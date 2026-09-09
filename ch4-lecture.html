@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 4 — Environmental Legislation and Maritime Jurisdiction of the Philippines</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 4 — Environmental Legislation and Maritime Jurisdiction of the Philippines</h1>
+  <div class="subtitle">Weeks 5–6 · CO1–LO3: Examine various Philippine laws to offer a more comprehensive perspective on developing a research project · RA 8749 · RA 9003 · RA 9275 · RA 9729 &amp; RA 10174 · Maritime Zones · UNCLOS · Assoc. Prof. Ryan Manuel D. Guido, Ph.D. · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Chapter sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#t1">4.1 Regulatory Paradigm</a></li>
+    <li><a href="#t2">4.2 RA 8749 · Clean Air</a></li>
+    <li><a href="#t3">4.3 RA 9003 · Solid Waste</a></li>
+    <li><a href="#t4">4.4 RA 9275 · Clean Water</a></li>
+    <li><a href="#t5">4.5 RA 9729/10174 · Climate</a></li>
+    <li><a href="#t6">4.6 Maritime Zones</a></li>
+    <li><a href="#t7">4.7 UNCLOS &amp; Research</a></li>
+    <li><a href="#t8">4.8 Site Compliance</a></li>
+    <li><a href="#test">Mastery Test</a></li>
+    <li><a href="#refs">References</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ OBJECTIVES ============ -->
+<section id="objectives">
+  <div class="objectives">
+    <h4>Chapter Learning Objectives</h4>
+    <p>After working through this chapter, you should be able to:</p>
+    <ol class="plain">
+      <li>Describe the common regulatory paradigm — standards, permits, monitoring, enforcement, funds — that runs through Philippine environmental statutes;</li>
+      <li>Explain the frameworks of RA 8749 (Clean Air), RA 9003 (Ecological Solid Waste Management), and RA 9275 (Clean Water), including their ecosystem-boundary governance units (airsheds, water quality management areas);</li>
+      <li>Distinguish climate change mitigation from adaptation, and describe the institutions and funds of RA 9729 as amended by RA 10174 (Climate Change Commission, NCCAP/LCCAP, People's Survival Fund);</li>
+      <li>Map the maritime zones of the Philippines — archipelagic waters, territorial sea, contiguous zone, EEZ, continental shelf — and the rights attached to each;</li>
+      <li>Explain UNCLOS as the "constitution for the oceans," the archipelagic doctrine, and the marine scientific research consent regime that governs research at sea;</li>
+      <li>Assemble an environmental-compliance and site-stewardship plan for a research facility, converting each statute into workplan items; and</li>
+      <li>Answer legal-scenario case questions on these statutes using the IRAC framework from Chapter 3.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 4.1 ============ -->
+<section id="t1">
+  <h2><span class="secno">4.1</span>One Paradigm, Many Statutes: How Environmental Regulation Works</h2>
+  <p class="lede">The environmental laws of this chapter look like a pile of unrelated acronyms until you see the single regulatory machine inside all of them. Learn the machine once and every statute becomes a variation.</p>
+  <p>Each act follows the same cycle: the State sets <strong>standards</strong> (how clean must air, water, or land be); regulated actors obtain <strong>permits</strong> tied to those standards; agencies conduct <strong>monitoring</strong> to detect violations; <strong>enforcement</strong> imposes sanctions and corrective action; and dedicated <strong>funds</strong> — often fed by fees and fines — finance management, research, and rehabilitation. The Department of Environment and Natural Resources (DENR), chiefly through its <strong>Environmental Management Bureau (EMB)</strong>, is the lead operator, with LGUs and other agencies sharing implementation.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="The environmental regulatory cycle">
+      <circle cx="450" cy="190" r="74" fill="#12203a"/>
+      <text x="450" y="180" text-anchor="middle" font-size="12.5" font-weight="800" fill="#f6edd2">DENR · EMB</text>
+      <text x="450" y="198" text-anchor="middle" font-size="9.5" fill="#c8d2e4">lead regulator, with</text>
+      <text x="450" y="212" text-anchor="middle" font-size="9.5" fill="#c8d2e4">LGUs &amp; sector agencies</text>
+      <g font-size="11.5" font-weight="800">
+        <rect x="330" y="16" width="240" height="58" rx="10" fill="#1b2a4a"/>
+        <text x="450" y="40" text-anchor="middle" fill="#fff">1 · STANDARDS</text>
+        <text x="450" y="58" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">ambient &amp; emission/effluent limits</text>
+        <rect x="660" y="120" width="220" height="58" rx="10" fill="#1e7d4f"/>
+        <text x="770" y="144" text-anchor="middle" fill="#fff">2 · PERMITS</text>
+        <text x="770" y="162" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">permission tied to the standards</text>
+        <rect x="660" y="216" width="220" height="58" rx="10" fill="#1d5fbf"/>
+        <text x="770" y="240" text-anchor="middle" fill="#fff">3 · MONITORING</text>
+        <text x="770" y="258" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d4e4fb">measurement — where science lives</text>
+        <rect x="330" y="306" width="240" height="58" rx="10" fill="#b3423a"/>
+        <text x="450" y="330" text-anchor="middle" fill="#fff">4 · ENFORCEMENT</text>
+        <text x="450" y="348" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f4cfcc">sanctions · corrective action</text>
+        <rect x="20" y="120" width="220" height="58" rx="10" fill="#a86a00"/>
+        <text x="130" y="144" text-anchor="middle" fill="#fff">5 · FUNDS</text>
+        <text x="130" y="162" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">fees &amp; fines → management, research</text>
+        <rect x="20" y="216" width="220" height="58" rx="10" fill="#6b4fa1"/>
+        <text x="130" y="240" text-anchor="middle" fill="#fff">6 · REVISION</text>
+        <text x="130" y="258" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">data feeds updated standards</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none" marker-end="url(#carr)">
+        <path d="M 575 55 Q 720 65 765 115"/>
+        <path d="M 770 182 L 770 212"/>
+        <path d="M 700 278 Q 640 330 575 335"/>
+        <path d="M 325 335 Q 190 320 135 278"/>
+        <path d="M 130 212 L 130 182"/>
+        <path d="M 175 116 Q 240 55 325 45"/>
+      </g>
+      <defs><marker id="carr" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.1 — The regulatory cycle common to RA 8749, RA 9003, and RA 9275.</span> Framework diagram; lead agency at <a href="https://emb.gov.ph/" target="_blank" rel="noopener">emb.gov.ph</a>, department at <a href="https://denr.gov.ph/" target="_blank" rel="noopener">denr.gov.ph</a>.</figcaption>
+  </figure>
+  <h3>Where the Paradigm Came From</h3>
+  <p>Philippine environmental law did not appear from nowhere. Internationally, the 1972 Stockholm Conference and the 1992 Rio Earth Summit built the modern vocabulary — sustainable development, the <strong>precautionary principle</strong> (scientific uncertainty is not a license to delay protective action), and the <strong>polluter-pays principle</strong> (the cost of pollution belongs on the balance sheet of whoever causes it). Domestically, the 1987 Constitution elevated the environment to a right: Article II, Section 16 declares the State's duty to protect "the right of the people to a balanced and healthful ecology in accord with the rhythm and harmony of nature."</p>
+  <p>That constitutional sentence acquired teeth in <strong><em>Oposa v. Factoran</em> (G.R. No. 101083, 1993)</strong>, the Supreme Court decision that made Philippine environmental law internationally famous. A group of minors, suing on their own behalf and on behalf of "generations yet unborn," challenged timber license agreements; the Court recognized their standing under the doctrine of <strong>intergenerational responsibility</strong> — each generation holds the environment in trust for the next. Every statute in this chapter descends from that trust logic, and a proposal that frames long-term environmental monitoring as trusteeship for future Filipinos is quoting the country's highest court, not being sentimental.</p>
+  <h3>Three Families of Regulatory Instruments</h3>
+  <p>Within the cycle, statutes deploy three distinguishable instrument families — and modern acts mix all three:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:200px;">Instrument family</th><th>How it works</th><th>Examples in this chapter</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Command-and-control</strong></td><td>The State sets binding limits and prohibitions, checked by permits and inspections</td><td>Ambient and emission standards (RA 8749); effluent standards and discharge permits (RA 9275); the incineration and open-dump bans</td></tr>
+        <tr><td><strong>Economic / market</strong></td><td>Prices and funds make good behavior cheaper than bad — continuous pressure where inspections are occasional</td><td>Wastewater charges that fall as effluent improves (RA 9275); air quality and water quality management funds fed by fees and fines</td></tr>
+        <tr><td><strong>Information / planning</strong></td><td>Mandatory measurement, disclosure, and plans create accountability and steer investment</td><td>Airshed monitoring and reporting; LGU 10-year solid waste plans (RA 9003); LCCAPs (RA 9729)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Reading a new statute, ask instrument-family questions before section-number questions: <em>what is commanded, what is priced, what must be measured and planned?</em> The answers are the statute's real architecture — and they tell you immediately where a research team fits (usually in the measurement and planning layer, occasionally as beneficiary of the funds).</p>
+
+  <aside class="note key"><span class="tag">Key Concept</span><br>Stage 3 — monitoring — is the scientist's door into every environmental statute: the laws <em>require</em> continuous, credible measurement, which means instruments, calibration, data management, and trained people. Where Chapter 3's laws handed you funds, institutions, and standards, this chapter's laws hand you <strong>mandated demand for measurement science</strong>.</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>The atmosphere is your detector's first optical element. Aerosols, haze, and smoke degrade transparency and photometric stability; the same particulates the Clean Air Act regulates are the ones flattening your light curves. Air quality science and observational astronomy are, physically, the same measurement problem viewed from opposite ends.</aside>
+</section>
+
+<!-- ============ 4.2 ============ -->
+<section id="t2">
+  <h2><span class="secno">4.2</span>RA 8749 (1999): The Philippine Clean Air Act</h2>
+  <p>The Clean Air Act built the machine of Figure 4.1 for the atmosphere. Its distinctive design choice is the governance unit: air quality is managed by <strong>airshed</strong> — a region sharing common weather, topography, and pollution climate — rather than by political boundary, because smoke does not respect municipal borders. Within each airshed, the Act deploys <strong>ambient air quality standards</strong> (how clean the shared air must be), <strong>emission standards</strong> for sources (vehicles, industry), permits for stationary sources, and an <strong>Air Quality Management Fund</strong> to finance monitoring, research, and improvement. Its most famous single provision is the general <strong>ban on waste incineration</strong> — burning municipal, biomedical, and hazardous waste in devices that emit poisonous and toxic fumes.</p>
+  <h3>Reading the Act in Detail</h3>
+  <p><strong>Rights and principles first.</strong> The Act opens by recognizing the citizen's right to breathe clean air and by committing to the polluter-pays principle — the declaration-of-policy material you learned in Chapter 3 to quote as an alignment anchor. It then frames air quality management as a shared enterprise: the State formulates a holistic national program, but "a clean environment is primarily the responsibility of polluters," with citizens given participation rights (complaints, access to information) that make the statute unusually litigable by ordinary people.</p>
+  <p><strong>Governance by airshed.</strong> Each designated airshed is run by a multipartite <strong>governing board</strong> — DENR with LGUs, other agencies, the private sector, and NGOs — which adopts a common action plan and administers the airshed's share of the <strong>Air Quality Management Fund</strong> (fed by emission charges, fees, and fines, and spent on monitoring, research, enforcement support, and community projects). Airsheds are further classified by performance: areas meeting ambient standards are <strong>attainment areas</strong>; those exceeding them are <strong>non-attainment areas</strong>, where new pollution sources face stricter controls until the shared air recovers — a spatial logic directly analogous to protecting a dark-sky site by managing its whole viewshed.</p>
+  <p><strong>Two kinds of standards, one logic.</strong> Ambient standards govern the <em>shared resource</em> (concentration ceilings for the criteria pollutants: particulate matter including PM10, sulfur and nitrogen oxides, photochemical ozone, carbon monoxide, lead); emission standards govern each <em>source</em> — stationary sources through permits tied to their emission limits, mobile sources through vehicle emission standards, inspection regimes, and fuel quality rules (the Act drove the phase-out of leaded gasoline and limits on fuel sulfur). The two standard types meet in the monitoring data: if every source complies but the ambient ceiling is still breached, the airshed board must tighten the allocation — which is why credible, continuous measurement is the statute's load-bearing wall.</p>
+  <p><strong>The incineration ban, precisely.</strong> The ban targets the burning of municipal, biomedical, and hazardous wastes in a manner that emits poisonous and toxic fumes; the Act (with RA 9003's parallel prohibition on open burning) closed both the facility route and the backyard route to waste-by-fire. Understanding its precise scope matters in case questions: the provision is about <em>waste disposal by combustion</em>, and its policy pair is the RA 9003 hierarchy that supplies the lawful alternatives.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 350" role="img" aria-label="Clean Air Act framework">
+      <ellipse cx="450" cy="120" rx="360" ry="92" fill="#eaf1fc" stroke="#1d5fbf" stroke-width="2" stroke-dasharray="8 5"/>
+      <text x="450" y="52" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1d5fbf">THE AIRSHED — governance follows the atmosphere, not the map</text>
+      <g font-size="10.5" font-weight="700">
+        <rect x="160" y="80" width="180" height="66" rx="9" fill="#1b2a4a"/>
+        <text x="250" y="104" text-anchor="middle" fill="#fff">AMBIENT STANDARDS</text>
+        <text x="250" y="122" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">quality of the shared air</text>
+        <text x="250" y="136" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">(PM, SOx, NOx, O₃ …)</text>
+        <rect x="360" y="80" width="180" height="66" rx="9" fill="#1e7d4f"/>
+        <text x="450" y="104" text-anchor="middle" fill="#fff">EMISSION STANDARDS</text>
+        <text x="450" y="122" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">limits at each source:</text>
+        <text x="450" y="136" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">vehicles · industry · permits</text>
+        <rect x="560" y="80" width="180" height="66" rx="9" fill="#a86a00"/>
+        <text x="650" y="104" text-anchor="middle" fill="#fff">MANAGEMENT FUND</text>
+        <text x="650" y="122" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">fees &amp; fines finance</text>
+        <text x="650" y="136" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">monitoring &amp; research</text>
+      </g>
+      <rect x="240" y="238" width="420" height="46" rx="9" fill="#b3423a"/>
+      <text x="450" y="258" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fff">INCINERATION BAN</text>
+      <text x="450" y="275" text-anchor="middle" font-size="9.5" fill="#f4cfcc">no burning of municipal, biomedical, hazardous waste in toxic-emitting devices</text>
+      <line x1="450" y1="212" x2="450" y2="234" stroke="#b3423a" stroke-width="2"/>
+      <g font-size="10">
+        <rect x="30" y="296" width="840" height="42" rx="9" fill="#f6edd2"/>
+        <text x="450" y="314" text-anchor="middle" font-weight="800" fill="#a86a00">ASTRONOMY READING: particulates = extinction · haze = lost transparency · smoke plumes = photometric noise</text>
+        <text x="450" y="330" text-anchor="middle" fill="#4a3a08">an aerosol/sky-transparency monitoring station serves the Act's monitoring stage and your observatory's data quality at once</text>
+      </g>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.2 — The Clean Air Act framework: airshed governance, twin standards, fund, and the incineration ban.</span> Recreated from RA 8749 — full text via <a href="https://lawphil.net/statutes/repacts/ra1999/ra_8749_1999.html" target="_blank" rel="noopener">LawPhil</a>; air quality program at <a href="https://emb.gov.ph/" target="_blank" rel="noopener">EMB</a>.</figcaption>
+  </figure>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>A sky-quality or aerosol-optical-depth station co-located with an EMB air monitoring site is a twofer: the astronomy gets extinction coefficients; the airshed gets an independent data stream. Write the co-location MOU into the workplan — Chapter 3's statute-to-opportunity mapping applied to a new statute.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Assuming "our site is rural, so air law is irrelevant." Open burning of agricultural and municipal waste — the rural norm the Act restricts — is precisely what fills valley sites with evening smoke layers. Your site-selection study should cite the Act's instruments, not just complain about haze.</aside>
+</section>
+
+<!-- ============ 4.3 ============ -->
+<section id="t3">
+  <h2><span class="secno">4.3</span>RA 9003 (2000): The Ecological Solid Waste Management Act</h2>
+  <p>RA 9003 is the waste counterpart, and its central framework is a <strong>hierarchy</strong>: interventions are ranked, and the law pushes effort toward the top. Source <strong>reduction and avoidance</strong> outrank <strong>reuse</strong>, which outranks <strong>recycling and composting</strong>, which outrank <strong>treatment and residual disposal</strong> — with disposal allowed only in <strong>sanitary landfills</strong> (open and, ultimately, controlled dumps are banned). The machinery is decentralized: <strong>mandatory segregation at source</strong>, <strong>materials recovery facilities (MRFs)</strong> at the barangay level or shared clusters, LGU solid waste management plans, and a <strong>National Solid Waste Management Commission (NSWMC)</strong> coordinating nationally.</p>
+  <h3>The Act's Working Parts</h3>
+  <p><strong>A numerical duty, not just a philosophy.</strong> The hierarchy comes with a target: LGUs were required to divert at least <strong>25% of their waste away from disposal</strong> within five years of the Act — through reuse, recycling, and composting — with the diversion rate to increase thereafter. Targets convert the pyramid from aspiration into an auditable performance indicator, and they are why a barangay MRF is a compliance instrument rather than a civic ornament.</p>
+  <p><strong>Segregation is the hinge.</strong> Everything above disposal depends on separation at the point of generation, so the Act mandates sorting into at least four streams: <strong>compostable</strong> (kitchen and garden waste bound for composting), <strong>recyclable</strong> (paper, plastics, metals, glass bound for the MRF and recycling markets), <strong>residual</strong> (the true leftovers, the only stream that should reach a sanitary landfill), and <strong>special waste</strong> — the category that matters most to a laboratory: batteries, electronics, busted lamps, paint and chemical containers, which require handling separate from the municipal stream. Mixed waste defeats every downstream facility; this is why the prohibited-acts list punishes not only littering, open burning, and open dumping but also the transport and acceptance of unsegregated loads.</p>
+  <p><strong>Institutions and plans.</strong> The NSWMC — situated under the Office of the President, with national agencies and private/NGO representatives — sets the national framework and approves the <strong>10-year solid waste management plans</strong> every province, city, and municipality must produce. Barangays carry segregation and collection of biodegradables and recyclables (hence the MRF at barangay or clustered-barangay level); municipalities handle residuals and disposal. For a research campus, the practical meaning is that your waste plan must dovetail with the host LGU's plan — the same plan-inclusion logic as the LDRRMF and the LCCAP.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 400" role="img" aria-label="Solid waste management hierarchy">
+      <g font-size="12" font-weight="800">
+        <polygon points="450,20 300,95 600,95" fill="#1e7d4f"/>
+        <text x="450" y="68" text-anchor="middle" fill="#fff" font-size="11.5">AVOID &amp; REDUCE</text>
+        <text x="450" y="84" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">first duty: make less waste</text>
+        <polygon points="292,105 608,105 648,170 252,170" fill="#27406b"/>
+        <text x="450" y="134" text-anchor="middle" fill="#fff" font-size="11.5">REUSE</text>
+        <text x="450" y="152" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">same object, next use</text>
+        <polygon points="244,180 656,180 696,245 204,245" fill="#a86a00"/>
+        <text x="450" y="208" text-anchor="middle" fill="#fff" font-size="11.5">RECYCLE &amp; COMPOST</text>
+        <text x="450" y="226" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">segregation at source · barangay/cluster MRFs</text>
+        <polygon points="196,255 704,255 744,320 156,320" fill="#b3423a"/>
+        <text x="450" y="283" text-anchor="middle" fill="#fff" font-size="11.5">TREAT &amp; DISPOSE — LAST RESORT</text>
+        <text x="450" y="301" text-anchor="middle" font-size="9" font-weight="400" fill="#f4cfcc">sanitary landfill only · open dumps banned · no incineration (RA 8749)</text>
+      </g>
+      <g font-size="10.5" fill="#4a5568">
+        <text x="760" y="55" font-weight="800" fill="#1e7d4f">EFFORT ↑</text>
+        <text x="760" y="72">the law pushes</text>
+        <text x="760" y="86">activity upward</text>
+        <text x="60" y="285" font-weight="800" fill="#b3423a">VOLUME ↓</text>
+        <text x="28" y="302">only residuals</text>
+        <text x="28" y="316">reach the bottom</text>
+      </g>
+      <rect x="120" y="342" width="660" height="44" rx="9" fill="#f6edd2"/>
+      <text x="450" y="360" text-anchor="middle" font-size="10.5" font-weight="800" fill="#a86a00">GOVERNANCE: NSWMC (national coordination) · LGU 10-year SWM plans · mandatory segregation at source</text>
+      <text x="450" y="377" text-anchor="middle" font-size="9.5" fill="#4a3a08">a research campus is a waste generator under this Act — your facility plan is a compliance document, not housekeeping</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.3 — The solid waste management hierarchy of RA 9003.</span> Recreated from the Act — full text via <a href="https://lawphil.net/statutes/repacts/ra2001/ra_9003_2001.html" target="_blank" rel="noopener">LawPhil</a>; commission at <a href="https://nswmc.emb.gov.ph/" target="_blank" rel="noopener">NSWMC</a>.</figcaption>
+  </figure>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Observatories generate exotic residuals — silvering and coating chemicals, batteries and electronics from remote stations, cryogens' packaging — plus ordinary campus waste from visitors. A dark-sky destination that draws two thousand festival guests has a solid-waste problem exactly one festival old. Design the MRF partnership with the host barangay <em>before</em> the first star party.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Hierarchies are a recurring legal <em>form</em>: like the legal-instrument pyramid (Fig. 3.1) and the design-strength ladder (Ch. 1), RA 9003 ranks options and demands justification for descending. When a statute hands you a hierarchy, your compliance plan should show work at the top tiers, not just a disposal contract at the bottom.</aside>
+</section>
+
+<!-- ============ 4.4 ============ -->
+<section id="t4">
+  <h2><span class="secno">4.4</span>RA 9275 (2004): The Philippine Clean Water Act</h2>
+  <p>The Clean Water Act runs the Figure 4.1 machine for water. Its ecosystem governance unit is the <strong>Water Quality Management Area (WQMA)</strong> — designated around a water body and its catchment, again ignoring political boundaries. The instruments will now look familiar: <strong>water quality guidelines</strong> for the receiving body, <strong>effluent standards</strong> for dischargers, a <strong>discharge permit system</strong> (no wastewater discharge into water bodies without one), fees that reward reduction, and an area <strong>water quality management fund</strong>. Prohibitions cover discharging untreated wastewater, dumping, and related acts.</p>
+  <h3>The Act's Working Parts</h3>
+  <p><strong>Coverage is total.</strong> The Act applies to water quality management in <em>all</em> water bodies — fresh, brackish, and marine — which is why it will follow your project from a mountain creek to the coastal annex of Section 4.8. Groundwater is protected too: the prohibitions reach unauthorized disposal into the ground where it threatens aquifers, a point relevant to any site relying on wells.</p>
+  <p><strong>WQMA governance mirrors the airshed.</strong> Each management area has a <strong>governing board</strong> — DENR with the LGUs of the catchment, water districts, industry, and civil society — that adopts an action plan for bringing the water body to its classification's guideline values, and administers the area's <strong>water quality management fund</strong>. Water bodies are classified by intended beneficial use (public water supply, recreation, fisheries, agriculture, and so on), and the guideline values follow the classification — so the first datum your catchment study must record is the official classification of the river you are modeling, because it defines "clean" for that water legally.</p>
+  <p><strong>Permits and prices.</strong> The <strong>discharge permit</strong> is the operative instrument: it specifies the quantity and quality of allowable effluent, and it is unlawful to discharge without one. On top sits the <strong>wastewater charge system</strong> — fees scaled to the load actually discharged, so that a facility which treats beyond compliance pays less: the economic-instrument family layered on command-and-control, as Section 4.1 predicted. The Act also drives the national program for <strong>sewerage and septage management</strong>, the unglamorous infrastructure whose absence is the largest single source of domestic water pollution — and a standing item for any facility with dormitories or visitor crowds.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 330" role="img" aria-label="Clean Water Act framework">
+      <path d="M 60 250 Q 250 190 450 240 Q 650 290 840 220 L 840 310 L 60 310 Z" fill="#1d5fbf" opacity="0.25"/>
+      <path d="M 60 262 Q 250 202 450 252 Q 650 302 840 232" fill="none" stroke="#1d5fbf" stroke-width="3"/>
+      <text x="140" y="295" font-size="11" font-weight="800" fill="#1d5fbf">THE WATER BODY + ITS CATCHMENT = WQMA</text>
+      <g font-size="10.5" font-weight="700">
+        <rect x="60" y="30" width="190" height="66" rx="9" fill="#1b2a4a"/>
+        <text x="155" y="54" text-anchor="middle" fill="#fff">QUALITY GUIDELINES</text>
+        <text x="155" y="72" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">what the river/lake/bay</text>
+        <text x="155" y="86" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">itself must satisfy</text>
+        <rect x="270" y="30" width="190" height="66" rx="9" fill="#1e7d4f"/>
+        <text x="365" y="54" text-anchor="middle" fill="#fff">EFFLUENT STANDARDS</text>
+        <text x="365" y="72" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">limits on every discharge</text>
+        <text x="365" y="86" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">entering the body</text>
+        <rect x="480" y="30" width="190" height="66" rx="9" fill="#b3423a"/>
+        <text x="575" y="54" text-anchor="middle" fill="#fff">DISCHARGE PERMITS</text>
+        <text x="575" y="72" text-anchor="middle" font-size="9" font-weight="400" fill="#f4cfcc">no permit, no discharge —</text>
+        <text x="575" y="86" text-anchor="middle" font-size="9" font-weight="400" fill="#f4cfcc">labs and facilities included</text>
+        <rect x="690" y="30" width="180" height="66" rx="9" fill="#a86a00"/>
+        <text x="780" y="54" text-anchor="middle" fill="#fff">AREA FUND</text>
+        <text x="780" y="72" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">fees &amp; fines finance</text>
+        <text x="780" y="86" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">monitoring &amp; restoration</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2" fill="none" marker-end="url(#warr)">
+        <line x1="155" y1="96" x2="230" y2="215"/>
+        <line x1="365" y1="96" x2="400" y2="225"/>
+        <line x1="575" y1="96" x2="530" y2="235"/>
+        <line x1="780" y1="96" x2="690" y2="245"/>
+      </g>
+      <defs><marker id="warr" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <text x="450" y="140" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">same machine as the Clean Air Act — swap airshed for WQMA, emissions for effluents</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.4 — The Clean Water Act framework: WQMA governance and its instruments.</span> Recreated from RA 9275 — full text via <a href="https://lawphil.net/statutes/repacts/ra2004/ra_9275_2004.html" target="_blank" rel="noopener">LawPhil</a>; program at <a href="https://emb.gov.ph/" target="_blank" rel="noopener">EMB</a>.</figcaption>
+  </figure>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Mirror-coating and instrument-cleaning effluents are laboratory wastewater. One sentence in your facility plan — "coating-line rinse water is collected and treated; no discharge occurs without a permit under RA 9275" — converts an inspection risk into evidence of competence.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>You have now seen the <strong>ecosystem-boundary paradigm</strong> twice: airsheds and WQMAs draw governance around the natural system, not the political map. Note the scientific consequence — the law's monitoring units match the units your models use, which makes environmental datasets unusually research-ready.</aside>
+</section>
+
+<!-- ============ 4.5 ============ -->
+<section id="t5">
+  <h2><span class="secno">4.5</span>RA 9729 (2009) and RA 10174 (2012): The Climate Change Act and the People's Survival Fund</h2>
+  <p>Climate law adds a second axis to the regulatory machine. Where pollution statutes manage <em>what we emit into local systems</em>, climate statutes manage a global risk along two complementary strategies: <strong>mitigation</strong> — reducing greenhouse-gas emissions and enhancing sinks — and <strong>adaptation</strong> — adjusting communities and systems to impacts already unavoidable. Philippine law, written for a country that emits little but suffers much, leans deliberately toward <strong>adaptation</strong>.</p>
+  <p>RA 9729 created the <strong>Climate Change Commission (CCC)</strong> — chaired by no less than the President — to coordinate national policy; a <strong>National Framework Strategy</strong> and <strong>National Climate Change Action Plan (NCCAP)</strong> set direction; and every LGU must produce a <strong>Local Climate Change Action Plan (LCCAP)</strong>. RA 10174 then added the money: the <strong>People's Survival Fund (PSF)</strong>, a dedicated national fund — with an annual allocation protected by statute — financing local adaptation projects, with LGUs and accredited community organizations as proponents.</p>
+  <h3>Inside the NCCAP: Where Research Lives</h3>
+  <p>The NCCAP organizes national climate action into seven strategic priorities: <strong>food security; water sufficiency; ecological and environmental stability; human security; climate-smart industries and services; sustainable energy;</strong> and — read this one twice — <strong>knowledge and capacity development</strong>. The seventh priority is the research system's named seat at the climate table: climate science, downscaled projections, risk and vulnerability assessment, monitoring networks, and the training of climate-literate professionals are not support services to the plan; they are one of its seven pillars. A university proposal that anchors in the knowledge-and-capacity pillar while <em>serving</em> one of the sectoral pillars (say, water sufficiency via basin rainfall monitoring) has a two-point NCCAP citation of exactly the target-level kind Chapter 2 demands.</p>
+  <h3>The People's Survival Fund, Precisely</h3>
+  <p>RA 10174 wrote adaptation finance into the annual budget: the PSF carries an allocation of <strong>at least one billion pesos</strong> per year, protected by statute rather than dependent on annual political weather, and — crucially — <em>supplementing</em> rather than replacing agencies' regular climate appropriations. A <strong>PSF Board</strong> (chaired from the finance side of government, with the CCC providing technical evaluation and secretariat support) passes on proposals from LGUs and accredited local and community organizations. Eligible activities read like a research menu: water resources and land management under changing regimes, climate-proofing of infrastructure, health surveillance tied to climate-sensitive diseases, and — explicitly — the improvement of <strong>monitoring, forecasting, and early-warning systems</strong>. The design logic repeats the LDRRMF's: money is placed closest to the communities that bear the risk, with the science entering through partnership with the local proponent.</p>
+  <p>Note also the <strong>mainstreaming</strong> duty that makes the LCCAP more than a document: climate risk must be integrated into local land-use and development planning, so an LCCAP's hazard maps and projections propagate into zoning, building, and investment decisions. Research that improves an LCCAP therefore improves a municipality's entire planning stack — the highest-leverage uptake pathway this course has shown you yet.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 420" role="img" aria-label="Climate Change Act framework: mitigation and adaptation, institutions and funds">
+      <g font-size="12" font-weight="800">
+        <rect x="60" y="20" width="360 " height="88 " rx="10" fill="#1e7d4f"/>
+        <text x="240" y="48" text-anchor="middle" fill="#fff">MITIGATION</text>
+        <text x="240" y="68" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">cut greenhouse-gas emissions · protect sinks</text>
+        <text x="240" y="84" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">energy, transport, forests, waste (RA 9003 link)</text>
+        <rect x="480" y="20" width="360" height="88" rx="10" fill="#1d5fbf"/>
+        <text x="660" y="48" text-anchor="middle" fill="#fff">ADAPTATION — the Philippine emphasis</text>
+        <text x="660" y="68" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d4e4fb">adjust to unavoidable impacts: resilient farms,</text>
+        <text x="660" y="84" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d4e4fb">coasts, water, health, settlements · DRRM link (RA 10121)</text>
+      </g>
+      <rect x="270" y="140" width="360" height="60" rx="10" fill="#12203a"/>
+      <text x="450" y="164" text-anchor="middle" font-size="12.5" font-weight="800" fill="#f6edd2">CLIMATE CHANGE COMMISSION</text>
+      <text x="450" y="184" text-anchor="middle" font-size="9.5" fill="#c8d2e4">chaired by the President · lead policy-making &amp; coordinating body</text>
+      <g stroke="#e3e0d8" stroke-width="2"><line x1="240" y1="108" x2="380" y2="138"/><line x1="660" y1="108" x2="520" y2="138"/><line x1="450" y1="200" x2="450" y2="228"/></g>
+      <rect x="200" y="232" width="500" height="52" rx="10" fill="#27406b"/>
+      <text x="450" y="253" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fff">NATIONAL FRAMEWORK STRATEGY → NCCAP</text>
+      <text x="450" y="272" text-anchor="middle" font-size="9.5" fill="#c8d2e4">national direction, cascading (a familiar pattern) into local plans</text>
+      <g stroke="#e3e0d8" stroke-width="2"><line x1="330" y1="284" x2="240" y2="312"/><line x1="570" y1="284" x2="660" y2="312"/></g>
+      <g font-size="11.5" font-weight="800">
+        <rect x="80" y="316" width="320" height="76" rx="10" fill="#a86a00"/>
+        <text x="240" y="342" text-anchor="middle" fill="#fff">LCCAP — every LGU</text>
+        <text x="240" y="362" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">local climate action plan: the hook where a</text>
+        <text x="240" y="378" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">sited research project anchors locally</text>
+        <rect x="500" y="316" width="320" height="76" rx="10" fill="#6b4fa1" stroke="#c9a227" stroke-width="3.5"/>
+        <text x="660" y="342" text-anchor="middle" fill="#fff">PEOPLE'S SURVIVAL FUND ★ (RA 10174)</text>
+        <text x="660" y="362" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">statutorily protected annual allocation financing</text>
+        <text x="660" y="378" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">local adaptation — LGUs &amp; accredited orgs propose</text>
+      </g>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.5 — The two-strategy climate framework and the institutions of RA 9729 as amended by RA 10174.</span> Recreated from the Acts — texts via <a href="https://lawphil.net/statutes/repacts/ra2009/ra_9729_2009.html" target="_blank" rel="noopener">LawPhil (RA 9729)</a> and <a href="https://lawphil.net/statutes/repacts/ra2012/ra_10174_2012.html" target="_blank" rel="noopener">LawPhil (RA 10174)</a>; commission at <a href="https://climate.gov.ph/" target="_blank" rel="noopener">climate.gov.ph</a>.</figcaption>
+  </figure>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Climate services run on exactly your skill set: long, calibrated, homogeneous time series; satellite radiometry; careful treatment of instrument drift and selection effects. A department that can reduce photometric survey data can quality-control a fifty-year temperature record — and the LCCAP/PSF architecture gives that skill a funded local application.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Spot the pattern library at work: CCC chaired by the President (highest-level coordination, like the Space Council logic), NCCAP→LCCAP cascade (the Chapter 2 vision→plan→local cascade), PSF as a protected statutory fund (the LDRRMF logic at national scale). New statutes, familiar frameworks — this is why you learn paradigms, not trivia.</aside>
+</section>
+
+<!-- ============ 4.6 ============ -->
+<section id="t6">
+  <h2><span class="secno">4.6</span>Maritime Territories and Jurisdictions: The Archipelagic Framework</h2>
+  <p class="lede">An archipelagic State's most important map is invisible from shore. Philippine maritime jurisdiction is a set of nested zones, each with its own bundle of rights — and every buoy, tide gauge, or research vessel you deploy sits in exactly one of them.</p>
+  <p>Under the <strong>archipelagic doctrine</strong>, the Philippines is treated as one integrated unit of islands and waters: <strong>straight archipelagic baselines</strong> (drawn by RA 9522, the 2009 Baselines Law) connect the outermost points of the outermost islands, and the waters enclosed — regardless of depth or distance from any single island — are <strong>archipelagic waters</strong> under Philippine sovereignty. Seaward of the baselines run the zones:</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 430" role="img" aria-label="Philippine maritime zones cross-section">
+      <rect x="0" y="330" width="900" height="70" fill="#8a7350"/>
+      <path d="M 0 330 L 140 330 L 200 355 L 320 370 L 560 385 L 900 395 L 900 430 L 0 430 Z" fill="#6e5a3e"/>
+      <rect x="0" y="120" width="900" height="210" fill="#1d5fbf" opacity="0.18"/>
+      <polygon points="0,120 150,120 150,330 0,330" fill="#1e7d4f" opacity="0.30"/>
+      <rect x="150" y="120" width="130" height="210" fill="#1d5fbf" opacity="0.35"/>
+      <rect x="280" y="120" width="130" height="210" fill="#1d5fbf" opacity="0.26"/>
+      <rect x="410" y="120" width="360" height="210" fill="#1d5fbf" opacity="0.16"/>
+      <rect x="770" y="120" width="130" height="210" fill="#4a5568" opacity="0.13"/>
+      <polygon points="40,120 100,60 160,120" fill="#1e7d4f"/>
+      <polygon points="90,120 150,75 205,120" fill="#27406b"/>
+      <text x="120" y="105" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">ISLANDS</text>
+      <line x1="150" y1="50" x2="150" y2="330" stroke="#c9a227" stroke-width="3"/>
+      <text x="150" y="40" text-anchor="middle" font-size="10.5" font-weight="800" fill="#a86a00">ARCHIPELAGIC BASELINES (RA 9522)</text>
+      <g font-size="10.5" font-weight="800" fill="#12203a">
+        <text x="75" y="145" text-anchor="middle">ARCHIPELAGIC</text><text x="75" y="160" text-anchor="middle">WATERS</text>
+        <text x="75" y="178" text-anchor="middle" font-size="9" font-weight="400">full sovereignty —</text>
+        <text x="75" y="191" text-anchor="middle" font-size="9" font-weight="400">the waters between islands</text>
+        <text x="215" y="145" text-anchor="middle">TERRITORIAL SEA</text>
+        <text x="215" y="161" text-anchor="middle" font-size="9.5" font-weight="700">0 → 12 nm</text>
+        <text x="215" y="178" text-anchor="middle" font-size="9" font-weight="400">sovereignty; foreign ships:</text>
+        <text x="215" y="191" text-anchor="middle" font-size="9" font-weight="400">innocent passage only</text>
+        <text x="345" y="145" text-anchor="middle">CONTIGUOUS ZONE</text>
+        <text x="345" y="161" text-anchor="middle" font-size="9.5" font-weight="700">12 → 24 nm</text>
+        <text x="345" y="178" text-anchor="middle" font-size="9" font-weight="400">enforcement: customs, fiscal,</text>
+        <text x="345" y="191" text-anchor="middle" font-size="9" font-weight="400">immigration, sanitary laws</text>
+        <text x="590" y="145" text-anchor="middle">EXCLUSIVE ECONOMIC ZONE</text>
+        <text x="590" y="161" text-anchor="middle" font-size="9.5" font-weight="700">out to 200 nm</text>
+        <text x="590" y="178" text-anchor="middle" font-size="9" font-weight="400">sovereign rights over resources · jurisdiction over</text>
+        <text x="590" y="191" text-anchor="middle" font-size="9" font-weight="400">marine scientific research &amp; environment</text>
+        <text x="835" y="145" text-anchor="middle">HIGH SEAS</text>
+        <text x="835" y="163" text-anchor="middle" font-size="9" font-weight="400">freedoms of</text>
+        <text x="835" y="176" text-anchor="middle" font-size="9" font-weight="400">all States</text>
+      </g>
+      <text x="590" y="360" text-anchor="middle" font-size="10" font-weight="800" fill="#f6edd2">CONTINENTAL SHELF — seabed rights, may extend beyond 200 nm</text>
+      <g stroke="#12203a" stroke-width="1.6"><line x1="280" y1="120" x2="280" y2="330" stroke-dasharray="6 4"/><line x1="410" y1="120" x2="410" y2="330" stroke-dasharray="6 4"/><line x1="770" y1="120" x2="770" y2="330" stroke-dasharray="6 4"/></g>
+      <text x="450" y="418" text-anchor="middle" font-size="10.5" font-style="italic" fill="#f6edd2">every instrument you moor, float, or sail sits in exactly one zone — and inherits that zone's legal regime</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.6 — The nested maritime zones of an archipelagic State.</span> Framework recreated from UNCLOS and RA 9522 — treaty text at the <a href="https://www.un.org/depts/los/convention_agreements/texts/unclos/unclos_e.pdf" target="_blank" rel="noopener">UN Division for Ocean Affairs</a>; baselines law via <a href="https://lawphil.net/statutes/repacts/ra2009/ra_9522_2009.html" target="_blank" rel="noopener">LawPhil</a>.</figcaption>
+  </figure>
+  <h3>The Baselines Machinery, and What Lies Beyond 200 nm</h3>
+  <p><strong>RA 9522 in operation.</strong> The 2009 Baselines Law updated the country's earlier baselines statutes to conform with UNCLOS's technical limits on archipelagic baselines (segment lengths, water-to-land ratio). Its most examined design choice: the <strong>Kalayaan Island Group</strong> and <strong>Bajo de Masinloc (Scarborough Shoal)</strong> were placed under a <strong>"regime of islands"</strong> — claimed as Philippine territory generating their own maritime zones, but outside the main archipelagic baselines, precisely so the baselines themselves would remain UNCLOS-compliant. The Supreme Court upheld this architecture in <em>Magallona v. Ermita</em> (2011) against the argument that it diminished national territory: drawing lawful baselines, the Court reasoned, strengthens rather than surrenders maritime claims.</p>
+  <p><strong>The continental shelf can outrun the EEZ.</strong> Where the physical continental margin extends past 200 nm, UNCLOS allows a coastal State to establish an <strong>extended continental shelf</strong> through a submission to the Commission on the Limits of the Continental Shelf. The Philippines did exactly this for the <strong>Philippine Rise</strong> (formerly Benham Rise), the vast undersea plateau east of Luzon — the submission was approved in 2012, giving the country seabed rights over the region well beyond 200 nm. The Rise has since become the textbook case of science-as-jurisdiction: bathymetric mapping, biodiversity cruises, and oceanographic monitoring there are simultaneously research programs and the exercise of sovereign rights, and foreign research on the Rise routes through the Philippine consent process like any MSR in national zones.</p>
+  <p><strong>What each zone actually gives you.</strong> In the territorial sea, sovereignty is nearly complete, qualified by foreign ships' right of <strong>innocent passage</strong> — passage that is continuous, expeditious, and not prejudicial to peace, good order, or security; activities like fishing, surveying, or research strip passage of its innocence. Archipelagic waters carry a similar regime, plus designated <strong>archipelagic sea lanes</strong> through which foreign vessels and aircraft enjoy a more robust passage right along defined corridors. The contiguous zone adds enforcement jurisdiction (customs, fiscal, immigration, sanitary laws) without sovereignty. The EEZ bundle is functional: sovereign rights to explore, exploit, conserve, and manage natural resources — living and non-living, water column and seabed, including energy from water, currents, and winds — plus jurisdiction over artificial islands and installations, marine scientific research, and environmental protection. Each bundle is exactly what your project documentation must match an instrument against.</p>
+  <p>Two synthesis points. First, the zones are <em>graduated</em>: sovereignty (archipelagic waters, territorial sea) fades into <em>sovereign rights and jurisdictions</em> (EEZ, continental shelf) and finally into high-seas freedoms — a gradient of authority, not a wall. Second, the West Philippine Sea situation shows the framework under stress: the <strong>2016 arbitral award</strong> under UNCLOS clarified maritime entitlements in the South China Sea in the Philippines' favor on key points, a reminder that these zones are living legal claims sustained by, among other things, <em>scientific presence and data</em>.</p>
+  <aside class="note ph"><span class="tag">PH Context</span><br>Pagtanaw 2050's vision of an "archipelagic and maritime nation" (Chapter 2) is this figure read as destiny: the EEZ makes the Philippines' jurisdiction mostly ocean. Tide gauges, HF radars, and satellite altimetry — space-enabled maritime science — are how a maritime nation actually knows its own territory.</aside>
+</section>
+
+<!-- ============ 4.7 ============ -->
+<section id="t7">
+  <h2><span class="secno">4.7</span>UNCLOS: The Constitution for the Oceans — and Its Research Clause</h2>
+  <p>The UN Convention on the Law of the Sea (1982) is the framework treaty behind every zone in Figure 4.6 — often called the <em>constitution for the oceans</em>. For working scientists its most consequential part is the least famous: <strong>Part XIII on Marine Scientific Research (MSR)</strong> establishes a <strong>consent regime</strong>. All States enjoy the right to conduct MSR — but research in another State's territorial sea requires its <em>express consent</em>, and research in the EEZ or on the continental shelf requires coastal-State consent, normally granted for peaceful, benign research, with obligations to share data, allow participation, and report results.</p>
+  <h3>The Convention in Brief</h3>
+  <p>Adopted in 1982 after nearly a decade of negotiation and in force since 1994, UNCLOS codifies the entire public order of the sea in seventeen parts — baselines and zones, passage regimes, the archipelagic-State rules the Philippines championed during the negotiations, the deep seabed "common heritage of mankind" regime, environmental protection, MSR, and a compulsory dispute-settlement system (arbitral tribunals and the International Tribunal for the Law of the Sea) under which the 2016 Philippines-China arbitration was brought. The Philippines signed in 1982 and ratified in 1984 — an early mover, unsurprisingly: no other legal instrument matters more to a State whose jurisdiction is mostly water.</p>
+  <h3>How the Consent Regime Actually Runs</h3>
+  <p>Part XIII is procedural enough to schedule a cruise by. The researching State must transmit a <strong>full project description well in advance</strong> of the planned start — objectives, methods, vessels and equipment, areas, dates, and the sponsoring institutions. In the EEZ and on the continental shelf, consent is to be granted <strong>"in normal circumstances"</strong> for projects pursued for peaceful purposes and to increase scientific knowledge of the marine environment; the coastal State may withhold it for projects bearing directly on resource exploitation, involving drilling or explosives, or affecting installations. Consent may even become <strong>implied</strong> if the coastal State does not respond within the Convention's timelines — a discipline on bureaucratic silence. In exchange, the coastal State may impose the standard <strong>conditions</strong>: participation of its scientists aboard, access to all data and samples, provision of reports and final results, and assistance in interpreting them. In Philippine practice, foreign MSR applications route through the Department of Foreign Affairs with the relevant science agencies — and clearance policies for sensitive areas such as the Philippine Rise show the consent power actively exercised.</p>
+  <p>Read the regime from both chairs. As the <em>coastal State's</em> scientists, Filipino researchers should treat every foreign application as a negotiation in which berths, data access, co-authorship, and training are the lawful price of the zone. As <em>visiting</em> researchers — the day your project samples another archipelago's waters — the same rules bind you, and your Chapter 1 ethics training already taught you the posture: permission first, reciprocity always, results shared with the community whose domain you entered.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 330" role="img" aria-label="UNCLOS marine scientific research consent regime by zone">
+      <g font-size="10.5" font-weight="800">
+        <rect x="30" y="30" width="200" height="52" rx="9" fill="#12203a"/><text x="130" y="52" text-anchor="middle" fill="#f6edd2">ZONE</text><text x="130" y="70" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">where the instrument/vessel is</text>
+        <rect x="240" y="30" width="310" height="52" rx="9" fill="#12203a"/><text x="395" y="52" text-anchor="middle" fill="#f6edd2">FOREIGN RESEARCHERS</text><text x="395" y="70" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">MSR consent regime (Part XIII)</text>
+        <rect x="560" y="30" width="310" height="52" rx="9" fill="#12203a"/><text x="715" y="52" text-anchor="middle" fill="#f6edd2">PHILIPPINE RESEARCHERS</text><text x="715" y="70" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">what it means for your project</text>
+      </g>
+      <g font-size="10">
+        <rect x="30" y="92" width="200" height="64" rx="9" fill="#e8f5ee" stroke="#1e7d4f" stroke-width="1.4"/>
+        <text x="130" y="118" text-anchor="middle" font-weight="800" fill="#1e7d4f">Archipelagic waters &amp;</text><text x="130" y="132" text-anchor="middle" font-weight="800" fill="#1e7d4f">territorial sea</text>
+        <rect x="240" y="92" width="310" height="64" rx="9" fill="#fbeceb" stroke="#b3423a" stroke-width="1.4"/>
+        <text x="252" y="116" font-weight="700" fill="#b3423a">EXPRESS CONSENT required —</text>
+        <text x="252" y="132" fill="#1c2433">sovereignty zone: research only on the</text>
+        <text x="252" y="146" fill="#1c2433">Philippines' explicit terms</text>
+        <rect x="560" y="92" width="310" height="64" rx="9" fill="#e8f5ee" stroke="#1e7d4f" stroke-width="1.4"/>
+        <text x="572" y="116" font-weight="700" fill="#1e7d4f">Home advantage:</text>
+        <text x="572" y="132" fill="#1c2433">domestic permits still apply (LGU, environment,</text>
+        <text x="572" y="146" fill="#1c2433">navigation) — but no foreign-State consent issue</text>
+        <rect x="30" y="166" width="200" height="64" rx="9" fill="#eaf1fc" stroke="#1d5fbf" stroke-width="1.4"/>
+        <text x="130" y="192" text-anchor="middle" font-weight="800" fill="#1d5fbf">EEZ &amp;</text><text x="130" y="206" text-anchor="middle" font-weight="800" fill="#1d5fbf">continental shelf</text>
+        <rect x="240" y="166" width="310" height="64" rx="9" fill="#fdf6e3" stroke="#a86a00" stroke-width="1.4"/>
+        <text x="252" y="188" font-weight="700" fill="#a86a00">COASTAL-STATE CONSENT —</text>
+        <text x="252" y="204" fill="#1c2433">normally granted for peaceful research; duties to</text>
+        <text x="252" y="218" fill="#1c2433">share data, allow participation, report results</text>
+        <rect x="560" y="166" width="310" height="64" rx="9" fill="#e8f5ee" stroke="#1e7d4f" stroke-width="1.4"/>
+        <text x="572" y="188" font-weight="700" fill="#1e7d4f">Partnership leverage:</text>
+        <text x="572" y="204" fill="#1c2433">foreign missions need PH consent — negotiate</text>
+        <text x="572" y="218" fill="#1c2433">co-authorship, data access, and training in return</text>
+        <rect x="30" y="240" width="200" height="52" rx="9" fill="#f8f7f2" stroke="#4a5568" stroke-width="1.2"/>
+        <text x="130" y="262" text-anchor="middle" font-weight="800" fill="#4a5568">High seas</text><text x="130" y="278" text-anchor="middle" font-size="9" fill="#4a5568">beyond national jurisdiction</text>
+        <rect x="240" y="240" width="310" height="52" rx="9" fill="#f8f7f2" stroke="#4a5568" stroke-width="1.2"/>
+        <text x="252" y="262" font-weight="700" fill="#4a5568">FREEDOM of scientific research —</text>
+        <text x="252" y="278" fill="#1c2433">open to all States, with flag-State responsibility</text>
+        <rect x="560" y="240" width="310" height="52" rx="9" fill="#f8f7f2" stroke="#4a5568" stroke-width="1.2"/>
+        <text x="572" y="262" font-weight="700" fill="#4a5568">Same freedom —</text>
+        <text x="572" y="278" fill="#1c2433">and the same duty to fly your obligations with you</text>
+      </g>
+      <text x="450" y="318" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">The consent regime is reciprocity in legal form: science enters another State's waters as a guest, and the host may set terms.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.7 — The UNCLOS Part XIII consent regime for marine scientific research, by zone.</span> Recreated from the Convention — <a href="https://www.un.org/depts/los/convention_agreements/texts/unclos/unclos_e.pdf" target="_blank" rel="noopener">full text (UN DOALOS)</a>.</figcaption>
+  </figure>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Space science keeps meeting the sea: coastal tide gauges calibrate satellite altimetry; GNSS reflectometry measures sea state; sea-level series anchor climate records; and telescope-bearing islands are reached, supplied, and sometimes powered by sea. An archipelagic space program is a maritime program with better optics.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The MSR consent regime is the international twin of the ethics-clearance principle from Chapter 1: <em>permission precedes data collection</em>, and the permission is owned by the community whose domain you enter. Same paradigm, different sovereign.</aside>
+</section>
+
+<!-- ============ 4.8 ============ -->
+<section id="t8">
+  <h2><span class="secno">4.8</span>Synthesis: The Environmental Compliance Map of a Research Facility</h2>
+  <p class="lede">Close the chapter the way a project manager would: one facility, every statute, one page.</p>
+  <p>Take a mountain observatory with a coastal tide-gauge annex. Before any statute in this chapter applies, the <strong>Philippine EIS System (PD 1586)</strong> asks whether the construction itself needs an <strong>Environmental Compliance Certificate (ECC)</strong> — the umbrella clearance whose conditions typically incorporate everything else. Then the chapter's laws attach, each through the machine you now recognize:</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 400" role="img" aria-label="Environmental compliance map for a research facility">
+      <rect x="330" y="18" width="240" height="64" rx="10" fill="#12203a"/>
+      <text x="450" y="44" text-anchor="middle" font-size="12" font-weight="800" fill="#f6edd2">RESEARCH FACILITY</text>
+      <text x="450" y="62" text-anchor="middle" font-size="9.5" fill="#c8d2e4">observatory + coastal instrument annex</text>
+      <rect x="290" y="104" width="320" height="46" rx="9" fill="#4a5568"/>
+      <text x="450" y="123" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">PD 1586 · EIS SYSTEM → ECC</text>
+      <text x="450" y="140" text-anchor="middle" font-size="9" fill="#e3e0d8">the umbrella clearance — its conditions carry the rest</text>
+      <line x1="450" y1="82" x2="450" y2="100" stroke="#c9a227" stroke-width="2.4"/>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="330" y1="150" x2="150" y2="188"/><line x1="410" y1="150" x2="330" y2="188"/><line x1="490" y1="150" x2="570" y2="188"/><line x1="570" y1="150" x2="750" y2="188"/>
+      </g>
+      <g font-size="10.5" font-weight="800">
+        <rect x="50"  y="192" width="200" height="88" rx="10" fill="#1d5fbf"/>
+        <text x="150" y="214" text-anchor="middle" fill="#fff">RA 8749 · AIR</text>
+        <text x="150" y="232" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">generator emissions · no open</text>
+        <text x="150" y="246" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">burning · aerosol monitoring</text>
+        <text x="150" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">opportunity: transparency data</text>
+        <rect x="255" y="192" width="200" height="88" rx="10" fill="#1e7d4f"/>
+        <text x="355" y="214" text-anchor="middle" fill="#fff">RA 9003 · WASTE</text>
+        <text x="355" y="232" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">segregation at source · MRF</text>
+        <text x="355" y="246" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">partnership · e-waste, chemicals</text>
+        <text x="355" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">opportunity: host-LGU goodwill</text>
+        <rect x="460" y="192" width="200" height="88" rx="10" fill="#a86a00"/>
+        <text x="560" y="214" text-anchor="middle" fill="#fff">RA 9275 · WATER</text>
+        <text x="560" y="232" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">lab effluents treated · discharge</text>
+        <text x="560" y="246" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">permit before any outflow</text>
+        <text x="560" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">opportunity: WQMA datasets</text>
+        <rect x="665" y="192" width="200" height="88" rx="10" fill="#6b4fa1"/>
+        <text x="765" y="214" text-anchor="middle" fill="#fff">RA 9729/10174 · CLIMATE</text>
+        <text x="765" y="232" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">anchor in host LGU's LCCAP ·</text>
+        <text x="765" y="246" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">PSF-fundable adaptation science</text>
+        <text x="765" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">opportunity: climate services</text>
+      </g>
+      <rect x="150" y="304" width="600" height="46" rx="9" fill="#eaf1fc" stroke="#1d5fbf" stroke-width="1.6"/>
+      <text x="450" y="323" text-anchor="middle" font-size="10.5" font-weight="800" fill="#1d5fbf">COASTAL ANNEX: which zone is the instrument in? (Fig. 4.6) — domestic permits + UNCLOS regime (Fig. 4.7)</text>
+      <text x="450" y="340" text-anchor="middle" font-size="9.5" fill="#1c2433">moorings, tide gauges, and radars inherit the legal regime of the waters they occupy</text>
+      <text x="450" y="382" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Every box is one paragraph of your proposal's compliance section — write each as compressed IRAC (Ch. 3, Fig. 3.8).</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 4.8 — The environmental compliance map of a research facility</span>, with the opportunity each statute offers alongside its obligations. EIS system under <a href="https://lawphil.net/statutes/presdecs/pd1978/pd_1586_1978.html" target="_blank" rel="noopener">PD 1586</a>; permits via <a href="https://emb.gov.ph/" target="_blank" rel="noopener">EMB</a>.</figcaption>
+  </figure>
+  <h3>The EIS System in Operation</h3>
+  <p>PD 1586 sorts projects by two questions: is the project type <strong>environmentally critical</strong> (heavy industry, major infrastructure, resource extraction), or is it located in an <strong>environmentally critical area</strong> (protected areas, hazard-prone zones, aquifer recharge areas, and similar)? Projects caught by either question undergo impact assessment and need an <strong>ECC</strong>; projects caught by neither may obtain a <strong>Certificate of Non-Coverage (CNC)</strong> — a determination worth having in writing even when you expect it, because it is the document that answers the reviewer's question before it is asked. A mountain observatory is rarely critical by <em>type</em>, but mountaintops sit in critical <em>areas</em> often enough that screening is a genuine step, not a formality.</p>
+  <p>The assessment itself runs through recognizable stages: <strong>screening</strong> (is the project covered?), <strong>scoping</strong> (which impacts matter, decided with the community), the <strong>impact study and EIS document</strong>, <strong>review</strong> by the EMB with public participation, the <strong>decision</strong> (ECC with conditions, or denial), and <strong>post-approval monitoring</strong> against those conditions — often through a multipartite monitoring team that includes the community. Notice the shape: it is the regulatory cycle of Figure 4.1 run once, prospectively, for a single project. And notice the community's position at scoping and monitoring: an observatory that treats its host barangay as a co-monitor rather than an audience is not being generous; it is using the system as designed.</p>
+  <p>One management habit completes the picture: the <strong>compliance calendar</strong>. Every clearance condition, permit renewal, monitoring report, and plan-inclusion date from this chapter belongs on a single dated calendar owned by a named project member — the humble artifact that separates projects that <em>are</em> compliant from projects that merely <em>were</em> compliant at kickoff. A sample compliance paragraph, in the compressed IRAC of Chapter 3: <em>"(R) The site ECC (ref. no.) conditions quarterly ambient-dust reporting; (A) the project logs PM readings at the two stations installed in Month 2 and files reports each quarter-end, archived in the project repository; (C) the condition is met continuously, with records available for audit."</em></p>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Reviewers rarely ask "is this project legal?" — they ask "does this team know what it is doing?" A one-page compliance map answering both is worth more than a page of promises: ECC status, four statute paragraphs, one maritime-zone determination. Attach it as an annex to your Week 12 workplan.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Treating environmental compliance as pure cost. Each statute in this chapter also operates funds and mandates monitoring — meaning each is simultaneously an obligation <em>and</em> a funding-and-partnership pathway for measurement science. Chapter 3 taught the mapping; this chapter proves it generalizes.</aside>
+</section>
+
+<!-- ============ MASTERY TEST ============ -->
+<section id="test">
+  <h2><span class="secno">✓</span>Chapter 4 Mastery Test — 20-Item HOTS Multiple Choice</h2>
+  <p>Each item targets applying, analyzing, or evaluating — most are legal-scenario items in Case Recitation style. Choose your answer before opening the dropdown. Suggested protocol: answer all 20 before revealing any explanation.</p>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A colleague complains that RA 8749, RA 9003, and RA 9275 are "three unrelated laws to memorize." The chapter's sharpest correction is:</p>
+    <ol class="opts"><li>They are indeed unrelated; memorize harder</li><li>All three run one regulatory machine — standards → permits → monitoring → enforcement → funds — so learning the cycle once lets you read each statute as a variation on it</li><li>Only RA 9003 matters in practice</li><li>They are identical laws with different numbers</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The paradigm — not the trivia — is the transferable knowledge: each act sets quality standards for a medium, permits sources against them, mandates monitoring, enforces, and finances through fees-and-fines funds. D overcorrects into falsehood: the acts differ meaningfully in governance units (airshed, hierarchy, WQMA) even though the machine is shared.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does RA 8749 manage air quality by <em>airshed</em> rather than by city or province?</p>
+    <ol class="opts"><li>Airsheds are easier to spell</li><li>Because pollution moves with weather and topography, not with political boundaries — governance drawn around the natural system matches the scale at which the problem physically exists</li><li>To reduce the number of mayors involved</li><li>Because the Constitution forbids provincial air management</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> This is the ecosystem-boundary paradigm: the governance unit follows the physical system. The scientific bonus is that legally mandated monitoring is organized at the same scale your atmospheric models use, making regulatory data unusually research-ready. The same logic returns as WQMAs in RA 9275.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Applying</span></div>
+    <p class="stem">A barangay near your candidate observatory site proposes a small waste incinerator to "solve" its garbage problem, promising cleaner air than open dumping. Under this chapter's statutes, the proposal is:</p>
+    <ol class="opts"><li>Permissible if the smoke blows away from the observatory</li><li>Blocked by RA 8749's incineration ban on burning municipal waste in toxic-emitting devices — and the real solution path runs up RA 9003's hierarchy: segregation, MRF, composting, residual disposal in a sanitary landfill</li><li>Mandatory under RA 9003</li><li>Legal only at night</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The two statutes interlock: the Clean Air Act closes the burn-it door while the Solid Waste Act opens the hierarchy — reduce, reuse, recycle, compost, then sanitary disposal of residuals only. The scenario's false dilemma (burning vs. dumping) dissolves once the hierarchy is applied. A is both unlawful and, for your site's sky transparency, self-defeating.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Applying</span></div>
+    <p class="stem">Rank these campus interventions by RA 9003's hierarchy, best first: (1) shift the cafeteria to reusable tableware; (2) contract residual hauling to a sanitary landfill; (3) build a barangay-shared MRF for recyclables and compostables.</p>
+    <ol class="opts"><li>2 · 3 · 1</li><li>1 · 3 · 2 — reduction first, then recovery through the MRF, with landfill disposal last and smallest</li><li>3 · 2 · 1</li><li>The hierarchy has no ranking</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The hierarchy ranks source reduction above recovery (reuse/recycle/compost) above disposal, and the Act expects effort to concentrate at the top. A compliance plan that leads with a hauling contract (option A's order) shows work only at the bottom tier — exactly what Figure 4.3 warns reads as non-compliance in spirit.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your instrumentation lab rinses newly coated mirrors, producing modest volumes of chemical-bearing wastewater that currently drains toward a creek. Under RA 9275, the correct reading is:</p>
+    <ol class="opts"><li>Small volumes are automatically exempt</li><li>This is a discharge into a water body: it requires treatment and a discharge permit before any outflow — "no permit, no discharge" applies to laboratories as much as factories</li><li>Creeks are not water bodies</li><li>Permits are needed only in Metro Manila</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The Clean Water Act's permit system attaches to the act of discharging, not to the discharger's industry or size threshold as imagined in A. The facility-plan sentence from the lecture — collection, treatment, permit before outflow — converts this from inspection risk to demonstrated competence. C and D are invented limits.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Classify: (1) a mangrove-reforestation carbon-sink program; (2) elevating a coastal barangay's water system against storm surge; (3) an early-warning rainfall network. Under the climate framework, the best classification is:</p>
+    <ol class="opts"><li>1 mitigation · 2 adaptation · 3 adaptation (with DRRM overlap under RA 10121)</li><li>All three are mitigation</li><li>1 adaptation · 2 mitigation · 3 neither</li><li>Classification is arbitrary</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Mitigation acts on causes (emissions and sinks — the mangroves' carbon function), adaptation acts on consequences (protecting the water system; anticipating extreme rainfall). Item 3 shows the statute-pair overlap the lecture flagged: adaptation under RA 9729 and prevention/mitigation under RA 10121 — the DRRM word "mitigation" confusingly maps to climate "adaptation," a classic case-recitation trap.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">The Climate Change Commission is chaired by the President. Based on the pattern this course has now shown three times, the design signal is:</p>
+    <ol class="opts"><li>The President enjoys chairing things</li><li>Cross-cutting problems get highest-level coordination: like PhilSA's presidential attachment and the Space Council, climate policy spans every department, so its coordinating body sits above all of them</li><li>Climate is a defense matter only</li><li>The CCC has no other members</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Institutional placement is policy (Chapter 3's lesson): problems that cut across sectors are coordinated from above the sectors. Recognizing the recurring design — Space Council, NDRRMC's cabinet composition, CCC — lets you predict where any new cross-cutting issue will be governed and whom a multi-agency proposal must ultimately address.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">A coastal municipality wants to fund a sea-level and storm-surge monitoring program as part of its climate response. The most correct funding-and-planning route under RA 9729/10174 is:</p>
+    <ol class="opts"><li>Wait for a foreign donor</li><li>Anchor the program in the municipality's LCCAP, then propose it to the People's Survival Fund as a local adaptation project — with the university as science partner of the LGU proponent</li><li>Charge fishermen a monitoring fee</li><li>Use the Quick Response Fund, since storms are involved</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The architecture runs plan-then-fund: the LCCAP establishes the local priority, and the PSF exists precisely to finance LGU-proposed adaptation. Note the recurring partnership pattern — like the LDRRMF, the PSF is accessed by the LGU as proponent, with researchers entering as partners. D confuses the DRRM standby fund with climate finance; the QRF is for response, not monitoring programs.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does Philippine climate law lean toward adaptation rather than mitigation?</p>
+    <ol class="opts"><li>Because mitigation is scientifically discredited</li><li>Because the Philippines contributes a small share of global emissions yet ranks among the most climate-exposed countries — the marginal peso protects more lives spent on adjusting to impacts than on cutting already-small emissions</li><li>Because adaptation is cheaper in all countries</li><li>Because UNCLOS requires it</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The emphasis is a rational allocation given the country's risk-to-responsibility profile, institutionalized in the NCCAP's adaptation priorities and the PSF's exclusive adaptation focus. A and C are false as stated (mitigation remains valid and is pursued); D connects the wrong treaty. Expect this reasoning pattern — national circumstances shaping statutory emphasis — in case questions.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">You moor an instrumented buoy 8 nautical miles seaward of the archipelagic baselines. The buoy sits in the:</p>
+    <ol class="opts"><li>High seas</li><li>Territorial sea — within 12 nm of the baselines, under Philippine sovereignty</li><li>Exclusive Economic Zone</li><li>Contiguous zone</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The zones nest outward from the baselines: territorial sea to 12 nm, contiguous zone 12–24 nm, EEZ to 200 nm, high seas beyond national jurisdiction. At 8 nm the buoy is in sovereign waters — domestic permitting applies, foreign research would need express consent, and your project documentation should state the zone determination explicitly (Figure 4.8's coastal-annex box).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">The difference between Philippine authority in the territorial sea and in the EEZ is best stated as:</p>
+    <ol class="opts"><li>None; both are full sovereignty</li><li>Territorial sea: sovereignty (subject to innocent passage); EEZ: not sovereignty but sovereign rights over resources plus jurisdiction over specific matters — including marine scientific research and environmental protection</li><li>EEZ: sovereignty; territorial sea: none</li><li>Both are high seas with Filipino names</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The zones form a gradient of authority, not a wall: sovereignty shades into functionally defined rights and jurisdictions. For researchers the crucial detail is that MSR jurisdiction is expressly one of the EEZ competences — which is what makes the consent regime of Figure 4.7 legally possible 200 nm from shore.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">What did RA 9522 (2009) actually do?</p>
+    <ol class="opts"><li>Created the EEZ concept</li><li>Drew the straight archipelagic baselines from the outermost points of the outermost islands — the legal reference line from which every maritime zone is measured — consistent with UNCLOS's archipelagic-State regime</li><li>Abolished the territorial sea</li><li>Transferred maritime law to the LGUs</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Baselines are the geodetic foundation of the whole structure: archipelagic waters lie within them, and the territorial sea, contiguous zone, and EEZ are all measured outward from them. A confuses statute with treaty (the EEZ is an UNCLOS institution); the baselines law is where cartography, geodesy, and sovereignty meet — a genuinely scientific statute.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Applying</span></div>
+    <p class="stem">A foreign university plans autonomous glider transects for ocean-temperature profiling 150 nm off Palawan, calling it "just environmental data, not resource exploitation." Under UNCLOS Part XIII, the mission:</p>
+    <ol class="opts"><li>Needs nothing; data collection is free everywhere</li><li>Falls within the EEZ's marine scientific research regime: it requires Philippine consent — normally granted for peaceful research — with duties to share data, allow participation, and report results</li><li>Is forbidden absolutely</li><li>Needs consent only if minerals are found</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> MSR jurisdiction in the EEZ belongs to the coastal State regardless of the research's commercial character — "just environmental data" is still MSR. The regime is consent-plus-conditions, not prohibition (C) and not laissez-faire (A). For Philippine science the flip side is leverage: consent negotiations are where co-authorship, data access, and training berths are won.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">The lecture calls the MSR consent regime "the international twin of ethics clearance." The analogy holds because both:</p>
+    <ol class="opts"><li>Involve committees that meet monthly</li><li>Encode the same paradigm — permission precedes data collection, and the permission belongs to the community whose domain the researcher enters, which may set conditions (participation, data sharing, reporting)</li><li>Are optional for senior researchers</li><li>Apply only to biomedical research</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The parallel is structural: informed consent and ethics review protect human participants' domain; MSR consent protects the coastal State's domain. Both replace "ask forgiveness" with "ask permission," and both attach ongoing obligations rather than one-time approval. Seeing the shared paradigm is what lets you anticipate how any new domain — indigenous lands, orbital slots, genetic resources — will be governed.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">The 2016 arbitral award (Philippines v. China) matters to a maritime-science proposal chiefly because it:</p>
+    <ol class="opts"><li>Ended all disputes permanently</li><li>Clarified maritime entitlements under UNCLOS in the Philippines' favor on key points — and illustrates that zones are living legal claims sustained partly by scientific presence, monitoring, and data</li><li>Repealed RA 9522</li><li>Prohibited research in the West Philippine Sea</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The award's practical lesson for scientists is the evidentiary one: hydrographic surveys, environmental baselines, and continuous monitoring are part of how entitlements are documented and exercised. A overstates (enforcement remains contested); C and D are false. A proposal siting instruments in these waters should note the award soberly and route through national agencies.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Applying</span></div>
+    <p class="stem">Before building your mountain observatory, the first environmental clearance question is:</p>
+    <ol class="opts"><li>Which telescope brand to buy</li><li>Whether the project falls under the Philippine EIS System (PD 1586) and therefore needs an Environmental Compliance Certificate — the umbrella clearance whose conditions typically carry the other statutes' requirements</li><li>Whether the mountain has a name</li><li>Whether UNCLOS applies to mountains</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The ECC is the gateway: environmentally critical projects or locations trigger impact assessment before construction, and the certificate's conditions operationalize air, water, and waste obligations site-specifically. Sequencing it first in the workplan is the same lesson as ethics clearance in Chapter 1 and IRR procedure in Chapter 3 — permissions precede activity.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A proposal's compliance annex reads: "The project will obey all environmental laws." Compared with Figure 4.8's compliance map, this sentence is:</p>
+    <ol class="opts"><li>Sufficient; brevity is professionalism</li><li>An empty universal: it names no statute, no obligation, no mechanism — the environmental version of agenda-washing. The map version (ECC status + one compressed-IRAC paragraph per statute + zone determination) is checkable and therefore credible</li><li>Illegal to write</li><li>Better, because lists annoy reviewers</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The same specificity-causality-honesty logic from Chapter 2 governs compliance claims: verifiable beats vague. "Will obey all laws" cannot be false — which is exactly why it carries no information. The one-page map answers the question panels actually ask: does this team know what it is doing?</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Applying</span></div>
+    <p class="stem">Match each dataset need to the statute whose machinery produces it: (1) PM and aerosol series near your site; (2) river-quality series for a catchment model; (3) municipal adaptation priorities and hazard exposure.</p>
+    <ol class="opts"><li>1 → RA 8749 airshed monitoring; 2 → RA 9275 WQMA monitoring; 3 → the LGU's LCCAP under RA 9729</li><li>1 → RA 9003; 2 → RA 8749; 3 → RA 9522</li><li>All three → UNCLOS</li><li>None; agencies keep no data</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Each statute's monitoring stage generates exactly one of these streams, and each is organized at ecosystem scale (airshed, WQMA) or planning scale (LCCAP) — the research-ready property the lecture flagged. Knowing which machine makes which data is the environmental version of Chapter 3's "PAGASA has your typhoon tracks."</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A dark-sky tourism proposal projects two thousand visitors per festival but contains no waste, water, or traffic-emission planning. The sharpest single-sentence review comment is:</p>
+    <ol class="opts"><li>"Add more telescopes."</li><li>"The project's own success is its environmental risk: at projected attendance, the site becomes a waste generator (RA 9003), a discharge source (RA 9275), and an emissions node (RA 8749) — the proposal must manage the impact it is designed to create."</li><li>"Festivals are exempt from law."</li><li>"Reduce attendance projections so the problem disappears."</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The critique identifies the reflexive blind spot: impact scales with success, so the strongest version of the project internalizes its own footprint (MRF partnership, sanitation plan, shuttle scheme) as design features. D is the dishonest fix — shrinking the projection instead of managing the impact — and would fail the honesty test the moment the festival succeeds.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Synthesize Chapters 3 and 4: which statement best captures how a TE01 project manager should treat the Philippine legal landscape?</p>
+    <ol class="opts"><li>As an obstacle course to be avoided by staying small</li><li>As layered infrastructure: agency statutes supply mandates, funds, and standards (Ch. 3); environmental and maritime law supplies the operating envelope and its own monitoring-driven opportunities (Ch. 4) — the manager's job is to map both into partners, budget lines, compliance paragraphs, and data sources</li><li>As material relevant only to lawyers on the team</li><li>As a fixed body of trivia to recite at defenses</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Two chapters, one method: read each instrument for its mandates, money, standards, and constraints, then write the findings into the project as concrete design elements. A forfeits the funds and partnerships the laws create; C repeats the outsourcing fallacy; D mistakes the paradigm course for a memory course — the mastery tests you just took argue otherwise.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section id="refs">
+  <h2><span class="secno">◈</span>References and Readings (Clickable)</h2>
+  <h3>Primary Texts</h3>
+  <ul class="plain">
+    <li>RA 8749 — Philippine Clean Air Act of 1999 — <a href="https://lawphil.net/statutes/repacts/ra1999/ra_8749_1999.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>RA 9003 — Ecological Solid Waste Management Act of 2000 — <a href="https://lawphil.net/statutes/repacts/ra2001/ra_9003_2001.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>RA 9275 — Philippine Clean Water Act of 2004 — <a href="https://lawphil.net/statutes/repacts/ra2004/ra_9275_2004.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>RA 9729 — Climate Change Act of 2009 — <a href="https://lawphil.net/statutes/repacts/ra2009/ra_9729_2009.html" target="_blank" rel="noopener">LawPhil</a> · RA 10174 — People's Survival Fund (2012) — <a href="https://lawphil.net/statutes/repacts/ra2012/ra_10174_2012.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>RA 9522 — Archipelagic Baselines Law of 2009 — <a href="https://lawphil.net/statutes/repacts/ra2009/ra_9522_2009.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>PD 1586 — Philippine EIS System — <a href="https://lawphil.net/statutes/presdecs/pd1978/pd_1586_1978.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>UNCLOS — UN Convention on the Law of the Sea (1982), incl. Part XIII (Marine Scientific Research) — <a href="https://www.un.org/depts/los/convention_agreements/texts/unclos/unclos_e.pdf" target="_blank" rel="noopener">UN DOALOS full text</a></li>
+  </ul>
+  <h3>Implementing Institutions</h3>
+  <ul class="plain">
+    <li>DENR — <a href="https://denr.gov.ph/" target="_blank" rel="noopener">denr.gov.ph</a> · Environmental Management Bureau — <a href="https://emb.gov.ph/" target="_blank" rel="noopener">emb.gov.ph</a></li>
+    <li>National Solid Waste Management Commission — <a href="https://nswmc.emb.gov.ph/" target="_blank" rel="noopener">nswmc.emb.gov.ph</a></li>
+    <li>Climate Change Commission (NCCAP, LCCAP guidance, People's Survival Fund) — <a href="https://climate.gov.ph/" target="_blank" rel="noopener">climate.gov.ph</a></li>
+    <li>UN Division for Ocean Affairs and the Law of the Sea — <a href="https://www.un.org/depts/los/" target="_blank" rel="noopener">un.org/depts/los</a></li>
+  </ul>
+  <h3>Context</h3>
+  <ul class="plain">
+    <li>Summary of the UNCLOS regime and the maritime territories and jurisdictions of the Philippines (course readings, per syllabus)</li>
+    <li>South China Sea Arbitration (Philippines v. China), PCA Case 2013-19, Award of 12 July 2016 — <a href="https://pca-cpa.org/en/cases/7/" target="_blank" rel="noopener">Permanent Court of Arbitration</a></li>
+    <li>Official Gazette (statute texts) — <a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">officialgazette.gov.ph</a> · LawPhil — <a href="https://lawphil.net/" target="_blank" rel="noopener">lawphil.net</a></li>
+  </ul>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch3-lecture.html">&#8592; Ch. 3 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch4-reinforcement.html">Ch. 4 Reinforcement</a></span> <span><a href="ch5-lecture.html">Ch. 5 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 4 Lecture Pack · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

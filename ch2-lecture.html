@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 2 — International and National Research Agendas and Country Development Plans</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 2 — International and National Research Agendas and Country Development Plans</h1>
+  <div class="subtitle">Week 2 · CO1–LO2: Assess the role of international and national research agendas and country development plans · Assoc. Prof. Ryan Manuel D. Guido, Ph.D. · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Chapter sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#t1">2.1 Why Agendas Exist</a></li>
+    <li><a href="#t2">2.2 UN 2030 &amp; UNESCO</a></li>
+    <li><a href="#t3">2.3 IAU Strategic Plan</a></li>
+    <li><a href="#t4">2.4 AmBisyon &amp; PDP</a></li>
+    <li><a href="#t5">2.5 DOST HNRDA</a></li>
+    <li><a href="#t6">2.6 Pagtanaw 2050</a></li>
+    <li><a href="#t7">2.7 PH Space Agenda</a></li>
+    <li><a href="#t8">2.8 Aligning Your Proposal</a></li>
+    <li><a href="#test">Mastery Test</a></li>
+    <li><a href="#refs">References</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ OBJECTIVES ============ -->
+<section id="objectives">
+  <div class="objectives">
+    <h4>Chapter Learning Objectives</h4>
+    <p>After working through this chapter, you should be able to:</p>
+    <ol class="plain">
+      <li>Explain why funding systems steer public research through agendas, and distinguish vision documents, medium-term plans, research agendas, and foresight studies;</li>
+      <li>Situate an astronomy project within the UN 2030 Agenda for Sustainable Development and UNESCO's science frameworks, including open science;</li>
+      <li>Use the IAU Strategic Plan 2020–2030 and its offices (OAD, OAO, OAE) to position a project internationally;</li>
+      <li>Trace the Philippine planning chain — AmBisyon Natin 2040 → Philippine Development Plan 2023–2028 → DOST Harmonized National R&amp;D Agenda 2023–2028 — and locate astronomy and space science within it;</li>
+      <li>Interpret Pagtanaw 2050 as a foresight document and explain how foresight differs from planning;</li>
+      <li>Write a defensible agenda-alignment section: a traceability chain from global goals to national priorities to your project's specific objectives — without "agenda-washing."</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 2.1 ============ -->
+<section id="t1">
+  <h2><span class="secno">2.1</span>Why Research Agendas Exist — and Why Reviewers Read Them First</h2>
+  <p class="lede">Public research money is not distributed to reward curiosity in the abstract; it is invested to move a country toward outcomes its citizens have chosen through policy. A <strong>research agenda</strong> is the instrument that translates those outcomes into fundable priorities.</p>
+  <p>Modern R&amp;D governance layers four different document types, and confusing them is the most common student error in proposal writing:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:200px;">Instrument</th><th>Question it answers</th><th>Time horizon</th><th>Philippine example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Vision</strong></td><td>What life do we want?</td><td>Generation-scale</td><td>AmBisyon Natin 2040</td></tr>
+        <tr><td><strong>Development plan</strong></td><td>What will government do this term?</td><td>~6 years</td><td>Philippine Development Plan 2023–2028</td></tr>
+        <tr><td><strong>Research agenda</strong></td><td>What knowledge must R&amp;D produce to serve the plan?</td><td>~6 years</td><td>DOST HNRDA 2023–2028</td></tr>
+        <tr><td><strong>Foresight study</strong></td><td>What futures should we prepare for?</td><td>25–30 years</td><td>Pagtanaw 2050</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="fig">
+    <svg viewBox="0 0 900 440" role="img" aria-label="Philippine policy cascade pyramid with foresight band">
+      <!-- Foresight band -->
+      <rect x="30" y="35" width="140" height="360" rx="12" fill="#6b4fa1" opacity="0.10"/>
+      <rect x="30" y="35" width="140" height="360" rx="12" fill="none" stroke="#6b4fa1" stroke-dasharray="6 5" stroke-width="1.6"/>
+      <text x="100" y="215" transform="rotate(-90 100 215)" text-anchor="middle" font-size="16" font-weight="700" fill="#6b4fa1" letter-spacing="2">PAGTANAW 2050 · FORESIGHT</text>
+      <text x="128" y="215" transform="rotate(-90 128 215)" text-anchor="middle" font-size="11" fill="#6b4fa1">scans plausible futures · informs every layer</text>
+      <line x1="170" y1="80"  x2="330" y2="80"  stroke="#6b4fa1" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <line x1="170" y1="170" x2="300" y2="170" stroke="#6b4fa1" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <line x1="170" y1="255" x2="265" y2="255" stroke="#6b4fa1" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <line x1="170" y1="340" x2="235" y2="340" stroke="#6b4fa1" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <!-- Pyramid -->
+      <polygon points="475,12 345,112 605,112" fill="#12203a"/>
+      <text x="475" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#f6edd2">AMBISYON NATIN 2040</text>
+      <text x="475" y="100" text-anchor="middle" font-size="10" fill="#c8d2e4">VISION · what life do we want?</text>
+      <polygon points="338,122 612,122 655,197 295,197" fill="#1b2a4a"/>
+      <text x="475" y="153" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">PDP 2023–2028 (+ RDPs)</text>
+      <text x="475" y="175" text-anchor="middle" font-size="10.5" fill="#c8d2e4">DEVELOPMENT PLAN · what will government do this term?</text>
+      <polygon points="288,207 662,207 705,282 245,282" fill="#27406b"/>
+      <text x="475" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">DOST HNRDA 2023–2028</text>
+      <text x="475" y="262" text-anchor="middle" font-size="10.5" fill="#c8d2e4">RESEARCH AGENDA · what knowledge must R&amp;D produce?</text>
+      <polygon points="238,292 712,292 755,382 195,382" fill="#c9a227"/>
+      <text x="475" y="329" text-anchor="middle" font-size="13.5" font-weight="800" fill="#12203a">PROGRAMS · PROJECTS · YOUR R&amp;D PROPOSAL</text>
+      <text x="475" y="351" text-anchor="middle" font-size="10.5" fill="#4a3a08">joins the cascade at the bottom — outputs must be legible upward</text>
+      <!-- Horizon labels -->
+      <text x="740" y="75" font-size="11" fill="#4a5568">generation-scale</text>
+      <text x="740" y="165" font-size="11" fill="#4a5568">~6-year term</text>
+      <text x="740" y="250" font-size="11" fill="#4a5568">~6-year agenda</text>
+      <text x="740" y="340" font-size="11" fill="#4a5568">1–3-year projects</text>
+      <line x1="620" y1="70" x2="732" y2="70" stroke="#e3e0d8" stroke-width="1.4"/>
+      <line x1="640" y1="160" x2="732" y2="160" stroke="#e3e0d8" stroke-width="1.4"/>
+      <line x1="668" y1="245" x2="732" y2="245" stroke="#e3e0d8" stroke-width="1.4"/>
+      <line x1="700" y1="335" x2="732" y2="335" stroke="#e3e0d8" stroke-width="1.4"/>
+      <text x="475" y="425" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4a5568">Accountability flows downward · evidence of contribution flows upward</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.1 — The Philippine policy cascade.</span> Framework diagram recreated from the instrument hierarchy of <a href="https://2040.neda.gov.ph/" target="_blank" rel="noopener">AmBisyon Natin 2040 (NEDA)</a>, the <a href="https://pdp.neda.gov.ph/" target="_blank" rel="noopener">PDP 2023–2028</a>, the <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">DOST HNRDA</a>, and <a href="https://nast.dost.gov.ph/" target="_blank" rel="noopener">Pagtanaw 2050 (NAST PHL)</a>.</figcaption>
+  </figure>
+
+  <p>The shift worldwide has been from purely <em>researcher-driven</em> funding toward <strong>mission-oriented</strong> funding: calls organized around societal problems (disaster resilience, food security, digital transformation) rather than around disciplines. For you this has one practical meaning: <em>a proposal is evaluated not only on scientific soundness but on demonstrated alignment</em> — DOST project forms literally contain fields asking which agenda items your project serves.</p>
+  <h3>Why Steering Won — and What It Cannot Do</h3>
+  <p>The mission-oriented turn has intellectual history behind it. Post-war science policy ran for decades on the "linear model" — fund basic science generously and applications will follow on their own — until evaluations kept finding that the path from discovery to national benefit is neither automatic nor free. Economists of innovation (Mariana Mazzucato's work on mission-oriented public investment is the most cited recent statement) showed that states which <em>direct</em> portions of their research investment at defined societal missions — moonshots, green transitions, disease targets — get more transformation per peso than states that only subsidize supply. The Philippine agenda stack you are about to study is this doctrine in local form: scarce GERD (recall Chapter 1's Frascati indicators) steered through harmonized priorities rather than scattered across uncoordinated worthy projects.</p>
+  <p>Honesty requires the other half of the story: steering has known failure modes, and reviewers know them too. Agendas can ossify (a six-year list cannot anticipate a ChatGPT moment); they can crowd out the unfundable-but-transformative idea; and they can teach researchers to write in slogans — the agenda-washing this chapter arms you against. Mature systems therefore keep a protected space for curiosity-driven work (NIBRA is the Philippine instance) and revise agendas mid-stream. For you the practical synthesis is this: alignment is a real scoring criterion because steering is real policy — but the system itself expects, and funds, honest basic science that can say plainly "our contribution is knowledge and people, catalogued under NIBRA."</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Alignment is an <strong>argument, not a citation</strong>. Naming an agenda is decoration; showing that your specific objectives produce outputs the agenda explicitly calls for is alignment. Reviewers call the decorative version "agenda-washing."</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomy rarely appears by name in national plans — you must translate. Astronomy projects typically enter agendas through education and human capital, space technology, disaster resilience (space weather, ionosphere), tourism (dark skies), and instrumentation capability. Learning this translation <em>is</em> the skill of this chapter.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Writing the alignment section last, as an afterthought. Strong teams choose which calls to answer <em>because of</em> the agenda landscape — alignment shapes the project design, not just its packaging.</aside>
+</section>
+
+<!-- ============ 2.2 ============ -->
+<section id="t2">
+  <h2><span class="secno">2.2</span>The Global Frame: The UN 2030 Agenda and UNESCO</h2>
+  <p>The <strong>2030 Agenda for Sustainable Development</strong>, adopted by all UN member states in 2015, organizes global development effort around <strong>17 Sustainable Development Goals (SDGs)</strong> and their specific, numbered <strong>targets</strong> and <strong>indicators</strong>, under the ethic of "leaving no one behind." It is the outermost layer of your traceability chain: Philippine plans deliberately reference it, so a project aligned with the PDP is usually already aligned with identifiable SDGs.</p>
+  <p>For astronomy and space-science projects, the most commonly engaged goals are:</p>
+  <ul class="plain">
+    <li><strong>SDG 4 — Quality Education:</strong> astronomy as a gateway science; teacher training; STEM pipeline projects;</li>
+    <li><strong>SDG 9 — Industry, Innovation and Infrastructure:</strong> research capability, instrumentation, and scientific infrastructure;</li>
+    <li><strong>SDG 13 — Climate Action</strong> and <strong>SDG 11 — Sustainable Cities:</strong> earth observation, atmospheric monitoring, responsible outdoor lighting;</li>
+    <li><strong>SDG 14 — Life Below Water:</strong> maritime and blue-economy applications of space data (relevant to an archipelagic state);</li>
+    <li><strong>SDG 17 — Partnerships:</strong> international scientific cooperation, data sharing, and capacity building.</li>
+  </ul>
+  <figure class="fig">
+    <svg viewBox="0 0 900 350" role="img" aria-label="The 17 SDGs with astronomy-relevant goals highlighted">
+      <g font-size="10" font-weight="600">
+        <g opacity="0.22"><rect x="10"  y="10" width="136" height="96" rx="8" fill="#e5243b"/><text x="22" y="38" font-size="22" font-weight="800" fill="#fff">1</text><text x="22" y="58" fill="#fff">No Poverty</text></g>
+        <g opacity="0.22"><rect x="156" y="10" width="136" height="96" rx="8" fill="#DDA63A"/><text x="168" y="38" font-size="22" font-weight="800" fill="#fff">2</text><text x="168" y="58" fill="#fff">Zero Hunger</text></g>
+        <g opacity="0.22"><rect x="302" y="10" width="136" height="96" rx="8" fill="#4C9F38"/><text x="314" y="38" font-size="22" font-weight="800" fill="#fff">3</text><text x="314" y="58" fill="#fff">Good Health</text></g>
+        <g><rect x="448" y="10" width="136" height="96" rx="8" fill="#C5192D" stroke="#c9a227" stroke-width="3.5"/><text x="460" y="38" font-size="22" font-weight="800" fill="#fff">4</text><text x="460" y="58" fill="#fff">Quality</text><text x="460" y="72" fill="#fff">Education</text><text x="460" y="94" font-size="9" fill="#ffe9a8">STEM pipeline · teachers</text></g>
+        <g opacity="0.22"><rect x="594" y="10" width="136" height="96" rx="8" fill="#FF3A21"/><text x="606" y="38" font-size="22" font-weight="800" fill="#fff">5</text><text x="606" y="58" fill="#fff">Gender Equality</text></g>
+        <g opacity="0.22"><rect x="740" y="10" width="136" height="96" rx="8" fill="#26BDE2"/><text x="752" y="38" font-size="22" font-weight="800" fill="#fff">6</text><text x="752" y="58" fill="#fff">Clean Water</text></g>
+        <g opacity="0.55"><rect x="10" y="116" width="136" height="96" rx="8" fill="#FCC30B"/><text x="22" y="144" font-size="22" font-weight="800" fill="#fff">7</text><text x="22" y="164" fill="#fff">Affordable &amp;</text><text x="22" y="178" fill="#fff">Clean Energy</text><text x="22" y="200" font-size="9" fill="#5c4a00">efficient lighting</text></g>
+        <g opacity="0.22"><rect x="156" y="116" width="136" height="96" rx="8" fill="#A21942"/><text x="168" y="144" font-size="22" font-weight="800" fill="#fff">8</text><text x="168" y="164" fill="#fff">Decent Work</text></g>
+        <g><rect x="302" y="116" width="136" height="96" rx="8" fill="#FD6925" stroke="#c9a227" stroke-width="3.5"/><text x="314" y="144" font-size="22" font-weight="800" fill="#fff">9</text><text x="314" y="164" fill="#fff">Industry, Innovation</text><text x="314" y="178" fill="#fff">&amp; Infrastructure</text><text x="314" y="200" font-size="9" fill="#ffe9a8">research capability</text></g>
+        <g opacity="0.22"><rect x="448" y="116" width="136" height="96" rx="8" fill="#DD1367"/><text x="460" y="144" font-size="22" font-weight="800" fill="#fff">10</text><text x="460" y="164" fill="#fff">Reduced Inequalities</text></g>
+        <g><rect x="594" y="116" width="136" height="96" rx="8" fill="#FD9D24" stroke="#c9a227" stroke-width="3.5"/><text x="606" y="144" font-size="22" font-weight="800" fill="#fff">11</text><text x="606" y="164" fill="#fff">Sustainable Cities</text><text x="606" y="178" fill="#fff">&amp; Communities</text><text x="606" y="200" font-size="9" fill="#ffe9a8">responsible lighting</text></g>
+        <g opacity="0.22"><rect x="740" y="116" width="136" height="96" rx="8" fill="#BF8B2E"/><text x="752" y="144" font-size="22" font-weight="800" fill="#fff">12</text><text x="752" y="164" fill="#fff">Responsible</text><text x="752" y="178" fill="#fff">Consumption</text></g>
+        <g><rect x="10" y="222" width="136" height="96" rx="8" fill="#3F7E44" stroke="#c9a227" stroke-width="3.5"/><text x="22" y="250" font-size="22" font-weight="800" fill="#fff">13</text><text x="22" y="270" fill="#fff">Climate Action</text><text x="22" y="292" font-size="9" fill="#d7f0dc">earth observation</text></g>
+        <g><rect x="156" y="222" width="136" height="96" rx="8" fill="#0A97D9" stroke="#c9a227" stroke-width="3.5"/><text x="168" y="250" font-size="22" font-weight="800" fill="#fff">14</text><text x="168" y="270" fill="#fff">Life Below Water</text><text x="168" y="292" font-size="9" fill="#d4edfb">blue economy · space data</text></g>
+        <g opacity="0.22"><rect x="302" y="222" width="136" height="96" rx="8" fill="#56C02B"/><text x="314" y="250" font-size="22" font-weight="800" fill="#fff">15</text><text x="314" y="270" fill="#fff">Life on Land</text></g>
+        <g opacity="0.22"><rect x="448" y="222" width="136" height="96" rx="8" fill="#00689D"/><text x="460" y="250" font-size="22" font-weight="800" fill="#fff">16</text><text x="460" y="270" fill="#fff">Peace &amp; Justice</text></g>
+        <g><rect x="594" y="222" width="136" height="96" rx="8" fill="#19486A" stroke="#c9a227" stroke-width="3.5"/><text x="606" y="250" font-size="22" font-weight="800" fill="#fff">17</text><text x="606" y="270" fill="#fff">Partnerships</text><text x="606" y="284" fill="#fff">for the Goals</text><text x="606" y="304" font-size="9" fill="#cfe0f7">intl. science cooperation</text></g>
+        <g><rect x="740" y="222" width="136" height="96" rx="8" fill="#fbfaf7" stroke="#e3e0d8"/><text x="752" y="252" font-size="11" font-weight="800" fill="#1b2a4a">LEGEND</text><rect x="752" y="262" width="14" height="10" fill="#FD6925" stroke="#c9a227" stroke-width="2"/><text x="772" y="271" font-size="9" fill="#4a5568">astronomy-relevant</text><rect x="752" y="280" width="14" height="10" fill="#A21942" opacity="0.25"/><text x="772" y="289" font-size="9" fill="#4a5568">other goals (dimmed)</text><text x="752" y="304" font-size="9" fill="#4a5568">cite at TARGET level</text></g>
+      </g>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.2 — The 17 Sustainable Development Goals</span>, with the goals astronomy and space-science projects most commonly engage highlighted (SDGs 4, 9, 11, 13, 14, 17; SDG 7 partially, via lighting efficiency). Recreated framework, official goal names and colors per <a href="https://sdgs.un.org/2030agenda" target="_blank" rel="noopener">UN 2030 Agenda</a>; icons and communication assets at <a href="https://www.un.org/sustainabledevelopment/news/communications-material/" target="_blank" rel="noopener">un.org</a>.</figcaption>
+  </figure>
+
+  <h3>How the SDG Machinery Actually Works</h3>
+  <p>The 2030 Agenda is more than a poster of seventeen tiles: beneath the goals sit <strong>169 numbered targets</strong>, and beneath the targets a global <strong>indicator framework</strong> maintained by the UN statistical system, against which each country reports. Nations account for themselves through <strong>Voluntary National Reviews</strong> at the UN, and domestically the Philippine Statistics Authority maintains the country's SDG indicator watch, while NEDA wires the goals into the PDP's results matrices — which is why a target-level SDG citation and a PDP citation are usually the <em>same alignment claim</em> expressed at two altitudes. This machinery is what makes target-level citation possible and goal-level citation lazy: Target 4.c has an indicator, a baseline, and a Philippine data series; "SDG 4" has a color and a logo. When your matrix row names a target, it is implicitly naming the indicator a reviewer could check your contribution against — the entire cash value of the specificity test.</p>
+  <p><strong>UNESCO</strong> carries the science mandate of the UN system. Two instruments matter for proposal writers. First, UNESCO frames science as a driver of the 2030 Agenda and monitors national science systems through its <em>Science Report</em> series. Second, the <strong>UNESCO Recommendation on Open Science (2021)</strong> commits member states — including the Philippines — to open access, open data, and inclusive scientific participation. Funding agencies increasingly translate this into requirements for data-management plans and open repositories.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 300" role="img" aria-label="UNESCO Open Science framework as a temple diagram">
+      <path d="M 90 95 L 450 25 L 810 95 Z" fill="#1b2a4a"/>
+      <text x="450" y="72" text-anchor="middle" font-size="15" font-weight="800" fill="#f6edd2">UNESCO RECOMMENDATION ON OPEN SCIENCE (2021)</text>
+      <text x="450" y="89" text-anchor="middle" font-size="10.5" fill="#c8d2e4">adopted by member states, including the Philippines</text>
+      <g font-size="12.5" font-weight="700">
+        <rect x="100" y="110" width="160" height="120" rx="8" fill="#eaf1fc" stroke="#1d5fbf" stroke-width="1.6"/>
+        <text x="180" y="140" text-anchor="middle" fill="#1d5fbf">OPEN ACCESS</text>
+        <text x="180" y="162" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">publications readable</text>
+        <text x="180" y="176" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">by all, without paywalls</text>
+        <rect x="280" y="110" width="160" height="120" rx="8" fill="#e8f5ee" stroke="#1e7d4f" stroke-width="1.6"/>
+        <text x="360" y="140" text-anchor="middle" fill="#1e7d4f">OPEN DATA</text>
+        <text x="360" y="162" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">FAIR: findable, accessible,</text>
+        <text x="360" y="176" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">interoperable, reusable</text>
+        <rect x="460" y="110" width="160" height="120" rx="8" fill="#fdf6e3" stroke="#a86a00" stroke-width="1.6"/>
+        <text x="540" y="140" text-anchor="middle" fill="#a86a00">OPEN SOURCE</text>
+        <text x="540" y="162" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">code, pipelines, and</text>
+        <text x="540" y="176" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">infrastructure shared</text>
+        <rect x="640" y="110" width="160" height="120" rx="8" fill="#f1ecf9" stroke="#6b4fa1" stroke-width="1.6"/>
+        <text x="720" y="140" text-anchor="middle" fill="#6b4fa1">OPEN ENGAGEMENT</text>
+        <text x="720" y="162" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">societal actors + dialogue</text>
+        <text x="720" y="176" text-anchor="middle" font-size="10" font-weight="400" fill="#4a5568">with other knowledge systems</text>
+      </g>
+      <rect x="90" y="245" width="720" height="42" rx="8" fill="#c9a227"/>
+      <text x="450" y="271" text-anchor="middle" font-size="12.5" font-weight="800" fill="#12203a">IN YOUR PROPOSAL: data-management plan — repository · license · release schedule</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.3 — The Open Science framework.</span> Pillars recreated from the <a href="https://www.unesco.org/en/open-science" target="_blank" rel="noopener">UNESCO Recommendation on Open Science (2021)</a>; FAIR principles per <a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">GO FAIR</a>.</figcaption>
+  </figure>
+
+  <aside class="note key"><span class="tag">Key Concept</span><br>Cite SDGs at the <strong>target</strong> level, not the goal level. "Aligned with SDG 4" is weak; "contributes to Target 4.c (supply of qualified teachers) by training 60 physics teachers in telescope-based pedagogy" is an argument.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Add a short <strong>data availability / open science</strong> paragraph to your proposal now: where the data will live, under what license, and when it becomes public. It signals UNESCO-era compliance and costs you three sentences.</aside>
+</section>
+
+<!-- ============ 2.3 ============ -->
+<section id="t3">
+  <h2><span class="secno">2.3</span>The IAU Strategic Plan 2020–2030: Astronomy's Own Agenda</h2>
+  <p>The <strong>International Astronomical Union</strong> — the global professional body of astronomers — publishes its own decadal strategy. The Strategic Plan 2020–2030 organizes IAU activity around coordinated goals: leading worldwide scientific exchange among professional astronomers; using <em>astronomy as a tool for development</em>; engaging the public; strengthening astronomy education in schools; and developing the next generation of astronomers with attention to inclusion and diversity.</p>
+  <p>Each societal goal is carried by a dedicated office, and each office is a door a Philippine project can knock on:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:260px;">IAU Office</th><th>Mandate</th><th>What it offers a TE01-scale project</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Office of Astronomy for Development (OAD)</strong>, Cape Town</td><td>Astronomy as a tool for socio-economic development</td><td>Annual open call for development-oriented project grants; regional offices in Southeast Asia</td></tr>
+        <tr><td><strong>Office for Astronomy Outreach (OAO)</strong>, Tokyo</td><td>Public engagement and communication; network of National Outreach Coordinators</td><td>Global campaigns, outreach networks, naming projects (e.g., exoplanet naming)</td></tr>
+        <tr><td><strong>Office of Astronomy for Education (OAE)</strong>, Heidelberg</td><td>Astronomy in primary and secondary school systems</td><td>Teacher-training resources, national education coordinators</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="fig">
+    <svg viewBox="0 0 900 360" role="img" aria-label="IAU Strategic Plan 2020-2030 goals and offices structure">
+      <rect x="250" y="15" width="400" height="58" rx="10" fill="#12203a"/>
+      <text x="450" y="40" text-anchor="middle" font-size="15" font-weight="800" fill="#f6edd2">IAU STRATEGIC PLAN 2020–2030</text>
+      <text x="450" y="60" text-anchor="middle" font-size="10.5" fill="#c8d2e4">the discipline's own decadal agenda</text>
+      <g font-size="11.5" font-weight="700">
+        <rect x="20"  y="110" width="160" height="70" rx="8" fill="#1b2a4a"/>
+        <text x="100" y="138" text-anchor="middle" fill="#fff">SCIENTIFIC</text><text x="100" y="153" text-anchor="middle" fill="#fff">EXCHANGE</text>
+        <text x="100" y="170" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">symposia · General Assembly</text>
+        <rect x="195" y="110" width="160" height="70" rx="8" fill="#1e7d4f"/>
+        <text x="275" y="138" text-anchor="middle" fill="#fff">ASTRONOMY FOR</text><text x="275" y="153" text-anchor="middle" fill="#fff">DEVELOPMENT</text>
+        <text x="275" y="170" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">socio-economic capacity</text>
+        <rect x="370" y="110" width="160" height="70" rx="8" fill="#1d5fbf"/>
+        <text x="450" y="138" text-anchor="middle" fill="#fff">PUBLIC</text><text x="450" y="153" text-anchor="middle" fill="#fff">ENGAGEMENT</text>
+        <text x="450" y="170" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d4e4fb">outreach · communication</text>
+        <rect x="545" y="110" width="160" height="70" rx="8" fill="#a86a00"/>
+        <text x="625" y="138" text-anchor="middle" fill="#fff">EDUCATION</text><text x="625" y="153" text-anchor="middle" fill="#fff">IN SCHOOLS</text>
+        <text x="625" y="170" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">primary &amp; secondary systems</text>
+        <rect x="720" y="110" width="160" height="70" rx="8" fill="#6b4fa1"/>
+        <text x="800" y="138" text-anchor="middle" fill="#fff">EARLY-CAREER &amp;</text><text x="800" y="153" text-anchor="middle" fill="#fff">INCLUSION</text>
+        <text x="800" y="170" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">next generation · diversity</text>
+      </g>
+      <line x1="450" y1="73" x2="100" y2="108" stroke="#e3e0d8" stroke-width="1.6"/>
+      <line x1="450" y1="73" x2="275" y2="108" stroke="#e3e0d8" stroke-width="1.6"/>
+      <line x1="450" y1="73" x2="450" y2="108" stroke="#e3e0d8" stroke-width="1.6"/>
+      <line x1="450" y1="73" x2="625" y2="108" stroke="#e3e0d8" stroke-width="1.6"/>
+      <line x1="450" y1="73" x2="800" y2="108" stroke="#e3e0d8" stroke-width="1.6"/>
+      <g font-size="11" font-weight="700">
+        <line x1="275" y1="180" x2="275" y2="225" stroke="#1e7d4f" stroke-width="2"/>
+        <rect x="185" y="228" width="180" height="80" rx="8" fill="#e8f5ee" stroke="#1e7d4f" stroke-width="1.6"/>
+        <text x="275" y="252" text-anchor="middle" fill="#1e7d4f">OAD · Cape Town</text>
+        <text x="275" y="270" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a5568">annual project-grant call;</text>
+        <text x="275" y="284" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a5568">SE Asia regional office</text>
+        <text x="275" y="300" text-anchor="middle" font-size="9" font-weight="600" fill="#1e7d4f">← a door for TE01 projects</text>
+        <line x1="450" y1="180" x2="450" y2="225" stroke="#1d5fbf" stroke-width="2"/>
+        <rect x="360" y="228" width="180" height="80" rx="8" fill="#eaf1fc" stroke="#1d5fbf" stroke-width="1.6"/>
+        <text x="450" y="252" text-anchor="middle" fill="#1d5fbf">OAO · Tokyo</text>
+        <text x="450" y="270" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a5568">National Outreach</text>
+        <text x="450" y="284" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a5568">Coordinators · campaigns</text>
+        <line x1="625" y1="180" x2="625" y2="225" stroke="#a86a00" stroke-width="2"/>
+        <rect x="535" y="228" width="180" height="80" rx="8" fill="#fdf6e3" stroke="#a86a00" stroke-width="1.6"/>
+        <text x="625" y="252" text-anchor="middle" fill="#a86a00">OAE · Heidelberg</text>
+        <text x="625" y="270" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a5568">teacher training resources;</text>
+        <text x="625" y="284" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a5568">national education coordinators</text>
+      </g>
+      <text x="450" y="342" text-anchor="middle" font-size="11" font-style="italic" fill="#4a5568">Match your work package to the office whose outcome indicators it actually serves — not merely to "the IAU."</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.4 — Goals and offices of the IAU Strategic Plan 2020–2030.</span> Structure recreated from the <a href="https://www.iau.org/administration/about/strategic_plan/" target="_blank" rel="noopener">IAU Strategic Plan</a>; office details at <a href="https://www.astro4dev.org/" target="_blank" rel="noopener">astro4dev.org</a>, <a href="https://www.iau.org/public/" target="_blank" rel="noopener">iau.org/public</a>, and <a href="https://astro4edu.org/" target="_blank" rel="noopener">astro4edu.org</a>.</figcaption>
+  </figure>
+
+  <p>The plan's central premise — that astronomy builds capacity far beyond astronomy, through technology, skills, and inspiration — is precisely the argument a developing-country proposal must often make at home. Quote it; it is the discipline's own official position.</p>
+  <h3>The IAU as an Institution</h3>
+  <p>Founded in 1919, the IAU is one of the oldest international scientific unions — the body that convenes the General Assembly every three years, adopts resolutions that function as the discipline's collective policy voice (on matters from the definition of a planet to, in recent years, the protection of <strong>dark and quiet skies</strong> against light pollution and satellite-constellation interference), and maintains the working structures (divisions, commissions, working groups) through which professional astronomy coordinates itself. Membership runs through national members and individual members; participation is how a country's astronomers join the discipline's governance rather than merely its literature.</p>
+  <p>For a TE01 project, the OAD's grant mechanics deserve specific attention: its annual call funds projects that use astronomy — its skills, data, infrastructure, or cultural pull — to advance development outcomes, with proposals judged on the development logic (problem, intervention, measurable outcome) as much as the astronomy. That evaluation style is precisely the results-chain reasoning of Figure 2.5, which means the alignment discipline you are learning for DOST transfers to the international window unchanged. Regional structures — including the Southeast Asian regional office of astronomy for development — give Philippine proposals a nearer door and a network of comparable projects to learn from.</p>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Distinguish the three offices when designing work packages: an <em>outreach</em> stargazing night (OAO territory), a <em>curriculum</em> module for Grade 9 teachers (OAE), and a <em>livelihood-linked</em> dark-sky tourism study (OAD) are different interventions with different indicators — even if all three involve telescopes.</aside>
+  <aside class="note ph"><span class="tag">PH Context</span><br>The Philippines participates in the IAU ecosystem through its professional astronomers, national outreach coordination, and Southeast Asian regional structures. For a proposal, IAU alignment demonstrates <em>international legitimacy</em> — a complement to, never a substitute for, national-agenda alignment.</aside>
+</section>
+
+<!-- ============ 2.4 ============ -->
+<section id="t4">
+  <h2><span class="secno">2.4</span>AmBisyon Natin 2040 and the Philippine Development Plan 2023–2028</h2>
+  <p><strong>AmBisyon Natin 2040</strong> is the country's long-term vision statement, adopted by executive issuance and maintained by NEDA: by 2040, Filipinos enjoy a <em>"matatag, maginhawa, at panatag na buhay"</em> — a strongly rooted, comfortable, and secure life. It is deliberately not a plan; it is the fixed star that successive six-year plans must steer by.</p>
+  <p>The <strong>Philippine Development Plan (PDP) 2023–2028</strong>, prepared by NEDA, is the medium-term plan of the current administration, framed around <em>economic and social transformation for a prosperous, inclusive, and resilient society</em>. For researchers, its significance is concrete:</p>
+  <ul class="plain">
+    <li>It contains a dedicated agenda for <strong>research and development, technology, and innovation</strong>, calling for stronger R&amp;D investment, industry–academe linkage, technology adoption, and an innovation ecosystem (building on the <strong>Philippine Innovation Act, RA 11293</strong>);</li>
+    <li>Each chapter carries a <strong>results matrix</strong> — indicators and targets — which is where a sharp proposal anchors its expected outcomes;</li>
+    <li>It cascades into <strong>Regional Development Plans</strong>, which is where a project sited in a specific region (an observatory, a school network) finds its most local policy hook.</li>
+  </ul>
+  <h3>Where the Vision Came From, and the Innovation Statute Beneath the Plan</h3>
+  <p>AmBisyon Natin 2040 was built empirically — national surveys and focus groups in the mid-2010s asking Filipinos what a good life means — before being adopted by executive issuance as the fixed long-term reference that every administration's plan must serve. That origin is worth citing: when your rationale invokes AmBisyon, it invokes a documented popular aspiration, not a bureaucrat's slogan. The PDP, meanwhile, stands on statutory reinforcement for its innovation agenda: the <strong>Philippine Innovation Act (RA 11293)</strong> created a National Innovation Council and standing mechanisms (including dedicated funding channels) to develop the national innovation ecosystem, while companion legislation strengthened startup and technology-adoption support. The practical consequence for proposal writers is the pattern you will meet again in Chapter 3: the plan's innovation chapter is term-bound, but its skeleton is statute — durable across administrations — so an innovation-flavored alignment claim can cite both layers, plan for currency and statute for permanence.</p>
+  <p>Underneath the results matrices sits the paradigm that makes them work: the <strong>results chain</strong> (also called the logic model or logframe paradigm), which disciplines every claim of contribution into the sequence <em>inputs → activities → outputs → outcomes → impact</em>. Each layer of the policy cascade "speaks" a different link of this chain — and a proposal earns credibility by reporting at the links it can actually control (outputs) while showing a plausible pathway to the links it cannot (outcomes, impact).</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 400" role="img" aria-label="Results chain paradigm mapped to the policy cascade">
+      <text x="230" y="32" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1b2a4a" letter-spacing="1">POLICY CASCADE</text>
+      <text x="670" y="32" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1b2a4a" letter-spacing="1">RESULTS CHAIN (LOGIC MODEL)</text>
+      <g font-size="12.5" font-weight="700">
+        <rect x="90" y="50" width="280" height="52" rx="8" fill="#12203a"/><text x="230" y="72" text-anchor="middle" fill="#f6edd2">AmBisyon Natin 2040</text><text x="230" y="90" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">vision of the good life</text>
+        <rect x="90" y="122" width="280" height="52" rx="8" fill="#1b2a4a"/><text x="230" y="144" text-anchor="middle" fill="#fff">PDP 2023–2028 · results matrices</text><text x="230" y="162" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">societal targets per chapter</text>
+        <rect x="90" y="194" width="280" height="52" rx="8" fill="#27406b"/><text x="230" y="216" text-anchor="middle" fill="#fff">HNRDA 2023–2028 pillars</text><text x="230" y="234" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">knowledge &amp; technology the plan needs</text>
+        <rect x="90" y="266" width="280" height="52" rx="8" fill="#c9a227"/><text x="230" y="288" text-anchor="middle" fill="#12203a">Your project's workplan</text><text x="230" y="306" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a3a08">objectives · activities · budget</text>
+      </g>
+      <g font-size="12.5" font-weight="700">
+        <rect x="530" y="50" width="280" height="42" rx="21" fill="#6b4fa1"/><text x="670" y="76" text-anchor="middle" fill="#fff">IMPACT — long-term societal change</text>
+        <rect x="530" y="112" width="280" height="42" rx="21" fill="#1d5fbf"/><text x="670" y="138" text-anchor="middle" fill="#fff">OUTCOMES — behavior &amp; use change</text>
+        <rect x="530" y="174" width="280" height="42" rx="21" fill="#1e7d4f"/><text x="670" y="200" text-anchor="middle" fill="#fff">OUTPUTS — datasets · people · briefs</text>
+        <rect x="530" y="236" width="280" height="42" rx="21" fill="#a86a00"/><text x="670" y="262" text-anchor="middle" fill="#fff">ACTIVITIES — campaigns · training</text>
+        <rect x="530" y="298" width="280" height="42" rx="21" fill="#4a5568"/><text x="670" y="324" text-anchor="middle" fill="#fff">INPUTS — funds · staff · equipment</text>
+      </g>
+      <g stroke="#b3423a" stroke-width="1.8" stroke-dasharray="6 4" fill="none">
+        <line x1="370" y1="76"  x2="528" y2="71"/>
+        <line x1="370" y1="148" x2="528" y2="133"/>
+        <line x1="370" y1="220" x2="528" y2="195"/>
+        <line x1="370" y1="292" x2="528" y2="257"/>
+        <line x1="370" y1="302" x2="528" y2="319"/>
+      </g>
+      <g font-size="9.5" fill="#b3423a" font-weight="600">
+        <text x="449" y="62">vision claims impact</text>
+        <text x="449" y="130">plan targets outcomes</text>
+        <text x="449" y="198">agenda tasks outputs</text>
+        <text x="449" y="288">project controls these</text>
+      </g>
+      <text x="450" y="382" text-anchor="middle" font-size="11" font-style="italic" fill="#4a5568">Report what you control (outputs) · argue the pathway to what you don't (outcomes, impact) — never promise impact as a deliverable.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.5 — The results-chain paradigm mapped to the policy cascade.</span> Logic-model framework as used in results-based monitoring across NEDA/PDP results matrices (<a href="https://pdp.neda.gov.ph/" target="_blank" rel="noopener">pdp.neda.gov.ph</a>) and development-agency practice (see the <a href="https://www.oecd.org/en/topics/policy-areas/development-co-operation.html" target="_blank" rel="noopener">OECD DAC</a> results-based management literature).</figcaption>
+  </figure>
+
+  <aside class="note key"><span class="tag">Key Concept</span><br>Vision → plan → agenda is a <strong>cascade of accountability</strong>: AmBisyon states the destination, the PDP commits the government term, the HNRDA tasks the research system. Your proposal joins the cascade at the bottom — its outputs must be legible as contributions to indicators above it.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>When you write your rationale in Week 12, quote the PDP at the level of its <em>strategy statements or indicators</em>, and name the Regional Development Plan region where your study sites sit. Two precise citations outweigh a page of paraphrase.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Citing an expired plan. Plans are term-bound: a 2026 proposal citing the PDP 2017–2022 tells reviewers the team recycled an old proposal without re-reading the landscape.</aside>
+</section>
+
+<!-- ============ 2.5 ============ -->
+<section id="t5">
+  <h2><span class="secno">2.5</span>The DOST Harmonized National R&amp;D Agenda (HNRDA) 2023–2028</h2>
+  <p class="lede">The HNRDA is the single most important document in this chapter for your final requirement: it is the agenda DOST-funded proposals are scored against.</p>
+  <p>"Harmonized" is the operative word: the agenda consolidates the priorities of government agencies, academe, and industry into one national reference so that public R&amp;D investment does not fragment. It is organized into major sectors, each shepherded by a DOST sectoral council or unit:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:300px;">HNRDA pillar</th><th>Scope</th><th>Lead council</th></tr></thead>
+      <tbody>
+        <tr><td><strong>National Integrated Basic Research Agenda (NIBRA)</strong></td><td>Basic research across disciplines — the home of curiosity-driven and foundational work, including basic space science</td><td>DOST (with NRCP)</td></tr>
+        <tr><td><strong>Health</strong></td><td>Health systems, biomedical, and clinical research</td><td>PCHRD</td></tr>
+        <tr><td><strong>Agriculture, Aquatic and Natural Resources (AANR)</strong></td><td>Food security, fisheries, forestry, biodiversity</td><td>PCAARRD</td></tr>
+        <tr><td><strong>Industry, Energy and Emerging Technology (IEET)</strong></td><td>Manufacturing, energy, electronics, AI, and <strong>space technology applications</strong></td><td>PCIEERD</td></tr>
+        <tr><td><strong>Disaster Risk Reduction and Climate Change Adaptation (DRR-CCA)</strong></td><td>Hazards, resilience, climate services</td><td>DOST agencies incl. PAGASA, PHIVOLCS</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="fig">
+    <svg viewBox="0 0 900 460" role="img" aria-label="HNRDA hub and spoke diagram with astronomy entry points">
+      <circle cx="450" cy="215" r="88" fill="#12203a"/>
+      <text x="450" y="200" text-anchor="middle" font-size="15" font-weight="800" fill="#f6edd2">HNRDA</text>
+      <text x="450" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2023–2028</text>
+      <text x="450" y="240" text-anchor="middle" font-size="9.5" fill="#c8d2e4">one harmonized national agenda</text>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="450" y1="127" x2="450" y2="72"/>
+        <line x1="368" y1="180" x2="205" y2="135"/>
+        <line x1="532" y1="180" x2="695" y2="135"/>
+        <line x1="380" y1="270" x2="235" y2="330"/>
+        <line x1="520" y1="270" x2="665" y2="330"/>
+      </g>
+      <g font-size="12" font-weight="800">
+        <rect x="330" y="14" width="240" height="58" rx="10" fill="#27406b"/>
+        <text x="450" y="38" text-anchor="middle" fill="#fff">NIBRA · basic research</text>
+        <text x="450" y="56" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">DOST · NRCP — curiosity-driven &amp; foundational</text>
+        <rect x="30" y="82" width="220" height="58" rx="10" fill="#1e7d4f"/>
+        <text x="140" y="106" text-anchor="middle" fill="#fff">AANR</text>
+        <text x="140" y="124" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">PCAARRD — food, fisheries, resources</text>
+        <rect x="650" y="82" width="220" height="58" rx="10" fill="#a86a00"/>
+        <text x="760" y="106" text-anchor="middle" fill="#fff">IEET</text>
+        <text x="760" y="124" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">PCIEERD — industry, energy, space tech</text>
+        <rect x="55" y="322" width="220" height="58" rx="10" fill="#b3423a"/>
+        <text x="165" y="346" text-anchor="middle" fill="#fff">DRR-CCA</text>
+        <text x="165" y="364" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f4cfcc">hazards, resilience — PAGASA, PHIVOLCS</text>
+        <rect x="625" y="322" width="220" height="58" rx="10" fill="#6b4fa1"/>
+        <text x="735" y="346" text-anchor="middle" fill="#fff">HEALTH</text>
+        <text x="735" y="364" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">PCHRD — biomedical &amp; health systems</text>
+      </g>
+      <g font-size="10" font-weight="600" fill="#12203a">
+        <circle cx="450" cy="90" r="5" fill="#c9a227"/><text x="462" y="94">← archival astrophysics · star formation</text>
+        <circle cx="760" cy="152" r="5" fill="#c9a227"/><text x="595" y="166">CubeSat payloads · instrumentation →</text>
+        <circle cx="165" cy="392" r="5" fill="#c9a227"/><text x="178" y="396">← space weather · ionospheric early warning</text>
+        <circle cx="140" cy="152" r="5" fill="#c9a227"/><text x="152" y="166">← astronomy-guided fisheries lighting</text>
+      </g>
+      <rect x="240" y="415" width="420" height="34" rx="8" fill="#f6edd2"/>
+      <text x="450" y="437" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a86a00">Declare ONE primary pillar — it selects your council, panel, and indicators</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.6 — The five HNRDA pillars and their lead councils</span>, with gold markers showing where astronomy and space-science projects typically enter. Recreated from the DOST Harmonized National R&amp;D Agenda structure (<a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">dost.gov.ph</a>); councils: <a href="https://pcieerd.dost.gov.ph/" target="_blank" rel="noopener">PCIEERD</a>, <a href="https://www.pcaarrd.dost.gov.ph/" target="_blank" rel="noopener">PCAARRD</a>, <a href="https://www.pchrd.dost.gov.ph/" target="_blank" rel="noopener">PCHRD</a>, <a href="https://nrcp.dost.gov.ph/" target="_blank" rel="noopener">NRCP</a>.</figcaption>
+  </figure>
+
+  <p>Astronomy and space science enter the HNRDA through more than one door, and choosing the right door is a design decision: a star-formation archival study is <strong>NIBRA</strong>; a CubeSat imaging payload is <strong>IEET</strong> (space technology under PCIEERD); an ionospheric-scintillation early-warning study serves <strong>DRR-CCA</strong>; astronomy-guided fisheries lighting could even be <strong>AANR</strong>. The same telescope can serve four agendas — but one proposal must declare a primary pillar, because it determines which council and review panel will judge it.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br><strong>Primary pillar, secondary contributions.</strong> Declare one pillar as home (it selects your funding council and reviewers) and list other pillars as documented co-benefits. Claiming every pillar equally reads as focus failure.</aside>
+  <h3>How the Agenda Is Made — and How Money Flows From It</h3>
+  <p>"Harmonized" describes a process, not just a document: the HNRDA is assembled through consultations that pull agency research agendas, regional priorities, academe, and industry into one framework, precisely so that a PAGASA need, a university capability, and an industry problem can be matched instead of funded in parallel ignorance. Once adopted, the agenda becomes operational through the councils' <strong>calls for proposals</strong> — some open, some targeted at named priority topics — evaluated in stages (screening for eligibility and alignment, then technical panels, then budget scrutiny) under the DOST-GIA rules you will study in Week 10. Two funding facts belong in your planning now: agencies commonly expect the proponent institution to carry a visible <strong>counterpart contribution</strong> (staff time, facilities, sometimes cash) as evidence of institutional commitment; and calls are cyclical — a proposal that misses this year's window is not dead but must survive to the next cycle, which is why the Week 12 advice to draft early is calendar arithmetic, not virtue.</p>
+  <aside class="note ph"><span class="tag">PH Context</span><br>The sectoral councils — <strong>PCIEERD</strong>, <strong>PCAARRD</strong>, <strong>PCHRD</strong> — are the operational gatekeepers: they issue the calls, run the panels, and monitor funded projects under the DOST-GIA guidelines you will study in Week 10. Learn which council owns your topic <em>before</em> drafting.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Submitting a basic-science proposal to an applied call (or vice versa) because the deadline was convenient. Misrouted proposals are typically screened out before scientific review — the strongest astronomy idea cannot survive the wrong pillar.</aside>
+</section>
+
+<!-- ============ 2.6 ============ -->
+<section id="t6">
+  <h2><span class="secno">2.6</span>Pagtanaw 2050: Foresight, Not Forecast</h2>
+  <p><strong>Pagtanaw 2050</strong>, published by the National Academy of Science and Technology (NAST PHL), is the Philippine <em>science, technology, and innovation foresight</em>: a structured look at the futures the country should prepare for by mid-century. It imagines the Philippines as a prosperous <strong>archipelagic and maritime nation</strong>, and scans strategic domains that include the blue economy, digital transformation, health, food, energy, education, governance — and, significantly for this course, <strong>space and emerging technologies</strong>.</p>
+  <p><strong>Foresight is a method, not a prophecy.</strong> Where a plan commits resources to chosen actions, foresight uses horizon scanning, trend analysis, and scenario building to widen the option space — asking "what may plausibly happen, and what capabilities would we regret not having built?" Its outputs are directional: capabilities to grow, sectors to watch, risks to hedge.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="Futures cone paradigm used in foresight">
+      <polygon points="110,190 810,40 810,340" fill="#eaf1fc"/>
+      <polygon points="110,190 810,90 810,290" fill="#cfe0f7"/>
+      <polygon points="110,190 810,145 810,235" fill="#1d5fbf" opacity="0.55"/>
+      <ellipse cx="700" cy="150" rx="80" ry="42" fill="none" stroke="#1e7d4f" stroke-width="3" stroke-dasharray="8 5"/>
+      <text x="700" y="145" text-anchor="middle" font-size="12" font-weight="800" fill="#1e7d4f">PREFERRED</text>
+      <text x="700" y="161" text-anchor="middle" font-size="9.5" fill="#1e7d4f">futures worth steering toward</text>
+      <circle cx="110" cy="190" r="9" fill="#12203a"/>
+      <text x="110" y="225" text-anchor="middle" font-size="12" font-weight="800" fill="#12203a">NOW · 2026</text>
+      <text x="835" y="45"  font-size="10.5" font-weight="700" fill="#4a5568">POSSIBLE</text>
+      <text x="835" y="95"  font-size="10.5" font-weight="700" fill="#27406b">PLAUSIBLE</text>
+      <text x="835" y="192" font-size="10.5" font-weight="700" fill="#12203a">PROBABLE</text>
+      <line x1="110" y1="355" x2="810" y2="355" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arr)"/>
+      <defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#4a5568"/></marker></defs>
+      <text x="460" y="348" text-anchor="middle" font-size="11" fill="#4a5568">time horizon</text>
+      <text x="810" y="372" text-anchor="end" font-size="12" font-weight="800" fill="#12203a">2050</text>
+      <path d="M 130 185 Q 420 120 615 150" fill="none" stroke="#6b4fa1" stroke-width="2.6" marker-end="url(#arrp)"/>
+      <defs><marker id="arrp" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#6b4fa1"/></marker></defs>
+      <text x="330" y="112" font-size="11.5" font-weight="700" fill="#6b4fa1">PAGTANAW 2050: explore the cone, then invest in capabilities</text>
+      <text x="330" y="128" font-size="11.5" font-weight="700" fill="#6b4fa1">robust across many futures — not in one predicted future</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.7 — The futures cone, the core paradigm of foresight.</span> Recreated from the futures-studies literature (Voros's adaptation of Hancock &amp; Bezold's futures cone; see an open explainer at <a href="https://thevoroscope.com/2017/02/24/the-futures-cone-use-and-history/" target="_blank" rel="noopener">thevoroscope.com</a>), as applied in <a href="https://nast.dost.gov.ph/" target="_blank" rel="noopener">Pagtanaw 2050 (NAST PHL)</a>.</figcaption>
+  </figure>
+
+  <h3>The Foresight Toolbox</h3>
+  <p>Foresight is a family of named methods, and knowing them lets you read Pagtanaw as methodology rather than prophecy. <strong>Horizon scanning</strong> sweeps for weak signals of change at the edges of current knowledge; <strong>trend and driver analysis</strong> sorts them into forces with momentum; <strong>Delphi panels</strong> aggregate expert judgment through structured, iterated, anonymous rounds (designed to suppress the loudest-voice bias of ordinary committees); <strong>scenario building</strong> combines critical uncertainties into a small set of internally consistent futures — the cone of Figure 2.7 populated; and <strong>backcasting</strong> works in reverse, standing in a preferred 2050 and reasoning backward to what must be true by 2040, 2030, and next budget cycle for that future to remain reachable. Technology <strong>roadmapping</strong> then turns backcast milestones into sequenced capability investments. When Essay work in this course asks you to design a national astronomy research roadmap, this toolbox is what "foresight-informed" concretely means: scan, structure, scenario, backcast, sequence.</p>
+  <p>For a proposal writer, Pagtanaw 2050 does two jobs. It legitimizes <em>long-horizon and capability-building</em> arguments that a six-year plan cannot host ("this project builds the instrumentation skill base the 2050 maritime-space vision requires"). And it signals to reviewers that your team thinks beyond the funding cycle — the mark of a research <em>program</em> rather than a one-off project.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Use the right document for the right claim: <strong>PDP/HNRDA for relevance now; Pagtanaw for capability tomorrow.</strong> A strong rationale often cites both — the six-year hook and the 2050 trajectory it advances.</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomy's strongest Pagtanaw argument is <em>capability spillover</em>: precision optics, timing, big-data pipelines, and space situational awareness are dual-use capacities for an archipelagic nation dependent on satellites for weather, navigation, fisheries, and disaster response.</aside>
+</section>
+
+<!-- ============ 2.7 ============ -->
+<section id="t7">
+  <h2><span class="secno">2.7</span>The Philippine Space Agenda: Where Astronomy Meets National Policy</h2>
+  <p>Chapter 3 will study the <strong>Philippine Space Act (RA 11363)</strong> as law; here we read it as <em>agenda</em>. The Act created the <strong>Philippine Space Agency (PhilSA)</strong> and articulated the <strong>Philippine Space Policy</strong>, organized around key development areas that include national security and development; hazard management and climate studies; space research and development; space industry capacity building; space education and awareness; and international cooperation.</p>
+  <p>Notice what this means for your traceability chain: space research, education, and international cooperation are <em>named policy areas of a Republic Act</em>. An astronomy proposal in the Philippines can therefore anchor itself not merely in a plan but in statute — the strongest form of alignment available.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 400" role="img" aria-label="Philippine Space Policy key development areas around PhilSA">
+      <circle cx="450" cy="200" r="92" fill="#12203a"/>
+      <text x="450" y="185" text-anchor="middle" font-size="15" font-weight="800" fill="#f6edd2">RA 11363</text>
+      <text x="450" y="205" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Philippine Space Act</text>
+      <text x="450" y="226" text-anchor="middle" font-size="10.5" fill="#c8d2e4">PhilSA · Philippine Space Policy</text>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="378" y1="140" x2="240" y2="85"/>
+        <line x1="522" y1="140" x2="660" y2="85"/>
+        <line x1="356" y1="215" x2="215" y2="215"/>
+        <line x1="544" y1="215" x2="685" y2="215"/>
+        <line x1="378" y1="262" x2="240" y2="322"/>
+        <line x1="522" y1="262" x2="660" y2="322"/>
+      </g>
+      <g font-size="11.5" font-weight="700">
+        <rect x="35" y="40" width="210" height="62" rx="10" fill="#4a5568"/>
+        <text x="140" y="66" text-anchor="middle" fill="#fff">National security</text><text x="140" y="82" text-anchor="middle" fill="#fff">&amp; development</text>
+        <rect x="655" y="40" width="210" height="62" rx="10" fill="#b3423a"/>
+        <text x="760" y="66" text-anchor="middle" fill="#fff">Hazard management</text><text x="760" y="82" text-anchor="middle" fill="#fff">&amp; climate studies</text>
+        <rect x="10" y="184" width="210" height="62" rx="10" fill="#1e7d4f" stroke="#c9a227" stroke-width="3.5"/>
+        <text x="115" y="210" text-anchor="middle" fill="#fff">Space research</text><text x="115" y="226" text-anchor="middle" fill="#fff">&amp; development ★</text>
+        <rect x="680" y="184" width="210" height="62" rx="10" fill="#27406b"/>
+        <text x="785" y="210" text-anchor="middle" fill="#fff">Space industry</text><text x="785" y="226" text-anchor="middle" fill="#fff">capacity building</text>
+        <rect x="35" y="300" width="210" height="62" rx="10" fill="#a86a00" stroke="#c9a227" stroke-width="3.5"/>
+        <text x="140" y="326" text-anchor="middle" fill="#fff">Space education</text><text x="140" y="342" text-anchor="middle" fill="#fff">&amp; awareness ★</text>
+        <rect x="655" y="300" width="210" height="62" rx="10" fill="#6b4fa1" stroke="#c9a227" stroke-width="3.5"/>
+        <text x="760" y="326" text-anchor="middle" fill="#fff">International</text><text x="760" y="342" text-anchor="middle" fill="#fff">cooperation ★</text>
+      </g>
+      <text x="450" y="388" text-anchor="middle" font-size="11" font-style="italic" fill="#4a5568">★ gold-ringed areas are statutory anchors most directly open to astronomy proposals — alignment with the state itself, not one administration's plan</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.8 — Key development areas of the Philippine Space Policy under RA 11363.</span> Recreated from the Act's declared policy framework — full text via the <a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">Official Gazette</a>; programs at <a href="https://philsa.gov.ph/" target="_blank" rel="noopener">philsa.gov.ph</a>.</figcaption>
+  </figure>
+
+  <aside class="note ph"><span class="tag">PH Context</span><br>Your case-recitation materials make the point sharply: there is, at present, <strong>no dedicated national research roadmap for astronomy and space science in the Philippines</strong>. That gap is itself a research-agenda finding — and drafting such a roadmap is exactly the kind of output a TE01 research agenda (your Week 14–17 laboratory work) can propose.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>If your final project touches space science, cite the specific Space Policy development area it serves, then trace upward (PDP innovation agenda) and outward (SDG target, IAU goal). A four-link chain — statute, plan, global goal, discipline strategy — is close to alignment-proof.</aside>
+</section>
+
+<!-- ============ 2.8 ============ -->
+<section id="t8">
+  <h2><span class="secno">2.8</span>Workshop: Building Your Agenda-Alignment Matrix</h2>
+  <p class="lede">The deliverable skill of this chapter is a one-page <strong>traceability matrix</strong> that will become part of your research agenda output in Weeks 12–17.</p>
+  <p>Construct it in four columns, one row per specific objective of your candidate project:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Specific objective (yours)</th><th>National anchor (HNRDA pillar / PDP strategy / Space Policy area)</th><th>Global anchor (SDG target / IAU goal)</th><th>Evidence of contribution (output → indicator)</th></tr></thead>
+      <tbody>
+        <tr><td><em>Example:</em> Produce a 12-month calibrated sky-brightness baseline for 30 Metro Manila sites</td><td>HNRDA–NIBRA (basic space science); PDP urban-environment strategies</td><td>SDG 11 (sustainable cities), target-level: urban environmental quality</td><td>Open dataset + LGU lighting-policy brief; indicator: number of LGUs adopting guidelines</td></tr>
+        <tr><td><em>Example:</em> Train 60 physics teachers in telescope-based pedagogy</td><td>PDP human-capital agenda; Space Policy: space education &amp; awareness</td><td>SDG 4, Target 4.c (qualified teachers); IAU OAE goal</td><td>Certified training + pre/post pedagogy assessment; indicator: teachers deploying modules</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="fig">
+    <svg viewBox="0 0 900 250" role="img" aria-label="Full traceability chain from budget to global goals">
+      <g font-size="11.5" font-weight="700">
+        <rect x="15"  y="70" width="130" height="66" rx="10" fill="#4a5568"/>
+        <text x="80" y="97" text-anchor="middle" fill="#fff">₱ LINE-ITEM</text><text x="80" y="113" text-anchor="middle" fill="#fff">BUDGET</text>
+        <rect x="163" y="70" width="130" height="66" rx="10" fill="#a86a00"/>
+        <text x="228" y="97" text-anchor="middle" fill="#fff">ACTIVITY /</text><text x="228" y="113" text-anchor="middle" fill="#fff">WORK PACKAGE</text>
+        <rect x="311" y="70" width="130" height="66" rx="10" fill="#1e7d4f"/>
+        <text x="376" y="97" text-anchor="middle" fill="#fff">SPECIFIC</text><text x="376" y="113" text-anchor="middle" fill="#fff">OBJECTIVE</text>
+        <rect x="459" y="70" width="130" height="66" rx="10" fill="#27406b"/>
+        <text x="524" y="90" text-anchor="middle" fill="#fff">HNRDA PILLAR</text><text x="524" y="106" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">or Space Act</text><text x="524" y="120" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">policy area</text>
+        <rect x="607" y="70" width="130" height="66" rx="10" fill="#1b2a4a"/>
+        <text x="672" y="90" text-anchor="middle" fill="#fff">PDP / RDP</text><text x="672" y="106" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">strategy &amp;</text><text x="672" y="120" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">results matrix</text>
+        <rect x="755" y="70" width="130" height="66" rx="10" fill="#1d5fbf"/>
+        <text x="820" y="90" text-anchor="middle" fill="#fff">SDG TARGET</text><text x="820" y="106" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d4e4fb">+ IAU goal as</text><text x="820" y="120" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d4e4fb">discipline anchor</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.6" fill="none" marker-end="url(#garr)">
+        <line x1="145" y1="103" x2="160" y2="103"/><line x1="293" y1="103" x2="308" y2="103"/><line x1="441" y1="103" x2="456" y2="103"/><line x1="589" y1="103" x2="604" y2="103"/><line x1="737" y1="103" x2="752" y2="103"/>
+      </g>
+      <defs><marker id="garr" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <path d="M 20 60 L 20 46 L 440 46 L 440 60" fill="none" stroke="#a86a00" stroke-width="1.8"/>
+      <text x="230" y="36" text-anchor="middle" font-size="11" font-weight="800" fill="#a86a00">INTERNAL DESIGN ARGUMENT (Chapter 1)</text>
+      <path d="M 462 60 L 462 46 L 882 46 L 882 60" fill="none" stroke="#1d5fbf" stroke-width="1.8"/>
+      <text x="672" y="36" text-anchor="middle" font-size="11" font-weight="800" fill="#1d5fbf">EXTERNAL ALIGNMENT ARGUMENT (Chapter 2)</text>
+      <path d="M 860 160 Q 450 210 45 160" fill="none" stroke="#b3423a" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#rarr)"/>
+      <defs><marker id="rarr" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#b3423a"/></marker></defs>
+      <text x="450" y="218" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b3423a">reviewers read the chain BACKWARDS — every peso must trace to a national outcome</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 2.9 — The complete traceability chain.</span> Synthesis framework of this course: Chapter 1's design argument (budget → activity → objective) extended through Chapter 2's alignment layers (pillar → plan → global goal). Anchor documents: <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">HNRDA</a>, <a href="https://pdp.neda.gov.ph/" target="_blank" rel="noopener">PDP 2023–2028</a>, <a href="https://sdgs.un.org/2030agenda" target="_blank" rel="noopener">UN 2030 Agenda</a>, <a href="https://www.iau.org/administration/about/strategic_plan/" target="_blank" rel="noopener">IAU Strategic Plan</a>.</figcaption>
+  </figure>
+
+  <p>Three quality tests before you call the matrix done:</p>
+  <ol class="plain">
+    <li><strong>Specificity test</strong> — every anchor is cited at target/strategy level, never merely by document title;</li>
+    <li><strong>Causality test</strong> — a reasonable reviewer can see <em>how</em> the output moves the indicator, not just that the words match;</li>
+    <li><strong>Honesty test</strong> — remove any row you could not defend aloud in a panel; one false alignment poisons the credible ones.</li>
+  </ol>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Agenda alignment is this chapter's answer to Chapter 1's "design argument": the budget traced to objectives (Ch. 1) and the objectives traced to agendas (Ch. 2) together form the complete chain reviewers walk — <em>peso → activity → objective → agenda → national outcome</em>.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Alignment inflation: claiming eight SDGs, five pillars, and three strategic plans for a one-year, one-site project. Two or three <em>defended</em> anchors outscore ten asserted ones.</aside>
+</section>
+
+<!-- ============ MASTERY TEST ============ -->
+<section id="test">
+  <h2><span class="secno">✓</span>Chapter 2 Mastery Test — 20-Item HOTS Multiple Choice</h2>
+  <p>Each item targets applying, analyzing, or evaluating. Choose your answer before opening the dropdown. Suggested protocol: answer all 20 before revealing any explanation.</p>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A team argues: "Our science is excellent, so alignment sections are bureaucratic decoration." The strongest counter-argument from this chapter is:</p>
+    <ol class="opts"><li>Alignment sections are short, so they cost nothing either way</li><li>Public R&amp;D funds are invested to advance outcomes chosen through policy; alignment is the evidence that excellent science will also serve those outcomes — it is part of the merit case, not packaging around it</li><li>Reviewers never read the science anyway</li><li>Excellent science is impossible without an agenda</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Mission-oriented funding evaluates proposals on both scientific soundness <em>and</em> demonstrated contribution to declared priorities; the alignment argument is where the second criterion is met. A trivializes rather than answers; C is cynical and false; D overcorrects — curiosity-driven science exists (NIBRA hosts it), but it still competes within an agenda structure.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Applying</span></div>
+    <p class="stem">Classify these four documents by instrument type: AmBisyon Natin 2040, PDP 2023–2028, HNRDA 2023–2028, Pagtanaw 2050. The correct sequence of types is:</p>
+    <ol class="opts"><li>Plan · vision · foresight · agenda</li><li>Vision · development plan · research agenda · foresight study</li><li>Foresight · agenda · plan · vision</li><li>Vision · foresight · plan · agenda</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> AmBisyon answers "what life do we want" (generation-scale vision); the PDP commits a six-year government term (plan); the HNRDA tasks the research system for the same horizon (agenda); Pagtanaw scans plausible futures to 2050 (foresight). Distinguishing the four types is the foundation for citing each one for the claim it can actually support.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two alignment statements for the same teacher-training project: (i) "This project supports SDG 4 — Quality Education." (ii) "This project contributes to SDG Target 4.c by adding 60 telescope-trained physics teachers, measured against DepEd deployment records." Statement (ii) is superior chiefly because it:</p>
+    <ol class="opts"><li>Mentions a larger number</li><li>Cites at target level and shows a causal, measurable path from output to indicator — passing the specificity and causality tests</li><li>Uses the word "contributes" instead of "supports"</li><li>Avoids naming the SDG</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Goal-level citation is decoration ("agenda-washing"); target-level citation with an output→indicator mechanism is an argument a reviewer can verify. The improvement is structural, not lexical (C) or numerical (A); D describes neither statement.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Applying</span></div>
+    <p class="stem">A proposal will use archival satellite and ground-based data to map coastal night-lighting and its effect on municipal fisheries. Which SDG pairing is the most defensible <em>primary</em> anchor?</p>
+    <ol class="opts"><li>SDG 14 (Life Below Water) with SDG 11 (Sustainable Cities)</li><li>SDG 3 (Health) with SDG 16 (Peace and Institutions)</li><li>SDG 5 (Gender Equality) with SDG 7 (Energy)</li><li>SDG 17 alone, because partnerships cover everything</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> The project's substance is marine-ecosystem impact (SDG 14) of urban/coastal lighting (SDG 11): both anchors trace causally to the study's actual outputs. B and C have no mechanism to this project; D illustrates alignment inflation — SDG 17 describes <em>how</em> projects cooperate, not what this one produces, and "covers everything" is exactly what a defensible anchor is not.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A funding call requires compliance with the UNESCO Recommendation on Open Science. Which proposal element most directly demonstrates it?</p>
+    <ol class="opts"><li>A promise to publish only in high-impact-factor journals</li><li>A data-management plan naming the repository, license, and public-release schedule for the project's datasets and code</li><li>A confidentiality clause keeping all data within the team for ten years</li><li>A statement that the team supports science in general</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Open science operationalizes as open access, open data, and open code with concrete custody details — repository, license, timeline. A concerns prestige, not openness (and paywalled venues can conflict with it); C is the opposite of the recommendation; D fails the specificity test that runs through this whole chapter.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Applying</span></div>
+    <p class="stem">Match the intervention to the correct IAU office: (1) a barangay stargazing festival; (2) a Grade 9 curriculum module co-developed with DepEd teachers; (3) a dark-sky tourism feasibility study for a rural municipality's livelihood diversification.</p>
+    <ol class="opts"><li>1-OAD, 2-OAO, 3-OAE</li><li>1-OAO, 2-OAE, 3-OAD</li><li>1-OAE, 2-OAD, 3-OAO</li><li>All three belong to the OAD, since all involve development</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Public engagement is the OAO's mandate (festival), school-system education is the OAE's (curriculum module), and socio-economic development is the OAD's (livelihood-linked tourism study). D blurs the distinction the offices exist to make — and, practically, sends two of the three proposals to the wrong door with the wrong indicators.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the relationship "AmBisyon Natin 2040 is not a plan" matter to a proposal writer?</p>
+    <ol class="opts"><li>It means AmBisyon can be ignored entirely</li><li>Vision documents carry no programs, budgets, or indicators — so AmBisyon can motivate a rationale's opening, but concrete alignment claims must anchor in the PDP, HNRDA, or statute, which do carry commitments</li><li>It means only laws may be cited in proposals</li><li>It makes the PDP optional</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Each instrument supports only the claims it was built for: a vision states a destination, so citing it proves shared direction but not programmatic relevance. The verifiable hooks — strategies, results-matrix indicators, funded pillars — live in the plan and agenda layers. A and D discard useful layers; C overshoots (plans and agendas are citable without being statutes).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">Four projects seek their HNRDA home. Which routing is correct?</p>
+    <ol class="opts"><li>Star-formation archival study → DRR-CCA; CubeSat payload → Health; scintillation early-warning → NIBRA; fisheries lighting → IEET</li><li>Star-formation archival study → NIBRA; CubeSat imaging payload → IEET (PCIEERD); ionospheric-scintillation early-warning → DRR-CCA; astronomy-guided fisheries lighting → AANR</li><li>All four → NIBRA, since astronomy is basic science</li><li>All four → IEET, since telescopes are technology</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The pillar follows the project's <em>purpose and user</em>, not its instrument: foundational knowledge (NIBRA), space-technology development (IEET under PCIEERD), hazard early-warning (DRR-CCA), and fisheries application (AANR). C and D commit the same fallacy in opposite directions — classifying by discipline or by hardware instead of by the agenda the outputs serve.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A proposal claims equal, primary alignment with all five HNRDA pillars. As a reviewer, your most defensible reading is:</p>
+    <ol class="opts"><li>Impressive breadth — score it higher</li><li>A focus failure: no single council owns it, its review routing is ambiguous, and the claim suggests the team has not made the design decision of a primary pillar with secondary co-benefits</li><li>Automatically fundable by all five councils simultaneously</li><li>A clerical error only</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Declaring a primary pillar is a design decision that selects the funding council, panel expertise, and success indicators; claiming all five equally is alignment inflation and leaves the proposal unroutable. Breadth of <em>documented</em> co-benefits is fine — but as secondary contributions under one home pillar, which is why A and C misread the governance structure.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">"Pagtanaw 2050 predicts what will happen; the PDP decides what we will do." Which correction is most accurate?</p>
+    <ol class="opts"><li>The statement is fully correct</li><li>Half right: the PDP does commit actions, but foresight does not predict — it scans plausible futures and identifies capabilities worth building under many scenarios</li><li>Both documents predict the future with different accuracy</li><li>Both documents are legally binding forecasts</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Foresight is a method for widening the option space (horizon scanning, scenarios) whose outputs are directional capabilities and risks — explicitly not point predictions. Conflating foresight with forecast leads writers to cite Pagtanaw for claims it cannot carry ("by 2050 X will happen") instead of the claims it can ("capability Y is robust across the futures Pagtanaw examines").</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your project builds precision-timing infrastructure with no six-year application, but clear relevance to long-term maritime-space capability. The most strategic citation pairing is:</p>
+    <ol class="opts"><li>PDP results matrix alone — force a six-year indicator onto it</li><li>Pagtanaw 2050 for the capability trajectory, paired with the HNRDA–NIBRA pillar as the six-year home for the basic-science work</li><li>No citations — infrastructure needs no alignment</li><li>SDG 17 and nothing else</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> This is "right document for the right claim": Pagtanaw legitimizes capability-building beyond the funding cycle, while NIBRA provides the fundable six-year berth for foundational work. A manufactures false indicators (an honesty-test failure); C forfeits the merit case; D anchors globally but leaves the proposal homeless nationally.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why is the Philippine Space Act (RA 11363) a stronger alignment anchor than a strategic plan, when a project fits one of its policy areas?</p>
+    <ol class="opts"><li>Statutes are longer documents</li><li>Statutes persist across administrations and carry the force of law — space R&amp;D, education, and international cooperation are standing national policy, not term-bound priorities that expire with a plan</li><li>Only statutes mention astronomy</li><li>Plans are secret; laws are public</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The hierarchy of durability matters: plans expire in six years (recall the expired-PDP pitfall), but a Republic Act's declared policy areas remain valid anchors until amended. A project serving a named policy area of RA 11363 aligns with the state itself, not one administration's program. A, C, D are irrelevant or false.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A rationale reads: "This project supports AmBisyon 2040, the PDP, all 17 SDGs, Pagtanaw 2050, the IAU Strategic Plan, and eight Republic Acts." Diagnose it.</p>
+    <ol class="opts"><li>Exemplary comprehensiveness</li><li>Alignment inflation: undifferentiated citation at document-title level fails the specificity and honesty tests, and signals that no real traceability analysis was done</li><li>Acceptable if the fonts are consistent</li><li>Weak only because it omits the UN Charter</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Two or three anchors cited at target/strategy level with output→indicator mechanisms outscore a catalog of titles. Undifferentiated lists cannot all be true for a bounded project, so the reviewer discounts even the claims that were defensible — the stated risk that one false alignment poisons the credible ones.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Applying</span></div>
+    <p class="stem">A regional university proposes a sky-quality monitoring network across its province. Beyond the national PDP, the chapter suggests its sharpest <em>local</em> policy hook is:</p>
+    <ol class="opts"><li>The Regional Development Plan of the region where the sites sit</li><li>The UNESCO Science Report</li><li>The IAU General Assembly schedule</li><li>AmBisyon Natin 2040's vision statement</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> The PDP cascades into Regional Development Plans, which carry region-specific strategies and indicators — the most local, most concrete layer available to a geographically sited project. B and C are context documents, not policy hooks; D is the most distant layer, useful for motivation rather than local anchoring.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A basic-research astronomer resents "translating" her work into agenda language, fearing distortion of the science. The chapter's most honest guidance is:</p>
+    <ol class="opts"><li>Distort freely; reviewers cannot check</li><li>Translation ≠ distortion: identify the genuine outputs (data, methods, trained people, instrumentation capability) and map those honestly to agenda items that truly call for them — NIBRA exists precisely so basic science can align without pretending to be applied</li><li>Refuse all public funding on principle</li><li>Relabel the project as applied research</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The translation skill is finding the true intersection between what the science genuinely produces and what agendas genuinely request — human capital, capability spillover, open data. The honesty test forbids A and D (misclassification is also a routing error that gets proposals screened out); C mistakes a solvable writing problem for an ethical dilemma.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Applying</span></div>
+    <p class="stem">Which single row, as written, would pass all three quality tests (specificity, causality, honesty) of the alignment matrix?</p>
+    <ol class="opts"><li>Objective: "do astronomy outreach" → Anchor: "SDG 4" → Evidence: "children will be inspired"</li><li>Objective: "train 60 physics teachers in telescope pedagogy by Month 10" → Anchor: "SDG Target 4.c; PDP human-capital strategy; Space Policy: space education" → Evidence: "certification records + pre/post pedagogy assessment; indicator: modules deployed in classes within one school year"</li><li>Objective: "advance national development" → Anchor: "all agendas" → Evidence: "obvious"</li><li>Objective: "publish papers" → Anchor: "AmBisyon 2040" → Evidence: "papers cite the vision"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> It is the only row whose objective is bounded and measurable, whose anchors are cited at target/strategy level across national and global layers, and whose evidence names verifiable outputs connected to an indicator a reviewer can trace. A and C fail specificity and causality; D pairs an output with a vision-layer anchor that carries no indicators — a mechanism-free match of words.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the chapter insist you identify the owning DOST sectoral council (PCIEERD, PCAARRD, PCHRD) <em>before</em> drafting, rather than after?</p>
+    <ol class="opts"><li>Councils require different paper sizes</li><li>The council determines the call, the review panel's expertise, the pillar's priorities, and the monitoring regime — knowing the audience shapes design decisions (indicators, partners, deliverables) that cannot be retrofitted honestly</li><li>Council names must appear in the title</li><li>It is alphabetically convenient</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Alignment shapes the project, not just its packaging: an AANR-routed fisheries-lighting study needs fisherfolk partners and production indicators, while the same instrument routed through NIBRA needs knowledge outputs. Choosing the audience after writing forces either dishonest retrofitting or a misrouted submission — both fatal earlier than scientific review.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A colleague proposes citing the IAU Strategic Plan as the <em>sole</em> anchor for a DOST proposal, reasoning that "astronomers should be judged by astronomy's agenda." Evaluate.</p>
+    <ol class="opts"><li>Correct — discipline strategies outrank national plans everywhere</li><li>Insufficient: IAU alignment demonstrates international legitimacy and complements the case, but a national funder scores contribution to national priorities — the IAU plan cannot substitute for PDP/HNRDA anchoring</li><li>Correct, because the IAU funds DOST</li><li>Wrong only because the IAU plan expired</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Each funder reads the agenda it is accountable to: DOST panels walk the peso→objective→national-agenda chain, and an international discipline strategy — however prestigious — sits outside that chain. The IAU plan is powerful as a <em>complement</em> (it supplies the discipline's own development argument). C is factually false; D is wrong (the plan runs to 2030) and misses the structural point.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your case materials note that the Philippines has no dedicated research roadmap for astronomy and space science. Read as an <em>agenda opportunity</em>, the most productive TE01 response is:</p>
+    <ol class="opts"><li>Conclude that astronomy proposals are impossible until a roadmap appears</li><li>Treat the gap itself as a research-agenda output: propose the roadmap's evidence base — e.g., a capability audit and stakeholder-mapped priority study — anchored in the Space Act's R&amp;D policy area, HNRDA–NIBRA, and Pagtanaw's space domain</li><li>Copy another country's roadmap verbatim</li><li>Wait for the IAU to write one</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> A named national gap is the strongest possible rationale: the project supplies something statute and foresight already call for but no document yet delivers. This converts the missing-roadmap complaint into a fundable design — precisely the Week 14–17 research-agenda exercise. A and D surrender agency; C fails both the honesty test and the whole point of national contextualization.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Combine Chapters 1 and 2: which complete chain would a reviewer accept as fully traceable?</p>
+    <ol class="opts"><li>Budget → activity → objective → HNRDA pillar (target-level) → PDP strategy → SDG target, with each link explicitly argued</li><li>Budget → SDG target directly, skipping objectives "for brevity"</li><li>Objective → AmBisyon vision → budget, with activities implied</li><li>Agenda citations in the annex only, since chains clutter the narrative</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Chapter 1 built the internal chain (peso → activity → objective); Chapter 2 extends it outward (objective → agenda → national outcome → global goal). Reviewers walk the whole chain in both directions, so every link must be explicit. B amputates the internal logic; C interposes a no-indicator vision layer where commitments belong and leaves activities unargued; D hides the argument where scoring panels will not credit it.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section id="refs">
+  <h2><span class="secno">◈</span>References and Readings (Clickable)</h2>
+  <h3>Global Frameworks</h3>
+  <ul class="plain">
+    <li>UN 2030 Agenda for Sustainable Development (full text, goals, targets, indicators) — <a href="https://sdgs.un.org/2030agenda" target="_blank" rel="noopener">sdgs.un.org/2030agenda</a> · SDG indicator database — <a href="https://unstats.un.org/sdgs/" target="_blank" rel="noopener">unstats.un.org/sdgs</a></li>
+    <li>UNESCO Recommendation on Open Science (2021) — <a href="https://www.unesco.org/en/open-science" target="_blank" rel="noopener">unesco.org/en/open-science</a></li>
+    <li>UNESCO Science Report series — <a href="https://www.unesco.org/reports/science/" target="_blank" rel="noopener">unesco.org/reports/science</a></li>
+  </ul>
+  <h3>Discipline Strategy</h3>
+  <ul class="plain">
+    <li>IAU Strategic Plan 2020–2030 — <a href="https://www.iau.org/administration/about/strategic_plan/" target="_blank" rel="noopener">iau.org/administration/about/strategic_plan</a></li>
+    <li>IAU Office of Astronomy for Development (grants and regional offices) — <a href="https://www.astro4dev.org/" target="_blank" rel="noopener">astro4dev.org</a></li>
+    <li>IAU Office for Astronomy Outreach — <a href="https://www.iau.org/public/" target="_blank" rel="noopener">iau.org/public</a> · Office of Astronomy for Education — <a href="https://astro4edu.org/" target="_blank" rel="noopener">astro4edu.org</a></li>
+  </ul>
+  <h3>Philippine Planning Chain</h3>
+  <ul class="plain">
+    <li>AmBisyon Natin 2040 — <a href="https://2040.neda.gov.ph/" target="_blank" rel="noopener">2040.neda.gov.ph</a></li>
+    <li>Philippine Development Plan 2023–2028 — <a href="https://pdp.neda.gov.ph/" target="_blank" rel="noopener">pdp.neda.gov.ph</a></li>
+    <li>DOST — Harmonized National R&amp;D Agenda and program pages — <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">dost.gov.ph</a></li>
+    <li>DOST sectoral councils: PCIEERD — <a href="https://pcieerd.dost.gov.ph/" target="_blank" rel="noopener">pcieerd.dost.gov.ph</a> · PCAARRD — <a href="https://www.pcaarrd.dost.gov.ph/" target="_blank" rel="noopener">pcaarrd.dost.gov.ph</a> · PCHRD — <a href="https://www.pchrd.dost.gov.ph/" target="_blank" rel="noopener">pchrd.dost.gov.ph</a></li>
+    <li>National Research Council of the Philippines (NRCP, basic research) — <a href="https://nrcp.dost.gov.ph/" target="_blank" rel="noopener">nrcp.dost.gov.ph</a></li>
+    <li>Pagtanaw 2050 (NAST PHL) — <a href="https://nast.dost.gov.ph/" target="_blank" rel="noopener">nast.dost.gov.ph</a></li>
+    <li>Philippine Innovation Act (RA 11293) and other statutes — <a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">officialgazette.gov.ph</a></li>
+  </ul>
+  <h3>Philippine Space Agenda (Chapter 3 preview)</h3>
+  <ul class="plain">
+    <li>Philippine Space Agency (Space Policy, programs, scholarships) — <a href="https://philsa.gov.ph/" target="_blank" rel="noopener">philsa.gov.ph</a></li>
+    <li>RA 11363 (Philippine Space Act) — via the <a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">Official Gazette</a></li>
+  </ul>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch1-lecture.html">&#8592; Ch. 1 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch2-reinforcement.html">Ch. 2 Reinforcement</a></span> <span><a href="ch3-lecture.html">Ch. 3 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 2 Lecture Pack · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

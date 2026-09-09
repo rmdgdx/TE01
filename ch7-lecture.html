@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 7 — Principles of R&amp;D Management and the Magna Carta for S&amp;T Personnel</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 7 — Principles of R&amp;D Management and the Magna Carta for S&amp;T Personnel</h1>
+  <div class="subtitle">Week 10 · CO2: Develop proficient skills in research and development management · DOST AO 011 s. 2020 (Revised GIA Guidelines) · RA 8439 · RA 11312 · S&amp;T Human Resources and Qualification Standards · Assoc. Prof. Ryan Manuel D. Guido, Ph.D. · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Chapter sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#t1">7.1 Managing S&amp;T Talent</a></li>
+    <li><a href="#t2">7.2 The DOST-GIA Regime</a></li>
+    <li><a href="#t3">7.3 RA 8439 · Magna Carta</a></li>
+    <li><a href="#t4">7.4 RA 11312 · The Update</a></li>
+    <li><a href="#t5">7.5 Movements &amp; QS</a></li>
+    <li><a href="#t6">7.6 Compensation</a></li>
+    <li><a href="#t7">7.7 The HRD Pipeline</a></li>
+    <li><a href="#t8">7.8 The Case Method</a></li>
+    <li><a href="#test">Mastery Test</a></li>
+    <li><a href="#refs">References</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ OBJECTIVES ============ -->
+<section id="objectives">
+  <div class="objectives">
+    <h4>Chapter Learning Objectives</h4>
+    <p>After working through this chapter, you should be able to:</p>
+    <ol class="plain">
+      <li>Explain why managing R&amp;D means managing scarce creative talent, and apply the classic principles — autonomy, intrinsic motivation, dual career ladders — to a research team;</li>
+      <li>Describe the DOST Grants-in-Aid regime (AO 011 s. 2020): its actors, lifecycle, and the fund rules that Chapter 6's budget machinery operates inside;</li>
+      <li>State the purpose, coverage, and benefit architecture of RA 8439 — the Magna Carta for Scientists, Engineers, Researchers and other S&amp;T Personnel in Government — and how RA 11312 updated it;</li>
+      <li>Distinguish plantilla from contractual engagement, and detail, secondment, and transfer from one another — the classifications your Case Analysis turns on;</li>
+      <li>Explain the two-track compensation architecture (Salary Standardization for plantilla posts; GIA project rates with their premium for contract personnel) and perform the arithmetic your cases demand;</li>
+      <li>Map the S&amp;T human-resource development pipeline — scholarship statutes, the Scientific Career System, the Balik Scientist program — and the qualification-standards framework beneath appointments; and</li>
+      <li>Apply the full IRAC method to Magna Carta case scenarios: coverage first, classification second, computation last.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 7.1 ============ -->
+<section id="t1">
+  <h2><span class="secno">7.1</span>Managing S&amp;T Talent: The Scarcest Input</h2>
+  <p class="lede">Every previous chapter managed things — agendas, statutes, budgets, intellectual property. This chapter manages the only input that thinks back: people. And in a developing country's research system, trained scientific people are the scarcest, slowest-to-produce, and easiest-to-lose asset there is.</p>
+  <p>The arithmetic of scarcity is stark. A research astronomer represents fifteen to twenty years of education; a competent instrumentation engineer nearly as many. The Philippines, with researchers per million population far below its wealthier neighbors (Chapter 1's Frascati indicators), produces this asset slowly — and loses it quickly: to foreign universities and observatories, to industry, to airlines hiring meteorologists, to any employer who can out-pay a government salary grade. This is the <strong>brain drain</strong>, and it is not a moral failure of the individuals who leave; it is a systems failure of the institutions that could not make staying rational. Every statute in this chapter is an engineering response to that failure — the Magna Carta making government science <em>livable</em>, the scholarship acts refilling the pipeline with service obligations attached, the Balik Scientist Act pumping expertise back, and RA 10055's royalties (Chapter 5) letting inventors profit where they work.</p>
+  <p>Below the statutes sits a management literature your course texts carry (Daim, Gilbert, Wingate): creative professionals are not managed like production staff. Three principles recur. <strong>Autonomy with accountability</strong> — researchers do their best work choosing methods within agreed objectives; micromanaging the <em>how</em> kills exactly the creativity being purchased (the logframe's design — control outputs, not procedures — is this principle in document form). <strong>Intrinsic motivation dominates</strong> — curiosity, mastery, recognition, and mission move scientists at least as strongly as pay, which is why authorship fairness (Chapter 1), revenue sharing (Chapter 5), and honoraria (this chapter) matter beyond their peso value: they are recognition instruments. <strong>The dual ladder</strong> — organizations need a way to promote excellent scientists <em>without</em> converting them into administrators; a technical career track (the Scientific Career System of Section 7.7) that rises in rank, pay, and prestige alongside the managerial track, so that becoming a better scientist is itself a career.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="The S&amp;T talent system: leaks and statutory responses">
+      <g font-size="11" font-weight="800">
+        <rect x="30" y="40" width="180" height="70" rx="10" fill="#1b2a4a"/>
+        <text x="120" y="68" text-anchor="middle" fill="#fff">STEM PIPELINE</text>
+        <text x="120" y="88" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">15–20 years to produce</text>
+        <text x="120" y="100" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">one researcher</text>
+        <rect x="360" y="40" width="180" height="70" rx="10" fill="#1e7d4f"/>
+        <text x="450" y="68" text-anchor="middle" fill="#fff">GOV'T S&amp;T SERVICE</text>
+        <text x="450" y="88" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">agencies · SUCs · RDIs —</text>
+        <text x="450" y="100" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">where public science happens</text>
+        <rect x="690" y="40" width="180" height="70" rx="10" fill="#b3423a"/>
+        <text x="780" y="62" text-anchor="middle" fill="#fff">THE LEAKS</text>
+        <text x="780" y="80" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">abroad · industry · out of</text>
+        <text x="780" y="92" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">science entirely —</text>
+        <text x="780" y="104" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">brain drain as system failure</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.6" fill="none" marker-end="url(#tal)">
+        <line x1="210" y1="75" x2="355" y2="75"/>
+        <line x1="540" y1="75" x2="685" y2="75"/>
+      </g>
+      <defs><marker id="tal" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <g font-size="9.5" font-weight="800">
+        <rect x="40"  y="170" width="195" height="76" rx="10" fill="#27406b"/>
+        <text x="137" y="192" text-anchor="middle" fill="#fff">REFILL THE PIPELINE</text>
+        <text x="137" y="210" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">RA 7687 &amp; RA 10612 scholarships</text>
+        <text x="137" y="224" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">with return-service obligations</text>
+        <rect x="255" y="170" width="195" height="76" rx="10" fill="#1e7d4f"/>
+        <text x="352" y="192" text-anchor="middle" fill="#fff">MAKE STAYING RATIONAL</text>
+        <text x="352" y="210" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">RA 8439 / RA 11312 Magna Carta:</text>
+        <text x="352" y="224" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">benefits · allowances · honoraria</text>
+        <rect x="470" y="170" width="195" height="76" rx="10" fill="#a86a00"/>
+        <text x="567" y="192" text-anchor="middle" fill="#fff">REWARD INVENTION</text>
+        <text x="567" y="210" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">RA 10055 royalties (Ch. 5) ·</text>
+        <text x="567" y="224" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">Scientific Career System ranks</text>
+        <rect x="685" y="170" width="195" height="76" rx="10" fill="#6b4fa1"/>
+        <text x="782" y="192" text-anchor="middle" fill="#fff">PUMP EXPERTISE BACK</text>
+        <text x="782" y="210" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">RA 11035 Balik Scientist Act:</text>
+        <text x="782" y="224" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">diaspora returns with incentives</text>
+      </g>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="137" y1="170" x2="180" y2="112"/><line x1="352" y1="170" x2="440" y2="112"/><line x1="567" y1="170" x2="470" y2="112"/><line x1="782" y1="170" x2="780" y2="112"/>
+      </g>
+      <rect x="150" y="290" width="600" height="62" rx="10" fill="#f6edd2"/>
+      <text x="450" y="314" text-anchor="middle" font-size="10.5" font-weight="800" fill="#a86a00">THE MANAGEMENT LAYER BENEATH THE STATUTES</text>
+      <text x="450" y="334" text-anchor="middle" font-size="9.5" fill="#4a3a08">autonomy with accountability · intrinsic motivation (recognition instruments matter) · the dual ladder — promote scientists as scientists</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 7.1 — The S&amp;T talent system: the pipeline, the leaks, and the four statutory pumps.</span> Framework synthesis of the course texts (Daim; Gilbert; Wingate) and the Philippine statute stack of this chapter.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Read every provision in this chapter as <strong>incentive engineering against the leak</strong>: benefits, premiums, ranks, scholarships, and royalties are the State pricing what it costs to keep a scientist doing science in the Philippines. When a case scenario puzzles you, ask which leak the provision was built to plug — the purpose usually decides the interpretation.</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomy feels the leak acutely: the Philippines trains excellent physics and astronomy graduates whose natural employers — major observatories, space agencies, research universities — are overwhelmingly abroad. A national astronomy program (your Chapter 2 roadmap essay) is, at bottom, a retention machine: it must give the best graduates something worth staying for. That is why your Week-12 proposal's PS lines and training work packages are not administrative filler — they are the mission.</aside>
+</section>
+
+<!-- ============ 7.2 ============ -->
+<section id="t2">
+  <h2><span class="secno">7.2</span>The DOST-GIA Regime: AO 011 s. 2020</h2>
+  <p class="lede">The Grants-in-Aid program is the operating system on which most Philippine public research runs — and DOST Administrative Order 011, series of 2020, is its current master document: the <em>Revised Guidelines for the Grants-in-Aid Program</em>. Chapter 3 taught you what an AO is; Chapter 6 built the machinery it governs; this section names the regime.</p>
+  <p><strong>The actors.</strong> The GIA world has a recurring cast: the <strong>funding agency</strong> (DOST itself or its sectoral councils — PCIEERD, PCAARRD, PCHRD, per the HNRDA routing of Chapter 2) which issues calls, approves, and funds; the <strong>monitoring agency</strong> (typically the council owning the sector) which tracks implementation through the reports and reviews of Chapter 6; and the <strong>implementing agency</strong> — the RDI that executes: your university. One project may also sit inside a <strong>program</strong> (a cluster of related projects under a program leader) — vocabulary your Case Analysis uses when it distinguishes project leaders from program leaders. The proposal's journey runs call → screening for eligibility and agenda alignment → technical evaluation → approval → <strong>Memorandum of Agreement</strong> between funder and RDI (the document Prof. Son could not carry to another university) → fund release by tranche against milestones → monitoring → closure.</p>
+  <p><strong>The fund rules.</strong> The GIA guidelines are where Chapter 6's abstractions get their numbers and procedures: the line-item structure (PS, MOOE, EO) and what each may contain; the <strong>capped indirect cost</strong> the STARI case violates; <strong>counterpart</strong> expectations; equipment ownership and disposition rules (government property, disposed per the funder's rules at closure); realignment thresholds and approval paths; extension procedures (the UWU remedy); and personnel engagement rules — including the compensation architecture of Section 7.6 that decides two of your cases. The guidelines also carry the researcher-facing duties: progress and terminal reports, liquidation deadlines, and the consequences of default — including disqualification of delinquent proponents from new grants, the institutional memory that makes Chapter 6's closure discipline more than good manners.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 360" role="img" aria-label="The DOST-GIA regime: actors and lifecycle">
+      <g font-size="10.5" font-weight="800">
+        <rect x="40" y="30" width="240" height="72" rx="10" fill="#1b2a4a"/>
+        <text x="160" y="56" text-anchor="middle" fill="#fff">FUNDING AGENCY</text>
+        <text x="160" y="74" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">DOST · sectoral councils — calls,</text>
+        <text x="160" y="88" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">approval, funds (HNRDA routing, Ch. 2)</text>
+        <rect x="330" y="30" width="240" height="72" rx="10" fill="#1e7d4f"/>
+        <text x="450" y="56" text-anchor="middle" fill="#fff">MONITORING AGENCY</text>
+        <text x="450" y="74" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">tracks via reports, reviews, site visits —</text>
+        <text x="450" y="88" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">the consumer of Ch. 6's monitoring system</text>
+        <rect x="620" y="30" width="240" height="72" rx="10" fill="#a86a00"/>
+        <text x="740" y="56" text-anchor="middle" fill="#fff">IMPLEMENTING AGENCY (RDI)</text>
+        <text x="740" y="74" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">your university — executes, owns IP</text>
+        <text x="740" y="88" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">(RA 10055), accountable for funds</text>
+      </g>
+      <g font-size="9.3" font-weight="700">
+        <rect x="40"  y="150" width="120" height="52" rx="8" fill="#27406b"/><text x="100" y="172" text-anchor="middle" fill="#fff">CALL &amp;</text><text x="100" y="186" text-anchor="middle" fill="#fff">PROPOSAL</text>
+        <rect x="172" y="150" width="120" height="52" rx="8" fill="#27406b"/><text x="232" y="172" text-anchor="middle" fill="#fff">SCREENING &amp;</text><text x="232" y="186" text-anchor="middle" fill="#fff">EVALUATION</text>
+        <rect x="304" y="150" width="120" height="52" rx="8" fill="#1e7d4f"/><text x="364" y="172" text-anchor="middle" fill="#fff">APPROVAL &amp;</text><text x="364" y="186" text-anchor="middle" fill="#fff">MOA SIGNING</text>
+        <rect x="436" y="150" width="120" height="52" rx="8" fill="#a86a00"/><text x="496" y="172" text-anchor="middle" fill="#fff">TRANCHED</text><text x="496" y="186" text-anchor="middle" fill="#fff">RELEASES</text>
+        <rect x="568" y="150" width="120" height="52" rx="8" fill="#1d5fbf"/><text x="628" y="172" text-anchor="middle" fill="#fff">MONITORING &amp;</text><text x="628" y="186" text-anchor="middle" fill="#fff">REPORTS</text>
+        <rect x="700" y="150" width="160" height="52" rx="8" fill="#6b4fa1"/><text x="780" y="172" text-anchor="middle" fill="#fff">CLOSURE: liquidation ·</text><text x="780" y="186" text-anchor="middle" fill="#fff">equipment · terminal report</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.2" fill="none" marker-end="url(#gia)">
+        <line x1="160" y1="176" x2="168" y2="176"/><line x1="292" y1="176" x2="300" y2="176"/><line x1="424" y1="176" x2="432" y2="176"/><line x1="556" y1="176" x2="564" y2="176"/><line x1="688" y1="176" x2="696" y2="176"/>
+      </g>
+      <defs><marker id="gia" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <rect x="90" y="240" width="720" height="92" rx="10" fill="#f6edd2"/>
+      <text x="450" y="264" text-anchor="middle" font-size="10.5" font-weight="800" fill="#a86a00">WHAT AO 011 s. 2020 DECIDES FOR YOUR CASES AND YOUR PROPOSAL</text>
+      <text x="450" y="284" text-anchor="middle" font-size="9.5" fill="#4a3a08">line-item contents &amp; capped indirect cost (STARI) · equipment ownership &amp; disposition (Prof. Son) · extension procedure (UWU) ·</text>
+      <text x="450" y="300" text-anchor="middle" font-size="9.5" fill="#4a3a08">personnel engagement &amp; compensation rules (Ursulan · Publico, Sec. 7.6) · reporting, liquidation, and delinquency consequences</text>
+      <text x="450" y="320" text-anchor="middle" font-size="9" font-style="italic" fill="#4a3a08">read the current text at dost.gov.ph — an AO is the operational layer (Fig. 3.1), and operational layers get revised</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 7.2 — The GIA regime: three actors, one lifecycle, and the rules your cases turn on.</span> DOST AO 011 s. 2020 (Revised GIA Guidelines) — current text and program pages at <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">dost.gov.ph</a>.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The MOA is the load-bearing document: it binds <em>funder and institution</em> — not the project leader personally. Every "can the leader take/move/keep X?" case dissolves once you ask what the MOA and guidelines say about X — the separation habit (IP vs. chattel vs. grant relationship) completing its third appearance.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Citing "the GIA guidelines" from memory of an older series. Administrative issuances supersede one another (the Chapter 5 currency-check habit): AO 011 s. 2020 revised earlier GIA rules, and your Case Analysis readings also assign related DOST issuances (AO 001 s. 2020, AO 508 s. 2013, SO 009 s. 2021). Quote the specific issuance and section your answer relies on.</aside>
+</section>
+
+<!-- ============ 7.3 ============ -->
+<section id="t3">
+  <h2><span class="secno">7.3</span>RA 8439 (1997): The Magna Carta for S&amp;T Personnel in Government</h2>
+  <p class="lede">A <em>magna carta</em>, in Philippine legislative usage, is a statute that consolidates the rights and welfare of a sector — teachers, health workers, the poor. RA 8439 is the scientists': the <strong>Magna Carta for Scientists, Engineers, Researchers and other Science and Technology Personnel in Government</strong>, built to make a government science career survivable against the leak of Figure 7.1.</p>
+  <p><strong>Coverage first — always.</strong> The Act protects <em>S&amp;T personnel in government</em>: scientists, engineers, researchers, and other personnel performing S&amp;T functions in government agencies and instrumentalities. Every Case Analysis question about this statute begins here, at the definitions (the Chapter 3 canon: statutory definitions control): is the person <em>in government</em>? Is their work an <em>S&amp;T function</em>? Note what the definition does <em>not</em> require: a PhD, a fancy title, or a laboratory coat. A permanent laborer who spends thirty years keeping research instruments calibrated and operational — your Mr. Newton — presents a genuine coverage question: his employer is a government research institute and his daily work directly supports its S&amp;T functions; the analysis turns on whether the Act's definitions and IRR embrace S&amp;T <em>support</em> personnel, and a full-credit answer quotes the definition section and argues the classification both ways before concluding. Coverage is where most Magna Carta points are won and lost.</p>
+  <p><strong>Then the benefits.</strong> The Act's architecture grants covered personnel a package designed to compensate what government science actually costs its people: <strong>honoraria</strong> for work beyond regular duties (lectures, resource-person engagements — the instrument behind Ms. Curie Marie's computation); a <strong>share in royalties</strong> from their inventions and works (the Magna Carta's older sibling of RA 10055's revenue sharing — the two now operate together); <strong>hazard allowance</strong> for exposure to hazardous conditions — radiation, toxic substances, dangerous fieldwork — scaled by exposure, not granted by job title; <strong>subsistence and laundry allowances</strong> for those the nature of their work entitles; <strong>housing and quarters</strong> provisions for personnel assigned away from home stations; <strong>longevity pay</strong> rewarding sustained government service; <strong>medical examination</strong> and health-care provisions; and support for <strong>graduate study and conference participation</strong>. Two structural facts about this package decide cases. First, <em>each benefit has its own eligibility conditions</em> — hazard allowance follows actual exposure, subsistence follows work circumstances — so "covered by the Act" never automatically means "entitled to everything." Second, implementation runs through <em>appropriations and implementing rules</em>: benefits are operationalized by IRR and budget issuances, which is why a scenario like Ms. Rotasyon's — a research institute pleading "insufficient funds" while every <em>other</em> employee enjoys the benefits — is really two questions layered: what the funding condition lawfully permits, and whether selective denial to one employee can survive the equal-application principle even where funds are constrained. Argue both layers; the second is where her case is strongest.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 420" role="img" aria-label="Magna Carta coverage gate and benefits map">
+      <rect x="40" y="30" width="250" height="140" rx="10" fill="#1b2a4a"/>
+      <text x="165" y="58" text-anchor="middle" font-size="12" font-weight="800" fill="#f6edd2">THE COVERAGE GATE</text>
+      <text x="165" y="82" text-anchor="middle" font-size="9.5" fill="#c8d2e4">1 · in government service?</text>
+      <text x="165" y="100" text-anchor="middle" font-size="9.5" fill="#c8d2e4">2 · performing S&amp;T functions?</text>
+      <text x="165" y="124" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">definitions decide — argue the</text>
+      <text x="165" y="138" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">classification before any benefit</text>
+      <text x="165" y="158" text-anchor="middle" font-size="8.5" font-style="italic" fill="#c8d2e4">(the Mr. Newton question lives here)</text>
+      <g stroke="#c9a227" stroke-width="2.6" fill="none" marker-end="url(#mc)">
+        <line x1="290" y1="100" x2="345" y2="100"/>
+      </g>
+      <defs><marker id="mc" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <g font-size="9.3" font-weight="800">
+        <rect x="355" y="24" width="160" height="64" rx="9" fill="#1e7d4f"/>
+        <text x="435" y="46" text-anchor="middle" fill="#fff">HONORARIA</text>
+        <text x="435" y="62" text-anchor="middle" font-size="8" font-weight="400" fill="#d7f0dc">work beyond regular duties ·</text>
+        <text x="435" y="74" text-anchor="middle" font-size="8" font-weight="400" fill="#d7f0dc">resource persons (Curie Marie)</text>
+        <rect x="525" y="24" width="160" height="64" rx="9" fill="#a86a00"/>
+        <text x="605" y="46" text-anchor="middle" fill="#fff">ROYALTY SHARE</text>
+        <text x="605" y="62" text-anchor="middle" font-size="8" font-weight="400" fill="#f3e2b3">from inventions &amp; works —</text>
+        <text x="605" y="74" text-anchor="middle" font-size="8" font-weight="400" fill="#f3e2b3">now paired with RA 10055</text>
+        <rect x="695" y="24" width="170" height="64" rx="9" fill="#b3423a"/>
+        <text x="780" y="46" text-anchor="middle" fill="#fff">HAZARD ALLOWANCE</text>
+        <text x="780" y="62" text-anchor="middle" font-size="8" font-weight="400" fill="#f4cfcc">follows actual exposure,</text>
+        <text x="780" y="74" text-anchor="middle" font-size="8" font-weight="400" fill="#f4cfcc">not job title</text>
+        <rect x="355" y="98" width="160" height="64" rx="9" fill="#1d5fbf"/>
+        <text x="435" y="120" text-anchor="middle" fill="#fff">SUBSISTENCE &amp;</text>
+        <text x="435" y="134" text-anchor="middle" fill="#fff">LAUNDRY</text>
+        <text x="435" y="150" text-anchor="middle" font-size="8" font-weight="400" fill="#d4e4fb">per work circumstances</text>
+        <rect x="525" y="98" width="160" height="64" rx="9" fill="#6b4fa1"/>
+        <text x="605" y="120" text-anchor="middle" fill="#fff">HOUSING &amp;</text>
+        <text x="605" y="134" text-anchor="middle" fill="#fff">QUARTERS</text>
+        <text x="605" y="150" text-anchor="middle" font-size="8" font-weight="400" fill="#ddd2f0">assignments away from home</text>
+        <rect x="695" y="98" width="170" height="64" rx="9" fill="#27406b"/>
+        <text x="780" y="120" text-anchor="middle" fill="#fff">LONGEVITY PAY</text>
+        <text x="780" y="136" text-anchor="middle" font-size="8" font-weight="400" fill="#c8d2e4">sustained service rewarded</text>
+        <rect x="355" y="172" width="160" height="64" rx="9" fill="#4a5568"/>
+        <text x="435" y="194" text-anchor="middle" fill="#fff">MEDICAL &amp; HEALTH</text>
+        <text x="435" y="210" text-anchor="middle" font-size="8" font-weight="400" fill="#e3e0d8">examinations · care provisions</text>
+        <rect x="525" y="172" width="160" height="64" rx="9" fill="#1e7d4f"/>
+        <text x="605" y="194" text-anchor="middle" fill="#fff">STUDY &amp; CONFERENCES</text>
+        <text x="605" y="210" text-anchor="middle" font-size="8" font-weight="400" fill="#d7f0dc">graduate study · scientific meetings</text>
+        <rect x="695" y="172" width="170" height="64" rx="9" fill="#a86a00"/>
+        <text x="780" y="194" text-anchor="middle" fill="#fff">EACH BENEFIT HAS ITS</text>
+        <text x="780" y="208" text-anchor="middle" fill="#fff">OWN CONDITIONS</text>
+        <text x="780" y="224" text-anchor="middle" font-size="8" font-weight="400" fill="#f3e2b3">coverage ≠ automatic entitlement</text>
+      </g>
+      <rect x="90" y="270" width="720" height="110" rx="10" fill="#fbeceb" stroke="#b3423a" stroke-width="1.8"/>
+      <text x="450" y="296" text-anchor="middle" font-size="11" font-weight="800" fill="#b3423a">THE TWO-LAYER FUNDING QUESTION (the Ms. Rotasyon pattern)</text>
+      <text x="450" y="318" text-anchor="middle" font-size="9.5" fill="#1c2433">Layer 1 — implementation: benefits operate through IRR and appropriations; what does the funding condition lawfully permit an agency to defer?</text>
+      <text x="450" y="336" text-anchor="middle" font-size="9.5" fill="#1c2433">Layer 2 — equal application: can an agency grant the benefits to everyone EXCEPT one employee and plead "insufficient funds" as to her alone?</text>
+      <text x="450" y="360" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b3423a">full-credit answers argue both layers — the selective-denial layer is where such complaints are strongest</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 7.3 — The Magna Carta's architecture: the coverage gate, the benefits map, and the two-layer funding analysis.</span> RA 8439 — full text via <a href="https://lawphil.net/statutes/repacts/ra1997/ra_8439_1997.html" target="_blank" rel="noopener">LawPhil</a>; IRR and issuances via <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">DOST</a>.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The case-answering order is fixed: <strong>coverage → classification → conditions → computation</strong>. Students who compute an allowance for a person the Act may not cover have answered a question nobody asked — the Application step (Ch. 3's IRAC) begins at the definitions, every time.</aside>
+</section>
+
+<!-- ============ 7.4 ============ -->
+<section id="t4">
+  <h2><span class="secno">7.4</span>RA 11312 (2019): The Magna Carta Updated</h2>
+  <p class="lede">Two decades of inflation, new institutions, and accumulated implementation lessons separated 1997 from 2019. RA 11312 is Congress's answer: an amendatory act that strengthens RA 8439 rather than replacing it — which makes the pair a living exercise in Chapter 3's canon that <em>the later law prevails over the earlier where they conflict, and the two are read together where they do not</em>.</p>
+  <p>Read as amendment machinery, RA 11312 does three kinds of work. It <strong>broadens reach</strong> — refining coverage definitions so that the S&amp;T personnel of the wider public sector, including those in state universities and colleges and other government instrumentalities performing S&amp;T functions, sit more clearly inside the tent (a refinement that matters directly to the coverage arguments of Section 7.3). It <strong>updates the package</strong> — revisiting allowances and benefits whose 1997 terms had aged, and directing their rates and mechanics to current standards through updated implementing rules. And it <strong>hardens implementation</strong> — the amendment exists precisely because a benefit on paper without funded, regulated delivery is a promise, not a program; the 2019 act pushes the benefits from aspiration toward administrable entitlement. For your Case Analysis, the practical instruction is always to ask: <em>which version of the provision governs this scenario — the original section, or the section as amended?</em> The case that cites RA 8439 alone, where RA 11312 has spoken, has quoted a superseded rule; the case that cites both, in the right order, has done the Rule step properly.</p>
+  <p>One more reading matters. Your case set titles itself "RA No. 8439, RA No. 11312 Magna Carta for Scientists, Researchers…" — the pairing is the point. Scenario questions about compensation entitlements, benefit eligibility, and qualification will typically require you to hold the two texts side by side, find the operative section in each, and state explicitly which controls. That skill — reading a statute <em>as amended</em> — is the week's quiet learning objective, and it transfers to every amended law you will ever meet (you already practiced it on RA 9729/10174 in Chapter 4).</p>
+  <aside class="note ph"><span class="tag">PH Context</span><br>The Magna Carta pair sits inside a larger welfare-statute family — magna cartas for teachers, for public health workers, for women — and case examiners love boundary questions between them (a science teacher? a physician-researcher?). The answer discipline is the same: whose definitions capture this person's <em>actual functions</em>? Function beats title; title beats building.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Treating RA 11312 as a separate parallel statute. It is an <em>amendment</em>: its sections rewrite named sections of RA 8439. Quoting "Section 2 of RA 11312" in your Case Analysis means quoting what that section <em>did to</em> the Magna Carta — say so, and your Rule step becomes exact.</aside>
+</section>
+
+<!-- ============ 7.5 ============ -->
+<section id="t5">
+  <h2><span class="secno">7.5</span>Appointments, Movements, and Qualification Standards</h2>
+  <p class="lede">Half of your Case Analysis scenarios are classification puzzles: what <em>kind</em> of position, what <em>kind</em> of movement, what <em>kind</em> of engagement? The civil-service vocabulary answers them, and it is smaller than it looks.</p>
+  <p><strong>Positions.</strong> A <strong>plantilla</strong> position is a permanent item in an agency's staffing pattern: created by authority, graded under the Salary Standardization Law, carrying security of tenure and the full benefits architecture — Mr. Publico's University Researcher V is one. A <strong>contractual / contract-of-service</strong> engagement is project-bound: it lives and dies with the project (a GIA project, typically), carries no tenure and no plantilla benefits, and is compensated under the funder's rules — Mr. Ursulan's Project Officer IV is one. The two kinds answer to different masters: plantilla to the civil-service and compensation laws, contractual to the grant guidelines — which is precisely why their pay differs by design (Section 7.6).</p>
+  <p><strong>Qualification standards.</strong> Every position — plantilla or contractual — carries <strong>QS</strong>: the minimum education, experience, training, and (for plantilla posts) civil-service eligibility required for appointment. A qualification question like Mr. Ursulan's is answered against the QS of the position, element by element: does a BS in Financial Management satisfy the education requirement of a Project Officer IV on an accounting-applications project? Do seven years of accounting-firm experience satisfy the experience requirement? The method is pure IRAC Application — facts matched to the position's stated elements — and the salary difference between his old job and the new one is, analytically, <em>noise</em>: qualification is about the QS, not the pay jump.</p>
+  <p><strong>Movements.</strong> Four terms cover nearly every scenario. <strong>Detail</strong> — temporary movement to another <em>government</em> agency, no change of employer, position, or pay. <strong>Reassignment</strong> — movement within the same agency. <strong>Transfer</strong> — a genuine change of employer: resignation from one government post and appointment to another (what Prof. Son's move between universities actually is — with the consequences Chapter 5 and 6 taught). <strong>Secondment</strong> — temporary release to serve another entity, with the home position held and a right of return; the Magna Carta framework contemplates precisely this for S&amp;T personnel sharing expertise, including engagements with the private sector. Ms. Lehnie Pink — released full-time to a private company for six months, returning afterward to her University Researcher V post — is the textbook secondment fact pattern: temporary, full-time service elsewhere, home item preserved, return guaranteed. In your answer, define the term, quote the framework that authorizes it, and distinguish the neighbors (it is not a detail — the host is private; not a transfer — she returns; not moonlighting — it is full-time and sanctioned).</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="Personnel movement decision tree">
+      <rect x="330" y="16" width="240" height="56" rx="10" fill="#12203a"/>
+      <text x="450" y="40" text-anchor="middle" font-size="12" font-weight="800" fill="#f6edd2">A PERSON IS MOVING —</text>
+      <text x="450" y="58" text-anchor="middle" font-size="9.5" fill="#c8d2e4">classify the movement before judging it</text>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="380" y1="72" x2="140" y2="120"/><line x1="430" y1="72" x2="345" y2="120"/><line x1="470" y1="72" x2="555" y2="120"/><line x1="520" y1="72" x2="760" y2="120"/>
+      </g>
+      <g font-size="10.5" font-weight="800">
+        <rect x="40"  y="124" width="200" height="118" rx="10" fill="#1e7d4f"/>
+        <text x="140" y="148" text-anchor="middle" fill="#fff">DETAIL</text>
+        <text x="140" y="168" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">to another GOVERNMENT agency ·</text>
+        <text x="140" y="182" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">temporary · same employer,</text>
+        <text x="140" y="196" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">position, and salary</text>
+        <text x="140" y="222" text-anchor="middle" font-size="8.5" font-weight="700" fill="#ffe9a8">key: gov't-to-gov't, comes back</text>
+        <rect x="245" y="124" width="200" height="118" rx="10" fill="#1d5fbf"/>
+        <text x="345" y="148" text-anchor="middle" fill="#fff">REASSIGNMENT</text>
+        <text x="345" y="168" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">within the SAME agency ·</text>
+        <text x="345" y="182" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">new unit or station,</text>
+        <text x="345" y="196" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">same employer</text>
+        <text x="345" y="222" text-anchor="middle" font-size="8.5" font-weight="700" fill="#cfe0f7">key: the employer never changes</text>
+        <rect x="455" y="124" width="200" height="118" rx="10" fill="#6b4fa1" stroke="#c9a227" stroke-width="3.5"/>
+        <text x="555" y="148" text-anchor="middle" fill="#fff">SECONDMENT ★</text>
+        <text x="555" y="168" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">temporary release to another entity</text>
+        <text x="555" y="182" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">— incl. PRIVATE sector under the</text>
+        <text x="555" y="196" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">S&amp;T framework · home item held</text>
+        <text x="555" y="222" text-anchor="middle" font-size="8.5" font-weight="700" fill="#e8dcfa">key: right of return (Ms. Pink)</text>
+        <rect x="660" y="124" width="200" height="118" rx="10" fill="#b3423a"/>
+        <text x="760" y="148" text-anchor="middle" fill="#fff">TRANSFER</text>
+        <text x="760" y="168" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">a genuine change of employer —</text>
+        <text x="760" y="182" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">out of one post, into another ·</text>
+        <text x="760" y="196" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">nothing follows automatically</text>
+        <text x="760" y="222" text-anchor="middle" font-size="8.5" font-weight="700" fill="#f8dbd8">key: Prof. Son — projects don't ride along</text>
+      </g>
+      <rect x="150" y="284" width="600" height="70" rx="10" fill="#f6edd2"/>
+      <text x="450" y="308" text-anchor="middle" font-size="10.5" font-weight="800" fill="#a86a00">BENEATH ALL FOUR: QUALIFICATION STANDARDS</text>
+      <text x="450" y="328" text-anchor="middle" font-size="9.5" fill="#4a3a08">every position states its minimum education · experience · training · eligibility — qualification questions are answered</text>
+      <text x="450" y="344" text-anchor="middle" font-size="9.5" fill="#4a3a08">element-by-element against the QS, never against salary comparisons (the Ursulan method)</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 7.4 — The movement classifications and the QS floor beneath them.</span> Civil-service framework as applied to S&amp;T personnel under the Magna Carta and GIA rules; CSC resources at <a href="https://www.csc.gov.ph/" target="_blank" rel="noopener">csc.gov.ph</a>.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Classification precedes judgment: nearly every "is this allowed?" personnel case becomes easy once the movement or engagement is correctly named, because each class carries its own rules. Name it, cite the framework that defines it, then apply — the Application step doing its quiet work again.</aside>
+</section>
+
+<!-- ============ 7.6 ============ -->
+<section id="t6">
+  <h2><span class="secno">7.6</span>The Two-Track Compensation Architecture — and the Arithmetic of Your Cases</h2>
+  <p class="lede">Two of your highest-value cases — Mr. Ursulan's and Mr. Publico's — are the same lesson viewed from opposite ends: government science pays through <strong>two distinct tracks</strong>, and confusing them produces exactly the grievances the cases dramatize.</p>
+  <p><strong>Track one: plantilla compensation.</strong> A permanent position's pay is fixed by the <strong>Salary Standardization Law</strong>: every plantilla post carries a salary grade and step, and the incumbent receives that rate — no more, no less — plus the allowances and benefits (including the Magna Carta package where covered) that attach to permanent government service: tenure, leave credits, GSIS, retirement. The rate is public, standardized, and non-negotiable at appointment.</p>
+  <p><strong>Track two: project-based compensation.</strong> Personnel engaged for a funded project — contract-of-service, no plantilla item — are paid under the <em>funder's</em> compensation rules, benchmarked to the equivalent plantilla rate <strong>plus a premium</strong> (in GIA practice, up to twenty percent above the comparable government rate). The premium is not generosity; it is arithmetic honesty: it prices the tenure, leave, retirement, and benefit package the contractual worker does <em>not</em> receive. Now watch your two cases resolve. Mr. Ursulan's contractual Project Officer IV offers ₱104,090.40 monthly; Mr. Publico's <em>permanent</em> University Researcher V pays ₱86,742.00 — and he complains he "should be receiving ₱104,090.40." Run the arithmetic: <strong>₱86,742.00 × 1.20 = ₱104,090.40, exactly</strong>. The two figures are the same position's pay on the two tracks: the plantilla rate, and the plantilla rate with the contractual premium. Mr. Publico's expectation imports track two's rate into track one's appointment — but he chose (and received) the permanent track, whose compensation is the SSL rate <em>plus everything the premium exists to replace</em>. His complaint, analyzed, is an apples-to-oranges comparison the two-track design anticipates; the full-credit answer shows the ×1.20 computation, names what each track carries, and concludes accordingly.</p>
+  <p><strong>Honoraria: the third stream.</strong> Distinct from both tracks, honoraria compensate specific additional work — lectures, resource-person engagements, special assignments — under the Magna Carta and the budget rules that implement it. The method for a computation case like Ms. Curie Marie's five-hour expert engagement is fixed even where rates vary by issuance: <em>classify the engagement</em> (resource person / expert lecturer), <em>identify the applicable rate schedule</em> in the current implementing issuance (rates scale with the expert's classification), <em>multiply by the compensable hours</em>, and <em>show the computation</em> — the case instruction "show computation" is literal, and the marks are in the method as much as the product.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="Two-track compensation architecture with the case arithmetic">
+      <g font-size="11" font-weight="800">
+        <rect x="45" y="30" width="380" height="150" rx="10" fill="#1b2a4a"/>
+        <text x="235" y="56" text-anchor="middle" fill="#f6edd2">TRACK 1 · PLANTILLA (permanent)</text>
+        <text x="235" y="80" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">Salary Standardization Law: grade + step = the rate</text>
+        <text x="235" y="100" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">PLUS tenure · leave · GSIS · retirement ·</text>
+        <text x="235" y="116" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">Magna Carta benefits where covered</text>
+        <text x="235" y="146" text-anchor="middle" font-size="11.5" font-weight="800" fill="#ffe9a8">Mr. Publico · UR V · ₱86,742.00</text>
+        <text x="235" y="164" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">the SSL rate for his post — correct as paid</text>
+        <rect x="475" y="30" width="380" height="150" rx="10" fill="#1e7d4f"/>
+        <text x="665" y="56" text-anchor="middle" fill="#fff">TRACK 2 · PROJECT / CONTRACTUAL</text>
+        <text x="665" y="80" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">funder's rules (GIA): equivalent plantilla rate</text>
+        <text x="665" y="100" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">+ premium (up to 20%) — pricing the ABSENT</text>
+        <text x="665" y="116" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">tenure, leave, retirement, and benefits</text>
+        <text x="665" y="146" text-anchor="middle" font-size="11.5" font-weight="800" fill="#c9f7d8">Mr. Ursulan's post · ₱104,090.40</text>
+        <text x="665" y="164" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">project-funded, project-bound, no plantilla package</text>
+      </g>
+      <rect x="240" y="212" width="420" height="58" rx="10" fill="#c9a227"/>
+      <text x="450" y="236" text-anchor="middle" font-size="13" font-weight="800" fill="#12203a">₱86,742.00 × 1.20 = ₱104,090.40 — exactly</text>
+      <text x="450" y="256" text-anchor="middle" font-size="9.5" fill="#4a3a08">the two case figures are ONE position's pay on TWO tracks — the whole dispute, dissolved by arithmetic</text>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none"><line x1="235" y1="180" x2="330" y2="210"/><line x1="665" y1="180" x2="570" y2="210"/></g>
+      <rect x="150" y="300" width="600" height="58" rx="10" fill="#f1ecf9" stroke="#6b4fa1" stroke-width="1.8"/>
+      <text x="450" y="322" text-anchor="middle" font-size="10.5" font-weight="800" fill="#6b4fa1">THE THIRD STREAM · HONORARIA (Magna Carta)</text>
+      <text x="450" y="342" text-anchor="middle" font-size="9.5" fill="#1c2433">specific additional work: classify the engagement → find the current rate schedule → multiply by compensable hours → SHOW the computation</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 7.5 — The two-track compensation architecture, with the Case Analysis arithmetic resolved.</span> Plantilla rates per the Salary Standardization framework (<a href="https://www.dbm.gov.ph/" target="_blank" rel="noopener">DBM</a>); project rates and premium per the DOST-GIA guidelines (<a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">DOST</a>); honoraria per the Magna Carta and implementing budget issuances.</figcaption>
+  </figure>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Letting the sympathy run the analysis. Mr. Publico's disappointment is human — the number next door is bigger — but case answers are graded on the architecture: which track, which rules, which package. State the human premise kindly, then let the arithmetic and the design answer it. (And notice the reverse trap in Ursulan: the big salary does not make him qualified; the QS does or does not.)</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Budget your own proposal's people on the correct track: project RAs and field observers are track two (GIA rates with the premium, costed into PS per work package — Chapter 6); any plantilla faculty time is counterpart, valued at track-one rates. A proposal that pays a contractual RA a bare plantilla rate has quietly underpaid them by the price of every benefit they will not receive.</aside>
+</section>
+
+<!-- ============ 7.7 ============ -->
+<section id="t7">
+  <h2><span class="secno">7.7</span>The HRD Pipeline: Scholarships, the Scientific Career System, Balik Scientist</h2>
+  <p class="lede">Retention statutes keep the scientists you have; the human-resource development stack produces, ranks, and repatriates them. Four instruments complete the system of Figure 7.1.</p>
+  <p><strong>Scholarship statutes.</strong> RA 7687 — the <strong>Science and Technology Scholarship Act of 1994</strong> — funds undergraduate S&amp;T study for talented students, famously carrying a <strong>return-service obligation</strong>: scholars serve in the country, in their fields, for a period tied to their scholarship years. RA 10612 (2013) fast-tracks S&amp;T teachers along the same design. The service obligation is the design's load-bearing wall — public investment in a scholar is a loan repaid in national service, not a gift — and its enforcement questions (what counts as service? what happens on default?) are classic case material.</p>
+  <p><strong>The Scientific Career System.</strong> Administered jointly by DOST and the Civil Service Commission, the SCS is the dual ladder of Section 7.1 made official: a merit-based career path conferring the ranks of <strong>Scientist I through Scientist V</strong> on government researchers, evaluated on scientific productivity — publications, inventions, mentorship — rather than administrative position. Rank carries compensation and prestige, which means a productive researcher can rise for decades without ever leaving the bench: the statutory cure for the promotion-to-administrator brain injury that afflicts research institutions everywhere.</p>
+  <p><strong>The Balik Scientist Act.</strong> RA 11035 (2018) institutionalized the <strong>Balik Scientist Program</strong>: incentives — travel, insurance, allowances, facilitation, and for long-term awardees more substantial support — for Filipino scientists abroad to return, short-term or permanently, and infuse their expertise into local institutions. It is the diaspora read as a reservoir rather than a loss: the leak of Figure 7.1, partially reversed, one returning expert at a time. For a university team, a Balik Scientist hosted into your project is both a capability injection and an alignment argument (human-capital pillars, Chapter 2) that reviewers recognize instantly.</p>
+  <p><strong>Qualification standards, again.</strong> Beneath all of it, the QS framework of Section 7.5 governs entry and promotion at every rung — which is why "S&amp;T Human Resources Management and Development and Qualification Standards" appears in your syllabus as one breath: the pipeline produces people, the QS gates place them, the SCS ranks them, the Magna Carta keeps them, and the Balik program tops the reservoir back up.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 330" role="img" aria-label="The S&amp;T human resource development pipeline">
+      <g font-size="10.5" font-weight="800">
+        <rect x="30"  y="90" width="190" height="100" rx="10" fill="#1e7d4f"/>
+        <text x="125" y="116" text-anchor="middle" fill="#fff">PRODUCE</text>
+        <text x="125" y="136" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">RA 7687 · RA 10612 scholarships —</text>
+        <text x="125" y="150" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">public investment with a</text>
+        <text x="125" y="164" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">return-service obligation</text>
+        <rect x="250" y="90" width="190" height="100" rx="10" fill="#1d5fbf"/>
+        <text x="345" y="116" text-anchor="middle" fill="#fff">PLACE</text>
+        <text x="345" y="136" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">qualification standards gate</text>
+        <text x="345" y="150" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">every appointment — education ·</text>
+        <text x="345" y="164" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">experience · training · eligibility</text>
+        <rect x="470" y="90" width="190" height="100" rx="10" fill="#a86a00"/>
+        <text x="565" y="116" text-anchor="middle" fill="#fff">RANK &amp; KEEP</text>
+        <text x="565" y="136" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">Scientific Career System:</text>
+        <text x="565" y="150" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">Scientist I–V on merit (dual ladder) ·</text>
+        <text x="565" y="164" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">Magna Carta makes staying rational</text>
+        <rect x="690" y="90" width="180" height="100" rx="10" fill="#6b4fa1"/>
+        <text x="780" y="116" text-anchor="middle" fill="#fff">REPATRIATE</text>
+        <text x="780" y="136" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">RA 11035 Balik Scientist:</text>
+        <text x="780" y="150" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">the diaspora as reservoir —</text>
+        <text x="780" y="164" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">expertise pumped back in</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none" marker-end="url(#hrd)">
+        <line x1="220" y1="140" x2="245" y2="140"/><line x1="440" y1="140" x2="465" y2="140"/><line x1="660" y1="140" x2="685" y2="140"/>
+      </g>
+      <defs><marker id="hrd" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <path d="M 780 190 Q 700 280 450 285 Q 200 290 125 194" fill="none" stroke="#6b4fa1" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#hrd2)"/>
+      <defs><marker id="hrd2" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#6b4fa1"/></marker></defs>
+      <text x="450" y="268" text-anchor="middle" font-size="9.5" font-weight="700" fill="#6b4fa1">returning experts mentor the next scholarship cohort — the loop closes</text>
+      <text x="450" y="315" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">produce → place → rank &amp; keep → repatriate: the statute stack as one talent machine.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 7.6 — The S&amp;T HRD pipeline as a closed loop.</span> RA 7687 and RA 10612 (scholarships), the DOST–CSC Scientific Career System, RA 8439/11312 (retention), RA 11035 (Balik Scientist) — texts via <a href="https://lawphil.net/" target="_blank" rel="noopener">LawPhil</a>; programs via <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">DOST</a> and <a href="https://sei.dost.gov.ph/" target="_blank" rel="noopener">DOST-SEI</a>.</figcaption>
+  </figure>
+  <aside class="note ph"><span class="tag">PH Context</span><br>These are living programs, not museum statutes: DOST-SEI administers thousands of active scholars; the Balik Scientist Program hosts returnees across the country's universities — and a provincial physics department that has never hosted one is leaving a national instrument unused. Your final proposal may cite them as existing machinery it plugs into, not aspirations it invents.</aside>
+</section>
+
+<!-- ============ 7.8 ============ -->
+<section id="t8">
+  <h2><span class="secno">7.8</span>Synthesis: One Researcher, Five Statutes — and the Case Method Perfected</h2>
+  <p class="lede">Stand one government researcher in the middle of the room and watch the statutes of Chapters 5–7 arrange themselves around her.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 420" role="img" aria-label="The interlocking statute wheel around one researcher">
+      <circle cx="450" cy="210" r="80" fill="#12203a"/>
+      <text x="450" y="196" text-anchor="middle" font-size="12.5" font-weight="800" fill="#f6edd2">ONE GOVERNMENT</text>
+      <text x="450" y="214" text-anchor="middle" font-size="12.5" font-weight="800" fill="#f6edd2">RESEARCHER</text>
+      <text x="450" y="238" text-anchor="middle" font-size="9" fill="#c8d2e4">every question about her has</text>
+      <text x="450" y="252" text-anchor="middle" font-size="9" fill="#c8d2e4">a statute waiting to answer it</text>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="450" y1="130" x2="450" y2="86"/>
+        <line x1="374" y1="185" x2="235" y2="140"/>
+        <line x1="526" y1="185" x2="665" y2="140"/>
+        <line x1="380" y1="260" x2="245" y2="320"/>
+        <line x1="520" y1="260" x2="655" y2="320"/>
+      </g>
+      <g font-size="10" font-weight="800">
+        <rect x="330" y="20" width="240" height="64" rx="10" fill="#1e7d4f"/>
+        <text x="450" y="42" text-anchor="middle" fill="#fff">HER PAY &amp; BENEFITS</text>
+        <text x="450" y="58" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">RA 8439 as amended by RA 11312 —</text>
+        <text x="450" y="72" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">coverage → classification → conditions</text>
+        <rect x="40" y="88" width="240" height="64" rx="10" fill="#a86a00"/>
+        <text x="160" y="110" text-anchor="middle" fill="#fff">HER INVENTIONS</text>
+        <text x="160" y="126" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">RA 10055: RDI owns · she shares</text>
+        <text x="160" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">revenues · Magna Carta royalty share</text>
+        <rect x="620" y="88" width="240" height="64" rx="10" fill="#1d5fbf"/>
+        <text x="740" y="110" text-anchor="middle" fill="#fff">HER PROJECT'S RULES</text>
+        <text x="740" y="126" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">DOST-GIA AO 011 s. 2020: budget ·</text>
+        <text x="740" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">equipment · reports · extensions</text>
+        <rect x="50" y="324" width="240" height="64" rx="10" fill="#6b4fa1"/>
+        <text x="170" y="346" text-anchor="middle" fill="#fff">HER CAREER</text>
+        <text x="170" y="362" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">QS · Scientific Career System I–V ·</text>
+        <text x="170" y="376" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">movements: detail · secondment · transfer</text>
+        <rect x="610" y="324" width="240" height="64" rx="10" fill="#b3423a"/>
+        <text x="730" y="346" text-anchor="middle" fill="#fff">HER FIELD'S FUTURE</text>
+        <text x="730" y="362" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">RA 7687/10612 scholars behind her ·</text>
+        <text x="730" y="376" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">RA 11035 colleagues returning</text>
+      </g>
+    </svg>
+    <figcaption><span class="fignum">Figure 7.7 — The interlocking statute wheel: Chapters 5–7 arranged around one working researcher.</span> The synthesis your Case Analysis assumes — most scenarios sit at the seams between two spokes.</figcaption>
+  </figure>
+  <p>Now perfect the case method with a full worked IRAC on the chapter's hardest pattern. <em>Scenario (the Rotasyon pattern): a newly hired Chief Science Research Specialist in a government research institute — three months in service, the only employee not receiving Magna Carta benefits, the institute pleading insufficient funds — sues for non-payment.</em> <strong>Issue:</strong> May a government RI withhold Magna Carta benefits from one covered employee on grounds of fund insufficiency while granting them to all others? <strong>Rule:</strong> RA 8439 as amended by RA 11312 grants covered S&amp;T personnel the statutory benefit package; implementation operates through IRR and appropriations; and public employers act under the equal-application principle — like cases treated alike. <strong>Application:</strong> Coverage is clean (a Chief Science Research Specialist in a government RI performs S&amp;T functions; tenure length is not a coverage element — the Act does not probation-gate its protections). Classification: she claims the standard package, not exposure-conditioned allowances, so no special conditions block her. The funding defense then does the real work — and fails at the second layer: whatever latitude fund insufficiency lawfully gives an agency, it is latitude about the <em>program</em>, not a license to select <em>one employee</em> for exclusion; an institute that funds the benefits for everyone except its newest hire is not describing scarcity, it is describing discrimination, and "insufficient funds" that are sufficient for all-but-one is a contradiction the agency must explain, not a defense it may rest on. <strong>Conclusion:</strong> Her complaint has substantial grounds; the remedy runs to equal inclusion in the funded benefits and payment of what selective exclusion withheld — with the caveat every honest answer carries: the precise entitlements follow the current IRR's terms, which the full answer quotes. Notice the method's shape one last time: <em>coverage → classification → conditions → computation</em>, with the statutory purpose (Section 7.1's leak) illuminating every step — a benefits regime built to keep scientists cannot coherently be read to exclude the newest scientist first.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The course's management arc closes here: Chapter 6 managed the project; Chapter 7 manages the people the project is made of. Your Week-12 proposal's PS lines, training packages, and partnership commitments are this chapter — costed. And your Case Analysis is this chapter — argued.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Add the one-paragraph <strong>people plan</strong> reviewers rarely see and always reward: how the project pays fairly (correct track and premium), builds its members (training work package, conference support), credits them (authorship and RA 10055 shares), and leaves them better placed (certifications, graduate-study alignment). Four sentences that say: this team knows its scarcest input.</aside>
+</section>
+
+<!-- ============ MASTERY TEST ============ -->
+<section id="test">
+  <h2><span class="secno">✓</span>Chapter 7 Mastery Test — 20-Item HOTS Multiple Choice</h2>
+  <p>Each item targets applying, analyzing, or evaluating — most in Case Recitation style. Choose your answer before opening the dropdown. Suggested protocol: answer all 20 before revealing any explanation.</p>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does this chapter insist the Magna Carta is "incentive engineering against the leak" rather than a welfare gesture?</p>
+    <ol class="opts"><li>Because welfare is embarrassing to legislate</li><li>Because every provision prices a specific reason scientists leave — low pay (allowances, honoraria), no upside from invention (royalty share, with RA 10055), no scientific career path (the SCS's dual ladder) — reading provisions through the leak they plug is what makes ambiguous cases decidable by purpose</li><li>Because engineers wrote the statute</li><li>Because benefits are taxable</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Purposive reading is the chapter's master key: when text is ambiguous, the interpretation that serves retention usually wins, because retention is what Congress was buying. This is the same statutory-purpose move you used on RA 10121's proactive paradigm and RA 10535's single timescale — now applied to people.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Applying</span></div>
+    <p class="stem">In the GIA cast, match the actor to the act: issuing the call and signing the MOA; tracking implementation through reports; executing the research and owning the resulting IP.</p>
+    <ol class="opts"><li>Implementing agency · funding agency · monitoring agency</li><li>Funding agency · monitoring agency · implementing agency (RDI)</li><li>Monitoring agency · implementing agency · funding agency</li><li>COA · DBM · CSC</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The three-actor structure runs the whole regime: funder calls and contracts, monitor watches (consuming Chapter 6's reports), RDI executes and — per RA 10055 — owns the IP. Knowing who does what tells you whom each case document binds: the MOA binds funder and RDI, which is why no project leader can carry it elsewhere.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Applying</span></div>
+    <p class="stem">A government research institute's permanent maintenance laborer spends thirty years keeping the laboratories' instruments calibrated and operational. Asked whether the Magna Carta covers him, the correct analytical <em>opening move</em> is:</p>
+    <ol class="opts"><li>Deny coverage — laborers are not scientists</li><li>Go to the definitions: the Act covers scientists, engineers, researchers <em>and other S&amp;T personnel</em> in government — so the question is whether his actual functions (direct, continuous support of S&amp;T operations) place him within "other S&amp;T personnel" as the Act and IRR define it; argue the classification from his functions, both ways, before concluding</li><li>Grant coverage — thirty years earns anything</li><li>Ask whether he owns a laboratory coat</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Coverage is a definitions question, and the definition's tail — "other S&amp;T personnel" — is where support staff live or don't. Function beats title: what he <em>does</em> (S&amp;T support functions in a government RI) is the operative fact, not what he is called. A and C decide by sympathy in opposite directions; the Act decides by classification.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A covered researcher demands hazard allowance because "the Act grants it to S&amp;T personnel." Her work is entirely computational, in an ordinary office. The correct analysis is:</p>
+    <ol class="opts"><li>Pay it; coverage means everything</li><li>Coverage passes but conditions fail: hazard allowance follows <em>actual exposure to hazardous conditions</em>, not membership in the covered class — each benefit carries its own eligibility conditions, and "covered by the Act" never automatically means "entitled to every benefit"</li><li>Deny coverage entirely because she is safe</li><li>Convert the claim to laundry allowance as compromise</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The four-step order at work: coverage (yes) → classification (hazard allowance) → conditions (exposure — absent) → computation (never reached). C commits the reverse error, letting a benefit's conditions contaminate the coverage question. Most Magna Carta case errors are step-order errors.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">An RI grants Magna Carta benefits to all 84 covered employees except the newest hire, pleading "insufficient funds" as to her. The strongest evaluation of the defense is:</p>
+    <ol class="opts"><li>It holds; agencies may ration freely</li><li>It fails at the equal-application layer: funding latitude, whatever its lawful scope, concerns the program — not the selection of one employee for exclusion; funds "insufficient" for exactly one person while sufficient for all others describe discrimination wearing a budget's clothes</li><li>It holds if the newest hire is young</li><li>It fails only if she files within one week</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The two-layer analysis of Figure 7.3: implementation-through-appropriations is a real feature of the benefits architecture, but it cannot be operated person-by-person. The arithmetic itself impeaches the defense — a fund that covers n−1 of n claimants is not "insufficient" in any sense the law respects. This is the Rotasyon pattern's core, worked fully in Section 7.8.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">How should a case answer use RA 8439 and RA 11312 together?</p>
+    <ol class="opts"><li>Cite whichever is shorter</li><li>As statute-and-amendment: find the operative section in RA 8439, check whether RA 11312 rewrote it, and state explicitly which text governs the scenario — quoting the original where an amendment has spoken is quoting a superseded rule</li><li>As two unrelated laws to alternate between</li><li>Ignore RA 11312; older is more authentic</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Reading a statute <em>as amended</em> is the week's quiet skill: the later law prevails where they conflict; they read together where they don't (the Chapter 3 canon, third application after RA 9729/10174). The Case Analysis template's "Based on Section 2 of RA 11312…" models exactly this precision.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Applying</span></div>
+    <p class="stem">Distinguish the two positions: University Researcher V (permanent plantilla) versus Project Officer IV (contractual, DOST project). The correct rule-pairing is:</p>
+    <ol class="opts"><li>Both are governed identically by the SSL</li><li>The plantilla post: SSL salary grade, tenure, leave, GSIS, Magna Carta package where covered; the contractual post: the funder's (GIA) compensation rules, project-bound, no plantilla benefits — two tracks, two masters, two packages</li><li>The contractual post outranks the plantilla one</li><li>Both are private-sector employment</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The two-track architecture is the load-bearing distinction of your compensation cases: which track a person is on determines which rules answer every question about them. Confusing the tracks generates exactly the grievances the cases dramatize — and diagnosing that confusion is the graded skill.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">A permanent University Researcher V receives ₱86,742.00 monthly and complains he "should receive ₱104,090.40" — the rate a DOST project pays its contractual Project Officer IV. The decisive computation and conclusion:</p>
+    <ol class="opts"><li>He is right; equal work, equal pay</li><li>₱86,742.00 × 1.20 = ₱104,090.40 exactly: the two figures are one rate on two tracks — the plantilla rate, and the plantilla rate plus the contractual premium that prices the tenure, leave, retirement, and benefits he <em>does</em> receive and the contractual worker does not; his complaint imports track two's number into track one's package, and fails</li><li>Both salaries are typos</li><li>He should sue for the difference plus interest</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The arithmetic is the argument: the 20% premium is not a raise he was denied but the cash price of the security he enjoys. A's slogan fails because the work packages differ precisely in what surrounds the salary. Show the multiplication in your case answer — examiners built the numbers to reward students who notice.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Applying</span></div>
+    <p class="stem">Mr. Ursulan (BS Financial Management, 7 years' accounting experience, current salary ₱28,500) applies for the contractual Project Officer IV post (₱104,090.40) on an accounting-apps project. The correct method for "is he qualified?" is:</p>
+    <ol class="opts"><li>No — his current salary is too low for such a jump</li><li>Check him against the position's qualification standards element by element — education, experience, training required by the QS for Project Officer IV on this project — his degree and seven years' relevant accounting experience argued against each stated element; the salary jump is analytically irrelevant to qualification</li><li>Yes — anyone may hold any contractual post</li><li>No — only accountants with PhDs qualify</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Qualification is a QS question, answered by element-matching (the IRAC Application step in its purest form); pay history is noise. Note the twin trap: the big salary neither qualifies nor disqualifies him — just as, in the mirror case, the plantilla holder's smaller salary implied no injustice. The QS and the track rules each answer their own question.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">An Associate Professor III at a government research university gives a five-hour expert talk as an invited resource person. The correct method for computing her honorarium is:</p>
+    <ol class="opts"><li>Whatever the host feels she deserves</li><li>Classify the engagement (resource person / expert lecturer), identify the applicable rate schedule in the current implementing issuance — rates scale with the expert's classification — multiply the rate by the five compensable hours, and show the computation explicitly, since the rates live in issuances that must be cited, not remembered</li><li>Her monthly salary divided by five</li><li>Zero; professors must lecture free</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Honoraria are the third compensation stream, and computation cases grade the method: classification → current rate schedule → hours → shown arithmetic. The rates themselves are operational-layer material (budget issuances under the Magna Carta) — quote the current one, per the Chapter 5 currency-check habit.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Applying</span></div>
+    <p class="stem">A University Researcher V is released full-time for six months to a private data-mechatronics company to share her expertise, then returns to her post. Classify the engagement:</p>
+    <ol class="opts"><li>Transfer — she changed employers</li><li>Secondment — temporary, sanctioned full-time service with another entity (including private, under the S&amp;T framework), her home item held and her return guaranteed; not a detail (the host is private), not a transfer (she returns), not moonlighting (full-time and authorized)</li><li>Detail — any movement is a detail</li><li>Resignation with rehiring privileges</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The textbook secondment fact pattern (Ms. Pink's case): the three distinguishing marks are temporariness, an external host, and the preserved home position with right of return. Full credit distinguishes the neighbors explicitly — the examiners chose facts that eliminate each alternative one by one.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the Scientific Career System confer Scientist I–V ranks on <em>research merit</em> rather than administrative position?</p>
+    <ol class="opts"><li>To create more paperwork</li><li>It is the dual ladder legislated: without a technical track that rises in rank and pay, the only promotion for an excellent scientist is into administration — converting the best researchers into managers and losing both a scientist and (often) gaining a poor manager; the SCS lets a productive researcher rise for decades without leaving the bench</li><li>Because administrators refused to share titles</li><li>To discourage publication</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The dual-ladder principle from the management literature (Section 7.1), made statutory: promotion within science, judged by scientific productivity, jointly administered by DOST and the CSC. It is the retention architecture's answer to the subtlest leak — the one where the scientist stays in government but stops doing science.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">RA 7687 scholarships carry a return-service obligation. The design logic is:</p>
+    <ol class="opts"><li>Punishment for accepting free tuition</li><li>The scholarship is a public investment repaid in national service: the State funds the training the market under-supplies, and the service obligation ensures the resulting scientist works, for a defined period, where the investment was made — converting a gift into a loop that refills the very pipeline of Figure 7.1</li><li>A formality no one enforces</li><li>A way to keep scholars from graduate school</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The obligation is the wall that makes the pipeline hold water: without it, public scholarship money subsidizes other countries' laboratories. Enforcement and what-counts-as-service questions are live case material — and the design logic (investment-and-return) is what any ambiguity should be resolved toward.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your department wants a Filipina radio astronomer, twenty years at a European observatory, to spend a year building your receiver lab. The statutory instrument built for exactly this is:</p>
+    <ol class="opts"><li>A tourist visa and goodwill</li><li>The Balik Scientist Program (RA 11035): incentives and facilitation for Filipino scientists abroad to return short- or long-term and infuse expertise into local institutions — the diaspora treated as reservoir, with your university as host institution</li><li>A plantilla item she must win by exam</li><li>Secondment from the European observatory</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The Balik Scientist Act institutionalized precisely this repatriation channel, with benefits scaled to engagement length. D misuses the classification vocabulary (secondment is her <em>current employer's</em> instrument, not yours); C erects the barrier the program exists to bypass. For your proposal, a hosted Balik Scientist is both capability and a ready-made alignment paragraph.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A researcher's invention earns royalties. RA 8439's royalty-share provision and RA 10055's revenue sharing relate how?</p>
+    <ol class="opts"><li>They contradict; the older wins</li><li>They are complementary layers of one incentive: the Magna Carta established the principle that government S&amp;T personnel share in the fruits of their inventions; RA 10055 built the full ownership-and-commercialization machinery (RDI ownership, diligence, revenue sharing) through which such shares now typically flow — cite them together, machinery and principle</li><li>Royalties are forbidden to government employees</li><li>Each cancels the other, leaving nothing</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The statutes interlock rather than collide (Figure 7.7's wheel): the Magna Carta names the entitlement; the Technology Transfer Act operationalizes the pipeline that produces the money. A researcher-inventor case should walk both spokes — and note the shared purpose: rewarding invention where it happens, against the leak.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A project leader manages her three RAs by prescribing their daily methods in detail, since "the grant is my responsibility." Against Section 7.1's principles, the evaluation is:</p>
+    <ol class="opts"><li>Correct management; control is care</li><li>A category error about creative work: accountability attaches to objectives and outputs (the logframe's design), while method autonomy is what the RAs' expertise was hired for — prescribing the <em>how</em> buys compliance at the price of the creativity, initiative, and growth the project actually needs, and it is the quiet first chapter of every resignation letter</li><li>Fine if the RAs are young</li><li>Wrong only because three is too few to manage</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Autonomy-with-accountability is the first principle of R&amp;D people management: control what must be delivered, not how thinking happens. The grant's accountability structure (Chapter 6) already supplies the objective-level controls; duplicating them at the method level adds no assurance and subtracts the motivation that retention depends on.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Applying</span></div>
+    <p class="stem">In your proposal's budget, a contractual field observer is costed at exactly the plantilla rate of the comparable government position. The Chapter 7 correction is:</p>
+    <ol class="opts"><li>None; matching plantilla rates is generous</li><li>Underpayment by design: contract personnel receive no tenure, leave, GSIS, or benefits package — the GIA premium (up to 20% above the comparable rate) exists to price that absence, and a budget that omits it has silently paid the observer less than the architecture intends; correct the PS line and show the computation</li><li>Overpayment; contractuals should earn less</li><li>Irrelevant; PS lines are unaudited</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The two-track arithmetic, applied to your own workplan: the premium is the honest price of precarity. This is where Chapter 7 becomes a budgeting instruction (Chapter 6's PS lines) and an ethics instruction at once — the people plan of Section 7.8 begins with paying the track correctly.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A case scenario involves a government science <em>teacher</em> claiming Magna Carta (RA 8439) benefits. The correct boundary analysis is:</p>
+    <ol class="opts"><li>Grant them; teaching is science-adjacent</li><li>Check whose definitions capture her actual functions: the teachers' own magna carta governs teaching personnel, while RA 8439 covers S&amp;T functions in government — a classroom teacher falls to the former, while a teacher genuinely performing research/S&amp;T functions in a government RI presents a real classification question to be argued from functions, not labels</li><li>Deny everything; teachers have no statutes</li><li>Let her choose whichever pays more</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The welfare-statute family creates boundary cases, and the discipline is constant: function beats title, title beats building. D fails because coverage is a classification of fact, not a menu; A and C decide by vibe. Examiners love this boundary precisely because it forces the definitions-first method.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two people plans reach a panel. Plan X: "Our team is passionate and hardworking." Plan Y: "RAs at GIA rates with premium (PS, WP-costed); one training work package with certification MOVs; authorship per ICMJE; RA 10055 revenue shares per University policy; conference support budgeted; a Balik Scientist hosted in Year 2." The panel's reading is:</p>
+    <ol class="opts"><li>X wins; passion is unbudgetable and therefore priceless</li><li>Y demonstrates the talent system operated — correct track and premium, development with verifiable outputs, credit architecture, and a repatriation instrument — while X is the unfalsifiable sentence in its sixth domain; by now the diagnosis writes itself</li><li>Both are equivalent</li><li>Y is worse for mentioning money and people together</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Agendas, statutes, compliance, IP, management, and now people: the verifiable-objects standard completes its tour of the course. Plan Y also happens to be the Section 7.8 people-plan paragraph, itemized — evidence that the proposer knows the scarcest input and the machinery built to keep it.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">Final synthesis: a single case scenario involves a seconded researcher whose project-funded invention earns royalties while her benefits are withheld for "lack of funds." Which statute-mapping correctly assigns each question?</p>
+    <ol class="opts"><li>One statute must answer everything; pick the longest</li><li>Movement classification → civil-service/S&amp;T secondment framework; invention ownership and revenue → RA 10055 (RDI owns, she shares) with the Magna Carta's royalty-share principle; benefits withholding → RA 8439/11312 coverage-conditions-funding analysis with the equal-application layer; project rules throughout → the GIA guidelines and MOA — four questions, four spokes of Figure 7.7, answered separately then assembled</li><li>All questions reduce to the GIA guidelines</li><li>The scenario is unanswerable and should be skipped</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The separation habit's final form: complex scenarios are several simple questions wearing one narrative, and the statute wheel assigns each to its spoke. Decompose, answer each with its own Rule and Application, then assemble the conclusions — this is precisely how an 850-point Case Analysis is engineered to be answered, and precisely how full credit is earned.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section id="refs">
+  <h2><span class="secno">◈</span>References and Readings (Clickable)</h2>
+  <h3>Primary Texts</h3>
+  <ul class="plain">
+    <li>RA 8439 — Magna Carta for Scientists, Engineers, Researchers and other S&amp;T Personnel in Government (1997) — <a href="https://lawphil.net/statutes/repacts/ra1997/ra_8439_1997.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>RA 11312 — amending RA 8439 (2019) — <a href="https://lawphil.net/statutes/repacts/ra2019/ra_11312_2019.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>DOST AO 011 s. 2020 — Revised Guidelines for the Grants-in-Aid Program — via <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">dost.gov.ph</a> (with the case set's related issuances: DOST AO 001 s. 2020 · AO 508 s. 2013 · SO 009 s. 2021)</li>
+    <li>RA 7687 — Science and Technology Scholarship Act (1994) — <a href="https://lawphil.net/statutes/repacts/ra1994/ra_7687_1994.html" target="_blank" rel="noopener">LawPhil</a> · RA 10612 — Fast-Tracked S&amp;T Scholarship Act (2013) — <a href="https://lawphil.net/statutes/repacts/ra2013/ra_10612_2013.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>RA 11035 — Balik Scientist Act (2018) — <a href="https://lawphil.net/statutes/repacts/ra2018/ra_11035_2018.html" target="_blank" rel="noopener">LawPhil</a></li>
+  </ul>
+  <h3>Institutions and Systems</h3>
+  <ul class="plain">
+    <li>DOST Science Education Institute (scholarships; Balik Scientist administration) — <a href="https://sei.dost.gov.ph/" target="_blank" rel="noopener">sei.dost.gov.ph</a></li>
+    <li>Civil Service Commission (qualification standards; movements; the Scientific Career System, jointly with DOST) — <a href="https://www.csc.gov.ph/" target="_blank" rel="noopener">csc.gov.ph</a></li>
+    <li>Department of Budget and Management (salary standardization; honoraria and allowance issuances) — <a href="https://www.dbm.gov.ph/" target="_blank" rel="noopener">dbm.gov.ph</a></li>
+    <li>National Academy of Science and Technology (Scientific Career System partnership) — <a href="https://nast.dost.gov.ph/" target="_blank" rel="noopener">nast.dost.gov.ph</a></li>
+  </ul>
+  <h3>Management Literature</h3>
+  <ul class="plain">
+    <li>Daim, T., Kim, J., &amp; Phan, K. (2017). <em>Research and Development Management.</em> Springer — <a href="https://link.springer.com/book/10.1007/978-3-319-54537-0" target="_blank" rel="noopener">publisher page</a></li>
+    <li>Gilbert, P., et al. (2018). <em>Innovation, Research, and Development Management.</em> Wiley — <a href="https://www.wiley.com/" target="_blank" rel="noopener">publisher</a></li>
+    <li>Course case materials: TE01 Case Analysis (Ursulan · Rotasyon · Publico de Los Santos-Caparal · Newton · Curie Marie · Pink · Project UWU)</li>
+  </ul>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch6-lecture.html">&#8592; Ch. 6 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch7-reinforcement.html">Ch. 7 Reinforcement</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 7 Lecture Pack · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

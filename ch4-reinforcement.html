@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 4 Reinforcement Exercises — Environmental Legislation and Maritime Jurisdiction</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 4 Reinforcement Exercises</h1>
+  <div class="subtitle">Environmental Legislation and Maritime Jurisdiction · RA 8749 · RA 9003 · RA 9275 · RA 9729/10174 · UNCLOS · 20-Item HOTS Multiple Choice + 3-Item HOTS Essay · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Exercise sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#howto">How to Use</a></li>
+    <li><a href="#mcq">Part I · Multiple Choice (20 items)</a></li>
+    <li><a href="#essay">Part II · Essay (3 items)</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="howto">
+  <div class="objectives">
+    <h4>How to Use This Reinforcement Set</h4>
+    <p>These exercises are <em>formative</em> — for building mastery after the Chapter 4 lecture, not for grading. All items are HOTS-level (applying, analyzing, evaluating, creating), most in Case Recitation style, and use fresh scenarios not found in the Mastery Test. Answer each item — for essays, write the full IRAC or design response — before opening the dropdown to compare with the model answer.</p>
+  </div>
+</section>
+
+<!-- ============ PART I ============ -->
+<section id="mcq">
+  <h2><span class="secno">I.</span>Reinforcement Multiple Choice — 20 HOTS Items</h2>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Applying</span></div>
+    <p class="stem">An LGU adjacent to your site announces "Clean Air Fridays" — a weekly car ban — while permitting a quarry's uncontrolled dust emissions all week. In regulatory-cycle terms (Fig. 4.1), the program's defect is:</p>
+    <ol class="opts"><li>Fridays are the wrong day</li><li>Enforcement is decoupled from standards and monitoring: a gesture at one mobile-source slice while a permitted stationary source violates emission standards daily — the cycle works only when permits, monitoring, and enforcement act on the same standards</li><li>Car bans are illegal under RA 8749</li><li>Quarries are exempt from air law</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The regulatory machine is a loop, not a menu: standards define the target, permits and monitoring locate the violators, enforcement acts on findings. Symbolic enforcement detached from monitoring data is regulatory theater. C and D are false — mobile-source measures are within the Act, and stationary sources are its core permit clientele.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Your aerosol-optical-depth station shows sharp evening extinction spikes each harvest season. The most statute-literate interpretation and response is:</p>
+    <ol class="opts"><li>The stars are dimming seasonally; publish immediately</li><li>The signature suggests open burning of agricultural residue — restricted under the Clean Air framework; the data can serve both your extinction correction and the airshed's monitoring stage, so share it with the EMB/LGU as evidence for enforcement and alternatives</li><li>Ignore it; harvest is cultural</li><li>Sue every farmer within 50 km</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> One dataset, two uses — the co-location logic of the lecture: the astronomy needs the extinction series anyway, and the regulatory cycle needs credible monitoring. The constructive route is data-to-regulator plus community alternatives (composting per RA 9003's hierarchy), not litigation theater (D) or misattribution (A).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your observatory's decommissioned electronics — controller boards, UPS batteries, CCD cameras — are offered by a contractor for "free disposal by burning at the town dumpsite." Count the violations implied:</p>
+    <ol class="opts"><li>None; free is free</li><li>At least three: incineration of waste (RA 8749 ban), disposal at an open dumpsite (RA 9003 requires sanitary landfills; open dumps are banned), and mishandling of special/hazardous e-waste that must be segregated and treated, not burned</li><li>One at most, and only if smoke is visible</li><li>Two, but they cancel out</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The offer stacks violations across statutes: the burn (air), the dump (waste), and the e-waste stream (special waste handling). Research facilities are waste generators with duties — Figure 4.8's point that your facility plan is a compliance document. The correct route: segregation, accredited e-waste treatment, documented chain of custody.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A festival organizer says: "We'll just hire more garbage trucks — problem solved." Under RA 9003's hierarchy, evaluate.</p>
+    <ol class="opts"><li>Correct; hauling capacity is the whole of waste law</li><li>Hauling optimizes the bottom tier only: without segregation at source and MRF recovery, the trucks carry recyclables and compostables to residual disposal — maximal cost, maximal landfill burden, minimal compliance with the hierarchy's upper tiers</li><li>Correct if the trucks are new</li><li>Wrong only because trucks emit carbon</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The hierarchy is a design constraint, not a suggestion: effort belongs at reduction and recovery, with disposal as the residual. "More trucks" is the logistics version of work-at-the-bottom — and for a dark-sky event, the visible waste stream is also a reputational dataset the community will read.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">RA 9275 charges dischargers fees that decrease as their effluent improves. The regulatory-design logic is:</p>
+    <ol class="opts"><li>Revenue maximization for the DENR</li><li>An incentive instrument layered on the permit system: pricing the discharge internalizes the pollution cost and rewards continuous improvement beyond bare compliance — the fund the fees feed then finances monitoring and restoration</li><li>Punishing water use as such</li><li>A typographical error in the statute</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Modern environmental statutes mix command-and-control (standards, permits) with economic instruments (fees, funds): the price signal works continuously where inspections work occasionally. Recognizing instrument <em>types</em> — command, price, information — lets you read any new statute's toolkit quickly.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your catchment model needs a governance partner for a river whose watershed spans three municipalities. Under RA 9275, the natural institutional counterpart is:</p>
+    <ol class="opts"><li>Whichever mayor answers first</li><li>The Water Quality Management Area designated around the water body — the governance unit drawn at catchment scale, whose governing board and monitoring program match your model's domain exactly</li><li>The barangay nearest the river mouth</li><li>No partner exists for multi-LGU water bodies</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The WQMA is the ecosystem-boundary paradigm institutionalized: multi-LGU water bodies get a management area with cross-boundary governance — precisely the counterpart problem (one river, three mayors) the design solves. Your model's domain and the law's monitoring domain coincide, which is the research-ready property again.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A senator proposes redirecting the People's Survival Fund to national mitigation megaprojects "for bigger climate impact." The strongest structural objection is:</p>
+    <ol class="opts"><li>Mitigation is worthless</li><li>It inverts the fund's statutory design: the PSF exists (via RA 10174) to finance <em>local adaptation</em> with LGUs and accredited community organizations as proponents — repurposing it nationalizes and mitigates away the one protected channel for community-scale adaptation finance</li><li>Megaprojects are always corrupt</li><li>The PSF may only fund conferences</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Funds carry design intent: the PSF's proponent rules and adaptation focus target exactly the actors and activities national budgets underserve — the same protected-fund logic as the LDRRMF's 70%. The objection is structural, not a value judgment about mitigation (A) or motives (C).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">A university team wants its heat-island and rainfall-downscaling study used by a city government. The chapter's most direct uptake pathway is:</p>
+    <ol class="opts"><li>Publish and hope</li><li>Time and shape the outputs for the city's LCCAP revision — the statutorily required local climate plan is the document a city must produce, so research packaged as LCCAP evidence has a mandated consumer</li><li>Bill the city for consulting</li><li>Send the mayor a preprint link</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Mandated plans are guaranteed readers: every LGU must write an LCCAP, and evidence formatted for it (hazard maps, exposure tables, prioritized options) enters governance by requirement rather than by luck. This is the uptake pattern of the whole course — find the document your user is legally obliged to produce, and feed it.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">"Adaptation science is just weather forecasting with extra steps." The best rebuttal from this chapter's framework is:</p>
+    <ol class="opts"><li>Forecasting is also easy</li><li>Adaptation planning needs a different product: not tomorrow's weather but decadal risk under changing baselines — downscaled projections, exposure and vulnerability mapping, options appraisal — feeding statutory instruments (NCCAP, LCCAP, PSF proposals) that forecasts alone cannot fill</li><li>Weather and climate are unrelated</li><li>Adaptation science requires no data</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The statutes define the product: an LCCAP consumes risk-under-change analysis, not bulletins. The distinction is time horizon and decision content — planning instruments need projections and options, warning systems need nowcasts. C overcorrects (climate is weather statistics under forcing); the truth is complementarity across RA 10121 and RA 9729 instruments.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">Place these instruments: (1) a tide gauge bolted to a municipal pier; (2) a wave buoy 30 nm offshore; (3) a drifting profiler released 250 nm offshore in unclaimed waters. The zone sequence is:</p>
+    <ol class="opts"><li>1 internal/archipelagic or port waters · 2 EEZ · 3 high seas</li><li>1 EEZ · 2 territorial sea · 3 contiguous zone</li><li>All three high seas</li><li>1 high seas · 2 internal waters · 3 EEZ</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> The pier sits in waters landward of the baselines (internal/archipelagic — fullest sovereignty); 30 nm is past the 24-nm contiguous limit and inside the 200-nm EEZ; 250 nm beyond national zones is high seas with freedom of research. Zone determination per instrument is the one-line habit Figure 4.8 asks your workplan to show.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the archipelagic doctrine matter so much to the Philippines specifically?</p>
+    <ol class="opts"><li>It sounds impressive in speeches</li><li>It converts the waters <em>between</em> islands into sovereign archipelagic waters enclosed by straight baselines — legally unifying a scattered island nation into one integrated territory of land and sea, rather than islands each casting a thin ring of sea</li><li>It abolishes the need for a navy</li><li>It applies only to Luzon</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Without the doctrine, inter-island waters could be high-seas corridors splitting the country legally in two; with it, the nation is one land-and-water unit. For science it means inter-island instrument networks (ferries-of-opportunity sensors, inter-island cables) operate in sovereign waters under domestic rules — one legal regime, not a patchwork.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Applying</span></div>
+    <p class="stem">A foreign-flagged yacht transits your province's territorial sea while towing a hydrophone array "for a podcast about whale sounds." The best legal characterization is:</p>
+    <ol class="opts"><li>Innocent passage; nothing more to say</li><li>Passage ceases to be innocent when it includes research or survey activities: data collection in the territorial sea requires Philippine consent — the "podcast" framing does not remove the activity from the MSR/survey category</li><li>Whale sounds are unowned, so all is lawful</li><li>Only the coast guard may listen to whales</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> UNCLOS conditions innocent passage on abstaining from, among other things, research and survey activities; the sovereignty zone's consent requirement attaches to the activity, not to its label. The pattern to recognize: relabeling data collection ("outreach," "content," "podcast") does not change its legal character — the same substance-over-label reasoning as Frascati classification in Chapter 1.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A Philippine team negotiating consent for a foreign oceanographic cruise in the EEZ is offered "acknowledgment in the paper" as the sole benefit. Under the Part XIII framework, the team's strongest counter-position is:</p>
+    <ol class="opts"><li>Accept; acknowledgment is generous</li><li>The consent regime contemplates participation, data sharing, and reporting as standard conditions — so the Philippine side should secure berths for Filipino scientists, full data access, co-authorship where contribution warrants, and capacity-building, as conditions of consent rather than favors</li><li>Refuse consent forever</li><li>Demand the vessel be donated</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Part XIII's conditions are the floor of a fair bargain, not aspirations: the coastal State grants access to its jurisdiction and may attach participation and data terms. The professional posture is neither rubber stamp (A) nor blockade (C) but negotiated reciprocity — the international mirror of the community-benefit reasoning in your ethics training.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Sea-level rise studies and baselines law intersect in a way peculiar to archipelagic States. The sharpest statement of the issue is:</p>
+    <ol class="opts"><li>There is no intersection; law ignores geography</li><li>Baselines anchor to physical coastal features, and every zone is measured from them — so long-term sea-level and shoreline monitoring is not just climate science but evidence bearing on the stability of the reference lines from which national jurisdiction is drawn</li><li>Sea level is constant by definition</li><li>Baselines move daily with the tide</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> This is where Chapter 4's two halves meet: climate observation (RA 9729's science base) and maritime jurisdiction (RA 9522/UNCLOS) share a physical foundation. International law is actively debating baseline fixity under sea-level rise — which makes Philippine tide-gauge and geodetic records instruments of statecraft as well as science.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your ECC for the observatory arrives with conditions: quarterly ambient dust monitoring, a construction materials-recovery plan, and zero wastewater discharge during works. The correct project-management reading is:</p>
+    <ol class="opts"><li>Conditions are suggestions</li><li>The ECC has operationalized RA 8749, RA 9003, and RA 9275 for your specific site: each condition becomes a workplan task with a budget line, a responsible person, and a compliance record — the umbrella clearance carrying the statutes, as Figure 4.8 predicted</li><li>Conditions expire once construction starts</li><li>Only the contractor need read them</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> ECC conditions are the site-specific compiled form of the general statutes — the practical sense in which PD 1586 is the umbrella. Treating each condition as task-budget-owner-record is compressed IRAC as management (Chapter 3's closing move), and non-compliance risks suspension of the certificate the whole project stands on.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Across RA 8749, 9275, and 9729, the governance units are airsheds, WQMAs, and (for adaptation) LGU planning areas. The residual mismatch a project manager must handle is:</p>
+    <ol class="opts"><li>None; all boundaries coincide perfectly</li><li>Ecosystem units and political units overlap imperfectly — a watershed crosses municipalities; an LCCAP stops at a border its hazard does not respect — so multi-scale projects need both the ecosystem body (data, standards) and each political unit (plans, funds) at the table</li><li>Ecosystem units are unconstitutional</li><li>Political units always win, so ignore ecosystems</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The paradigm has a seam: nature is managed at ecosystem scale but financed and planned at political scale. Competent project architecture seats both — the WQMA board for the science and standards, the LGUs for LCCAPs and funds — which is why the stakeholder table of your Week 12 workplan has more chairs than a map suggests.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">An investor proposes financing your coastal radar network "provided we skip the ECC — it's only paperwork and we're in a hurry." Evaluate.</p>
+    <ol class="opts"><li>Accept; speed is science</li><li>Refuse and re-sequence: clearance precedes construction (the standing permissions-precede-activity principle), a facility built without its ECC operates under threat of suspension and demolition, and a funder who starts by proposing non-compliance is a risk register entry, not a shortcut</li><li>Accept but build at night</li><li>Accept if the radar is small</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The pattern has now appeared in three forms — ethics before data (Ch. 1), IRR procedure before program (Ch. 3), clearance before construction (Ch. 4) — and it is always the same answer: permissions are preconditions, and a project standing on an unpermitted facility has converted its entire capital into legal exposure. The funder's attitude is itself due-diligence data.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Applying</span></div>
+    <p class="stem">Rank these dark-sky-site protections by how directly this chapter's statutes support them: (1) an airshed-level campaign against open burning; (2) a municipal lighting ordinance; (3) festival waste management via MRF partnership.</p>
+    <ol class="opts"><li>1 → RA 8749 machinery (directly); 3 → RA 9003 machinery (directly); 2 → supported only indirectly — lighting is the gap none of this chapter's statutes squarely covers</li><li>2 is fully covered by RA 9275</li><li>All three are covered by UNCLOS</li><li>None are related to any statute</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Precision about coverage is the skill: smoke and waste have statutory machines behind them, but light pollution has no dedicated national statute — protection currently runs through local ordinances and general instruments. That gap is a Chapter 2 lesson in disguise: a named legal gap plus existing mandates nearby is the raw material of a policy-research proposal (and of your roadmap essay).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A reviewer reads two site-stewardship annexes. Annex X: "We love the environment." Annex Y: "ECC application filed (ref. no.); zero-discharge coating line; e-waste MOU with accredited treater; MRF agreement with Brgy. San Isidro; instruments at 8 nm — territorial sea, domestic permits listed." The evaluative difference is:</p>
+    <ol class="opts"><li>X is warmer, therefore better</li><li>Y is checkable at every clause — reference numbers, named instruments, zone determination — while X is unverifiable sentiment; under the specificity-causality-honesty tests the annexes are not even the same genre of document</li><li>Both are equivalent legally</li><li>Y is worse because it is longer</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The course's oldest test in its newest clothing: verifiable objects beat sentiments in agendas (Ch. 2), statutes (Ch. 3), and compliance (Ch. 4) alike. Y also demonstrates the full Chapter 4 toolkit in five clauses — umbrella clearance, water, waste, partnerships, and maritime zone — which is the one-page map the lecture asked for.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">Design check: which single project concept most fully exercises BOTH halves of this chapter — the environmental statutes and the maritime framework?</p>
+    <ol class="opts"><li>A basement data-reduction pipeline</li><li>An integrated coastal observatory: tide gauges and GNSS stations (zone determinations, UNCLOS-aware siting), feeding sea-level series to LCCAPs and PSF proposals (RA 9729/10174), with the facility itself run under ECC conditions, waste hierarchy, and discharge permits (PD 1586, RA 9003, RA 9275, RA 8749)</li><li>A lunar crater catalog</li><li>A logo redesign for the DENR</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The concept touches every framework of the chapter with a genuine (not decorative) mechanism for each — the honesty test passed across six instruments — and it is recognizably the Essay 3 design space. A and C are fine projects with no Chapter 4 surface; the point of the item is to notice when a legal framework genuinely binds a design and when it merely could be name-dropped.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ PART II ============ -->
+<section id="essay">
+  <h2><span class="secno">II.</span>Reinforcement Essay — 3 HOTS Items</h2>
+  <p>Write each essay in full (300–500 words) before opening the dropdown — Essays 1 and 2 must follow the IRAC structure explicitly. The model answers are <em>possible</em> strong responses; yours may differ and still earn full marks if it demonstrates the same statutory reasoning identified in the explanation.</p>
+
+  <div class="q"><div class="qnum">Essay 1 · <span class="lvl">Evaluating (IRAC)</span> · 20 points</div>
+    <p class="stem">The Institute for Oceanic Futures, a foreign research foundation, deploys six autonomous wave gliders on a six-month temperature-salinity survey 150 nm west of Luzon, without any Philippine notification, reasoning that (a) the gliders are "unmanned, so no vessel entered Philippine waters," (b) the data are "purely environmental and freely shared online," and (c) "the ocean belongs to everyone." <strong>Using full IRAC, analyze whether the deployment complies with UNCLOS</strong>, address each of the three justifications, and outline the lawful route the foundation should have taken — including what the Philippines could reasonably require in return.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Issue:</em> May a foreign entity conduct a sustained oceanographic survey in the Philippine EEZ without coastal-State consent — and do unmanned platforms, environmental purpose, or open data change the answer? <em>Rule:</em> Under UNCLOS, the coastal State has jurisdiction over marine scientific research in its EEZ (Part V read with Part XIII); MSR there requires coastal-State consent, normally granted for peaceful research, with conditions typically including participation, data sharing, and reporting. The regime attaches to the research <em>activity</em> within the zone. <em>Application:</em> 150 nm west of Luzon is within the 200-nm EEZ, so the survey sits squarely in the consent regime. (a) The unmanned argument fails because jurisdiction attaches to the activity in the zone, not to the presence of crew: instruments collecting data in the EEZ are the research operation itself. (b) "Purely environmental, freely shared" fails because Part XIII's consent requirement covers MSR as such — benign purpose is grounds for <em>granting</em> consent, not for skipping it; open posting also does not discharge the specific obligations owed to the coastal State (notification, participation, reporting). (c) "The ocean belongs to everyone" describes the high seas, not the EEZ: the zones are a graduated structure, and freedom of research begins beyond national jurisdiction, not at the 12-nm line. <em>Conclusion:</em> The deployment is non-compliant MSR in the Philippine EEZ; the foundation should have sought consent through Philippine channels in advance. <em>Lawful route and reciprocity:</em> advance application through the Philippine government (foreign ministry and relevant science agencies); a Philippine partner institution; and consent conditions the Philippines could reasonably set — Filipino scientist berths or remote participation, full and timely data access, cruise/mission reports, and capacity-building components — the Part XIII bargain that converts a jurisdictional intrusion into a genuine partnership.</p>
+      <p><strong>Why this earns full marks.</strong> The IRAC is complete, and the Application dismantles each justification with the correct legal tool: activity-based jurisdiction (a), consent-versus-purpose distinction (b), and the zone gradient (c) — rather than one generic "they needed a permit." The conclusion adds the professional layer: the lawful route and the reciprocity package, showing the student can operate the regime, not just recite it. Answers that miss the EEZ/high-seas boundary or treat unmanned platforms as a genuine loophole fail the core; answers without the reciprocity paragraph are proficient rather than excellent.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 2 · <span class="lvl">Evaluating (IRAC)</span> · 20 points</div>
+    <p class="stem">Barangay Malinaw hosts your university's new hilltop observatory. Three months in, the municipal government opens a "temporary" open dumpsite in the valley below, where waste — including hauled residuals from two neighboring towns — is burned twice weekly, sending smoke across the site and washing leachate toward the river that supplies the barangay. The mayor argues the site is temporary, that burning "reduces volume, which is what RA 9003 wants," and that the observatory "has no standing to complain about municipal services." <strong>Using full IRAC, analyze the municipality's position</strong> under RA 8749, RA 9003, and RA 9275, then propose the partnership route by which the observatory converts this conflict into a monitoring-and-compliance collaboration.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Issue:</em> May a municipality operate an open, burning dumpsite affecting air and water quality — and does "volume reduction" or "temporariness" cure it? <em>Rule:</em> RA 9003 mandates segregation at source, recovery through MRFs, and disposal of residuals only in sanitary landfills; open dumps are prohibited (and "controlled" status was a transitional, not permanent, category). RA 8749 bans incineration of municipal waste in devices/practices emitting toxic fumes — open burning included. RA 9275 prohibits discharging pollutants (leachate) into water bodies without treatment and permit. <em>Application:</em> element by element: (1) the site is an open dump receiving mixed, unsegregated waste — the disposal tier is being used first and unlawfully, inverting the hierarchy; (2) twice-weekly burning is incineration of municipal waste in the open — the volume-reduction argument confuses the hierarchy's goal (reduce waste <em>generated</em>) with destroying evidence of non-compliance by combustion, which RA 8749 flatly bans; (3) uncontained leachate migrating to a drinking-water river is an unpermitted discharge under RA 9275 — "temporary" has no exculpatory force because each burn and each discharge is a present violation; (4) standing: air and water impacts fall on the barangay's residents and the observatory as an affected occupant — environmental statutes contemplate citizen participation and complaints, and the university is also a data-capable witness. <em>Conclusion:</em> The municipality's position fails on all three statutes; the site requires closure/rehabilitation, waste rerouting up the hierarchy, and permit-compliant leachate management. <em>Partnership route:</em> rather than open with litigation, the observatory offers what it uniquely has — instruments: a joint monitoring MOU (particulate/extinction station and river-quality sampling with the LGU and EMB), technical support for the LGU's 10-year SWM plan and an MRF cluster with the two neighbor towns, and co-developed festival-waste protocols — converting the university from complainant to the municipality's compliance partner, with the dumpsite's closure milestones written into the MOU.</p>
+      <p><strong>Why this earns full marks.</strong> The Application works all three statutes with element-matching (dump status, burning, leachate) and defuses each of the mayor's three arguments specifically — including the subtle "volume reduction" misreading of the hierarchy. The standing point is handled with the statutes' participatory character rather than bluster. The partnership route demonstrates the chapter's closing thesis: every obligation is also a monitoring opportunity, and the strongest resolution converts adversaries into data-sharing partners with dated milestones. Single-statute answers, or answers that stop at "the mayor is wrong," land at developing/proficient.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 3 · <span class="lvl">Creating</span> · 20 points</div>
+    <p class="stem">Design a three-year <strong>"Archipelagic Climate-Sky Program"</strong> for a coastal province: an integrated network of sky-quality/aerosol stations, tide gauges and GNSS reference points, and a community environmental-science hub at the provincial observatory. <strong>Write its regulatory and institutional architecture:</strong> (i) for each of RA 8749, RA 9003, RA 9275, RA 9729/10174, and the maritime framework (RA 9522/UNCLOS), state the obligation your design assumes AND the opportunity (data, fund, partner) it captures; (ii) specify the sequencing — which clearances, plan inclusions, and MOUs must precede which activities; and (iii) close with the two most serious regulatory risks and your mitigation for each.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>(i) Statute-by-statute architecture.</em> <strong>RA 8749:</strong> obligation — generator emissions compliance and no open burning at the hub; opportunity — aerosol/extinction stations co-located with EMB airshed monitoring, one dataset serving photometric calibration and the airshed's monitoring stage (data-sharing MOU with EMB). <strong>RA 9003:</strong> obligation — the hub is a waste generator: segregation at source, e-waste chain of custody for station electronics and batteries; opportunity — an MRF partnership with the host barangay that doubles as the community-science hub's flagship civic program. <strong>RA 9275:</strong> obligation — zero untreated discharge from instrument maintenance; opportunity — river and coastal water-quality series contributed to the WQMA board, aligning the program's sensors with the catchment governance unit. <strong>RA 9729/10174:</strong> obligation — none direct, but alignment duty: the program's sea-level, rainfall, and heat records are shaped for the province's and municipalities' LCCAPs; opportunity — PSF proposals with coastal LGUs as proponents and the university as science partner (sea-level adaptation baselines), plus NCCAP-legible outputs. <strong>Maritime framework:</strong> obligation — zone determination per instrument (pier gauges in internal/archipelagic waters; any offshore buoy's zone stated; domestic permits listed) and UNCLOS-aware conduct for any foreign collaboration (consent conditions: participation, data access); opportunity — the tide-gauge/GNSS series as nationally significant records for baseline stability and altimetry calibration — maritime-nation statecraft as science. <em>(ii) Sequencing:</em> Year 0–0.5: ECC screening/application for the hub (PD 1586) before any construction; barangay and LGU resolutions; EMB co-location and WQMA data MOUs; zone determinations documented. Year 0.5–1: station roll-out; SWM and discharge protocols live from day one; LCCAP engagement during plan revision windows. Year 1–3: PSF proposal cycle with two coastal municipalities; annual compliance audit against ECC conditions; Time-Consciousness-Week and festival programming under the waste protocol. <em>(iii) Risks and mitigations:</em> <strong>Risk 1 — clearance drift</strong> (construction pressure to start before the ECC): mitigated by a hard workplan gate — no earthworks without the certificate — and by phasing community programming (which needs no ECC) first, so the project shows momentum lawfully. <strong>Risk 2 — the boundary seam</strong> (watershed and airshed data cross municipal lines; plans and funds do not): mitigated by seating both kinds of institution from the start — WQMA/airshed bodies for standards and data, each LGU for LCCAP and PSF access — with a provincial steering committee as the seam-stitcher.</p>
+      <p><strong>Why this earns full marks.</strong> Every framework appears with a paired obligation-and-opportunity — the chapter's central thesis operationalized — and the maritime half is integrated rather than bolted on (zone determinations, consent-readiness, baseline-relevant records). Sequencing demonstrates the permissions-precede-activity principle as workplan gates, not slogans; and the risk section names the two structural failure modes this chapter actually teaches (clearance drift; the ecosystem-political seam) with mitigations that use the statutes' own architecture. Designs that list obligations without opportunities, or that skip sequencing, are proficient; designs that treat the statutes as five funding sources repeat the flattening error the framework exists to prevent.</p>
+    </div></details>
+  </div>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch4-lecture.html">&#8592; Ch. 4 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch5-lecture.html">Ch. 5 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 4 Reinforcement Exercises · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

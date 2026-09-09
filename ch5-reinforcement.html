@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 5 Reinforcement Exercises — Intellectual Property and Technology Transfer</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 5 Reinforcement Exercises</h1>
+  <div class="subtitle">Intellectual Property and Technology Transfer · RA 8293 · RA 10055 · IPOPHL Circulars · 20-Item HOTS Multiple Choice + 3-Item HOTS Essay · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Exercise sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#howto">How to Use</a></li>
+    <li><a href="#mcq">Part I · Multiple Choice (20 items)</a></li>
+    <li><a href="#essay">Part II · Essay (3 items)</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="howto">
+  <div class="objectives">
+    <h4>How to Use This Reinforcement Set</h4>
+    <p>These exercises are <em>formative</em> — for building mastery after the Chapter 5 lecture, not for grading. All items are HOTS-level (applying, analyzing, evaluating, creating), several in Case Recitation style, and use fresh scenarios not found in the Mastery Test. Answer each item — for essays, write the full IRAC or design response — before opening the dropdown to compare with the model answer.</p>
+  </div>
+</section>
+
+<!-- ============ PART I ============ -->
+<section id="mcq">
+  <h2><span class="secno">I.</span>Reinforcement Multiple Choice — 20 HOTS Items</h2>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Distinguish precisely: a <em>license</em> versus an <em>assignment</em> of a patent.</p>
+    <ol class="opts"><li>Synonyms with different fonts</li><li>A license is permission to use while ownership stays with the licensor (revocable per its terms, boundable by field, territory, and time); an assignment transfers ownership itself, permanently — a sale, after which the assignor has no further say</li><li>A license transfers ownership; an assignment grants permission</li><li>Both expire automatically after one year</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The distinction carries most of transfer strategy: licensing preserves the RDI's conditional ownership under RA 10055 and lets one invention serve many users and fields; assignment is irreversible and, for publicly funded IP, structurally suspect. Get this pair straight and half the Section 5.6 scenarios solve themselves.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Applying</span></div>
+    <p class="stem">A university licenses its air-quality sensor exclusively and worldwide to one distributor "for all fields, forever, royalty-free, in exchange for goodwill." As transfer design, the arrangement is:</p>
+    <ol class="opts"><li>Ideal — simplicity is elegance</li><li>An assignment in disguise: unlimited exclusivity with no royalties and no field bounds gives away everything ownership means while retaining the liabilities; a defensible deal bounds exclusivity by field/territory, sets royalties or milestones, and keeps termination rights for non-performance</li><li>Illegal because worldwide deals are prohibited</li><li>Fine as long as the goodwill is sincere</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The test of a license's fairness is what the owner retains: here, nothing of value. Milestone and termination clauses are the diligence machinery — without them the distributor can warehouse the technology exactly as Question 11 of the mastery test warned the RDI itself might. C invents a rule; the defect is economic structure, not geography.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your team's observatory scheduling algorithm is elegant and novel <em>as mathematics</em>. The team wants protection. The most accurate advice is:</p>
+    <ol class="opts"><li>Patent the algorithm as such</li><li>The algorithm as a mathematical method is excluded from patentability; the code implementing it is born copyrighted, the name can be trademarked, and if a genuinely technical embodiment (a scheduling system solving a technical problem in a non-obvious way) exists, that embodiment — not the math — is the candidate for examination</li><li>Trade-secret the mathematics after publishing it</li><li>No protection of any kind exists for software-related work</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The exclusions deny the abstract layer, not every layer: expression (code) takes copyright, identity takes trademark, and technical embodiments may clear Section 21 if they are more than the math "as such." C is self-contradictory — publication is the end of secrecy, a trap several mastery items have now set from different angles.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A staff engineer, hired to design detector mounts, invents a better detector mount using lab facilities. A weekend later, at home, she also invents a kitchen gadget unrelated to her duties. Under the IP Code's employee-invention defaults (absent contrary agreement):</p>
+    <ol class="opts"><li>Both belong to the university</li><li>The mount — invented within her regularly assigned duties — belongs to the employer by default; the kitchen gadget — outside those duties — remains hers even though she is an employee, and the wise institution puts all of this in written agreements rather than defaults</li><li>Both belong to her because inventors always own</li><li>Both belong to the government</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The default line runs along assigned duties, not employment as such or resource use as such. The deeper lesson from Section 5.2 stands: defaults are fragile and fact-dependent, so research engagements should allocate ownership in writing before anything is invented — the cheapest IP dispute is the one prevented by a paragraph.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Applying</span></div>
+    <p class="stem">Two universities co-develop an instrument under a DOST grant with no IP clause in their collaboration agreement. A manufacturer now wants an exclusive license, and each university separately claims the right to grant it. The chapter's diagnosis:</p>
+    <ol class="opts"><li>First to email the manufacturer wins</li><li>Joint ownership without a governance agreement is the foreseeable failure: RA 10055 vests ownership in the performing RDIs, but co-ownership mechanics (who may license, how revenues split, who pays maintenance) needed a written inter-institutional agreement — the missing paragraph now costs a negotiation, and possibly the deal</li><li>DOST owns everything, ending the dispute</li><li>The manufacturer should take the IP for free as peacemaker</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Multi-RDI projects multiply the Section 5.2 lesson: the statute allocates between funder, institutions, and researchers, but <em>between institutions</em> the allocation is contractual. An exclusive license is exactly the act joint owners cannot take unilaterally — which is why IP clauses belong in collaboration agreements at signing, not at licensing time.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A student's thesis PDF, uploaded to the university repository in March, describes her novel fiber positioner. In September she asks the ITSO to file. The evaluation must treat the upload as:</p>
+    <ol class="opts"><li>Invisible, because repositories are academic</li><li>A public disclosure — prior art against the application; being her own disclosure within twelve months, the Philippine grace period likely preserves domestic novelty, but foreign filings face jurisdictions without an equivalent grace, so the international options may already be narrowed</li><li>A trade secret, since few people read theses</li><li>A trademark use</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> "Available to the public" is a low bar an indexed repository clears easily. The grace period is the domestic seatbelt; the international lesson is harsher, which is why disclosure-before-upload workflows (Figure 5.8) treat thesis deposit like any other publication. C misunderstands secrecy as obscurity.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">An RDI's policy sets the researchers' share of licensing revenue at a trivially small fraction, arguing "the institution bore all costs." Under RA 10055's design, the strongest critique is:</p>
+    <ol class="opts"><li>None — any share satisfies any statute</li><li>The Act's revenue-sharing mandate exists to align inventor incentives with commercialization; a share set so low that disclosure stops being personally rational defeats the statutory purpose even if it technically exists — and the practical result (researchers hiding inventions or leaving) is the exact failure the Act was written to end</li><li>Researchers should receive everything</li><li>Revenue sharing is optional charity</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Purposive reading again: the sharing duty is incentive engineering, not accounting decoration, so institutional policies are judged by whether they keep the disclosure pipeline alive. A and D misread a mandate as a suggestion; C swings to the opposite extreme the Act's balance rejects — institutions also need returns to fund the next protection.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">A foreign collaborator's draft agreement states all foreground IP from a joint astronomy instrument project "shall vest exclusively in [Partner], governed by the laws of [Partner's country]." Your university performed the funded work under a Philippine GFA grant. Your negotiating position should begin:</p>
+    <ol class="opts"><li>Sign; templates are non-negotiable</li><li>The clause collides with RA 10055's vesting of publicly funded IP in the Philippine RDI and with the IP Code's rules on technology-transfer arrangements; propose joint or Philippine ownership of Philippine-funded foreground, a license to the partner where needed, and terms consistent with Philippine law — with the GFA's grant conditions as your written backing</li><li>Withdraw from all international work</li><li>Accept if the partner pays for lunch</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The Section 5.6 pitfall in the wild: foreign templates default everything to the drafter. Philippine law gives the RDI's negotiators statutory ground to stand on — but paper only helps the party who reads it before signing. C surrenders the collaboration instead of the clause, the same false trade-off as banning conferences to protect novelty.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does a <em>pending, published</em> patent application already deter copyists before grant?</p>
+    <ol class="opts"><li>Pending applications grant full rights immediately</li><li>Publication starts provisional protection: a copyist acts with knowledge of claims that may issue, facing back-dated exposure if they do — plus the commercial reality that investors and distributors avoid products with a live application aimed at them</li><li>It doesn't; before grant anyone may copy forever without consequence</li><li>Because IPOPHL polices markets weekly</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The 18-month publication cuts both ways (it discloses your secret — mastery Q7) and this is the compensating edge: provisional protection plus commercial risk-aversion make a published application a real deterrent. Understanding both edges is what makes the file-or-secret fork a genuine strategic decision.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your team wants world rights for its detector-cooling invention but cannot afford simultaneous foreign filings. The standard route is:</p>
+    <ol class="opts"><li>File in every country on day one regardless of cost</li><li>File first in the Philippines, then within twelve months file a single PCT international application claiming that priority — preserving rights across most of the world while deferring the expensive national-phase decisions, by which time the invention's commercial signals are clearer</li><li>Skip filing and trust the grace period worldwide</li><li>Email the invention to foreign offices for safekeeping</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The PCT is the budget-realistic globalization tool of Figure 5.4: one application, one priority chain, decisions deferred to the national phase. C fails because grace periods are jurisdiction-specific — the exact trap of the thesis-upload item; A is how small institutions bankrupt their IP budgets on one invention.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A trademark examiner would care about which fact pattern? Your outreach program's telescope-shaped logo is:</p>
+    <ol class="opts"><li>Beautiful</li><li>Used on educational services and merchandise to distinguish them from other providers' — the trademark function; registration gives ten renewable years, but the right must be kept alive by actual use (with the required declarations), and dies of abandonment if the program shelves it</li><li>Astronomically accurate</li><li>Approved by the physics department</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Trademark law protects source-distinguishing use, not aesthetics or accuracy: the questions are distinctiveness, use in commerce (or services), and maintenance. The use requirement is the practical trap for academic marks — programs register in a burst of enthusiasm and lose the mark by neglecting the declarations of actual use.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A department head proposes trade-secreting the department's <em>published</em> calibration method "to add protection." Evaluate.</p>
+    <ol class="opts"><li>Wise belt-and-suspenders thinking</li><li>Conceptually void: secrecy protects only what is secret, and publication irreversibly ended that; the method now lives in the public domain of ideas (copyright protects only its written expression), and the honest options are being first, best, and cited — or protecting the <em>next</em>, unpublished improvement properly</li><li>Effective if the PDF is deleted</li><li>Effective if everyone promises not to tell</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Rights attach to states of the world: trade secrecy is a fact (secrecy maintained) plus conduct (reasonable protection), and no agreement can restore a fact the internet has archived. The forward-looking reframe — protect the next improvement — is what separates strategy from wishful labeling. C and D mistake gestures for facts.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Applying</span></div>
+    <p class="stem">Under the government's reserved rights in RA 10055, which scenario most clearly justifies intervention in an RDI's patent?</p>
+    <ol class="opts"><li>The RDI licenses widely at fair rates</li><li>A public-health or national-emergency need for the technology that the RDI's licensing posture is failing to meet, or persistent non-commercialization — the march-in style situations where the public that funded the invention reclaims its use</li><li>The GFA director prefers a rival university</li><li>The invention wins an international award</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Reserved rights are exception machinery with named triggers — emergency, public interest, failure to commercialize — not a general power to reshuffle ownership (C would be abuse of the mechanism). A describes the system working, where intervention has no basis; the analytical habit is matching the trigger to the section, IRAC's Rule step in miniature.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Your open-science plan releases the pipeline under a permissive license while a patent application on the embodied trigger method is pending. A colleague objects: "The code release destroys the patent." The precise analysis is:</p>
+    <ol class="opts"><li>The colleague is right; delete the repository</li><li>Sequencing decides: if the release follows the filing date, it cannot be prior art against the application; copyright licensing of the code and patent protection of the method are different rights over different objects, coexisting by design — this is Figure 5.7's entire point</li><li>Licenses and patents are mutually exclusive by law</li><li>Patents automatically open-source their code</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Two dates and two objects: post-filing disclosure is harmless to the filed claims, and the code's copyright license neither grants nor destroys patent rights over the method. Getting rights-and-objects separation reflexive is the chapter's core skill — the same move as IP-versus-chattel in the Prof. Son analysis.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Applying</span></div>
+    <p class="stem">A barangay LGU wants to reproduce your project's astronomy teaching modules for its schools. The modules are copyrighted university works. The cleanest instrument to enable this — at zero cost and minimal paperwork — is:</p>
+    <ol class="opts"><li>Assignment of copyright to the barangay</li><li>Releasing the modules under a Creative Commons license permitting noncommercial reproduction with attribution — one decision by the owner that grants every LGU, school, and teacher the same permission without individual contracts</li><li>Requiring each teacher to file a license request</li><li>Ignoring the request until it goes away</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Open licensing is copyright exercised at scale: one instrument, unlimited compliant users — the exact fit for public-benefit educational outputs, and the licensing-table row your proposal should already contain. A transfers ownership to solve a permission problem; C builds a bureaucracy to avoid a paragraph.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why do NDAs deserve their reputation as the most underused instrument in academic IP practice?</p>
+    <ol class="opts"><li>Because they are long documents</li><li>Because the highest-risk moments — early conversations with manufacturers, funders, and collaborators — happen <em>before</em> anything is filed, when one enthusiastic description can become novelty-destroying prior art or a lost secret; a one-page NDA converts those conversations from gambles into protected exchanges</li><li>Because they replace patents entirely</li><li>Because professors enjoy signing things</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The disclosure timeline is the invisible risk surface: legal protection is weakest exactly when scientific excitement is highest. The NDA is cheap insurance for the pre-filing window — the "everyday plumbing" of Figure 5.6 that prevents the Section 5.3 pitfalls from ever occurring.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">An ITSO evaluation report recommends: "Publish the survey methodology openly; file a utility model on the mount; keep the coating process as a trade secret; trademark the outreach brand." A dean objects that the report is "inconsistent — pick one strategy." The best defense of the report is:</p>
+    <ol class="opts"><li>The dean is right; consistency demands one right for everything</li><li>The report is a portfolio, not an inconsistency: each output received the right matched to its nature and strategy — unpatentable methodology to the commons, incremental hardware to the fast cheap right, an invisible process to secrecy, identity to trademark — exactly the one-creation-many-rights logic of Figure 5.2</li><li>The report should have patented the brand name</li><li>ITSOs may not make recommendations</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> IP strategy is portfolio construction: uniformity across different objects is the actual inconsistency, because it ignores what each right protects. This is the Chapter 5 version of matching design to question (Ch. 1) and instrument to statute (Ch. 3) — one more instance of the course's single method.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Applying</span></div>
+    <p class="stem">In the Case Analysis, DOST-funded Project UWU sells 55,800 units of its instrument. Before computing any government share, the analytically <em>first</em> question this chapter equips you to ask is:</p>
+    <ol class="opts"><li>What color were the instruments?</li><li>Which legal regimes govern which flows: the IP ownership and revenue-sharing rules of RA 10055 (RDI, researchers), the grant's financial and property conditions under the GIA framework (Week 10's DOST issuances), and the specific provisions the case readings assign — because "how much goes where" is a layered question whose layers must be separated before any arithmetic</li><li>Whether the buyers were satisfied</li><li>Whether 55,800 is a lucky number</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The separation habit once more: sales revenue from a publicly funded project sits at the junction of IP law, grant conditions, and fiscal rules, and each layer has its own text to quote in the Rule step. Students who compute before separating produce confident wrong numbers; the layered answer earns the 100 points.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A funding panel reads two IP sections. Section X: "All IP will be handled according to law." Section Y: "The University (RDI, per RA 10055) owns foreground IP; disclosures precede all presentations; ITSO evaluation within its standard period; filing fees budgeted at line 4.3 per current IPOPHL fee circulars; licensing table attached; researcher revenue-sharing per University policy." The difference in evaluative weight is:</p>
+    <ol class="opts"><li>X wins; brevity is strength</li><li>Y is checkable at every clause — statute, workflow, budget line, current circulars, attached table — while X is the unfalsifiable sentence this course has now taught you to distrust in four different domains; the panel reads Y as management capability and X as a blank</li><li>They are equivalent since both mention IP</li><li>Y is worse because it names a budget line</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The specificity-causality-honesty triad completes its tour: agendas (Ch. 2), statutes (Ch. 3), compliance (Ch. 4), and now IP. Verifiable objects — section numbers, budget lines, named offices, attached tables — are what turn a promise into evidence. By now this answer should feel inevitable; that feeling is the course working.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">Your TE01 project will produce: (1) a fireball event catalog; (2) a detection pipeline; (3) a novel triggering method; (4) a weatherproof enclosure design; (5) an outreach brand. Which allocation plan best reflects the whole chapter?</p>
+    <ol class="opts"><li>Patent all five immediately</li><li>Catalog: facts, released open with a clear data license; pipeline: copyright, open-licensed after filing decisions; trigger method: ITSO evaluation for patent (file before any talk); enclosure: utility model or design registration as fits; brand: trademark with maintenance plan — all owned by the University per RA 10055, revenues shared, everything sequenced by the disclosure workflow</li><li>Keep all five secret permanently</li><li>Let each student keep whatever they worked on</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The full portfolio in one answer: right matched to object, ownership allocated by statute, openness and protection sequenced rather than traded off, and the workflow as the engine. A patents the unpatentable (facts) and wastes fees; C kills the science; D dissolves RA 10055 into sentiment. Option B is, not coincidentally, the skeleton of your proposal's IP annex.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ PART II ============ -->
+<section id="essay">
+  <h2><span class="secno">II.</span>Reinforcement Essay — 3 HOTS Items</h2>
+  <p>Write each essay in full (300–500 words) before opening the dropdown — Essays 1 and 2 must follow the IRAC structure explicitly. The model answers are <em>possible</em> strong responses; yours may differ and still earn full marks if it demonstrates the same reasoning identified in the explanation.</p>
+
+  <div class="q"><div class="qnum">Essay 1 · <span class="lvl">Evaluating (IRAC)</span> · 20 points</div>
+    <p class="stem">Dr. Reyes, a university researcher on a DOST-funded photonics project, demonstrated her novel fiber-alignment jig at an international conference in Singapore in September 2025, posted the slides online, and was celebrated in the university's press release. In July 2026, a Philippine manufacturer began selling a copy. The university's ITSO, learning of everything only now (August 2026), asks: (a) can a Philippine patent still be filed, and against whom would it bite? (b) what became of any foreign rights? (c) who would own whatever is filed, and what does Dr. Reyes personally stand to gain? <strong>Answer all three questions in full IRAC form</strong>, and close with the workflow reform the university needs.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Issue:</em> Whether a patent application filed in August 2026 can survive the inventor's own September 2025 disclosures; the territorial reach of surviving rights; and the allocation of ownership and revenues under RA 10055. <em>Rule:</em> Novelty requires absence from worldwide prior art at filing; the IP Code's non-prejudicial disclosure rule disregards disclosures derived from the inventor made within twelve months before the Philippine filing; the Philippines is first-to-file; RA 10055 vests IP from GFA-funded research in the RDI, with mandatory revenue sharing to researchers; a granted patent (or published application, provisionally) is enforceable against unauthorized makers and sellers within the jurisdiction. <em>Application:</em> (a) The September 2025 conference, slides, and press release are all the inventor's own disclosures; an application filed in August 2026 sits <em>just inside</em> the twelve-month window (September 2025 → September 2026), so Philippine novelty is likely salvageable — but the deadline is weeks away, making this an emergency filing. Once filed and published, the application (and later the patent) bites against the copying manufacturer prospectively; the manufacturer's July 2026 sales pre-filing are not infringement, which is itself part of the cost of delay. (b) Foreign rights: jurisdictions without an equivalent grace period were compromised in September 2025; a PCT route can only preserve what each national law's novelty rules allow — realistically, much of the foreign portfolio is gone. (c) Ownership vests in the university as RDI, not in Dr. Reyes and not in DOST; Dr. Reyes's personal stake is the statutory revenue share under the university's RA 10055 policy, plus inventorship recognition — and no personal filing by her could cure that allocation. <em>Conclusion:</em> File immediately in the Philippines; pursue the manufacturer prospectively after publication; write off most foreign rights; ownership to the RDI with revenue sharing to Dr. Reyes. <em>Reform:</em> institute the disclosure-before-presentation workflow (invention disclosure → ITSO evaluation → filing → conference), add an NDA habit for pre-filing conversations, and put IP-awareness into the press-release checklist — the press office was the third leak, and none of the three was malicious; all were process failures.</p>
+      <p><strong>Why this earns full marks.</strong> The three sub-questions are answered with three distinct rule-applications (grace-period arithmetic with the deadline consciously computed; territorial variation of novelty rules; RA 10055 allocation), the manufacturer's pre-filing sales are correctly excluded from infringement, and the reform paragraph converts the legal post-mortem into management design — the chapter's insistence that IP failures are usually workflow failures. Answers that treat the grace period as worldwide, or vest ownership in the inventor or funder, miss the two doctrines the scenario was built to test.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 2 · <span class="lvl">Evaluating (IRAC)</span> · 20 points</div>
+    <p class="stem">A university (RDI) negotiates with AstroParts Mfg. over its patented, DOST-funded telescope drive. AstroParts' draft demands: (i) assignment of the patent for ₱50,000; (ii) a clause that the university "shall not conduct further research or development in telescope drive systems for ten years"; (iii) automatic, royalty-free assignment of all future university improvements to AstroParts; (iv) confidentiality over the agreement's existence, including from DOST. <strong>Using full IRAC, evaluate each demand</strong> under RA 10055 and the IP Code's technology-transfer rules, then draft the counter-structure a competent ITSO would propose.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Issue:</em> Whether each of the four demanded terms is lawful and prudent for publicly funded IP, and what alternative structure serves both parties. <em>Rule:</em> RA 10055 vests ownership in the RDI as trustee of a public investment, pairs it with diligence duties, reserved government rights, and researcher revenue sharing — an architecture that presumes continued RDI ownership; the IP Code's technology-transfer provisions prohibit clauses that unreasonably restrain the licensee's or licensor's research and improvement activity and coerced exclusive grant-backs, and require terms consistent with Philippine law; grant conditions bind the RDI toward the GFA, including transparency obligations. <em>Application:</em> (i) Assignment for a token sum: legally possible only in narrow circumstances but structurally contrary to RA 10055 — it extinguishes the reserved rights' object, the revenue-sharing base, and the diligence framework; economically it is the Question-2 pathology (everything of value surrendered). (ii) The ten-year research ban: a restraint on the RDI's research falls squarely in the prohibited-clause family and is, for a university, a mission-destroying term no royalty can price — strike as void and non-negotiable. (iii) Automatic royalty-free grant-back of future improvements: the coerced-grant-back pathology; improvements are future publicly funded IP whose allocation RA 10055 again governs — replace with, at most, a negotiated option or first-refusal license on fair terms. (iv) Secrecy from DOST: collides with the RDI's grant obligations and the GFA's reserved rights — an RDI cannot contract itself out of accountability to its funder; ordinary commercial confidentiality can protect pricing details, never the agreement's existence from the government that paid for the invention. <em>Conclusion:</em> All four demands fail as drafted. <em>Counter-structure:</em> an exclusive license limited to the telescope-drive field and defined territories; running royalties with minimum annual payments and milestone obligations; termination and non-performance clauses (the diligence machinery); university freedom to research, publish (post-filing), and use internally; improvements each owned by their maker with reciprocal negotiation rights; transparency carve-out for GFA reporting; disputes under Philippine law. The letter to AstroParts explains, honestly, that these are not bargaining postures but statutory rails — and that a deal built on the rails is enforceable, while one built off them is not.</p>
+      <p><strong>Why this earns full marks.</strong> Each demand is met with its own named doctrine (RA 10055 architecture; prohibited restraint; coerced grant-back; grant-accountability), not a general "unfair!" — and the counter-structure demonstrates that the lawful deal is also the commercially sensible one, converting legal limits into negotiation leverage. The closing point — statutory rails as protection for <em>both</em> parties — shows evaluation-level maturity. Answers that reject the deal wholesale (losing the commercialization RA 10055 exists to promote) or accept it with cosmetic edits miss the chapter's balance.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 3 · <span class="lvl">Creating</span> · 20 points</div>
+    <p class="stem">Design the complete <strong>IP and technology-transfer annex</strong> for your TE01 proposal — a provincial meteor-and-fireball camera network with a public dashboard, teaching modules, and a low-cost weatherproof camera enclosure of your team's design. Your annex must contain: (i) an output-by-output rights table (right, owner under RA 10055, license, release timing); (ii) the disclosure workflow with named roles and its interaction with your publication and outreach calendar; (iii) the transfer pathway for the enclosure (instrument choice, target licensees, revenue-sharing note); and (iv) the two most likely IP risks with mitigations.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>(i) Rights table (five rows).</em> <strong>Fireball event data</strong> — facts, unprotectable as such; released open under a clear attribution data license, immediately upon validation (the science and the DRRM users need latency, not lawyers). <strong>Detection pipeline</strong> — copyright, University-owned (RA 10055; developed under the GFA grant); OSI-approved license, released after the trigger-method filing decision. <strong>Trigger method</strong> — candidate invention; ITSO evaluation for patent vs. utility model; owner: University as RDI; no public description until filed. <strong>Enclosure design</strong> — utility model (new, useful, arguably obvious to a skilled fabricator — the honest right) plus industrial design registration if the housing's appearance matters for the maker market; University-owned. <strong>Teaching modules and network brand</strong> — copyright (CC BY-NC for the modules, releasing every school and LGU at once) and trademark for the brand, with a maintenance-of-use plan. <em>(ii) Workflow and calendar.</em> Roles: every member logs work in versioned repositories; the project IP officer (a named co-investigator) screens monthly for disclosable matter; disclosures go to the University ITSO with a decision window; the rule that governs everything — <strong>no conference abstract, thesis upload, dashboard feature reveal, or press release before the ITSO clears it</strong> — is written into the outreach calendar itself, with the publication of each paper scheduled the week after its related filing. Budget line: IPOPHL fees per current fee circulars, ITSO time, and one NDA/MTA template review by university counsel. <em>(iii) Enclosure pathway.</em> Utility model filed → non-exclusive licenses to local fabrication shops in the province (capacity building and price competition beat exclusivity for a low-cost public-benefit device), with a simple royalty and a quality-mark trademark license tying licensed enclosures to the network's brand; revenues shared with the student inventors under the University's RA 10055 policy — named in the annex so the incentive is visible. <em>(iv) Risks and mitigations.</em> <strong>Risk 1 — enthusiasm leak:</strong> a student demos the trigger method at a science fair pre-filing; mitigation: the clearance rule above, an NDA habit for external conversations, and a standing "what's disclosable this month" agenda item — process, not blame. <strong>Risk 2 — orphaned rights:</strong> the utility model and trademark lapse after project end when no one pays fees; mitigation: a sustainability clause handing maintenance decisions (and fee obligations) to the ITSO's portfolio review, with sunset criteria for deliberately releasing lapsed rights into the commons rather than losing them by accident.</p>
+      <p><strong>Why this earns full marks.</strong> The table matches right to object across the whole family (including the deliberate openness of the data — knowing what <em>not</em> to protect is scored as competence); the workflow is calendarized rather than aspirational, with roles, budget lines, and the file-then-publish sequencing; the transfer pathway justifies non-exclusivity from the project's public-benefit logic instead of defaulting to exclusivity; and the risk section anticipates the two failure modes the chapter dramatized (novelty leaks and orphaned rights), mitigating both with process design. Annexes that patent everything, open everything, or omit the calendar interaction demonstrate the respective misunderstandings the three essay dropdowns of this course have been steadily eliminating.</p>
+    </div></details>
+  </div>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch5-lecture.html">&#8592; Ch. 5 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch6-lecture.html">Ch. 6 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 5 Reinforcement Exercises · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

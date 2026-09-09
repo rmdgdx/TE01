@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 2 Reinforcement Exercises — Research Agendas and Development Plans</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 2 Reinforcement Exercises</h1>
+  <div class="subtitle">International and National Research Agendas and Country Development Plans · 20-Item HOTS Multiple Choice + 3-Item HOTS Essay · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Exercise sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#howto">How to Use</a></li>
+    <li><a href="#mcq">Part I · Multiple Choice (20 items)</a></li>
+    <li><a href="#essay">Part II · Essay (3 items)</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="howto">
+  <div class="objectives">
+    <h4>How to Use This Reinforcement Set</h4>
+    <p>These exercises are <em>formative</em> — for building mastery after the Chapter 2 lecture, not for grading. All items are HOTS-level (applying, analyzing, evaluating, creating) and use fresh scenarios not found in the Mastery Test. Work each item completely before opening its dropdown; for essays, write your full answer first, then compare it against the model answer and the explanation of what a strong response must contain.</p>
+  </div>
+</section>
+
+<!-- ============ PART I ============ -->
+<section id="mcq">
+  <h2><span class="secno">I.</span>Reinforcement Multiple Choice — 20 HOTS Items</h2>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Applying</span></div>
+    <p class="stem">A mayor asks: "Your observatory proposal cites a 2040 vision, a 2028 plan, and a 2050 foresight — which one tells me what the government has actually committed money and targets to <em>right now</em>?" The correct answer is:</p>
+    <ol class="opts"><li>AmBisyon Natin 2040, because it is the oldest</li><li>The Philippine Development Plan 2023–2028, because a development plan carries the current term's strategies, programs, and results-matrix targets</li><li>Pagtanaw 2050, because it is the most recent horizon</li><li>None — commitments exist only in the annual national budget</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Among the four instrument types, only the development plan commits the sitting government to programs and measurable targets within its term. The vision states a destination without programs; foresight widens options without committing to any. D contains a grain of truth (budgets appropriate the money) but the PDP is precisely the policy basis those budgets execute — it is the commitment document the mayor asked about.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A team's alignment section quotes AmBisyon Natin 2040 for the claim: "Therefore our project's Year-2 target of 30 monitoring stations is a national commitment." The precise error is:</p>
+    <ol class="opts"><li>Wrong arithmetic — it should be 40 stations</li><li>A layer mismatch: a vision document carries no programs or station-level targets, so it cannot underwrite a specific operational commitment; that claim needs a plan-, agenda-, or statute-level anchor</li><li>AmBisyon may not be quoted by universities</li><li>The project should have cited the IAU instead</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Each instrument supports only claims of its own kind: visions support directional motivation, not operational targets. Attributing a station count to a generation-scale vision is a traceability error a reviewer will flag as either confusion or padding. C is false; D substitutes a different mismatch (an international discipline strategy also carries no Philippine operational commitments).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Applying</span></div>
+    <p class="stem">A proposal aims to build an automated meteor-camera network whose alerts feed PAGASA and local DRRM offices, with a secondary output of orbital data for researchers. Its most defensible HNRDA declaration is:</p>
+    <ol class="opts"><li>Primary: DRR-CCA (hazard monitoring service); secondary: NIBRA (orbital science) and IEET (instrumentation development)</li><li>Primary: Health, since falling meteors could injure people</li><li>Primary: NIBRA only — cameras observe the sky, and the sky is basic science</li><li>No declaration; let DOST decide</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> The pillar follows purpose and user: the network's operational purpose is hazard-relevant monitoring for DRRM users, with knowledge and technology outputs as documented co-benefits — the "primary pillar, secondary contributions" pattern. C classifies by discipline rather than by the agenda served; B invents a far-fetched mechanism; D forfeits the routing decision that shapes reviewers, indicators, and partners.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Reviewer X says: "This basic-research proposal on galaxy kinematics should be rejected — it names no industry beneficiary." Under the HNRDA structure, the soundest rebuttal is:</p>
+    <ol class="opts"><li>All research must have an industry beneficiary, so X is right</li><li>The HNRDA deliberately includes NIBRA as the home for basic research: foundational work is judged on knowledge outputs, capability building, and human capital — demanding an industry beneficiary applies IEET criteria to a NIBRA project</li><li>Galaxy kinematics secretly benefits industry</li><li>Reviewers may not question beneficiaries</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The harmonized agenda assigns different success criteria to different pillars precisely so basic science is not scored with applied metrics. The error is criterion transplantation — real and common in panels. A erases NIBRA; C invents an alignment that fails the honesty test; D confuses rebutting a criterion with forbidding scrutiny.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">The UNESCO Recommendation on Open Science and a university's wish to patent an instrument design appear to conflict in a proposal. The most sophisticated resolution is:</p>
+    <ol class="opts"><li>Abandon openness — patents always win</li><li>Abandon the patent — openness always wins</li><li>Differentiate the outputs: publish data and findings openly on the committed schedule, while managing the patentable design under the institution's IP process with a disclosed, time-bound embargo — openness and protection apply to different objects</li><li>Hide the conflict from the funder</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> Open science operates at the level of specific outputs, not as a blanket rule: datasets, papers, and code can be open while a distinct patentable artifact follows IP procedure with declared timelines. Recognizing that different outputs carry different regimes — and disclosing the plan — is exactly what data-management plans exist to record. A, B, and D each collapse a manageable design decision into a false dilemma or a disclosure violation. (You will meet the IP side formally in Weeks 8–9.)</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Applying</span></div>
+    <p class="stem">A student team wants IAU support for training barangay volunteers to run livelihood-linked astro-tourism in a heritage dark-sky area. Which application route best fits, and why?</p>
+    <ol class="opts"><li>OAE, because volunteers will learn</li><li>OAO, because tourists are the public</li><li>OAD, because the intervention's primary outcome is socio-economic development measured in livelihood terms — learning and engagement are means, not the endpoint</li><li>The IAU General Assembly, because it is the largest venue</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> Office selection follows the <em>primary outcome and its indicators</em>: here, income diversification and community benefit — OAD territory — even though the project contains training (OAE-like) and public engagement (OAO-like) components. Classifying by surface features rather than by outcome logic repeats the instrument-vs-purpose error in an international setting. D confuses a scientific meeting with a grants program.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why do agenda documents cascade (global → national → sectoral → regional) rather than exist as one master list?</p>
+    <ol class="opts"><li>Bureaucracies enjoy duplication</li><li>Each layer owns different accountabilities and instruments: global goals coordinate states, national plans commit governments, sectoral agendas task funding systems, regional plans localize sites and beneficiaries — a proposal gains strength by hooking the layer whose commitments its outputs actually serve</li><li>Only the newest layer ever matters</li><li>The cascade is decorative; all layers say the same thing</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The layers differ in <em>who is accountable for what</em>, which is why the chapter's matrix asks for both a national anchor and a global anchor, and why a sited project adds its Regional Development Plan. Treating the cascade as redundancy (D) or recency-ranked (C) forfeits the ability to choose the anchor with verifiable commitments closest to the project's outputs.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two rationales open a dark-sky ordinance study. R1: "Light pollution is a global tragedy that all seventeen SDGs deplore." R2: "Excess artificial light at night degrades urban environmental quality (SDG 11 target level), wastes energy (SDG 7), and erodes an emerging astro-tourism asset identified in the province's Regional Development Plan." The decisive difference is:</p>
+    <ol class="opts"><li>R2 is longer</li><li>R1 is more passionate, therefore stronger</li><li>R2 selects few anchors, cites them at target/strategy level, and ties each to a distinct, checkable mechanism — R1 is alignment inflation with no mechanism at all</li><li>R1 correctly claims all SDGs; R2 undersells</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> R2 passes the specificity test (target-level anchors), the causality test (each anchor has its own mechanism — environment, energy, livelihood), and the honesty test (no claim it cannot defend). R1's "all seventeen" is rhetorically loud and evidentially empty — the signature of agenda-washing. Length (A) and passion (B) are not scoring criteria; D mistakes inflation for coverage.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Applying</span></div>
+    <p class="stem">A PhilSA-adjacent project on GNSS ionospheric monitoring for aviation and maritime users wants the most durable possible anchor set. Ranked by durability, the best-constructed chain is:</p>
+    <ol class="opts"><li>RA 11363 policy area (statute) → PDP strategy (term plan) → SDG target (global goal), with the HNRDA pillar naming the funding home</li><li>A viral news article → a senator's speech → a hashtag</li><li>PDP alone, repeated three times</li><li>SDG target alone, since global goals outrank national law</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> The chain layers durability (statute survives administrations), current commitment (PDP), and global legibility (SDG target), while the HNRDA pillar supplies the operational funding route — the four-link pattern the lecture called close to alignment-proof. B is not policy; C has one layer's strengths and weaknesses thrice over; D inverts the hierarchy a national funder actually applies.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A department drafts its five-year research agenda by listing the thesis topics faculty already pursue. As agenda-setting, the chief methodological weakness is:</p>
+    <ol class="opts"><li>Faculty interests are illegitimate inputs</li><li>The process is supply-driven only: without demand-side inputs (national priorities, stakeholder needs, capability gaps, foresight), the "agenda" merely describes the status quo and cannot steer, justify investment, or reveal gaps</li><li>Five years is always the wrong horizon</li><li>Thesis topics change too often to list</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> An agenda's function is to steer effort toward chosen outcomes; harmonization (the H in HNRDA) exists precisely to reconcile researcher supply with societal demand. Inventorying current interests is a useful <em>input</em> (so A overshoots) but by itself produces a mirror, not a map — no gap analysis, no priorities, no investment case.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your team must decide <em>which</em> DOST council will eventually own your project idea before writing a line of the proposal. The most reliable procedure is:</p>
+    <ol class="opts"><li>Choose the council with the nearest office</li><li>Read the current calls and priority lists of the candidate councils (PCIEERD, PCAARRD, PCHRD) and the NIBRA themes, then classify your project by its primary purpose and end-user against those published scopes</li><li>Submit to all councils simultaneously and keep whichever answers first</li><li>Name no council and address the proposal "To DOST"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Routing is determined by purpose-and-user matched against each council's published scope — which is checkable, current, and shapes design decisions (partners, indicators) from the start. A optimizes geography; C violates submission norms and signals focus failure; D leaves the proposal unroutable at screening, the earliest and least recoverable rejection point.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A critic argues Pagtanaw 2050 is "useless because none of its scenarios will happen exactly." The best-reasoned response is:</p>
+    <ol class="opts"><li>Concede — foresight fails unless a scenario comes true</li><li>Point out that foresight's success criterion is decision quality, not prediction accuracy: scenarios exist to identify capabilities and hedges that are robust across many futures, so "no scenario happens exactly" is expected and irrelevant</li><li>Claim the scenarios will happen exactly</li><li>Argue foresight is valuable only for rich countries</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The critic imports a forecasting criterion into a foresight exercise — the same conflation as "foresight = prophecy." A capability worth building in most plausible futures (instrumentation skills, maritime-space capacity) is a good investment even though no single scenario materializes verbatim. A and C accept the wrong criterion from opposite directions; D is a non sequitur.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">The Philippine Innovation Act (RA 11293) matters to the PDP's innovation agenda because statutes of this kind chiefly provide:</p>
+    <ol class="opts"><li>A one-time celebration of science week</li><li>A standing institutional and funding architecture for innovation that successive plans can build on — so a proposal invoking the PDP innovation agenda can trace its hook to a durable legal foundation rather than a single plan cycle</li><li>A replacement for the HNRDA</li><li>Penalties for researchers who fail to innovate</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The pattern repeats from the Space Act analysis: statute supplies durability, the plan supplies current programs, and the agenda supplies the research tasks. Recognizing which layer each document occupies — rather than treating all citations as interchangeable — is the chapter's core skill. C confuses complementary instruments; A and D are caricatures.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Applying</span></div>
+    <p class="stem">A proposal's expected-output section lists: "1 open dataset, 2 trained graduate students, 1 policy brief for the provincial board, 1 peer-reviewed article." Mapped to agenda logic, this list is strong because it:</p>
+    <ol class="opts"><li>Contains exactly four items, the required number</li><li>Speaks several agenda dialects at once — knowledge outputs (article, dataset), human capital (students), and policy uptake (brief) — giving distinct, verifiable evidence lines for distinct anchors</li><li>Avoids mentioning any beneficiary</li><li>Guarantees the project will be funded</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Different anchors demand different evidence: an SDG-4/human-capital anchor is evidenced by trained people, a policy anchor by uptake documents, a NIBRA anchor by knowledge outputs. A portfolio of output types lets each matrix row carry its own verifiable evidence — the causality test passed four ways. A invents a rule; C describes a weakness; D confuses strong design with certainty.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A university insists every thesis, regardless of topic, must claim alignment with the PDP. An honest methodologist's assessment of this blanket rule is:</p>
+    <ol class="opts"><li>Sound — universal alignment claims strengthen every thesis equally</li><li>Counterproductive: forced universal claims manufacture exactly the mechanism-free, title-level citations that fail the specificity and honesty tests, training students in agenda-washing and devaluing the genuinely aligned work</li><li>Sound, provided the font is bold</li><li>Irrelevant, since theses are never read</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Alignment has value because it is discriminating: it distinguishes projects that demonstrably serve declared priorities. Mandating it universally severs the claim from the analysis that justifies it, producing inflation at institutional scale — one false alignment poisoning credible ones, now as policy. The honest alternative: require an alignment <em>analysis</em>, which may legitimately conclude "primarily curiosity-driven, NIBRA-type contribution."</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Applying</span></div>
+    <p class="stem">An astronomy-education project sited in three coastal municipalities wants its <em>evidence-of-contribution</em> column to satisfy the causality test. Which entry does?</p>
+    <ol class="opts"><li>"Education is the foundation of national progress"</li><li>"Pre/post science-attitude and content assessments for 240 pupils across the three sites, with results reported to the division office; indicator: change in assessment scores and number of teachers independently re-running the module the following year"</li><li>"The team believes strongly in the SDGs"</li><li>"Broad multi-sectoral transformative societal impact"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> It names the measurable output, the measurement instrument, the reporting line, and a follow-on indicator that a reviewer (or the division office) can verify — the output→indicator mechanism the matrix column exists to hold. A, C, and D are sentiments; none contains an object anyone could check, which is the operational definition of failing the causality test.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the lecture pair "PDP/HNRDA for relevance now" with "Pagtanaw for capability tomorrow" instead of recommending one or the other?</p>
+    <ol class="opts"><li>Because citing two documents doubles the page count</li><li>Because the pairing covers both accountability horizons a panel weighs: near-term deliverables within the funding cycle, and the longer trajectory that distinguishes a research program from a one-off project — each document underwrites the claim the other cannot</li><li>Because Pagtanaw replaces the PDP in 2028</li><li>Because reviewers only respect older documents</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The pairing is a claims-coverage strategy: term plans cannot host 25-year capability arguments, and foresight cannot evidence near-term relevance. Together they answer both questions a panel actually asks — "what do we get this cycle?" and "why does this team's direction matter beyond it?" A, C, D misconstrue the documents' relationship entirely.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A team recycles its rejected 2021 proposal, changing only the header to cite the PDP 2023–2028 and HNRDA 2023–2028. Predict the most likely reviewer response and its justification.</p>
+    <ol class="opts"><li>Acceptance — headers are what panels check</li><li>Detection: alignment claims interact with design (indicators, partners, priority themes), so a swapped citation over an unchanged design produces visible mismatches — objectives answering priorities that no longer exist, indicators tied to superseded strategies</li><li>Automatic funding due to persistence</li><li>Rejection solely for reusing a title</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Because genuine alignment shapes the project rather than labeling it, agenda updates propagate into objectives, beneficiaries, and indicators. A citation-only refresh leaves archaeological traces — the expired-plan pitfall in its most detectable form. Persistence (C) is a virtue only when accompanied by revision; A and D mistake surface features for the actual failure mode.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Applying</span></div>
+    <p class="stem">You have one page to convince a skeptical panel that your basic-astronomy project belongs in the national portfolio. Drawing on both the IAU Strategic Plan's premise and the HNRDA structure, your strongest one-paragraph argument is:</p>
+    <ol class="opts"><li>"Astronomy is beautiful, and beauty needs no justification"</li><li>"Astronomy builds capacities the nation needs regardless of the science — instrumentation, data pipelines, quantitative graduates (the IAU's own development premise) — and the HNRDA's NIBRA pillar exists to fund exactly this class of foundational, capability-building work; our outputs and trained personnel are the evidence lines"</li><li>"Other countries fund astronomy, so we must too"</li><li>"Rejecting this proposal would embarrass the university"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> It fuses the discipline's official development argument (capability spillover, human capital) with the national structure that legitimizes basic research (NIBRA), and closes with verifiable evidence lines — an argument the panel can score. A may be true but is unscoreable; C is an appeal to conformity without mechanism; D is pressure, not argument.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">Your team drafts four alignment-matrix rows for a provincial radio-quiet-zone study. Which row should be <em>deleted</em> under the honesty test?</p>
+    <ol class="opts"><li>Objective: RFI baseline survey of 3 candidate valleys → Anchor: Space Act R&amp;D policy area; NIBRA → Evidence: calibrated RFI atlas delivered to PhilSA-adjacent researchers</li><li>Objective: municipal ordinance model for radio-quiet protection → Anchor: Regional Development Plan land-use strategy → Evidence: draft ordinance + committee hearing record</li><li>Objective: community orientation sessions in 6 barangays → Anchor: SDG Target 4.7-adjacent public science literacy; Space Policy: education &amp; awareness → Evidence: attendance, pre/post awareness instrument</li><li>Objective: the same RFI survey → Anchor: SDG 3 (Good Health), claiming radio-quiet zones reduce community stress → Evidence: "self-evident wellness benefits"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: D.</span> Rows A–C each tie a real output to an anchor with a checkable mechanism. Row D invents a health pathway the study neither measures nor plausibly affects, and its "evidence" is a phrase, not an object — indefensible aloud in a panel. Under the honesty test it must go <em>before submission</em>, because its presence discounts the credibility of the three legitimate rows beside it.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ PART II ============ -->
+<section id="essay">
+  <h2><span class="secno">II.</span>Reinforcement Essay — 3 HOTS Items</h2>
+  <p>Write each essay in full (300–500 words) before opening the dropdown. The model answers are <em>possible</em> strong responses — your own answer may differ and still earn full marks if it demonstrates the same agenda-reasoning identified in the explanation.</p>
+
+  <div class="q"><div class="qnum">Essay 1 · <span class="lvl">Creating</span> · 20 points</div>
+    <p class="stem">Choose one candidate project idea you might develop into your TE01 final proposal. <strong>Write its complete agenda-alignment section:</strong> (i) a traceability chain running from at least one global anchor (SDG target level or IAU goal) through the national layer (PDP strategy and/or Space Act policy area) to a declared primary HNRDA pillar with named lead council; (ii) a two-row alignment matrix (objective · national anchor · global anchor · evidence of contribution); and (iii) a closing paragraph applying the specificity, causality, and honesty tests to your own rows.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response, using a sky-brightness monitoring project).</strong> <em>Chain:</em> The project produces a calibrated, open, 12-month sky-brightness baseline for 30 Metro Manila sites plus an LGU lighting-policy brief. Primary HNRDA home: <strong>NIBRA</strong> (foundational space-science measurement; no commercial end-user), with documented secondary contribution to DRR-CCA-adjacent urban environmental monitoring. National layer: PDP urban-environment and innovation strategies (cited at strategy level); Space Act policy area of space education and awareness for the schools component. Global layer: SDG 11 at target level (urban environmental quality) and SDG 4 Target 4.c for the embedded teacher-training strand; IAU OAE goal as discipline anchor. <em>Matrix row 1:</em> Objective — 12-month baseline for 30 stratified sites → National anchor: NIBRA; PDP urban-environment strategy → Global anchor: SDG 11 (target level) → Evidence: open dataset (repository, license, release date) + policy brief; indicator: number of LGUs referencing the brief in lighting ordinances within 18 months. <em>Matrix row 2:</em> Objective — train 40 physics teachers in sky-quality measurement pedagogy → National anchor: Space Policy education area; PDP human-capital strategy → Global anchor: SDG Target 4.c; IAU OAE → Evidence: certification records, pre/post pedagogy assessment; indicator: teachers independently deploying the module the following school year. <em>Self-test paragraph:</em> Specificity — all anchors cited at target/strategy level, none by title alone. Causality — each evidence entry is an object (dataset, brief, assessment) linked to a downstream indicator a third party can check. Honesty — an earlier draft row claiming SDG 13 (climate) was deleted: the project measures light, not climate variables, and the row would not survive a panel question.</p>
+      <p><strong>Why this earns full marks.</strong> The response (i) runs an unbroken chain across all required layers and correctly declares a single primary pillar with named council logic; (ii) builds matrix rows whose evidence column contains verifiable objects and indicators rather than sentiments; and (iii) — the discriminator — applies the three tests <em>against itself</em>, including a demonstrated deletion under the honesty test. Responses that claim many anchors without mechanisms, cite documents by title only, or skip the self-test paragraph are proficient at best. The deleted-row move shows evaluation-level thinking: knowing what to remove is the hardest part of alignment.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 2 · <span class="lvl">Evaluating</span> · 20 points</div>
+    <p class="stem">A colleague's draft rationale reads: <em>"Our CubeSat spectroscopy project supports AmBisyon Natin 2040, the PDP, the HNRDA, Pagtanaw 2050, all relevant SDGs, and the IAU Strategic Plan. Alignment is therefore total. As the government requires innovation, funding this project is a national obligation."</em> <strong>Critique this passage comprehensively:</strong> identify at least four distinct defects of agenda reasoning, explain the harm each causes before a review panel, and rewrite the passage into a defensible alignment argument (you may invent plausible project specifics).</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Defect 1 — title-level citation:</em> every document is named, none is engaged at target/strategy level; the panel cannot verify anything, so the passage scores as decoration (specificity failure). <em>Defect 2 — alignment inflation ("all relevant SDGs… total"):</em> a bounded CubeSat project cannot materially serve all goals; the unbounded claim discounts even the defensible anchors (honesty failure poisoning credible rows). <em>Defect 3 — layer confusion:</em> AmBisyon (vision) and Pagtanaw (foresight) are cited as if they carried commitments equivalent to the PDP and HNRDA; no primary HNRDA pillar or council is declared, leaving the proposal unroutable (instrument-type and routing failure). <em>Defect 4 — entitlement non sequitur ("funding is a national obligation"):</em> agendas justify <em>competition</em> for funds, not entitlement to them; the tone converts an argument into a demand, which panels read as inexperience. <em>(Acceptable fifth defect: no mechanism — no output, indicator, or beneficiary appears anywhere.)</em> <em>Rewrite:</em> "The project develops a 3U CubeSat UV spectroscopy payload and the graduate-level payload-engineering capability to sustain it. Primary alignment: HNRDA–IEET (space technology, PCIEERD), with the Space Act's space R&amp;D policy area as statutory anchor. Within the PDP innovation agenda, the project contributes to industry–academe linkage through co-development with a local electronics fabricator. Global anchor: SDG 9 at target level (research capability and technological upgrading). Evidence of contribution: flight-qualified payload, two trained payload engineers, one open calibration dataset; indicators: payload delivery milestone, personnel placement, dataset citations. A secondary education strand (Space Policy: education and awareness) is documented separately and does not claim IEET indicators."</p>
+      <p><strong>Why this earns full marks.</strong> The critique names four <em>structurally distinct</em> defects — specificity, inflation/honesty, layer/routing, and entitlement — and for each states the concrete harm at panel stage rather than labeling it. The rewrite demonstrates the cure: one declared pillar and council, statute-plan-goal layering, target-level citations, and an evidence column of checkable objects, with the secondary strand honestly quarantined from the primary indicators. Critiques that find four surface variants of the same defect (e.g., four versions of "too vague"), or rewrites that shrink the claims without adding mechanisms, earn proficient rather than excellent.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 3 · <span class="lvl">Evaluating / Creating</span> · 20 points</div>
+    <p class="stem">Your case materials observe that <em>the Philippines has no dedicated national research roadmap for astronomy and space science</em>. <strong>Argue whether the country should produce one, and design its skeleton.</strong> Your answer must (i) take and defend a position using the instrument types of this chapter (vision, plan, agenda, foresight) to specify exactly what kind of document the roadmap would be; (ii) propose its structure — at least four major components with the evidence base each requires; and (iii) explain how the roadmap would connect upward to existing anchors (RA 11363, HNRDA, Pagtanaw 2050, IAU Strategic Plan) without duplicating them.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit affirmative response).</strong> <em>Position and instrument type:</em> Yes — and the missing document is a <strong>sectoral research agenda with a foresight-informed horizon</strong>: narrower than the HNRDA (one field), longer than a PDP cycle (10–15 years), subordinate to statute (RA 11363 already supplies the policy mandate: space R&amp;D, education, international cooperation are named policy areas). It is not a vision (the field does not need a new destination statement) and not pure foresight (Pagtanaw already scans 2050 futures); it is the tasking layer between them that currently does not exist — which is why individual proposals must improvise their alignment chains today. <em>Skeleton (components + evidence base):</em> (1) <strong>Capability audit</strong> — inventory of Philippine astronomy human resources, instruments, institutions, and international memberships; evidence: surveys, bibliometrics, institutional records. (2) <strong>Priority research themes</strong> — e.g., time-domain/archival astrophysics, space weather and ionospheric physics, instrumentation and small-payload development, cultural/ethnoastronomy; evidence: stakeholder workshops (universities, PhilSA, PAGASA, DepEd, LGUs), gap analysis against ASEAN peers. (3) <strong>Human-capital pipeline plan</strong> — degree programs, scholarships, teacher training, return-flow mechanisms; evidence: enrollment and placement data, diaspora mapping. (4) <strong>Infrastructure and data policy</strong> — observatory siting (including radio-quiet and dark-sky protection), archive access, open-science commitments; evidence: site surveys, RFI/sky-brightness baselines, data-audit. (5) <strong>Monitoring & evaluation matrix</strong> — indicators per theme with review cadence. <em>Upward connections without duplication:</em> the roadmap <em>operationalizes</em> RA 11363's policy areas into research tasks (statute stays the mandate); it <em>feeds</em> the next HNRDA cycle a ready-made sectoral input (agenda stays the national aggregator); it <em>inherits</em> Pagtanaw's long-horizon scenarios as boundary conditions rather than re-scanning them; and it <em>localizes</em> IAU Strategic Plan goals (OAD/OAE/OAO structures) into national programs. A defensible negative position — arguing the HNRDA + Space Act already suffice and a separate roadmap risks fragmentation — can also earn full marks if it engages the same instrument-type analysis and proposes an alternative (e.g., an astronomy annex within existing instruments).</p>
+      <p><strong>Why this earns full marks.</strong> The response (i) classifies the proposed document precisely using the chapter's instrument taxonomy — the analytical move the item exists to test — rather than vaguely calling for "a plan"; (ii) designs components each paired with the <em>evidence base</em> that would make the roadmap a research product rather than a wish list; and (iii) positions the roadmap in the existing cascade so it fills the identified gap without duplicating statute, agenda, or foresight. Answers that skip the instrument-type analysis, list components without evidence bases, or treat the roadmap as replacing (rather than connecting to) existing anchors are proficient rather than excellent — and, as the mastery test's final principle says, the strongest responses could defend every claim aloud before a panel.</p>
+    </div></details>
+  </div>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch2-lecture.html">&#8592; Ch. 2 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch3-lecture.html">Ch. 3 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 2 Reinforcement Exercises · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astronomy Project Development and Management (TE01) — Course Syllabus</title>
+<style>
+  :root{
+    --ink:#1c2433;
+    --ink-soft:#4a5568;
+    --navy:#1b2a4a;
+    --navy-deep:#12203a;
+    --gold:#c9a227;
+    --gold-soft:#f6edd2;
+    --paper:#fbfaf7;
+    --card:#ffffff;
+    --line:#e3e0d8;
+    --blue-badge:#1d5fbf;
+    --green-badge:#1e7d4f;
+    --amber-badge:#a86a00;
+    --table-head:#f0eee7;
+    --row-alt:#f8f7f2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:112px;}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16.5px;
+  }
+  .sans{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+
+  /* ---------- Header ---------- */
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;
+    padding:48px 20px 40px;
+    text-align:center;
+    border-bottom:5px solid var(--gold);
+  }
+  .hero .republic{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:#c8d2e4;
+  }
+  .hero .univ{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:1.05rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gold);
+    margin-top:6px;
+  }
+  .hero .campus{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:.8rem;letter-spacing:.1em;color:#c8d2e4;margin-top:2px;
+  }
+  .hero h1{
+    font-size:2.1rem;
+    font-weight:400;
+    margin:26px auto 8px;
+    max-width:820px;
+    line-height:1.25;
+  }
+  .hero .subtitle{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:.95rem;color:#dbe3f0;
+  }
+  .hero .meta-line{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    display:inline-block;
+    margin-top:18px;
+    padding:8px 22px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:999px;
+    font-size:.85rem;
+    letter-spacing:.05em;
+    color:#eef2f9;
+  }
+
+  /* ---------- Nav ---------- */
+  nav.toc{
+    position:sticky;top:0;z-index:50;
+    background:var(--card);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 1px 6px rgba(20,30,50,.08);
+  }
+  nav.toc ul{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:2px;
+    list-style:none;max-width:1080px;margin:0 auto;padding:8px 12px;
+  }
+  nav.toc a{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    display:block;padding:7px 13px;border-radius:6px;
+    color:var(--navy);text-decoration:none;font-size:.86rem;font-weight:600;
+  }
+  nav.toc a:hover{background:var(--gold-soft);color:var(--navy-deep);}
+
+  /* ---------- Layout ---------- */
+  main{max-width:1080px;margin:0 auto;padding:34px 22px 60px;}
+  section{margin-bottom:56px;}
+  h2{
+    font-size:1.5rem;font-weight:700;color:var(--navy);
+    border-bottom:3px solid var(--gold);
+    padding-bottom:8px;margin-bottom:20px;
+  }
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:1.02rem;color:var(--navy);margin:26px 0 10px;
+    text-transform:uppercase;letter-spacing:.06em;
+  }
+  p{margin-bottom:12px;}
+  .lede{font-size:1.05rem;}
+
+  /* ---------- Badges ---------- */
+  .badge{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    display:inline-block;font-size:.66rem;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;
+    padding:2px 8px;border-radius:999px;vertical-align:2px;margin-left:6px;
+    white-space:nowrap;
+  }
+  .badge.new{background:#e3f3ea;color:var(--green-badge);border:1px solid #bfe3cf;}
+  .badge.updated{background:#e5eefb;color:var(--blue-badge);border:1px solid #c3d7f5;}
+  .badge.enhanced{background:#fdf3e0;color:var(--amber-badge);border:1px solid #f0dcb0;}
+
+  /* ---------- Cards ---------- */
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:20px 22px;box-shadow:0 1px 3px rgba(20,30,50,.05);
+  }
+  .card h4{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .card p, .card ol{font-size:.94rem;color:var(--ink-soft);}
+  .card ol{padding-left:20px;}
+  .card ol li{margin-bottom:6px;}
+
+  /* ---------- Tables ---------- */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{
+    width:100%;border-collapse:collapse;background:var(--card);
+    font-size:.92rem;border:1px solid var(--line);
+  }
+  th{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    background:var(--table-head);color:var(--navy);
+    text-align:left;padding:10px 12px;font-size:.8rem;
+    letter-spacing:.05em;text-transform:uppercase;
+    border:1px solid var(--line);vertical-align:bottom;
+  }
+  td{padding:10px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+  td.center,th.center{text-align:center;}
+  td.wk{white-space:nowrap;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;color:var(--navy);}
+  .kv td:first-child{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-weight:700;color:var(--navy);width:220px;background:var(--table-head);
+    font-size:.85rem;
+  }
+  .legend{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:.8rem;color:var(--ink-soft);margin-top:8px;
+  }
+  ul.plain{padding-left:22px;margin-bottom:12px;}
+  ul.plain li{margin-bottom:7px;}
+  ol.plain{padding-left:22px;margin-bottom:12px;}
+  ol.plain li{margin-bottom:7px;}
+
+  .callout{
+    background:var(--gold-soft);border-left:4px solid var(--gold);
+    padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0;
+    font-size:.95rem;
+  }
+  .callout strong{color:var(--navy);}
+
+  .period-label{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    display:inline-block;background:var(--navy);color:#fff;
+    font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:4px 14px;border-radius:4px;margin:22px 0 6px;
+  }
+
+  /* ---------- Committee ---------- */
+  .committee{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:18px;}
+  .sig{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:18px;text-align:center;
+  }
+  .sig .role{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .sig .name{font-weight:700;color:var(--navy);margin-top:10px;font-size:.95rem;}
+  .sig .title{font-size:.85rem;color:var(--ink-soft);}
+
+  footer{
+    background:var(--navy-deep);color:#c8d2e4;text-align:center;
+    padding:26px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.83rem;
+    border-top:4px solid var(--gold);
+  }
+
+  @media print{
+    nav.toc{display:none;}
+    header.hero{padding:24px;}
+    body{font-size:12px;}
+    section{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="republic">Republic of the Philippines</div>
+  <div class="univ">Rizal Technological University</div>
+  <div class="campus">Cities of Mandaluyong and Pasig · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <h1>Astronomy Project Development and Management</h1>
+  <div class="subtitle">Course Syllabus (Enhanced) &nbsp;|&nbsp; TE01</div>
+  <div class="meta-line">First Semester · Academic Year 2026–2027 · Assoc. Prof. Ryan Manuel D. Guido, Ph.D.</div>
+</header>
+
+<nav class="toc" aria-label="Syllabus sections">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#outcomes">Course Outcomes</a></li>
+    <li><a href="#outline">Course Outline</a></li>
+    <li><a href="#plan">Learning Plan</a></li>
+    <li><a href="#map">Course Map</a></li>
+    <li><a href="#grading">Grading</a></li>
+    <li><a href="#readings">Readings</a></li>
+    <li><a href="#policies">Policies</a></li>
+    <li><a href="#consultation">Consultation</a></li>
+    <li><a href="#materials" style="color:#a86a00;font-weight:800;">Chapter Packs</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ================= I. OVERVIEW ================= -->
+<section id="overview">
+  <h2><span class="secno">I.</span>Course Overview</h2>
+  <div class="tbl-wrap">
+    <table class="kv">
+      <tbody>
+        <tr><td>Program</td><td>Bachelor of Science in Astronomy</td></tr>
+        <tr><td>Course Title</td><td>Astronomy Project Development and Management</td></tr>
+        <tr><td>Course Code</td><td>TE01</td></tr>
+        <tr><td>Course Credit</td><td>1.0 Unit</td></tr>
+        <tr><td>Contact Hours</td><td>3 Hours Laboratory</td></tr>
+        <tr><td>Pre-requisite</td><td>AST11, AST15</td></tr>
+        <tr><td>Co-requisite</td><td>None</td></tr>
+        <tr><td>Semester</td><td>First Semester, Academic Year 2026–2027 <span class="badge updated">Updated</span></td></tr>
+        <tr><td>Created / Updated</td><td>Created August 2020 · Updated August 2026 <span class="badge updated">Updated</span></td></tr>
+        <tr><td>Instructor / Professor</td><td>Assoc. Prof. Ryan Manuel D. Guido, Ph.D.</td></tr>
+        <tr><td>Department</td><td>Earth and Space Sciences</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Course Description</h3>
+  <p class="lede">The primary aim of this course is for astronomy students to experience real-life research writing of grant proposals. It exposes students to research and development (R&amp;D) management with the application of science and technology (S&amp;T) in the context of astronomy for sustainable economic growth and development. The course also surveys various Philippine laws relevant to astronomy and space science, providing a more comprehensive perspective on developing a research project.</p>
+  <p>The course facilitates students’ skills in R&amp;D productivity, promotion, technology transfer and utilization, S&amp;T human resources development, astronomical science literacy, and advocacy — and builds the capacity to establish linkages by creating and promoting appropriate technologies in the field of astronomy and space science.</p>
+  <div class="callout"><strong>Final requirement.</strong> At the end of this course, students should be able to produce a complete R&amp;D proposal appropriate for a research funding application, culminating in a <em>presentation of the research agenda</em> and an <em>innovative pitching session</em> evaluated with a standard rubric. <span class="badge enhanced">Enhanced</span></div>
+
+  <h3>Learning Tools Required</h3>
+  <p>Since this course deals with research proposal writing for a funding application, students will need a computer, laptop, or smartphone with at least the following: a word processor (MS Word 2007+ or Google Docs), a spreadsheet application (MS Excel 2007+ or Google Sheets), or the WPS Office suite; presentation software for the pitching session; and a stable internet connection for e-RTU Flexys and class correspondence. <span class="badge updated">Updated</span></p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>Vision</h4>
+      <p>A leading technology-driven university responsive to the developmental needs of changing societies.</p>
+    </div>
+    <div class="card">
+      <h4>Mission</h4>
+      <p>To develop globally competitive and socially responsible professionals through technology-driven instructions, innovative researches, and sustainable extension programs that will enhance the lives of people in the communities.</p>
+    </div>
+    <div class="card">
+      <h4>College Goal &amp; Objectives</h4>
+      <p>Provide opportunities for qualified students to become professional engineers and technicians of the country. Specifically, the programs are designed to:</p>
+      <ol>
+        <li>Develop basic skills of comprehension, communication, and critical thinking;</li>
+        <li>Illustrate the interrelationship among various dimensions of knowledge through research and extension programs;</li>
+        <li>Develop the student’s aesthetic, cultural, and literacy tastes through exposure to the world of arts and letters;</li>
+        <li>Cultivate an environment where discipline, integrity, mutual respect, and honesty prevail above all;</li>
+        <li>Heighten appreciation for the sciences, stressing their importance in shaping the world of tomorrow; and</li>
+        <li>Affirm the ideas of a free society that preserves the fundamental rights of the human being.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= II. OUTCOMES ================= -->
+<section id="outcomes">
+  <h2><span class="secno">II.</span>Course Outcomes</h2>
+  <p>Upon successful completion of TE01, the student should be able to:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th class="center" style="width:70px;">CO</th><th>Course Outcome</th><th class="center" style="width:180px;">Emphasis Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="center wk">CO1</td><td>Understand the indispensable concept of research and development in the international and national contexts.</td><td class="center">I · E</td></tr>
+        <tr><td class="center wk">CO2</td><td>Develop proficient skills in research and development management.</td><td class="center">D · D</td></tr>
+        <tr><td class="center wk">CO3</td><td>Apply research and development principles in writing effective R&amp;D project proposals.</td><td class="center">E · E</td></tr>
+        <tr><td class="center wk">CO4</td><td>Create a research agenda and a scientific R&amp;D project proposal for possible funding.</td><td class="center">E · D</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="legend">Emphasis codes as aligned to the BS Astronomy Program Outcomes (PO1–PO9) in the approved curriculum map: <strong>I</strong> = Introduced · <strong>E</strong> = Enabled/Enhanced · <strong>D</strong> = Demonstrated. Refer to the official curriculum map for the full CO–PO matrix.</p>
+</section>
+
+<!-- ================= III. OUTLINE ================= -->
+<section id="outline">
+  <h2><span class="secno">III.</span>Course Outline and Timeframe</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th class="center" style="width:90px;">Week</th><th style="width:110px;">Unit</th><th>Topic</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="wk center">1</td><td>Unit 1</td><td>Class orientation · Overview of research methods and design principles · Diagnostic test</td></tr>
+        <tr><td class="wk center">2</td><td>Unit 1</td><td>International and national research agenda and country development plans <span class="badge updated">Updated</span></td></tr>
+        <tr><td class="wk center">3–4</td><td>Unit 2</td><td>Republic Acts pertaining to specific government agencies (DRRM, PAGASA, Philippine Standard Time, PhilSA)</td></tr>
+        <tr><td class="wk center">5–6</td><td>Unit 2</td><td>Republic Acts addressing environmental issues · Maritime territories and jurisdictions of the Philippines</td></tr>
+        <tr><td class="wk center">7</td><td>—</td><td><strong>Long Quiz 1</strong> (pencil-and-paper test)</td></tr>
+        <tr><td class="wk center">8–9</td><td>Unit 3</td><td>Intellectual property, technology transfer, and R&amp;D project management · Project line-item budget · Monitoring and evaluation</td></tr>
+        <tr><td class="wk center">10</td><td>Unit 3</td><td>Concepts and principles of R&amp;D management · DOST-GIA guidelines · Magna Carta for Scientists, Engineers, Researchers, and other S&amp;T Personnel · Case Analysis workshop <span class="badge new">New</span></td></tr>
+        <tr><td class="wk center">11</td><td>—</td><td><strong>Midterm Examination</strong> (pencil-and-paper test)</td></tr>
+        <tr><td class="wk center">12–13</td><td>Unit 4</td><td>Preparation of the Astronomy R&amp;D workplan · Principles of research agenda development · Stakeholders, data-gathering procedures, and ethical standards</td></tr>
+        <tr><td class="wk center">14–17</td><td>Unit 4</td><td>Laboratory works: crafting the research agenda and full R&amp;D proposal · Budget preparation · Pitch development and dry runs <span class="badge enhanced">Enhanced</span></td></tr>
+        <tr><td class="wk center">18</td><td>—</td><td><strong>Final Examination:</strong> Presentation of Research Agenda and <strong>Innovative Pitching</strong> session <span class="badge new">New</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="legend"><span class="badge new">New</span> newly added this revision &nbsp; <span class="badge updated">Updated</span> revised content or references &nbsp; <span class="badge enhanced">Enhanced</span> expanded from the previous syllabus. The week-by-week sequence has been renumbered for a clean 18-week flow (the July 2024 version contained overlapping week ranges).</p>
+</section>
+
+<!-- ================= IV. LEARNING PLAN ================= -->
+<section id="plan">
+  <h2><span class="secno">IV.</span>Learning Plan</h2>
+
+  <div class="period-label">Period A · Weeks 1–7 · Foundations and the Legal Landscape</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th style="width:80px;">Week</th><th style="width:220px;">Learning Outcomes</th><th>Content / Topic</th><th style="width:210px;">Teaching–Learning Activities</th><th style="width:170px;">Assessment / Output</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wk">1</td>
+          <td><strong>CO1 · LO1:</strong> Review research methods and design principles</td>
+          <td>Class orientation; overview of research methods and design principles</td>
+          <td>Face-to-face lecture and discussion; course expectations setting</td>
+          <td>Assessment 01 — Diagnostic Test</td>
+        </tr>
+        <tr>
+          <td class="wk">2</td>
+          <td><strong>LO2:</strong> Assess the role of international and national research agendas and country development plans</td>
+          <td>Philippine Science, Technology, and Innovation Foresight and Strategic Plan; UNESCO Sustainable Development Plan 2030; IAU Strategic Plan 2020–2030; Philippine Development Plan 2023–2028; DOST Harmonized National R&amp;D Agenda 2023–2028; Pagtanaw 2050</td>
+          <td>Face-to-face lecture; asynchronous reading</td>
+          <td>Assessment 02</td>
+        </tr>
+        <tr>
+          <td class="wk">3–4</td>
+          <td rowspan="2"><strong>LO3:</strong> Examine various Philippine laws to offer a more comprehensive perspective on developing a research project</td>
+          <td>Republic Acts pertaining to specific government agencies: RA 10121 (Philippine DRRM Act), RA 10692 (PAGASA Modernization), RA 10535 (Philippine Standard Time), RA 11363 (Philippine Space Act) and its IRR</td>
+          <td>Face-to-face lecture; asynchronous reading; <strong>case recitation</strong> on statutory scenarios <span class="badge new">New</span></td>
+          <td>Assessment 03 · Case Recitation</td>
+        </tr>
+        <tr>
+          <td class="wk">5–6</td>
+          <td>Republic Acts addressing environmental issues: RA 8749 (Clean Air), RA 9003 (Solid Waste Management), RA 9275 (Clean Water), RA 9729 &amp; RA 10174 (Climate Change); Revisiting the maritime territories and jurisdictions of the Philippines; Summary of UNCLOS</td>
+          <td>Face-to-face lecture; asynchronous reading</td>
+          <td>Assessment 04</td>
+        </tr>
+        <tr>
+          <td class="wk">7</td>
+          <td colspan="3"><strong>LONG QUIZ 1</strong> — coverage: Weeks 1–6</td>
+          <td>Pencil-and-paper test</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="period-label">Period B · Weeks 8–11 · R&amp;D Management, IP, and the Magna Carta</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th style="width:80px;">Week</th><th style="width:220px;">Learning Outcomes</th><th>Content / Topic</th><th style="width:210px;">Teaching–Learning Activities</th><th style="width:170px;">Assessment / Output</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wk">8–9</td>
+          <td><strong>LO4:</strong> Develop a thorough understanding of the intellectual property landscape and technology transfer in the Philippines, and apply this knowledge to manage and monitor research projects and their budgets</td>
+          <td>R&amp;D and technology transfer; R&amp;D project management; RA 10055 (Philippine Technology Transfer Act); the Intellectual Property Code of the Philippines; IPOPHL Memorandum Circulars 2020-023, 2020-024, 2020-025, 2022-016, 2023-002; project line-item budget; project monitoring and evaluation</td>
+          <td>Face-to-face lecture; asynchronous reading; budget-costing exercise</td>
+          <td>Assessment 05</td>
+        </tr>
+        <tr>
+          <td class="wk">10</td>
+          <td><strong>CO2 · LO5:</strong> Facilitate the application of R&amp;D principles and effective management strategies; strategically plan and oversee the development of R&amp;D projects</td>
+          <td>Concepts and principles of R&amp;D management; DOST AO 011 s. 2020 (Revised DOST-GIA Guidelines); RA 8439 and RA 11312 (Magna Carta for Scientists, Engineers, Researchers, and other S&amp;T Personnel); S&amp;T human resources management, development, and qualification standards</td>
+          <td>Face-to-face lecture; <strong>group Case Analysis</strong> on RA 8439 / RA 11312 / RA 10055 scenarios (850-point group task, max 5 members) <span class="badge new">New</span></td>
+          <td>Assessment 06 · Case Analysis</td>
+        </tr>
+        <tr>
+          <td class="wk">11</td>
+          <td colspan="3"><strong>MIDTERM EXAMINATION</strong> — coverage: Weeks 1–10</td>
+          <td>Pencil-and-paper test</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="period-label">Period C · Weeks 12–18 · Proposal Development and Pitching</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th style="width:80px;">Week</th><th style="width:220px;">Learning Outcomes</th><th>Content / Topic</th><th style="width:210px;">Teaching–Learning Activities</th><th style="width:170px;">Assessment / Output</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wk">12–13</td>
+          <td><strong>CO3 · LO6:</strong> Prepare an R&amp;D detailed workplan</td>
+          <td>Preparation of the Astronomy R&amp;D workplan; principles of research agenda development; identifying priority areas and stakeholders; data-gathering procedures; ethical standards</td>
+          <td>Face-to-face lecture; workshop; presentation of project workplan</td>
+          <td>Assessment 07 · Submission of research proposal draft</td>
+        </tr>
+        <tr>
+          <td class="wk">14–17</td>
+          <td><strong>CO4:</strong> Create a research agenda and a scientific R&amp;D project proposal for possible funding</td>
+          <td>Crafting the research agenda; full R&amp;D proposal development; line-item budget finalization; pitch deck development and dry runs <span class="badge enhanced">Enhanced</span></td>
+          <td>Laboratory works; mentored writing sessions; peer review; pitching rehearsals</td>
+          <td>Complete R&amp;D proposal package</td>
+        </tr>
+        <tr>
+          <td class="wk">18</td>
+          <td colspan="3"><strong>FINAL EXAMINATION</strong> — Presentation of Research Agenda and <strong>Innovative Pitching</strong>, evaluated using the TE01 Pitching Rubric <span class="badge new">New</span></td>
+          <td>Panel presentation and rubric-based evaluation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= V. COURSE MAP ================= -->
+<section id="map">
+  <h2><span class="secno">V.</span>Course Map (Outcomes × Assessments) <span class="badge enhanced">Enhanced</span></h2>
+  <p>The matrix below shows where each course outcome is assessed across the major requirements of the course.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Course Outcome</th>
+          <th class="center">Assessments 01–07</th>
+          <th class="center">Case Recitation</th>
+          <th class="center">Case Analysis</th>
+          <th class="center">Long Quiz 1</th>
+          <th class="center">Midterm Exam</th>
+          <th class="center">R&amp;D Proposal</th>
+          <th class="center">Innovative Pitching</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>CO1</strong> — R&amp;D concepts in international and national contexts</td><td class="center">L</td><td class="center">P</td><td class="center">P</td><td class="center">L</td><td class="center">L</td><td class="center">O</td><td class="center">O</td></tr>
+        <tr><td><strong>CO2</strong> — Proficient R&amp;D management skills</td><td class="center">L</td><td class="center">P</td><td class="center">P</td><td class="center">L</td><td class="center">L</td><td class="center">P</td><td class="center">P</td></tr>
+        <tr><td><strong>CO3</strong> — Apply R&amp;D principles in writing project proposals</td><td class="center">L</td><td class="center">O</td><td class="center">P</td><td class="center">O</td><td class="center">L</td><td class="center">P</td><td class="center">P</td></tr>
+        <tr><td><strong>CO4</strong> — Create a research agenda and fundable R&amp;D proposal</td><td class="center">O</td><td class="center">O</td><td class="center">O</td><td class="center">O</td><td class="center">O</td><td class="center">P</td><td class="center">P</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="legend"><strong>L</strong> = Learned (content is taught and tested) · <strong>P</strong> = Practiced (outcome is exercised and demonstrated) · <strong>O</strong> = Opportunity to learn (outcome is reinforced).</p>
+</section>
+
+<!-- ================= VI. GRADING ================= -->
+<section id="grading">
+  <h2><span class="secno">VI.</span>Course Requirements and Grading System</h2>
+
+  <h3>Course Requirements / Outputs</h3>
+  <ul class="plain">
+    <li><strong>Assessments</strong> (Assessments 01–07, quizzes, and asynchronous tasks)</li>
+    <li><strong>Class reinforcements</strong> — research attitude, case recitation, and participation in workshops and dry runs</li>
+    <li><strong>Case Analysis</strong> — group written analysis (maximum of 5 members) of legal-scenario cases on RA 8439, RA 11312, RA 10055, DOST AO 001 s. 2020, DOST AO 508 s. 2013, and DOST SO 009 s. 2021 <span class="badge new">New</span></li>
+    <li><strong>Major examinations / project outputs</strong> — Long Quiz 1, Midterm Examination, and the Final Examination (presentation of research agenda)</li>
+    <li><strong>Complete R&amp;D proposal</strong> appropriate for a research funding application, with detailed workplan and line-item budget</li>
+    <li><strong>Innovative Pitching</strong> — a panel-evaluated pitch of the proposed project <span class="badge new">New</span></li>
+  </ul>
+
+  <h3>Grading System</h3>
+  <p>The institutional/college grading system may apply. Lecture and laboratory components are weighted as follows:</p>
+  <div class="tbl-wrap">
+    <table style="max-width:520px;">
+      <thead>
+        <tr><th>Component</th><th class="center" style="width:120px;">Weight</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Assessments</td><td class="center">35%</td></tr>
+        <tr><td>Class Reinforcements (research attitude)</td><td class="center">30%</td></tr>
+        <tr><td>Major Examinations (project outputs)</td><td class="center">35%</td></tr>
+        <tr><td><strong>Total</strong></td><td class="center"><strong>100%</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Innovative Pitching Rubric <span class="badge new">New</span></h3>
+  <p>The final pitching session is scored on nine criteria, each rated on a four-point scale: <strong>Excellent (4)</strong> — outstanding mastery and integration of science and community application; <strong>Proficient (3)</strong> — solid understanding with minor gaps; <strong>Developing (2)</strong> — partial understanding, needs improvement; <strong>Beginning (1)</strong> — minimal understanding or application.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th style="width:280px;">Criterion</th><th>What the panel looks for at the “Excellent” level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Problem Identification &amp; Community Relevance</td><td>A specific, persistent community problem supported by data or evidence, with strong justification of urgency and relevance</td></tr>
+        <tr><td>Integration of Astronomy Concepts</td><td>Accurate and innovative use of astronomy (e.g., celestial mechanics, solar activity, satellite orbits) directly linked to the solution</td></tr>
+        <tr><td>Scientific Soundness &amp; Feasibility</td><td>A scientifically valid, realistic solution that is feasible within community constraints</td></tr>
+        <tr><td>Innovation &amp; Creativity</td><td>A highly original and creative approach to solving the problem</td></tr>
+        <tr><td>Societal Impact &amp; Sustainability</td><td>Clearly articulated long-term impact, sustainability, and benefits to the community</td></tr>
+        <tr><td>Economic or Value-Creation Potential</td><td>A clear explanation of how the idea can generate value, savings, or revenue</td></tr>
+        <tr><td>Clarity of Pitch &amp; Communication</td><td>A clear, logical, engaging, well-structured pitch with effective visuals or data</td></tr>
+        <tr><td>Use of Evidence &amp; Data</td><td>Strong use of data, references, or empirical evidence to support claims</td></tr>
+        <tr><td>Ethical, Environmental, and Policy Awareness</td><td>Strong awareness of ethical, environmental, and policy implications</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="legend">Total score interpretation: <strong>90–100%</strong> Highly Innovative &amp; Community-Ready Proposal · <strong>75–89%</strong> Strong Proposal with Refinement Needed · <strong>60–74%</strong> Conceptual but Requires Major Improvement · <strong>Below 60%</strong> Not Yet Ready for Implementation.</p>
+</section>
+
+<!-- ================= VII. READINGS ================= -->
+<section id="readings">
+  <h2><span class="secno">VII.</span>References and Open Educational Resources (OER)</h2>
+
+  <h3>Core References</h3>
+  <ul class="plain">
+    <li>Daim, T., Kim, J., &amp; Phan, K. (2017). <em>Research and Development Management: Technology Journey through Analysis, Forecasting, and Decision Making.</em> Springer Nature, Switzerland.</li>
+    <li>Gilbert, P., et al. (2018). <em>Innovation, Research, and Development Management.</em> John Wiley &amp; Sons, Inc., USA.</li>
+    <li>Muñoz, J., Blanco, J., &amp; Rizo, S. (2017). <em>Project Management and Engineering Research.</em> Springer Nature, Switzerland.</li>
+    <li>Wingate, L. (2015). <em>Project Management for Research and Development: Guiding Innovation for Positive R&amp;D Outcomes.</em> CRC Press, New York.</li>
+  </ul>
+
+  <h3>Strategic Plans and Research Agendas</h3>
+  <ul class="plain">
+    <li>UNESCO Sustainable Development Plan 2030</li>
+    <li>International Astronomical Union Strategic Plan 2020–2030</li>
+    <li>Philippine Development Plan 2023–2028</li>
+    <li>DOST Harmonized National Research and Development Agenda 2023–2028</li>
+    <li>Pagtanaw 2050 (Philippine Science, Technology, and Innovation Foresight)</li>
+  </ul>
+
+  <h3>Laws, Regulations, and Circulars</h3>
+  <ul class="plain">
+    <li>RA 10121 — Philippine Disaster Risk Reduction and Management Act</li>
+    <li>RA 10692 — PAGASA Modernization Act</li>
+    <li>RA 10535 — Philippine Standard Time Act</li>
+    <li>RA 11363 — Philippine Space Act, and its Implementing Rules and Regulations</li>
+    <li>RA 8749 — Philippine Clean Air Act · RA 9003 — Ecological Solid Waste Management Act · RA 9275 — Philippine Clean Water Act</li>
+    <li>RA 9729 — Climate Change Act · RA 10174 — Amended Climate Change Act (People’s Survival Fund)</li>
+    <li>RA 8439 and RA 11312 — Magna Carta for Scientists, Engineers, Researchers, and other S&amp;T Personnel</li>
+    <li>RA 10055 — Philippine Technology Transfer Act · The Intellectual Property Code of the Philippines</li>
+    <li>IPOPHL Memorandum Circulars No. 2020-023, 2020-024, 2020-025, 2022-016, and 2023-002</li>
+    <li>DOST AO 011 s. 2020 — Revised DOST Grants-in-Aid (GIA) Guidelines</li>
+    <li>DOST AO 001 s. 2020 · DOST AO 508 s. 2013 · DOST SO 009 s. 2021 <span class="badge new">New</span></li>
+    <li>S&amp;T Human Resources Management and Development and Qualification Standards</li>
+    <li>Revisiting the Maritime Territories and Jurisdictions of the Philippines · Summary of UNCLOS (Law of the Sea)</li>
+  </ul>
+  <p class="legend">Expect additional supplemental materials and readings to be posted on e-RTU Flexys during the semester.</p>
+</section>
+
+<!-- ================= VIII. POLICIES ================= -->
+<section id="policies">
+  <h2><span class="secno">VIII.</span>Course Policies</h2>
+
+  <h3>Schedule</h3>
+  <p>This course is available for live virtual class meetings for discussions, consultations, and other interactive sessions during asynchronous periods, in addition to the scheduled face-to-face laboratory sessions.</p>
+
+  <h3>General Policy</h3>
+  <ol class="plain">
+    <li>This course strictly follows the university code/manual for student academics and proper behavior.</li>
+    <li>No one is allowed to humiliate, in any form, anyone in the class.</li>
+    <li>The class strictly implements a similarity index and originality standard for papers. A plagiarism checker will be applied to submitted work. Students who show dishonesty toward scholarly works will be dealt with accordingly, based on university code rules and policies.</li>
+  </ol>
+
+  <h3>Academic Integrity and Responsible Use of AI Tools <span class="badge new">New</span></h3>
+  <ol class="plain">
+    <li>Generative AI tools may be used only as <em>assistive</em> aids — for example, brainstorming, grammar checking, or clarifying legal texts — and never to produce submitted work wholesale. All submissions must reflect the student’s own analysis and writing.</li>
+    <li>Any use of AI tools in an output must be disclosed in a brief note at the end of the submission (tool used and purpose).</li>
+    <li>Undisclosed or wholesale AI-generated work is treated as a violation of the originality policy above, alongside plagiarism.</li>
+  </ol>
+
+  <h3>Class Policy (for strict implementation)</h3>
+  <ol class="plain">
+    <li>All correspondence in this class will be sent to this email: <strong>rmguido@rtu.edu.ph</strong>.</li>
+    <li>Students are highly encouraged to use the <strong>@rtu.edu.ph</strong> email account. If you do not have this email, kindly request one from the Management Information Center (MIC). The RTU account gives free access to Microsoft applications.</li>
+    <li>For all correspondence/submissions, follow the subject-heading format <strong>TE01_&lt;SURNAME&gt;_&lt;SECTION CODE&gt;_&lt;DOCUMENT&gt;</strong>. Examples: <em>TE01_GUIDO_CEIT-34-301A_ASSESSMENT01</em>; <em>TE01_GUIDO_CEIT-34-301A_RESEARCH PROPOSAL DRAFT</em>; <em>TE01_GUIDO_CEIT-34-301A_RESEARCH PROPOSAL PPT</em>.</li>
+    <li>Lectures can be found on e-RTU Flexys or in the Facebook Units (you will be invited).</li>
+    <li>You may use the Facebook Units for student discussions and quick questions or clarifications.</li>
+    <li>The professor is open to scheduling a virtual live meeting with individuals or teams, by request, at pre-arranged schedules.</li>
+    <li>Show courtesy and proper professionalism when emailing documents. To build your early scientific and research career and scholarly stature, configure a professional email signature (name, program, department, university, contact details).</li>
+    <li>For questions and consultations, kindly allow a 24–48 hour response time. Please understand that other equally important matters are being handled besides this class.</li>
+    <li>Expect additional supplemental materials and readings.</li>
+    <li>All course requirements should be submitted on time; failure to comply will lead to deductions, down to no credit.</li>
+  </ol>
+
+  <h3>Online Meetings</h3>
+  <ol class="plain">
+    <li>As much as possible, keep your camera on during live meetings. To conserve internet data you may turn it off, but you will need to turn it on when group pictures are taken as evidence of class engagement.</li>
+    <li>Dress appropriately. As a courtesy to others, do not appear in sando shirts or spaghetti straps; being topless is strictly prohibited. You may turn off your camera if you are in a state of virtual unreadiness.</li>
+    <li>Find a quiet location during virtual live meetings.</li>
+  </ol>
+</section>
+
+<!-- ================= IX. CONSULTATION & COMMITTEE ================= -->
+<section id="consultation">
+  <h2><span class="secno">IX.</span>Consultation Schedule and Course Committee</h2>
+  <div class="tbl-wrap">
+    <table class="kv" style="max-width:520px;">
+      <tbody>
+        <tr><td>Consultation Day</td><td>Tuesday</td></tr>
+        <tr><td>Consultation Hours</td><td>16:00 – 18:00</td></tr>
+        <tr><td>Mode</td><td>Virtual live consultation (by request, at pre-arranged schedules)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="committee">
+    <div class="sig">
+      <div class="role">Prepared</div>
+      <div class="name">Assoc. Prof. Ryan Manuel D. Guido, Ph.D.</div>
+      <div class="title">Professor</div>
+    </div>
+    <div class="sig">
+      <div class="role">Checked</div>
+      <div class="name">College Curriculum Revision Committee</div>
+      <div class="title">Chair, CCRC</div>
+    </div>
+    <div class="sig">
+      <div class="role">Recommending Approval</div>
+      <div class="name">Instr. Jason B. Kalaw, MSc</div>
+      <div class="title">Head, DESS</div>
+    </div>
+    <div class="sig">
+      <div class="role">Approved</div>
+      <div class="name">Dr. Jeremiah V. Pacer</div>
+      <div class="title">Dean</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= X. COURSE MATERIALS ================= -->
+<section id="materials">
+  <h2><span class="secno">X.</span>Course Materials — Chapter Lecture Packs &amp; Reinforcement Exercises <span class="badge new">New</span></h2>
+  <p>Each chapter ships as an interactive pack: detailed annotated lectures with framework figures, a 20-item HOTS mastery test with answer-and-explanation dropdowns, and clickable primary-source references — paired with a reinforcement set of 20 fresh HOTS items plus 3 HOTS essays with model answers. Chapters 8–9 (Research Agenda Development · Proposal Crafting &amp; Innovative Pitching) will be posted here as they are released.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th class="center" style="width:60px;">Ch.</th><th>Chapter Topic</th><th class="center" style="width:80px;">Weeks</th><th class="center" style="width:130px;">Lectures</th><th class="center" style="width:130px;">Exercises</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="center wk">1</td>
+          <td><strong>Overview of Research Methods and Design Principles</strong><br><span style="font-size:.85em;color:#4a5568;">Frascati R&amp;D, inquiry &amp; paradigms, designs, sampling, validity, ethics, the design memo</span></td>
+          <td class="center">1</td>
+          <td class="center"><a href="ch1-lecture.html"><strong>Lecture Pack</strong></a></td>
+          <td class="center"><a href="ch1-reinforcement.html">Reinforcement</a></td>
+        </tr>
+        <tr>
+          <td class="center wk">2</td>
+          <td><strong>International and National Research Agendas and Country Development Plans</strong><br><span style="font-size:.85em;color:#4a5568;">UN 2030 &amp; UNESCO, IAU Strategic Plan, AmBisyon/PDP, HNRDA, Pagtanaw 2050, alignment matrix</span></td>
+          <td class="center">2</td>
+          <td class="center"><a href="ch2-lecture.html"><strong>Lecture Pack</strong></a></td>
+          <td class="center"><a href="ch2-reinforcement.html">Reinforcement</a></td>
+        </tr>
+        <tr>
+          <td class="center wk">3</td>
+          <td><strong>Philippine Laws on Science-Related Government Agencies</strong><br><span style="font-size:.85em;color:#4a5568;">Legal hierarchy, RA 10121 DRRM, RA 10692 PAGASA, RA 10535 PhST, RA 11363 Space Act, IRAC method</span></td>
+          <td class="center">3–4</td>
+          <td class="center"><a href="ch3-lecture.html"><strong>Lecture Pack</strong></a></td>
+          <td class="center"><a href="ch3-reinforcement.html">Reinforcement</a></td>
+        </tr>
+        <tr>
+          <td class="center wk">4</td>
+          <td><strong>Environmental Legislation and Maritime Jurisdiction</strong><br><span style="font-size:.85em;color:#4a5568;">RA 8749 · 9003 · 9275 · 9729/10174, maritime zones, UNCLOS &amp; MSR consent, site compliance</span></td>
+          <td class="center">5–6</td>
+          <td class="center"><a href="ch4-lecture.html"><strong>Lecture Pack</strong></a></td>
+          <td class="center"><a href="ch4-reinforcement.html">Reinforcement</a></td>
+        </tr>
+        <tr>
+          <td class="center wk">5</td>
+          <td><strong>Intellectual Property and Technology Transfer</strong><br><span style="font-size:.85em;color:#4a5568;">IP Code family, patents &amp; exclusions, RA 10055, transfer instruments, IPOPHL circulars, IP strategy</span></td>
+          <td class="center">8–9</td>
+          <td class="center"><a href="ch5-lecture.html"><strong>Lecture Pack</strong></a></td>
+          <td class="center"><a href="ch5-reinforcement.html">Reinforcement</a></td>
+        </tr>
+        <tr>
+          <td class="center wk">6</td>
+          <td><strong>R&amp;D Project Management: Budgeting and M&amp;E</strong><br><span style="font-size:.85em;color:#4a5568;">Triple constraint, WBS/Gantt, PS-MOOE-CO line items, procurement &amp; audit, logframe, risk register</span></td>
+          <td class="center">8–9</td>
+          <td class="center"><a href="ch6-lecture.html"><strong>Lecture Pack</strong></a></td>
+          <td class="center"><a href="ch6-reinforcement.html">Reinforcement</a></td>
+        </tr>
+        <tr>
+          <td class="center wk">7</td>
+          <td><strong>Principles of R&amp;D Management and the Magna Carta</strong><br><span style="font-size:.85em;color:#4a5568;">S&amp;T talent system, DOST-GIA, RA 8439/11312, movements &amp; QS, two-track compensation, HRD pipeline</span></td>
+          <td class="center">10</td>
+          <td class="center"><a href="ch7-lecture.html"><strong>Lecture Pack</strong></a></td>
+          <td class="center"><a href="ch7-reinforcement.html">Reinforcement</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="legend">Weeks 7, 11, and 18 are assessment milestones (Long Quiz 1 · Midterm Examination · Final Presentation and Innovative Pitching) rather than chapters. All packs are self-contained HTML — they work offline and print cleanly.</p>
+</section>
+
+</main>
+
+<footer>
+  Astronomy Project Development and Management (TE01) · Department of Earth and Space Sciences, College of Arts and Sciences, Rizal Technological University · Created August 2020 · Enhanced and updated August 2026 for the First Semester, AY 2026–2027 · Assoc. Prof. Ryan Manuel D. Guido, Ph.D.
+</footer>
+
+</body>
+</html>

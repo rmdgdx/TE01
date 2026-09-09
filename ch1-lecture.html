@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 1 — Overview of Research Methods and Design Principles</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 1 — Overview of Research Methods and Design Principles</h1>
+  <div class="subtitle">Week 1 · CO1–LO1: Review research methods and design principles · Assoc. Prof. Ryan Manuel D. Guido, Ph.D. · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Chapter sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#t1">1.1 R&amp;D Defined</a></li>
+    <li><a href="#t2">1.2 Scientific Inquiry</a></li>
+    <li><a href="#t3">1.3 Types of Research</a></li>
+    <li><a href="#t4">1.4 Research Designs</a></li>
+    <li><a href="#t5">1.5 Problems &amp; Hypotheses</a></li>
+    <li><a href="#t6">1.6 Sampling &amp; Data</a></li>
+    <li><a href="#t7">1.7 Ethics Preview</a></li>
+    <li><a href="#t8">1.8 Toward the Proposal</a></li>
+    <li><a href="#test">Mastery Test</a></li>
+    <li><a href="#refs">References</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ OBJECTIVES ============ -->
+<section id="objectives">
+  <div class="objectives">
+    <h4>Chapter Learning Objectives</h4>
+    <p>After working through this chapter, you should be able to:</p>
+    <ol class="plain">
+      <li>Distinguish research, development, and innovation, and classify R&amp;D activities as basic research, applied research, or experimental development;</li>
+      <li>Explain the logic of scientific inquiry — deduction, induction, and abduction — and relate it to how astronomical knowledge is actually built;</li>
+      <li>Differentiate quantitative, qualitative, and mixed-methods approaches and select the approach appropriate to a given problem;</li>
+      <li>Compare experimental, quasi-experimental, and non-experimental designs, and justify why most astronomy research is observational by necessity;</li>
+      <li>Formulate researchable problems, SMART objectives, operational definitions, variables, and testable hypotheses;</li>
+      <li>Evaluate sampling strategies, validity, and reliability — including selection effects peculiar to astronomical data; and</li>
+      <li>Connect each design decision to the methodology, workplan, and budget of a fundable R&amp;D proposal.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 1.1 ============ -->
+<section id="t1">
+  <h2><span class="secno">1.1</span>Research, Development, and the Scientific Enterprise</h2>
+  <p class="lede">Every funding agency you will face in this course — DOST, PhilSA, international foundations — asks one deceptively simple question: <em>is what you propose actually research and development?</em> Answering it requires precise definitions.</p>
+  <p><strong>Research</strong> is the systematic, creative investigation undertaken to increase the stock of knowledge and to devise new applications of available knowledge. <strong>Development</strong> converts that knowledge into new or improved materials, devices, products, processes, systems, or services. Together they form <strong>R&amp;D</strong>, which the OECD's <em>Frascati Manual</em> — the international standard used by statistical offices and funding agencies, including those in the Philippines — requires to satisfy five criteria: the activity must be <em>novel</em>, <em>creative</em>, <em>uncertain</em> in its outcome, <em>systematic</em>, and <em>transferable and/or reproducible</em>.</p>
+  <p>The Frascati Manual then divides R&amp;D into three categories that you must be able to apply to your own project ideas:</p>
+  <ul class="plain">
+    <li><strong>Basic research</strong> — experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena, without any particular application in view. <em>Example: measuring the rotation curves of nearby galaxies to constrain dark-matter halo models.</em></li>
+    <li><strong>Applied research</strong> — original investigation to acquire new knowledge directed primarily toward a specific practical aim. <em>Example: characterizing ionospheric scintillation over the Philippines to improve GNSS positioning accuracy.</em></li>
+    <li><strong>Experimental development</strong> — systematic work, drawing on existing knowledge, directed to producing new products or processes or improving existing ones. <em>Example: building and field-testing a low-cost all-sky camera network for meteor triangulation.</em></li>
+  </ul>
+  <h3>The Frascati Tradition: Why These Definitions Rule the World</h3>
+  <p>The Frascati Manual takes its name from the Italian town where OECD experts first met in 1963 to standardize how nations count research; it has been revised repeatedly since (the current edition dates from 2015) and has become the shared dialect of statisticians, finance ministries, and funding agencies worldwide. Its definitions matter because they decide what gets <em>counted</em> — and what gets counted gets budgeted. When you read that a country spends a given share of GDP on R&amp;D (the indicator called <strong>GERD</strong>, gross domestic expenditure on R&amp;D), or that it has so many researchers per million population, those numbers exist only because the Frascati categories make activities commensurable across borders. The Philippines has historically invested well under one percent of GDP in R&amp;D — far below the levels of its wealthier neighbors — which is precisely why the agenda documents of Week 2 treat the expansion and steering of that scarce investment as a national project, and why proposals are screened hard against the definitions.</p>
+  <p>Keep one more boundary clear: <strong>R&amp;D is not the same as innovation.</strong> Innovation — the subject of the OECD's companion <em>Oslo Manual</em> — is the implementation of a new or improved product or process <em>in use</em>; R&amp;D is one input to it, alongside design, engineering, training, and marketing. A start-up that packages existing star-map software for Philippine schools may be genuinely innovative while performing no R&amp;D at all; a university group may perform excellent R&amp;D that never becomes an innovation. TE01's final requirement — a fundable R&amp;D proposal — lives on the Frascati side of that line, but its Week-18 pitching rubric (economic and value-creation potential) deliberately asks you to argue the bridge to the Oslo side.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The five Frascati criteria — <strong>novel, creative, uncertain, systematic, transferable</strong> — are the funding agencies' litmus test. Routine data reduction, instrument calibration against established standards, or running an outreach planetarium show are valuable, but they are <em>not</em> R&amp;D because the outcome is not uncertain and no new knowledge is created.</aside>
+  <aside class="note ph"><span class="tag">PH Context</span><br>Philippine R&amp;D priorities are set nationally through the <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">DOST</a> Harmonized National R&amp;D Agenda (HNRDA) and, for the long term, <em>Pagtanaw 2050</em> of the <a href="https://nast.dost.gov.ph/" target="_blank" rel="noopener">National Academy of Science and Technology</a>. In Week 2 you will map your project ideas onto these agendas — a proposal that cannot cite where it sits in the HNRDA rarely gets funded.</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomy projects can fall in all three categories at once: a radio-telescope proposal may include basic research (source surveys), applied research (RFI characterization for site policy), and experimental development (receiver construction). Learn to label each work package — Philippine review panels score them differently.</aside>
+</section>
+
+<!-- ============ 1.2 ============ -->
+<section id="t2">
+  <h2><span class="secno">1.2</span>The Logic of Scientific Inquiry</h2>
+  <p>Research methods are not recipes; they are disciplined ways of connecting <em>ideas</em> to <em>evidence</em>. Three modes of inference do the connecting:</p>
+  <ul class="plain">
+    <li><strong>Deduction</strong> moves from theory to prediction to observation: <em>if</em> general relativity is correct, <em>then</em> starlight grazing the Sun must deflect by 1.75 arcseconds — and Eddington's 1919 eclipse expedition tested exactly that.</li>
+    <li><strong>Induction</strong> moves from repeated observations to general patterns: Hubble measured recession velocities of galaxies and generalized to the velocity–distance law.</li>
+    <li><strong>Abduction</strong> reasons to the best available explanation of a surprising fact: anomalies in Uranus's orbit were best explained by an unseen planet — the reasoning that led to Neptune's discovery in 1846.</li>
+  </ul>
+  <p>Underneath these inferences sit broader <strong>paradigms of inquiry</strong>. <em>Positivism/post-positivism</em> holds that an objective reality can be measured, however imperfectly — the natural home of quantitative astronomy. <em>Interpretivism/constructivism</em> holds that meaning is socially constructed and is best studied qualitatively — the appropriate lens when you study, say, how a fishing community perceives a proposed observatory on their mountain. <em>Pragmatism</em> refuses the either/or and selects whatever methods answer the research question — the philosophical basis of mixed methods, and the working philosophy of most R&amp;D managers.</p>
+  <h3>Beneath Methods: What Paradigms Actually Commit You To</h3>
+  <p>A paradigm is not a preference; it is a bundle of positions on three philosophical questions. <strong>Ontology</strong>: what exists to be known — a single mind-independent reality (the positivist wager) or multiple socially constructed realities (the constructivist one)? <strong>Epistemology</strong>: what is the relation between knower and known — detached observation or unavoidable participation? <strong>Axiology</strong>: what role do values play — to be minimized as bias, or acknowledged as constitutive? Post-positivism, today's default in the natural sciences, softened classical positivism with Karl Popper's insight that theories are never <em>proven</em>, only <em>corroborated until falsified</em> — the philosophical root of the falsifiability requirement your hypotheses must meet in Section 1.5, and of the professional habit of hunting for disconfirming evidence rather than collecting friendly cases.</p>
+  <p>Thomas Kuhn added the historical dimension: normal science proceeds inside a paradigm — shared exemplars, instruments, and standards of what counts as a good problem — until anomalies accumulate and force a <em>paradigm shift</em>. Astronomy supplies the canonical examples (Ptolemy to Copernicus; Newtonian gravity to general relativity; steady state to Big Bang), and the lesson for a working researcher is practical rather than romantic: most fundable work is excellent normal science, and a proposal should honestly locate itself — puzzle-solving within a paradigm is not a weakness, it is what "systematic" means. One further caution belongs in your toolkit: observation is <strong>theory-laden</strong>. What your instrument "sees" is shaped by the theory built into it — a photometer embodies assumptions about detector linearity and atmospheric extinction — which is why calibration and explicit assumptions are epistemology made concrete.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 360" role="img" aria-label="The cycle of scientific inquiry">
+      <g font-size="12" font-weight="800">
+        <rect x="330" y="18" width="240" height="60" rx="10" fill="#12203a"/>
+        <text x="450" y="43" text-anchor="middle" fill="#f6edd2">THEORY / PARADIGM</text>
+        <text x="450" y="62" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">general relativity · stellar evolution · ΛCDM</text>
+        <rect x="640" y="120" width="230" height="60" rx="10" fill="#1e7d4f"/>
+        <text x="755" y="145" text-anchor="middle" fill="#fff">DEDUCTION → PREDICTION</text>
+        <text x="755" y="164" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">"light must bend 1.75″ at the limb"</text>
+        <rect x="640" y="230" width="230" height="60" rx="10" fill="#1d5fbf"/>
+        <text x="755" y="255" text-anchor="middle" fill="#fff">TEST / OBSERVATION</text>
+        <text x="755" y="274" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d4e4fb">Eddington 1919 · your dataset</text>
+        <rect x="330" y="292" width="240" height="60" rx="10" fill="#a86a00"/>
+        <text x="450" y="317" text-anchor="middle" fill="#fff">ANOMALY?</text>
+        <text x="450" y="336" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">corroborated (Popper) — or surprising</text>
+        <rect x="30" y="230" width="230" height="60" rx="10" fill="#6b4fa1"/>
+        <text x="145" y="255" text-anchor="middle" fill="#fff">ABDUCTION</text>
+        <text x="145" y="274" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">best explanation: Neptune · dark matter</text>
+        <rect x="30" y="120" width="230" height="60" rx="10" fill="#27406b"/>
+        <text x="145" y="145" text-anchor="middle" fill="#fff">INDUCTION → REVISION</text>
+        <text x="145" y="164" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">patterns generalized; theory updated (Kuhn)</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.6" fill="none" marker-end="url(#cyc)">
+        <path d="M 575 55 Q 720 65 750 115"/>
+        <path d="M 755 184 L 755 225"/>
+        <path d="M 655 292 Q 590 322 575 322"/>
+        <path d="M 325 322 Q 230 315 175 294"/>
+        <path d="M 145 225 L 145 184"/>
+        <path d="M 185 116 Q 260 55 325 48"/>
+      </g>
+      <defs><marker id="cyc" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <text x="450" y="200" text-anchor="middle" font-size="11" font-style="italic" fill="#4a5568">a research program is this cycle</text>
+      <text x="450" y="216" text-anchor="middle" font-size="11" font-style="italic" fill="#4a5568">written as a multi-year workplan</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 1.1 — The cycle of scientific inquiry</span>, joining the three modes of inference to Popperian testing and Kuhnian revision. Framework synthesis; see Popper, <em>The Logic of Scientific Discovery</em>, and Kuhn, <em>The Structure of Scientific Revolutions</em> — overviews at the <a href="https://plato.stanford.edu/entries/popper/" target="_blank" rel="noopener">Stanford Encyclopedia of Philosophy</a>.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Good science cycles: theory → deduction → test → anomaly → abduction → revised theory → new deductions. A research <em>program</em> (and a good multi-year R&amp;D proposal) is this cycle written as a workplan.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Students often treat "the scientific method" as one linear checklist. Real inquiry is iterative and messy; what must be rigorous is the <em>logic linking your claim to your evidence</em>, not the order of steps. Reviewers probe that logic.</aside>
+</section>
+
+<!-- ============ 1.3 ============ -->
+<section id="t3">
+  <h2><span class="secno">1.3</span>Types of Research: Purpose, Approach, and Time Horizon</h2>
+  <p>Research is classified along several independent axes. You must be able to place any study — including your own proposal — on each axis.</p>
+  <h3>By purpose</h3>
+  <ul class="plain">
+    <li><strong>Exploratory</strong> — mapping unfamiliar territory, generating questions (a pilot survey of radio-quiet sites in Mindanao);</li>
+    <li><strong>Descriptive</strong> — documenting characteristics precisely (a photometric catalog of variable stars in a cluster);</li>
+    <li><strong>Explanatory / analytical</strong> — testing why relationships hold (does chromospheric activity explain the observed radial-velocity jitter?).</li>
+  </ul>
+  <h3>By approach</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:170px;">Approach</th><th>Nature of data</th><th>Typical strengths</th><th>Typical astronomy / R&amp;D-management use</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Quantitative</strong></td><td>Numerical measurements, statistics</td><td>Precision, generalizability, hypothesis testing</td><td>Photometry, spectroscopy, astrometry; bibliometric R&amp;D indicators</td></tr>
+        <tr><td><strong>Qualitative</strong></td><td>Words, images, field notes, interviews</td><td>Depth, context, meaning</td><td>Stakeholder interviews for an observatory site; case studies of research institutes</td></tr>
+        <tr><td><strong>Mixed methods</strong></td><td>Integrated numerical + textual</td><td>Triangulation, completeness</td><td>Community-based dark-sky projects: sky-brightness metering <em>plus</em> resident interviews</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>By time horizon</h3>
+  <p><strong>Cross-sectional</strong> studies observe at one point in time (a one-night sky-brightness snapshot across 20 barangays); <strong>longitudinal</strong> studies follow the same units across time (monitoring the same sites monthly for three years — the design you need to claim <em>trends</em>).</p>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Time-domain astronomy is inherently longitudinal: variable-star light curves, AGN monitoring, and pulsar timing all derive their power from repeated observation of the same objects. When you write a workplan in Week 12, the cadence of observation <em>is</em> a design decision with budget consequences.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Funding calls often specify the expected type: DOST-GIA "basic research" calls score novelty of knowledge; "applied/technology" calls score the path to use. Misclassifying your own project is a common reason for outright rejection at screening.</aside>
+</section>
+
+<!-- ============ 1.4 ============ -->
+<section id="t4">
+  <h2><span class="secno">1.4</span>Research Designs: From True Experiments to the Archives</h2>
+  <p class="lede">A <strong>research design</strong> is the architecture that links questions, data, and conclusions — decided <em>before</em> data collection, because it determines what your data can and cannot prove.</p>
+  <h3>Experimental designs</h3>
+  <p>A <strong>true experiment</strong> requires (1) manipulation of an independent variable, (2) a control condition, and (3) <strong>random assignment</strong> of units to conditions. Random assignment equalizes unknown confounders on average, which is why experiments support the strongest causal claims. In astronomy-adjacent R&amp;D, true experiments live mostly in the laboratory and in education research: testing two mirror coatings under randomized order, or randomizing which sections receive a new astronomy teaching module.</p>
+  <h3>Quasi-experimental designs</h3>
+  <p>When you manipulate a treatment but <em>cannot randomize</em> — intact class sections, one observatory site "treated" with an ordinance while a comparison site is not — the design is quasi-experimental (e.g., non-equivalent control group, interrupted time series). Causal claims are possible but must be defended against selection differences.</p>
+  <h3>Non-experimental designs</h3>
+  <ul class="plain">
+    <li><strong>Descriptive / survey</strong> — measuring characteristics or opinions as they exist;</li>
+    <li><strong>Correlational</strong> — quantifying associations between variables the researcher does not manipulate;</li>
+    <li><strong>Ex post facto (causal-comparative)</strong> — comparing pre-existing groups after the fact;</li>
+    <li><strong>Case study</strong> — intensive, contextual study of one unit (one institute, one project, one community);</li>
+    <li><strong>Archival / secondary analysis</strong> — analyzing data already collected, e.g., mining survey archives.</li>
+  </ul>
+  <h3>Threats to Internal Validity: The Reviewer's Checklist</h3>
+  <p>When a design is weaker than a true experiment, causal claims survive only by naming and neutralizing the classic <strong>threats to internal validity</strong> — the standing list every panel reviewer carries in their head. <strong>History</strong>: an outside event co-occurs with your treatment (a lockdown during your lighting intervention). <strong>Maturation</strong>: subjects change on their own (students improve because they aged a semester, not because of your module). <strong>Testing</strong>: taking a pre-test changes post-test behavior. <strong>Instrumentation</strong>: the measuring device drifts between waves (a detector degrading across a monitoring campaign is this threat in hardware form). <strong>Regression to the mean</strong>: groups selected for extreme scores drift back toward average regardless of treatment. <strong>Selection</strong>: non-equivalent groups differed before treatment. <strong>Attrition</strong>: who drops out is not random. A quasi-experimental proposal that walks this list threat by threat — "history is addressed by the comparison town; instrumentation by monthly cross-calibration" — reads as professional; one that ignores it reads as hopeful.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 330" role="img" aria-label="Ladder of causal defensibility across research designs">
+      <g font-size="11.5" font-weight="800">
+        <rect x="60"  y="238" width="780" height="52" rx="10" fill="#b3423a"/>
+        <text x="450" y="260" text-anchor="middle" fill="#fff">SINGLE CASE / ANECDOTE — rich context, weakest causal warrant</text>
+        <text x="450" y="278" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f4cfcc">use for mechanism, meaning, hypothesis generation</text>
+        <rect x="105" y="172" width="690" height="52" rx="10" fill="#a86a00"/>
+        <text x="450" y="194" text-anchor="middle" fill="#fff">CORRELATIONAL / ARCHIVAL — associations, statistically controlled</text>
+        <text x="450" y="212" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">confounders handled by measurement and modeling; selection effects corrected</text>
+        <rect x="150" y="106" width="600" height="52" rx="10" fill="#27406b"/>
+        <text x="450" y="128" text-anchor="middle" fill="#fff">QUASI-EXPERIMENT — manipulation without randomization</text>
+        <text x="450" y="146" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">causal claims defended threat-by-threat (history, selection, …)</text>
+        <rect x="195" y="40" width="510" height="52" rx="10" fill="#1e7d4f"/>
+        <text x="450" y="62" text-anchor="middle" fill="#fff">TRUE EXPERIMENT — randomized assignment</text>
+        <text x="450" y="80" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">unknown confounders equalized on average; strongest warrant</text>
+      </g>
+      <g font-size="10.5" fill="#4a5568">
+        <text x="46" y="70" text-anchor="end" font-weight="800" fill="#1e7d4f">STRONGER</text>
+        <text x="46" y="86" text-anchor="end">causal</text>
+        <text x="46" y="100" text-anchor="end">warrant</text>
+        <text x="855" y="250" font-weight="800" fill="#b3423a">WIDER</text>
+        <text x="855" y="266">reach &amp;</text>
+        <text x="855" y="280">feasibility</text>
+      </g>
+      <text x="450" y="316" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">The right design is the strongest rung that is ethical, feasible, and matched to the question — astronomy mostly climbs with natural experiments and statistical control.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 1.2 — The ladder of causal defensibility.</span> Framework synthesis after Campbell &amp; Stanley's classic treatment of experimental and quasi-experimental designs; accessible summary in Trochim's <a href="https://conjointly.com/kb/" target="_blank" rel="noopener">Research Methods Knowledge Base</a>.</figcaption>
+  </figure>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomy is the archetypal <strong>observational science</strong>: we cannot manipulate stars, so we exploit <em>natural experiments</em> (eclipses, transits, gravitational lenses), build large samples to average away confounders, and lean heavily on archival designs — data from ALMA, Gaia, TESS, and the <a href="https://ui.adsabs.harvard.edu/" target="_blank" rel="noopener">NASA/SAO Astrophysics Data System</a> are free to Philippine researchers. An archival design can make a 1-unit, laptop-scale thesis internationally publishable.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Design strength is a ladder of causal defensibility: <strong>true experiment &gt; quasi-experiment &gt; correlational/archival &gt; single case</strong> — but the <em>right</em> design is the strongest one that is ethical, feasible, and matched to the question. "Correlation is not causation" is a design statement, not a slogan.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Claiming causal language ("improves", "reduces", "causes") in the objectives of a proposal whose design is correlational. Reviewers strike this immediately. Match your verbs to your design.</aside>
+</section>
+
+<!-- ============ 1.5 ============ -->
+<section id="t5">
+  <h2><span class="secno">1.5</span>Research Problems, Variables, and Hypotheses</h2>
+  <h3>From topic to researchable problem</h3>
+  <p>A <em>topic</em> ("light pollution") becomes a <em>research problem</em> when you specify the gap between what is known and what decision-makers or scientists need to know. A strong problem statement names the phenomenon, the population/setting, the knowledge gap, and why it matters. Objectives derived from it should be <strong>SMART</strong> — specific, measurable, achievable, relevant, and time-bound — because your Week-12 workplan and line-item budget will be built objective by objective.</p>
+  <h3>Variables and operational definitions</h3>
+  <ul class="plain">
+    <li><strong>Independent variable (IV)</strong> — the presumed cause or the factor manipulated/selected;</li>
+    <li><strong>Dependent variable (DV)</strong> — the measured outcome;</li>
+    <li><strong>Confounding variable</strong> — an extraneous factor related to <em>both</em> IV and DV that offers a rival explanation;</li>
+    <li><strong>Moderating variable</strong> — changes the strength or direction of an IV→DV relationship;</li>
+    <li><strong>Control variable</strong> — held constant by design.</li>
+  </ul>
+  <p>An <strong>operational definition</strong> states exactly how a construct is measured: "sky quality" becomes "zenith sky brightness in mag/arcsec² measured with a Unihedron SQM-L at astronomical twilight end, median of five readings." Without operational definitions, replication — one of your Frascati criteria — is impossible.</p>
+  <h3>Testing the Problem Itself: FINER</h3>
+  <p>Before any hypothesis is written, subject the research problem to the <strong>FINER</strong> screen used across the research-methods literature: is it <strong>F</strong>easible (sample, instruments, skills, time, money — the honest audit your Week-12 workplan will demand anyway); <strong>I</strong>nteresting (to a community larger than yourself — the agenda documents of Week 2 are, among other things, a formal registry of what the nation finds interesting); <strong>N</strong>ovel (does it confirm, refute, or extend prior work rather than duplicate it — the literature review's real function); <strong>E</strong>thical (clearable by a review committee without contortion); and <strong>R</strong>elevant (to science, policy, or practice, with a nameable user). A problem that fails FINER cannot be rescued downstream by elegant methodology; a problem that passes it has already drafted half of your proposal's rationale section.</p>
+  <h3>Hypotheses</h3>
+  <p>The <strong>null hypothesis (H₀)</strong> asserts no effect or no difference; the <strong>alternative (H₁)</strong> asserts the effect, either <em>non-directionally</em> (a difference exists) or <em>directionally</em> (brighter skies reduce detected meteor counts). Hypotheses must be falsifiable: a claim no observation could refute is not scientific.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Statistical tests evaluate H₀, not your hopes. "We failed to reject H₀" is a legitimate, reportable result — and pre-registering hypotheses protects you from HARKing (Hypothesizing After the Results are Known).</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>In an exoplanet transit search, the IV might be stellar metallicity (selected, not manipulated), the DV planet occurrence rate, and stellar mass a confounder — metal-rich samples are also biased in mass and age. Astronomers control confounders <em>statistically</em> (matching, regression) since experimental control is impossible.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>DOST proposal templates require an "objectives tree": general objective → specific objectives → activities → outputs. Each specific objective should map to at least one hypothesis or deliverable and to a budget line. Orphan objectives (no activity, no budget) signal a poorly designed project.</aside>
+</section>
+
+<!-- ============ 1.6 ============ -->
+<section id="t6">
+  <h2><span class="secno">1.6</span>Sampling, Measurement Validity, and Reliability</h2>
+  <h3>Sampling</h3>
+  <p>You almost never observe the whole <strong>population</strong>; you observe a <strong>sample</strong> and infer. <strong>Probability sampling</strong> gives every unit a known, non-zero chance of selection — <em>simple random</em>, <em>systematic</em>, <em>stratified</em> (guarantee subgroup representation), <em>cluster</em> (sample groups when lists of individuals don't exist). <strong>Non-probability sampling</strong> — <em>convenience</em>, <em>purposive</em>, <em>snowball</em>, <em>quota</em> — is acceptable for exploratory and qualitative work but does not support population-level generalization.</p>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomical samples are ruled by <strong>selection effects</strong>. The classic is <em>Malmquist bias</em>: flux-limited surveys preferentially catch intrinsically luminous objects, inflating average luminosities at large distances. Eddington bias, confusion limits, and cadence gaps play the same role that convenience sampling plays in the social sciences — and must be modeled or corrected, not ignored.</aside>
+  <h3>How Many Is Enough?</h3>
+  <p>Two different logics answer the sample-size question, and confusing them is a common defense-stage stumble. In <strong>quantitative</strong> work, size follows <strong>statistical power</strong>: the probability of detecting an effect of a given size if it exists. Power grows with sample size and effect size and shrinks with measurement noise, so "how many?" has no universal answer — it is computed from the smallest effect worth detecting, the chosen significance level, and a target power (conventionally 80% or better). A proposal that states these inputs and shows the computation has answered the question before the panel asks it; a proposal that says "n = 30 because that is customary" has not. In <strong>qualitative</strong> work the criterion is <strong>saturation</strong>: sampling continues until new cases stop yielding new themes — a stopping rule reported and justified, not a number fixed in advance. Both logics share one moral: sample size is a <em>design output</em>, never a guess.</p>
+  <h3>Validity</h3>
+  <ul class="plain">
+    <li><strong>Construct validity</strong> — does the instrument measure the concept it claims to measure?</li>
+    <li><strong>Internal validity</strong> — can the observed effect be attributed to the IV rather than confounders?</li>
+    <li><strong>External validity</strong> — do results generalize beyond this sample, site, or epoch?</li>
+  </ul>
+  <p>There is a standing trade-off: tightly controlled designs maximize internal validity but may sacrifice realism (external validity); field studies do the reverse. State the trade-off you chose and why.</p>
+  <h3>Reliability</h3>
+  <p><strong>Reliability</strong> is consistency of measurement — test–retest stability, inter-rater agreement, internal consistency (Cronbach's α for scales). In instrumentation terms: precision and repeatability. A crucial asymmetry: <em>an instrument can be reliable yet invalid</em> (a miscalibrated photometer gives beautifully consistent, systematically wrong magnitudes), but it cannot be valid without being reliable.</p>
+  <p>Reliability has named estimators worth recognizing on sight: <strong>test–retest</strong> correlation for stability over time; <strong>inter-rater</strong> agreement (Cohen's κ for categories, intraclass correlation for continuous ratings) when humans judge; and <strong>internal consistency</strong> (Cronbach's α) for multi-item scales — with the standard caution that a very high α can mean redundant items rather than a good scale. Each estimator quantifies a different route by which random error enters, which is why a thorough instrumentation section reports the one matched to its actual measurement process.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 330" role="img" aria-label="Precision versus accuracy target diagram for reliability and validity">
+      <g>
+        <circle cx="170" cy="140" r="86" fill="#eaf1fc"/><circle cx="170" cy="140" r="60" fill="#cfe0f7"/><circle cx="170" cy="140" r="34" fill="#9fc0ee"/><circle cx="170" cy="140" r="12" fill="#1d5fbf"/>
+        <g fill="#12203a"><circle cx="168" cy="136" r="5"/><circle cx="175" cy="142" r="5"/><circle cx="166" cy="145" r="5"/><circle cx="172" cy="133" r="5"/></g>
+        <text x="170" y="252" text-anchor="middle" font-size="11.5" font-weight="800" fill="#1e7d4f">RELIABLE &amp; VALID</text>
+        <text x="170" y="270" text-anchor="middle" font-size="9.5" fill="#4a5568">small random error · small bias</text>
+        <text x="170" y="285" text-anchor="middle" font-size="9.5" fill="#4a5568">precise AND accurate</text>
+      </g>
+      <g>
+        <circle cx="450" cy="140" r="86" fill="#eaf1fc"/><circle cx="450" cy="140" r="60" fill="#cfe0f7"/><circle cx="450" cy="140" r="34" fill="#9fc0ee"/><circle cx="450" cy="140" r="12" fill="#1d5fbf"/>
+        <g fill="#b3423a"><circle cx="500" cy="95" r="5"/><circle cx="507" cy="102" r="5"/><circle cx="498" cy="105" r="5"/><circle cx="505" cy="93" r="5"/></g>
+        <text x="450" y="252" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a86a00">RELIABLE, NOT VALID</text>
+        <text x="450" y="270" text-anchor="middle" font-size="9.5" fill="#4a5568">tight cluster, wrong place — the</text>
+        <text x="450" y="285" text-anchor="middle" font-size="9.5" fill="#4a5568">0.3-mag zero-point error lives here</text>
+      </g>
+      <g>
+        <circle cx="730" cy="140" r="86" fill="#eaf1fc"/><circle cx="730" cy="140" r="60" fill="#cfe0f7"/><circle cx="730" cy="140" r="34" fill="#9fc0ee"/><circle cx="730" cy="140" r="12" fill="#1d5fbf"/>
+        <g fill="#b3423a"><circle cx="700" cy="100" r="5"/><circle cx="775" cy="130" r="5"/><circle cx="715" cy="185" r="5"/><circle cx="762" cy="88" r="5"/></g>
+        <text x="730" y="252" text-anchor="middle" font-size="11.5" font-weight="800" fill="#b3423a">NEITHER</text>
+        <text x="730" y="270" text-anchor="middle" font-size="9.5" fill="#4a5568">scattered and biased — validity</text>
+        <text x="730" y="285" text-anchor="middle" font-size="9.5" fill="#4a5568">without reliability is impossible</text>
+      </g>
+      <text x="450" y="318" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Reliability = precision (random error); validity = accuracy (systematic error). The middle target is the asymmetry made visible.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 1.3 — The target diagram for reliability and validity</span> — the measurement-theory twin of the astronomer's precision-versus-accuracy distinction. Classic framework; see Trochim's <a href="https://conjointly.com/kb/" target="_blank" rel="noopener">Research Methods Knowledge Base</a>.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Reliability ≈ random error kept small; validity ≈ systematic error (bias) kept small. Astronomers live this distinction daily as <em>precision versus accuracy</em>, and signal-to-noise versus calibration.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Reporting sample size without a sampling <em>frame</em> or strategy ("we surveyed 100 students" — which students? selected how?). Reviewers of your proposal will ask exactly this about your target beneficiaries and your observing targets alike.</aside>
+</section>
+
+<!-- ============ 1.7 ============ -->
+<section id="t7">
+  <h2><span class="secno">1.7</span>Research Ethics and Integrity — A Preview</h2>
+  <p>Ethics is woven through this whole course (it returns formally in Week 12 with data-gathering procedures and ethical standards). For now, fix the core commitments:</p>
+  <ul class="plain">
+    <li><strong>Integrity of record</strong> — no fabrication, falsification, or plagiarism (FFP); raw data are kept, versioned, and auditable;</li>
+    <li><strong>Human participants</strong> — informed consent, privacy, and proportionate risk whenever your project touches communities (site surveys, education studies, stakeholder interviews);</li>
+    <li><strong>Fair credit</strong> — authorship reflects substantial intellectual contribution, not position (a theme you will meet again in the Magna Carta cases in Week 10);</li>
+    <li><strong>Stewardship</strong> — public research money demands transparent procurement, honest reporting, and open sharing of results where possible.</li>
+  </ul>
+  <h3>The Frameworks Behind the Commitments</h3>
+  <p>Modern human-participant ethics descends from the <strong>Belmont Report</strong> (1979), whose three principles you will meet in every review form: <strong>respect for persons</strong> (autonomy, hence informed consent and special protection for those with diminished autonomy), <strong>beneficence</strong> (maximize benefit, minimize harm — the risk–benefit analysis), and <strong>justice</strong> (fair distribution of research burdens and benefits — do not recruit convenient communities for research whose benefits flow elsewhere; a principle with obvious force for site-based projects in rural barangays). Philippine practice adds a statutory layer scientists often forget: the <strong>Data Privacy Act (RA 10173)</strong> governs personal data in research — consent for collection, secure storage, proportionality — so a survey's data-management plan is simultaneously an open-science document (Chapter 2) and a privacy-compliance document.</p>
+  <p>On the scholarly-integrity side, two standards deserve early adoption. <strong>Authorship</strong> should follow contribution criteria of the kind the ICMJE codifies — substantial contribution to conception, design, analysis, or interpretation, plus drafting or revising, plus approval and accountability — a standard that will do quiet, decisive work in the Magna Carta authorship disputes of Week 10. And <strong>data stewardship</strong> means raw data, code, and instrument logs are versioned and retained: the practical machinery behind both the Frascati "reproducible" criterion and your defense against any future misconduct question.</p>
+  <aside class="note ph"><span class="tag">PH Context</span><br>Studies involving human participants in the Philippines fall under the National Ethical Guidelines for Research Involving Human Participants of the <a href="https://www.healthresearch.ph/" target="_blank" rel="noopener">Philippine Health Research Ethics Board (PHREB)</a> framework; universities maintain Research Ethics Committees that clear protocols <em>before</em> data collection. Budget review time for this in any workplan with community components.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Treating ethics clearance as paperwork to be done "later". Ethical review happens <em>before</em> data gathering; a proposal whose Gantt chart shows interviews in Month 1 with no clearance activity is self-refuting.</aside>
+</section>
+
+<!-- ============ 1.8 ============ -->
+<section id="t8">
+  <h2><span class="secno">1.8</span>From Design Principles to a Fundable R&amp;D Proposal</h2>
+  <p class="lede">Everything above converges on one artifact: the <strong>methodology chapter of your R&amp;D proposal</strong>, due as your final requirement in Week 18.</p>
+  <p>The mapping is direct:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Design decision (this chapter)</th><th>Where it appears in the proposal</th></tr></thead>
+      <tbody>
+        <tr><td>Problem statement and gap</td><td>Rationale / significance; alignment with HNRDA &amp; Pagtanaw 2050</td></tr>
+        <tr><td>SMART objectives and hypotheses</td><td>General and specific objectives; expected outputs (6Ps: publications, patents, products, people services, places &amp; partnerships, policies)</td></tr>
+        <tr><td>Type of research and design</td><td>Methodology; basis for the review panel and the funding window you apply to</td></tr>
+        <tr><td>Sampling / target population</td><td>Scope and delimitation; beneficiaries</td></tr>
+        <tr><td>Instruments, operational definitions</td><td>Methodology; equipment in the line-item budget</td></tr>
+        <tr><td>Cadence and time horizon</td><td>Workplan / Gantt chart; project duration</td></tr>
+        <tr><td>Validity and reliability safeguards</td><td>Quality assurance; monitoring and evaluation indicators</td></tr>
+        <tr><td>Ethical procedures</td><td>Ethical considerations; clearance milestones in the workplan</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>The Currency of Outputs: The 6Ps</h3>
+  <p>Philippine funding agencies increasingly ask proposals to declare expected outputs in the <strong>6Ps</strong> vocabulary: <strong>publications</strong> (papers, datasets with DOIs), <strong>patents</strong> and other IP (previewing Weeks 8–9), <strong>products</strong> (instruments, software, prototypes), <strong>people services</strong> (graduates trained, communities served), <strong>places and partnerships</strong> (facilities established, linkages formalized), and <strong>policies</strong> (briefs, ordinances, standards influenced). The list is worth memorizing not as jargon but as a design check: a project whose only imagined output is a paper has left five categories of fundable value unclaimed — and Chapter 2 will show that different agenda anchors are evidenced by different Ps. Behind all of this sits the <strong>logical framework</strong> discipline you will meet fully in Week 12: objectives, indicators, means of verification, and assumptions in one matrix — the results-chain paradigm (Figure 2.5 of the next chapter) turned into a planning table.</p>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Start a <strong>design memo</strong> this week: one page stating your candidate problem, its type of research, a sketch design, and the two biggest feasibility risks. You will iterate it after Week 2 (research agendas) and again after Week 10 (management principles). Strong final proposals in this course are the ones drafted earliest.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>A proposal is a <em>design argument</em>: every peso in the line-item budget must trace back through an activity to an objective to the knowledge gap. Reviewers read budgets backwards for exactly this chain.</aside>
+</section>
+
+<!-- ============ MASTERY TEST ============ -->
+<section id="test">
+  <h2><span class="secno">✓</span>Chapter 1 Mastery Test — 20-Item HOTS Multiple Choice</h2>
+  <p>Each item targets higher-order thinking: applying, analyzing, or evaluating. Choose the best answer, then open the dropdown to check the correct answer and the reasoning. Suggested protocol: answer all 20 before revealing any explanation.</p>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Applying</span></div>
+    <p class="stem">A PhilSA-funded team builds a new wide-band receiver for a 3-meter radio dish, then spends four months tuning it against a known calibration source until it meets published specifications. Under the Frascati framework, the <em>tuning phase</em> is best classified as:</p>
+    <ol class="opts"><li>Basic research, because radio astronomy generates fundamental knowledge</li><li>Applied research, because the receiver has a specific practical aim</li><li>Experimental development, because it draws on existing knowledge to improve a device whose final performance is still uncertain</li><li>Not R&amp;D, because calibration against established standards resolves no scientific or technological uncertainty</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> While the receiver <em>construction</em> and tuning still involve genuine technical uncertainty (will the design meet spec at all?), the work is systematic improvement of a device using existing knowledge — the definition of experimental development. Option D would be correct only for <em>routine</em> recalibration of a finished, proven instrument, where the outcome is not uncertain. The item tests whether you apply the "uncertainty" criterion to the phase described, not to radio astronomy in general (which is why A and B are distractors).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A proposal states: "This project will measure the metallicity distribution of 500 nearby G-type stars to constrain models of galactic chemical evolution." A reviewer must decide which DOST funding window fits. The best classification and reason is:</p>
+    <ol class="opts"><li>Applied research — the stars are specifically selected, so there is a specific practical aim</li><li>Basic research — new knowledge of underlying phenomena is sought with no particular application in view</li><li>Experimental development — a measurement pipeline will be produced</li><li>Not R&amp;D — the data already exist in survey archives</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> "Specific practical aim" in the Frascati sense means an intended <em>use or application</em> (a product, process, or policy), not merely a specific target list — so A misreads the criterion. Producing a pipeline as a by-product does not make the project experimental development (C), and archival data can absolutely support new, uncertain, creative analysis (D is false). Constraining chemical-evolution models is knowledge for its own sake: basic research.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">"Anomalous dimming events in a star's light curve are most plausibly explained by a circumstellar dust cloud, since known planetary transits cannot reproduce the asymmetric, aperiodic shape." This inference is primarily:</p>
+    <ol class="opts"><li>Deductive — a prediction is derived from established theory</li><li>Inductive — a generalization is drawn from repeated observations</li><li>Abductive — the best available explanation is inferred for a surprising observation</li><li>Statistical — a null hypothesis is being formally rejected</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> The reasoning starts from a surprising fact (asymmetric, aperiodic dimming), eliminates a rival account, and adopts the hypothesis that would best explain the data — the structure of abduction (inference to the best explanation), the same logic that led from Uranus's orbital anomalies to Neptune. No prediction is being derived from theory (A), no general law is being induced from many cases (B), and no formal test is described (D).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A student argues: "Since astronomy cannot manipulate its objects, astronomical studies can never support causal conclusions." The strongest rebuttal is:</p>
+    <ol class="opts"><li>Causal claims require only large samples, which astronomy has in abundance</li><li>Nature performs manipulations for us — eclipses, transits, lensing events — and statistical control of confounders in large samples can support defensible causal inference</li><li>Astronomy is a descriptive science, so causal language is simply redefined</li><li>Causality is a philosophical notion with no place in quantitative science</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The rebuttal must supply the actual epistemic machinery: natural experiments (nature varies the IV for us) plus statistical control (matching, regression, modeling of selection effects) allow causal inference weaker than a randomized experiment but far stronger than "never." A is false — sample size alone cures random error, not confounding. C concedes the argument, and D is simply wrong.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Applying</span></div>
+    <p class="stem">A team wants to know whether a new astronomy module improves Grade 10 students' scientific reasoning. The registrar cannot randomize students, so the team assigns two <em>intact sections</em>: one receives the module, the other the standard curriculum, with a pre-test and post-test for both. This design is:</p>
+    <ol class="opts"><li>A true experiment, because there is a control group and a pre-test</li><li>A quasi-experiment (non-equivalent control group design), because the treatment is manipulated but assignment is not random</li><li>A correlational design, because two variables are measured</li><li>An ex post facto design, because the groups existed before the study</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The researcher <em>manipulates</em> the treatment (who gets the module) but cannot randomize individuals — the defining condition of the non-equivalent control group quasi-experiment. A fails because random assignment, not the mere presence of a control group, defines a true experiment. D is wrong because in ex post facto designs the researcher does not manipulate the treatment at all; here the module is actively administered.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">In a study of whether host-star metallicity (IV) predicts giant-planet occurrence (DV), stellar mass correlates with both metallicity in the sample and planet detectability. In this design, stellar mass is best treated as a:</p>
+    <ol class="opts"><li>Dependent variable, since it is measured for every star</li><li>Moderating variable, since it strengthens the IV–DV relationship</li><li>Confounding variable that must be controlled statistically</li><li>Control variable, since the researcher holds it constant automatically</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> A variable related to both the IV and the DV that offers a rival explanation is a confounder; because astronomers cannot manipulate stars, it must be handled statistically (sample matching, regression, occurrence-rate corrections). B describes a variable that changes the <em>strength</em> of a genuine relationship, which is not what the stem establishes; D is false because nothing is being held constant by design — that is precisely the problem.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Applying</span></div>
+    <p class="stem">Which restatement turns the vague objective "to study light pollution in Mandaluyong" into the <em>most</em> SMART specific objective?</p>
+    <ol class="opts"><li>"To completely eliminate light pollution in Mandaluyong through advanced technology"</li><li>"To understand the deep relationship between urban life and the night sky"</li><li>"To measure zenith sky brightness (SQM-L, mag/arcsec²) at 30 stratified sites in Mandaluyong monthly for 12 months and map its association with streetlight density"</li><li>"To gather as much sky-brightness data as possible whenever weather permits"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> It is specific (zenith sky brightness, named instrument and unit), measurable, achievable at thesis scale, relevant to the problem, and time-bound (monthly × 12), and it embeds an operational definition and a sampling strategy. A is not achievable and is an advocacy goal, not a research objective; B is unmeasurable; D has no defined scope, cadence, or endpoint.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A researcher's photometer returns magnitude values with superb night-to-night consistency, but a zero-point error makes every reading 0.3 mag too bright. In measurement terms, the instrument is:</p>
+    <ol class="opts"><li>Reliable but not valid — low random error, high systematic error</li><li>Valid but not reliable — accurate on average, imprecise per reading</li><li>Neither reliable nor valid — the data are unusable</li><li>Both reliable and valid — 0.3 mag is within tolerance</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Consistency across repeated measurements is reliability (small random error); the fixed 0.3-mag offset is a systematic error — a validity (accuracy) failure. This is the canonical asymmetry: reliability without validity is possible, the reverse is not. C overstates (a known zero-point error is correctable, but as measured the readings are biased), and D invents a tolerance the stem never grants.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Applying</span></div>
+    <p class="stem">To survey attitudes toward a proposed observatory among residents of a municipality with 12 barangays of very unequal population, and to guarantee that each barangay is represented proportionally, the most appropriate strategy is:</p>
+    <ol class="opts"><li>Simple random sampling from a municipal resident list</li><li>Stratified random sampling with barangays as strata, allocation proportional to population</li><li>Cluster sampling: randomly pick 3 barangays and survey everyone there</li><li>Snowball sampling starting from barangay captains</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The requirement is <em>guaranteed proportional representation of every barangay</em> — exactly what proportional stratified sampling delivers. Simple random sampling (A) only approximates proportionality by chance; cluster sampling (C) trades representativeness for logistics and would omit 9 barangays entirely; snowball sampling (D) is non-probability and biased toward the captains' networks.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A flux-limited survey concludes: "Average quasar luminosity increases dramatically with distance." Before accepting this as cosmic evolution, the sharpest methodological objection is:</p>
+    <ol class="opts"><li>The sample is too small for statistics</li><li>Malmquist bias: at larger distances only the most luminous objects exceed the flux limit, inflating the apparent mean luminosity</li><li>Quasar luminosities cannot be measured reliably at any distance</li><li>The result must be wrong because it implies evolution</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> A flux (brightness) limit acts as a distance-dependent selection filter: faint objects drop out of the sample as distance grows, so the surviving sample is increasingly unrepresentative — the astronomical analog of sampling only your most visible cases. This is a <em>selection-effect</em> critique, independent of sample size (A). C is false and D is dogma, not method: evolution may be real, but only after the bias is modeled.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two designs are proposed to test whether a "dark-sky ordinance" reduces sky brightness. Design X: laboratory measurement of shielded vs. unshielded luminaires in a controlled optics lab. Design Y: 24-month interrupted time-series of sky brightness in the ordinance town and a matched comparison town. The best evaluation is:</p>
+    <ol class="opts"><li>X maximizes internal validity; Y trades some internal validity for external validity — together they make the strongest case</li><li>X is superior in every respect because control is always preferable</li><li>Y is superior in every respect because realism is always preferable</li><li>Both are worthless without random assignment of towns</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> This is the classic internal–external validity trade-off. X isolates the causal mechanism (luminaire shielding → less upward light) with high internal validity but weak generalization to real streets; Y captures the real-world policy effect with credible (quasi-experimental) causal leverage but more confounders. Complementary designs triangulate. B and C each absolutize one virtue; D wrongly makes randomization the only source of causal knowledge.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Applying</span></div>
+    <p class="stem">A researcher wants to claim that sky brightness in Metro Manila is <em>trending</em> upward. Which design is the minimum adequate one?</p>
+    <ol class="opts"><li>A cross-sectional snapshot across many sites on one night</li><li>A longitudinal design measuring the same sites repeatedly over time with consistent instruments and protocols</li><li>A single case study of the most polluted site</li><li>An online poll asking residents whether the sky looks brighter</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> A trend is change over time within units; only repeated measurement of the same units (panel/longitudinal logic, with instrument consistency to avoid method artifacts) can establish it. A cross-section (A) supports spatial comparison, not temporal claims; C cannot generalize; D measures perception, not luminance — a construct-validity mismatch with the claim.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">H₀: "Median seeing at Site A equals that at Site B." After 40 paired nights, the test yields p = 0.21. The team writes: "We proved the sites are identical." The most precise correction is:</p>
+    <ol class="opts"><li>The conclusion is fine; p &gt; 0.05 proves H₀</li><li>They should say they <em>failed to reject</em> H₀ — absence of evidence of a difference is not proof of equivalence, especially at this sample size</li><li>They should lower α to 0.01 so the proof becomes stronger</li><li>They should switch to a directional hypothesis to obtain significance</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Hypothesis testing is asymmetric: data can discredit H₀ but never prove it; a non-significant result may reflect low statistical power rather than true equivalence (an equivalence test or confidence interval on the difference would be the right tool). A repeats the fallacy; C misunderstands α; D is p-hacking — changing the hypothesis after seeing data (HARKing) to chase significance.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A proposal's objective reads: "To determine how the new outreach program <em>improves</em> community science literacy," but its methodology is a one-time post-program survey of self-selected attendees. The deepest flaw is:</p>
+    <ol class="opts"><li>The sample is too urban</li><li>Causal language ("improves") is unsupported: no baseline, no comparison group, and self-selection — the design cannot separate program effects from who chose to attend</li><li>Surveys are inherently unscientific instruments</li><li>The objective should not mention the community</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The verb claims causation while the design is a post-only, single-group, self-selected observation — vulnerable to selection bias and offering no counterfactual. The fix is either to strengthen the design (pre/post with comparison group) or to weaken the claim ("describe literacy levels among participants"). Verbs must match designs. A, C, D do not identify the claim–design mismatch.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Applying</span></div>
+    <p class="stem">A study of why a provincial LGU succeeded in passing a dark-sky ordinance — tracing meetings, documents, alliances, and local history in one municipality — is best designed as a:</p>
+    <ol class="opts"><li>True experiment</li><li>Correlational survey across 100 LGUs</li><li>Qualitative case study with document analysis and key-informant interviews</li><li>Archival photometric analysis</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> The question is a contextual, process-oriented <em>how/why</em> about a single contemporary unit — the textbook indication for a case study using qualitative evidence. A is impossible (you cannot randomize ordinances), B answers a different question (patterns across LGUs, not mechanism within one), and D measures the sky rather than the politics.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A mixed-methods project measures sky brightness at 30 sites (quantitative) and interviews 15 residents about nightscape value (qualitative). Its distinctive methodological payoff, done properly, is:</p>
+    <ol class="opts"><li>Doubling the sample size for statistics</li><li>Triangulation and complementarity — numeric magnitude of the problem plus the meaning it holds for stakeholders, each compensating the other's blind spots</li><li>Eliminating the need for sampling strategy in either strand</li><li>Guaranteeing statistically significant results</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Mixed methods earn their cost only through <em>integration</em>: convergent findings strengthen inference (triangulation), and each strand answers what the other cannot (complementarity) — crucial for community-facing proposals that must persuade both scientists and LGUs. Interviews do not enlarge the quantitative n (A); both strands still need explicit sampling logic (C); and no design guarantees significance (D).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Midway through analysis, a researcher notices an unexpected correlation, then rewrites the introduction so the paper "predicted" it all along. The best characterization and remedy is:</p>
+    <ol class="opts"><li>Efficient writing; no remedy needed</li><li>HARKing — it disguises exploratory findings as confirmatory; the remedy is to report the finding honestly as exploratory and, in future work, pre-register hypotheses</li><li>Plagiarism — the remedy is citation</li><li>A sampling error — the remedy is a larger sample</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Hypothesizing After the Results are Known inflates false-positive rates because a hypothesis fitted to noise is presented as if it had survived a genuine test. Exploratory findings are legitimate <em>when labeled as such</em> and then confirmed on new data. C misnames the offense; D confuses integrity with statistics; A is exactly the norm the replication crisis discredited.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Applying</span></div>
+    <p class="stem">A BS Astronomy student with a ₱0 equipment budget and one laptop wants an internationally publishable thesis. Applying this chapter's design principles, the most defensible strategy is:</p>
+    <ol class="opts"><li>Wait until funding for a 1-meter telescope is secured</li><li>An archival design: mine public survey data (e.g., Gaia, TESS) with a sharply framed question, explicit selection-effect handling, and reproducible code</li><li>A convenience survey of classmates about astronomy interest</li><li>A purely theoretical claim with no data at all</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Archival/secondary analysis converts feasibility constraints into design strengths: world-class data, zero acquisition cost, and full attention on question quality, bias correction, and reproducibility — the criteria this chapter says reviewers actually score. A confuses resources with research; C answers a trivial question weakly; D removes the evidence half of the idea–evidence link.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A proposal's Gantt chart shows community interviews beginning in Month 1; ethics-committee clearance is listed as a Month 3 "documentation" task. The correct diagnosis is:</p>
+    <ol class="opts"><li>Acceptable — clearance is administrative and can be back-dated</li><li>A sequencing violation: ethical review must precede any human-participant data collection, so the workplan is internally invalid and must be re-sequenced</li><li>A budget problem only — add honoraria for the committee</li><li>Fine, provided the interviews are anonymous</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Ethical clearance is a <em>precondition</em>, not paperwork: consent procedures, risk assessment, and instruments are reviewed before participants are approached. A workplan that gathers data first is self-refuting and signals to reviewers that the team does not understand research governance. Anonymity (D) does not waive review; back-dating (A) is misconduct.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A reviewer reads a line-item budget requesting a ₱1.2M spectrograph, but no specific objective, hypothesis, or activity in the proposal uses spectroscopy. Applying the "design argument" principle of this chapter, the reviewer should conclude:</p>
+    <ol class="opts"><li>Approve — good instruments always find uses</li><li>Approve if the total is within the budget cap</li><li>Flag it: every budget line must trace through an activity to an objective; an orphan line breaks the objectives→activities→budget chain and signals a poorly designed project</li><li>Reject the entire program area</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> A proposal is a design argument in which money is the conclusion of a chain that starts at the knowledge gap. An instrument with no objective or activity attached is unjustified scope (or padding) and is exactly what panels read budgets "backwards" to catch. A and B ignore the chain; D is disproportionate — the flaw is in one proposal's internal logic, not the field.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section id="refs">
+  <h2><span class="secno">◈</span>References and Readings (Clickable)</h2>
+  <h3>Core Course References</h3>
+  <ul class="plain">
+    <li>Daim, T., Kim, J., &amp; Phan, K. (2017). <em>Research and Development Management: Technology Journey through Analysis, Forecasting, and Decision Making.</em> Springer Nature — <a href="https://link.springer.com/book/10.1007/978-3-319-54537-0" target="_blank" rel="noopener">publisher page</a></li>
+    <li>Gilbert, P., et al. (2018). <em>Innovation, Research, and Development Management.</em> John Wiley &amp; Sons — <a href="https://www.wiley.com/" target="_blank" rel="noopener">publisher</a></li>
+    <li>Muñoz, J., Blanco, J., &amp; Rizo, S. (2017). <em>Project Management and Engineering Research.</em> Springer Nature — <a href="https://link.springer.com/" target="_blank" rel="noopener">publisher</a></li>
+    <li>Wingate, L. (2015). <em>Project Management for Research and Development.</em> CRC Press — <a href="https://www.routledge.com/" target="_blank" rel="noopener">publisher</a></li>
+  </ul>
+  <h3>Methods and R&amp;D Classification</h3>
+  <ul class="plain">
+    <li>OECD (2015). <em>Frascati Manual 2015: Guidelines for Collecting and Reporting Data on Research and Experimental Development</em> — <a href="https://www.oecd.org/en/publications/frascati-manual-2015_9789264239012-en.html" target="_blank" rel="noopener">read at OECD</a></li>
+    <li>Trochim, W. <em>Research Methods Knowledge Base</em> (open online text) — <a href="https://conjointly.com/kb/" target="_blank" rel="noopener">conjointly.com/kb</a></li>
+    <li>OpenStax / open textbooks on research methods and statistics — <a href="https://openstax.org/" target="_blank" rel="noopener">openstax.org</a></li>
+  </ul>
+  <h3>Agendas and Institutions (Week 2 preview)</h3>
+  <ul class="plain">
+    <li>Philippine Development Plan 2023–2028 — <a href="https://pdp.neda.gov.ph/" target="_blank" rel="noopener">pdp.neda.gov.ph</a></li>
+    <li>Department of Science and Technology (HNRDA and GIA program pages) — <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">dost.gov.ph</a></li>
+    <li>Pagtanaw 2050 (NAST PHL) — <a href="https://nast.dost.gov.ph/" target="_blank" rel="noopener">nast.dost.gov.ph</a></li>
+    <li>UN 2030 Agenda for Sustainable Development — <a href="https://sdgs.un.org/2030agenda" target="_blank" rel="noopener">sdgs.un.org</a></li>
+    <li>IAU Strategic Plan 2020–2030 — <a href="https://www.iau.org/administration/about/strategic_plan/" target="_blank" rel="noopener">iau.org</a></li>
+    <li>Philippine Space Agency — <a href="https://philsa.gov.ph/" target="_blank" rel="noopener">philsa.gov.ph</a> · Official Gazette (Republic Acts) — <a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">officialgazette.gov.ph</a></li>
+  </ul>
+  <h3>Open Data and Literature for Archival Designs</h3>
+  <ul class="plain">
+    <li>NASA/SAO Astrophysics Data System — <a href="https://ui.adsabs.harvard.edu/" target="_blank" rel="noopener">ui.adsabs.harvard.edu</a></li>
+    <li>arXiv astro-ph preprints — <a href="https://arxiv.org/list/astro-ph/recent" target="_blank" rel="noopener">arxiv.org/astro-ph</a></li>
+    <li>ESA Gaia Archive — <a href="https://gea.esac.esa.int/archive/" target="_blank" rel="noopener">gea.esac.esa.int</a> · MAST (TESS, Hubble, JWST) — <a href="https://archive.stsci.edu/" target="_blank" rel="noopener">archive.stsci.edu</a></li>
+    <li>Directory of Open Access Journals — <a href="https://doaj.org/" target="_blank" rel="noopener">doaj.org</a></li>
+  </ul>
+  <h3>Ethics</h3>
+  <ul class="plain">
+    <li>Philippine National Health Research System / PHREB resources — <a href="https://www.healthresearch.ph/" target="_blank" rel="noopener">healthresearch.ph</a></li>
+    <li>ALLEA <em>European Code of Conduct for Research Integrity</em> — <a href="https://allea.org/code-of-conduct/" target="_blank" rel="noopener">allea.org</a></li>
+  </ul>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch1-reinforcement.html">Ch. 1 Reinforcement</a></span> <span><a href="ch2-lecture.html">Ch. 2 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 1 Lecture Pack · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

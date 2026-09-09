@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 6 Reinforcement Exercises — R&amp;D Project Management, Budgeting, and M&amp;E</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 6 Reinforcement Exercises</h1>
+  <div class="subtitle">R&amp;D Project Management · Line-Item Budgeting · Monitoring &amp; Evaluation · 20-Item HOTS Multiple Choice + 3-Item HOTS Essay · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Exercise sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#howto">How to Use</a></li>
+    <li><a href="#mcq">Part I · Multiple Choice (20 items)</a></li>
+    <li><a href="#essay">Part II · Essay (3 items)</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="howto">
+  <div class="objectives">
+    <h4>How to Use This Reinforcement Set</h4>
+    <p>These exercises are <em>formative</em> — for building mastery after the Chapter 6 lecture, not for grading. All items are HOTS-level (applying, analyzing, evaluating, creating), several in Case Recitation style, and use fresh scenarios not found in the Mastery Test. Answer each item — for essays, write the full response — before opening the dropdown to compare with the model answer.</p>
+  </div>
+</section>
+
+<!-- ============ PART I ============ -->
+<section id="mcq">
+  <h2><span class="secno">I.</span>Reinforcement Multiple Choice — 20 HOTS Items</h2>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A proposal promises a 30-site survey (scope) in 12 months (time) for ₱800k (cost), where comparable projects manage 10 sites on that budget and timeline. Which corner of the triangle is silently scheduled to break?</p>
+    <ol class="opts"><li>None; ambition is free</li><li>Quality: with scope tripled against fixed time and cost, the only elastic element left is how well each site is done — calibration shortened, revisits skipped, data thinned — the classic incoherent-triangle failure the panel prices immediately</li><li>Time, because time always breaks first</li><li>The reviewers' patience only</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> When three promises are fixed and incompatible, the unlisted fourth — quality — absorbs the difference. Reviewers benchmark unit costs and unit times from comparable projects, which is exactly how this triangle is caught. The honest versions: fewer sites, more months, more pesos, or an explicit phased design.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your grant's Gate 3 midterm review is in Month 12. The gate-literate preparation, per the lifecycle, is:</p>
+    <ol class="opts"><li>A fresh coat of optimism</li><li>Arrive with the monitoring record: indicator status against the logframe, Gantt-versus-actual with variances explained, budget utilization, updated risk register, and — where variances are structural — a costed realignment or extension proposal for the funder's decision</li><li>Postpone the review until results improve</li><li>Send the newest student member alone</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Gates are decision points, so the winning preparation gives the funder a decidable package: evidence plus proposals. Teams that treat gates as performances bring adjectives; teams that treat them as governance bring variances with explanations and options — and get their extensions approved.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Two activities: A "analyze survey data" and B "collect survey data." A junior planner schedules them in parallel to save time. The scheduling concept violated is:</p>
+    <ol class="opts"><li>The 100% rule</li><li>Dependency logic: A is finish-to-start dependent on B — analysis cannot precede its own data — and forcing parallelism doesn't compress the schedule, it fictionalizes it; real compression comes from resequencing genuinely independent work or adding resources where they help</li><li>The critical path must contain analysis</li><li>Parallel work is always forbidden</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Dependencies are facts about the work, not preferences of the planner: a Gantt that draws impossible overlaps is prettier and falser. D overcorrects — parallelism among independent packages is exactly where honest compression lives (and why the WBS separates them cleanly).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Applying</span></div>
+    <p class="stem">Monsoon climatology gives your mountain site ~40% usable nights June–September. Your 24-month Gantt should:</p>
+    <ol class="opts"><li>Ignore weather; schedules are indoor documents</li><li>Draw observing campaigns against the almanac and climatology — dense campaigns in the dry season, habagat months assigned to analysis, maintenance, and training — and carry the residual weather risk explicitly in the register with a stated buffer of observing nights</li><li>Schedule all observing in August to test fate</li><li>Add a clause blaming the sky</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Astronomy's fourth constraint: the sky has a schedule. Planning against climatology converts a certainty (bad-season clouds) from a fake "risk" into design, leaving the register to carry only the genuine variance around the climatological mean — the avoid-then-accept pattern of Figure 6.7 in its native habitat.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Applying</span></div>
+    <p class="stem">Sort into PS / MOOE / CO: (1) stipend of the graduate research assistant; (2) annual station-insurance premium; (3) a ₱950k weather-sealed dome; (4) calibration lamps replaced quarterly.</p>
+    <ol class="opts"><li>1 PS · 2 MOOE · 3 CO · 4 MOOE</li><li>1 MOOE · 2 CO · 3 PS · 4 CO</li><li>1 CO · 2 PS · 3 MOOE · 4 PS</li><li>All MOOE for simplicity</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> People → PS; recurring consumables and services (insurance, replaceable lamps) → MOOE; the durable dome above threshold → CO with its property consequences. D's "simplicity" would misroute procurement, dodge the equipment registry, and hand the auditor a finding — classification is the accounting expression of what each thing <em>is</em>.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A budget line reads: "Miscellaneous research needs — ₱480,000." The reviewer's objection, in this chapter's terms, is:</p>
+    <ol class="opts"><li>The amount should be rounder</li><li>The line traces to nothing: no work package, no unit costing, no expense class discipline — it is fog on the traceability chain, indistinguishable from padding, and it will be equally indefensible before COA when something is actually charged to it</li><li>Miscellaneous lines must be at least ₱500,000</li><li>The objection is stylistic only</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The single-peso walk fails at step one: "miscellaneous" answers neither "for which activity" nor "toward which objective." The legitimate instrument for genuine uncertainty is a visible contingency line with its covering rationale in the risk register — bounded, explained, and rule-compliant, everything this line is not.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the chapter place procurement on the critical path of "most Philippine instrument projects" rather than treating it as background admin?</p>
+    <ol class="opts"><li>Because forms are photogenic</li><li>Because competitive bidding's lawful lead times are long, sit upstream of installation and commissioning by hard dependency, and have no float — a month lost in bidding is a project-month lost, which is why specs are written early, paperwork starts at Day 1, and Project UWU became a case study</li><li>Because procurement is optional for research</li><li>Because equipment always arrives early</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Critical-path placement is empirical: the procure→install→commission chain is the longest dependent sequence in most hardware projects, and its first link is governed by statutory process you cannot compress by enthusiasm. The management levers are timing (start immediately) and quality of specifications — both free, both chronically neglected.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">A supplier offers your project a "special discount" if you skip the inspection-and-acceptance report "to save everyone paperwork." The correct reading:</p>
+    <ol class="opts"><li>Accept; discounts serve the taxpayer</li><li>Refuse: the I&amp;A report is the document proving government got what it paid for — skipping it breaks the audit trail at its most critical link, exposes signatories to disallowance, and a discount conditioned on missing documentation is itself a red flag about what would be delivered</li><li>Accept if the discount exceeds 10%</li><li>Ask the supplier to sign the report instead</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Documentation is the audit defense built daily; the I&amp;A report is where delivery meets accountability. An offer priced on removing that link tells you its expected value comes from non-delivery or substitution. D misses that inspection is the <em>government's</em> act — the supplier attesting to its own delivery is no control at all.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Your project's funds were released as an advance in January; the grant requires liquidation within the funder's deadlines. By November, receipts sit unfiled in three drawers. The chapter's diagnosis of what is now at risk:</p>
+    <ol class="opts"><li>Nothing; receipts age like wine</li><li>The next release (blocked by unliquidated balances), the institution's standing with the funder, and ultimately personal liability for unliquidated advances — closure is a work package precisely because liquidation is an obligation with teeth, not filing preference</li><li>Only the project's feng shui</li><li>The funder's mood, at most</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Advances are debts until liquidated: the consequences cascade from operational (blocked tranches) through institutional (standing) to personal (accountability for the balance). The three-drawer scenario is cured by the third manager's habit — file the paperwork the day the expense happens — which costs minutes daily and saves careers annually.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">Choose the correct logframe placement: "≥200 validated fireball events in the open catalog by Month 20" and "LGUs incorporate alerts into DRRM protocols."</p>
+    <ol class="opts"><li>Both are activities</li><li>The catalog indicator is an <em>output</em> measure (a deliverable the project controls, with the repository as MOV); LGU incorporation is an <em>outcome</em> (behavior change by others, argued and evidenced but not controlled) — report the first, argue the pathway to the second, never promise the second as a deliverable</li><li>Both are impacts</li><li>The LGU row is an input</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The control test sorts levels: outputs are yours to deliver; outcomes require other actors' behavior, which is why their indicators (logbooks, protocols adopted) verify <em>uptake</em> rather than production. Promising outcomes as deliverables is the over-claim that terminal evaluations punish — Figure 2.5's rule, enforced by Figure 6.6's table.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A terminal evaluation finds all outputs delivered, yet the outcome never emerged: the alerts worked, but no LGU used them. The logframe's assumptions column had said "LGU partnership holds." The fairest evaluative conclusion is:</p>
+    <ol class="opts"><li>The team secretly failed and hid it</li><li>Implementation succeeded while a stated assumption failed — the design's causal bet, not the execution, is where the lesson lives; the next project should convert that assumption into designed work (engagement work packages, MOU incentives) rather than a hope in a column</li><li>Outcomes never matter anyway</li><li>The logframe caused the failure</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> This is evaluation's third question — was the design right? — answered honestly: the stated assumption localizes the failure and converts it into next-project design knowledge, which is the entire institutional point of stating assumptions. A misreads transparency as concealment; the team that wrote the bet down is the team you can learn from.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your register rates "customs delay on imported CCDs" as high probability × high impact. Which response <em>package</em> best fits its red-corner position?</p>
+    <ol class="opts"><li>Accept it; customs is destiny</li><li>Layered reduction and transfer: order at Day 1 with realistic lead times (reduce probability of project-level delay), hold critical spares locally (reduce impact), use suppliers with delivered-duty-paid terms where lawful (transfer), and keep a fallback local-optics design documented (contingent avoidance) — red-corner risks earn multiple responses</li><li>Delete the row so the register looks calmer</li><li>Transfer it verbally to the newest student</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Prioritization is resource allocation: the red corner justifies layered responses across the four verbs, while low-priority rows get acceptance and a contingency. C is register cosmetics — the risk remains, unmanaged and now undocumented; D confuses assigning an <em>owner</em> (legitimate) with dumping accountability (not a response category).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the chapter route the risk register's inputs from the logframe's assumptions column specifically?</p>
+    <ol class="opts"><li>Both documents share a font</li><li>Because assumptions are, by definition, the project's uncontrolled conditions — each one is a risk already identified by the causal logic itself; wiring the two documents together means the plan's honesty (stated bets) automatically becomes the manager's watchlist (owned, scored, responded)</li><li>To double the paperwork</li><li>Assumptions and risks are unrelated concepts</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The two artifacts are one thought in two postures: the logframe states what must hold; the register manages what might not. Projects that maintain them separately discover the same risks twice — once in planning and once, expensively, in execution.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Applying</span></div>
+    <p class="stem">Month 9: your MOOE utilization is 85% while the Gantt shows only 50% of Year-1 activities complete. The monitoring-literate reading is:</p>
+    <ol class="opts"><li>Celebrate the spending efficiency</li><li>A burn-rate divergence flag: money is moving faster than work, which means unit costs exceeded plan, spending is misaligned to activities, or work is under-reported — investigate line-by-line against work packages now, because the arithmetic points to an empty tank before the finish line</li><li>Ignore it; budgets and schedules are separate universes</li><li>Reduce reported activities to match the money</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Monitoring's whole value is early divergence detection — the burn-rate-versus-progress comparison is the single most informative dashboard pair a small project owns. D falsifies the record (the concealment pathology); C forgets the triangle's coupling; the correct instinct is investigation while correction is still cheap.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A colleague proposes charging the conference travel of an <em>unrelated</em> project to your grant's MOOE "since the line has savings." Evaluate under this chapter.</p>
+    <ol class="opts"><li>Fine; money is fungible among friends</li><li>Improper: expenses must trace to this project's budget lines and work packages — charging another project's costs breaks the traceability the funder approved and the documentation COA audits, and "savings" have their own lawful paths (realignment with approval, or return) — the friendly version of a disallowance in the making</li><li>Fine if reimbursed someday</li><li>Fine if the conference mentions astronomy</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Budget lines are promises with legal force, not pools of goodwill: the expense's project, line, and work package must match its papers. Savings are governed too — realignment procedures exist precisely so that flexibility stays lawful. The test is always the same: could you defend this charge line-by-line at audit?</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Distinguish a <em>realignment</em> from an <em>extension</em> in change discipline:</p>
+    <ol class="opts"><li>They are synonyms for delay</li><li>Realignment moves money between approved budget lines within the same total and period (per the grant's thresholds and approval rules); an extension moves time — usually a no-cost extension stretching the schedule without new funds; each has its own request, justification, and approval path, and neither is validly done by silence</li><li>Both require new legislation</li><li>Realignment is illegal; extension is automatic</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Change discipline has a small vocabulary worth precision: money-shape changes (realignment), time changes (extension), scope changes (amendment) — each lawful when requested, justified, and approved in advance. The UWU case is an extension case; the STARI repair is a budget-architecture case; confusing the instruments muddles the remedy.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Applying</span></div>
+    <p class="stem">Write the MOV: your logframe output row claims "20 teachers deliver the astronomy module independently in Year 2." The strongest means of verification is:</p>
+    <ol class="opts"><li>"The team's confidence"</li><li>Division-office class schedules naming the module, teacher-submitted delivery reports or lesson logs, and a sample of validation visits — third-party-checkable documents that exist whether or not your project is watching</li><li>A group photo from the training day</li><li>The proposal itself, cited as evidence</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> An MOV must let someone <em>else</em> verify: independent documents, produced by the system being measured, at the time of the behavior. The photo (C) verifies the training, not the Year-2 delivery — a subtle level confusion; D is circular. Writing MOVs well is writing your terminal report two years early.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A project leader boasts: "We never changed a single plan in three years." Under this chapter's change discipline, the sophisticated reading is:</p>
+    <ol class="opts"><li>Perfect planning, provable and common</li><li>Suspicion is warranted in both directions: either reality was unusually kind, or divergences were absorbed silently — unreported scope trims, quality erosion, or off-book fixes; disciplined projects change visibly through the lawful instruments, and a spotless change log on a three-year R&amp;D project is more often concealment than clairvoyance</li><li>Proof the risk register was unnecessary</li><li>Grounds for an automatic bonus</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> R&amp;D's irreducible uncertainty guarantees divergence; the only question is whether it surfaces through governed channels or hides in quality. Funders forgive documented adversity and punish discovered surprises — the change log is credibility, not confession.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the workplan package (Fig. 6.8) include the compliance calendar and IP annex from Chapters 4–5 rather than leaving them as separate documents?</p>
+    <ol class="opts"><li>To increase page count</li><li>Because their obligations are schedule and budget facts: clearances gate activities (permissions precede work), permit fees and filing fees are budget lines, reporting deadlines are milestones — separated, they are forgotten; integrated, the Gantt and budget enforce them automatically</li><li>Because reviewers only read appendices</li><li>Tradition in the appendix industry</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Integration is enforcement: an ECC condition with a Gantt bar and a named owner gets done; the same condition in a separate binder gets remembered at audit. The package's seven artifacts interlock precisely so that no chapter of this course survives only as good intentions.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">Final synthesis: your Week-12 workplan is drafted. Which self-test, run the night before submission, best certifies it?</p>
+    <ol class="opts"><li>Count the pages; more is better</li><li>Run the walks: pick three random budget lines and walk each to an objective and an indicator; pick the critical path and check every link has an owner and a procurement start date; pick two assumptions and find their risk-register rows; pick one clearance and find its Gantt bar — if all walks complete, the triangle coheres and the package is submission-ready</li><li>Read only the abstract aloud</li><li>Ask a friend if it "feels fundable"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The self-test operationalizes the whole chapter: traceability (budget walks), schedule integrity (critical-path check), honesty wiring (assumptions→register), and integration (clearance→Gantt). It is also, not coincidentally, a rehearsal of exactly what a good panel does to your document — better you find the broken walk on Tuesday night than they find it on Thursday.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ PART II ============ -->
+<section id="essay">
+  <h2><span class="secno">II.</span>Reinforcement Essay — 3 HOTS Items</h2>
+  <p>Write each essay in full (300–500 words) before opening the dropdown. The model answers are <em>possible</em> strong responses; yours may differ and still earn full marks if it demonstrates the same reasoning identified in the explanation.</p>
+
+  <div class="q"><div class="qnum">Essay 1 · <span class="lvl">Evaluating</span> · 20 points</div>
+    <p class="stem">The Space Technology Administration Research Institute (STARI) submits its ₱2.5B proposal: direct cost ₱500M (PS ₱200M, MOOE ₱200M, CO ₱100M) and indirect cost ₱2.0B. You are the panel's budget reviewer. <strong>Write your complete review:</strong> (i) diagnose every defect in the budget's architecture, citing the principles each violates; (ii) reconstruct a defensible version, showing your reasoning (you may assume a plausible capped indirect rate and invent reasonable work packages); and (iii) state the three questions you would put to STARI before any resubmission.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>(i) Diagnosis.</em> Defect 1 — inverted architecture: indirect cost (₱2.0B) is 400% of direct cost (₱500M), while the entire design of research funding permits overhead only as a modest capped percentage <em>of</em> direct costs; as submitted, 80 centavos of every peso buys administration, not research. Defect 2 — traceability failure: a ₱2.0B line with no work packages beneath it cannot answer "for which activity, toward which objective"; it is the ₱480k "miscellaneous" line at institutional scale. Defect 3 — the direct block itself is unshown work: PS/MOOE/CO totals appear without unit costing or work-package derivation, so even the legitimate fifth of the budget is asserted rather than derived. Defect 4 — proportional plausibility inside direct costs: CO of only ₱100M inside a supposed ₱2.5B space-technology program suggests the scope narrative and the budget describe different projects (the triangle incoherence, read from the cost corner). <em>(ii) Reconstruction.</em> Method: budgets are derived, not declared. Take the objectives; decompose to work packages (e.g., payload development, ground station, data systems, testing campaigns, training); cost each in PS (rates × person-months), MOOE (canvassed consumables, travel, services), CO (specified equipment with quotations); sum to true direct cost. Illustrative outcome: if honest work packages support ₱500M direct, then at an assumed capped indirect rate of, say, 7.5–10% the request totals roughly ₱537–550M — and the reviewer notes the assumed rate is illustrative, with the funder's actual cap controlling. If STARI genuinely needs ₱2.5B, the reconstruction runs the other way: the work packages must show ~₱2.3B of real direct cost before capped overhead — either way, the ₱2.0B "indirect" line cannot survive. <em>(iii) Three questions:</em> (1) Provide the WBS and per-work-package costing from which the direct budget derives — what work does each peso buy? (2) Itemize what the claimed indirect costs consist of, and reconcile them with your institution's actual approved overhead rate. (3) Which specific objectives would be descoped if the budget were corrected to the capped architecture — i.e., show us the honest triangle.</p>
+      <p><strong>Why this earns full marks.</strong> The diagnosis goes beyond the headline inversion to the deeper failures (traceability, underivation, internal plausibility), each tied to a named principle. The reconstruction demonstrates <em>method</em> — derive from the WBS, cap the overhead, show the arithmetic both directions — while honestly flagging the assumed rate as illustrative rather than inventing a fake statutory number. The three questions are decidable and force the resubmission to carry its own evidence. Answers that stop at "2B is too big" earn the diagnosis point only; the reconstruction and the questions are where the case's 100 points actually live.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 2 · <span class="lvl">Evaluating</span> · 20 points</div>
+    <p class="stem">Project UWU (University of Opinyonado) is 24 months into a 24-month DOST-funded grant: the science is on track wherever equipment exists, but the university's procurement of the main instrument suite took 14 months, and Objectives 3–4 need eight more months of field work. The project leader, frustrated, proposes to (a) let the grant lapse and "just finish informally," or (b) transfer everything to a faster university. <strong>Write the management memo</strong> that (i) rejects both proposals with reasons from this course; (ii) builds the correct extension request — its instrument, its evidence file, its revised planning artifacts; and (iii) extracts the systemic lessons a next proposal must encode.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>(i) Rejections.</em> Proposal (a) — informal finishing — fails on every layer: work after expiry has no legal cover (personnel unpaid or unlawfully paid, expenses unliquidatable, insurance and permits lapsed), the unspent balance and equipment enter accountability limbo, and the "finished" science would rest on ungoverned spending COA can disallow — silence converts documented adversity into discovered surprise, the one unforgivable change-management failure. Proposal (b) — unilateral transfer — repeats the Prof. Son fallacy: the grant is a GFA–RDI agreement; the equipment is government property under the grant's rules; the IP vests in the RDI under RA 10055; none of it relocates on a project leader's initiative, and attempting it would add a property mess to a schedule problem. <em>(ii) The correct instrument.</em> A <strong>no-cost extension</strong> requested before expiry: time moves, money does not. Evidence file: the procurement chronology (purchase requests, bid notices, award dates — proving the delay was systemic and outside the team's control, and that the team acted at Day 1); the monitoring record showing science-on-track where equipment existed (indicator status from the logframe); financial status showing lawful utilization and the unspent balance's mapping to the remaining objectives. Revised artifacts: an updated Gantt putting the eight months of field work against the almanac (dry-season campaigns), a re-scored risk register (procurement risk now retired; weather and staff-retention risks re-scored for the extension window), a realignment request if any savings must move lines to support the field work, and the revised reporting calendar. The memo's compressed IRAC: (R) the grant permits pre-expiry extension for cause with funder approval; (A) cause is documented and systemic, the plan is revised, no new funds are sought; (C) approval is respectfully requested. <em>(iii) Systemic lessons.</em> Next proposal encodes: procurement on the critical path with Day-1 initiation and realistic statutory lead times; early, brand-neutral specifications as a named planning work package; a pilot/phased equipment strategy so science can start on partial capability; the procurement-delay row pre-loaded in the risk register with layered responses (dual suppliers, spares, phased delivery); and a standing rule that assumptions about institutional processes ("procurement completes in X months") are logframe assumptions — stated, monitored, and owned.</p>
+      <p><strong>Why this earns full marks.</strong> Both rejections are argued from doctrine (change discipline; the GFA–RDI relationship; RA 10055; property rules) rather than prudence alone. The extension request is built as funders actually receive it — instrument, evidence, revised artifacts — showing the monitoring system paying its dividend. The lessons section converts the case into design (the course's recurring move: failure → framework), and the almanac detail shows the astronomy constraint carried through. Answers that merely say "ask for an extension" without the evidence file and revised artifacts are proficient; endorsing either of the leader's proposals fails the item.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 3 · <span class="lvl">Creating</span> · 20 points</div>
+    <p class="stem">Assemble the <strong>complete workplan package</strong> (Fig. 6.8) for your own TE01 proposal — the provincial meteor-camera network or your chosen project. Deliver, in compact form: (i) the WBS to work-package level (100% rule respected) with the critical path named; (ii) a line-item budget skeleton — PS/MOOE/CO per work package, indirect capped, counterpart and compliance/IP lines visible — with unit-costing shown for any two lines; (iii) a four-row logframe (one output row per major deliverable plus one outcome row) with indicators, MOVs, and assumptions; (iv) a five-row risk register scored on the P×I matrix with named responses; and (v) the reporting-and-gates calendar. Close with your own single-peso walk.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>(i) WBS.</em> Obj. 1 (network operational): WP1.1 site agreements &amp; surveys; WP1.2 procurement &amp; build; WP1.3 installation &amp; networking; WP1.4 commissioning (PhST-disciplined clocks). Obj. 2 (people &amp; uptake): WP2.1 observer training &amp; certification; WP2.2 LGU/DRRMO engagement &amp; drills. Obj. 3 (science &amp; openness): WP3.1 pipeline &amp; catalog; WP3.2 publications &amp; data release (post-filing, per Ch. 5). Closure: WP4.1 liquidation, property disposition, terminal report. Critical path: WP1.2 → WP1.3 → WP1.4 (procurement-led, Day-1 start); WP2.1 floats against it. 100% check: no orphan work (site MOUs present; closure present), no phantom work. <em>(ii) Budget skeleton.</em> Per work package, PS (RA stipends, observer honoraria), MOOE (travel and ferries, enclosure materials, insurance premiums, comms/SIM data, calibration lamps, publication and IPOPHL fees, ECC/permit costs), CO/EO (cameras, GPS clock modules, server). Indirect: capped percentage per funder's rule, computed on direct total and shown as one visible line. Counterpart: faculty time and campus server room, valued and stated. Unit costing shown for two lines — e.g., GPS modules: 6 units (5 stations + 1 spare) × ₱2,000 = ₱12,000 under WP1.4; site travel: 5 sites × 6 visits/yr × 2 yrs × ₱800 average fare = ₱48,000 under WP1.1/1.3 — arithmetic visible, canvass sources noted. <em>(iii) Logframe (compact).</em> Output rows: five stations ≥90% uptime by M10 (MOV: PhST-stamped uptime logs); catalog v1 ≥200 validated events by M20 (MOV: repository DOI); 20 observers certified by M12 (MOV: certification records). Outcome row: ≥3 LDRRMOs logging alert receipt and using them in ≥2 drills by M22 (MOV: LDRRMO logbooks, after-action reports). Assumptions: observing weather within climatological norms; LGU partnership survives election cycle; procurement within lead-time estimates — each carried to the register. <em>(iv) Risk register.</em> Procurement delay (H×H — reduce: Day-1 start, dual suppliers); habagat season (M×H — avoid: almanac scheduling); staff attrition (M×H — reduce: cross-training, documentation, fair honoraria); station vandalism/loss (L×H — transfer: insurance, host agreements); price drift (L×L — accept: contingency line). <em>(v) Calendar.</em> Gates: fund release (M0), workplan acceptance (M1), midterm review (M12), terminal acceptance (M24+); quarterly progress and financial reports; liquidation 30 days pre-deadline; ECC condition reports quarterly; ethics clearance before any school/LGU survey work; IP disclosures before each publication. <em>Single-peso walk:</em> the ₱2,000 GPS module → WP1.4 commissioning → Objective 1 → uptime-log MOV (PhST-stamped) → triangulation methodology (RA 10535 traceability) → DRR-relevant space-science alignment. The walk completes; the package coheres.</p>
+      <p><strong>Why this earns full marks.</strong> Every artifact is present, mutually wired (assumptions→register; clearances→calendar; budget→WBS), and inherits the course's earlier chapters where they belong (PhST clocks, post-filing releases, ECC conditions, counterpart). The unit costing shows arithmetic rather than totals; the critical path is named with its management consequence (Day-1 procurement); and the closing peso-walk demonstrates the integration test rather than asserting it. Packages that present five beautiful but unconnected documents miss the point the figure's caption states: seven artifacts, one project — the wiring <em>is</em> the competence.</p>
+    </div></details>
+  </div>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch6-lecture.html">&#8592; Ch. 6 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch7-lecture.html">Ch. 7 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 6 Reinforcement Exercises · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 1 Reinforcement Exercises — Research Methods and Design Principles</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 1 Reinforcement Exercises</h1>
+  <div class="subtitle">Overview of Research Methods and Design Principles · 20-Item HOTS Multiple Choice + 3-Item HOTS Essay · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Exercise sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#howto">How to Use</a></li>
+    <li><a href="#mcq">Part I · Multiple Choice (20 items)</a></li>
+    <li><a href="#essay">Part II · Essay (3 items)</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="howto">
+  <div class="objectives">
+    <h4>How to Use This Reinforcement Set</h4>
+    <p>These exercises are <em>formative</em> — they are for building mastery after the Chapter 1 lecture, not for grading. All items are HOTS-level (applying, analyzing, evaluating, creating) and use fresh scenarios not found in the Mastery Test. Work each item completely before opening its dropdown; for essays, write your full answer first, then compare it against the model answer and the explanation of what a strong response must contain.</p>
+  </div>
+</section>
+
+<!-- ============ PART I ============ -->
+<section id="mcq">
+  <h2><span class="secno">I.</span>Reinforcement Multiple Choice — 20 HOTS Items</h2>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A university observatory offers nightly telescope viewing to the public using fully proven equipment and procedures. The director claims this activity in the university's R&amp;D expenditure report. Under the Frascati criteria, the claim fails primarily because the activity is not:</p>
+    <ol class="opts"><li>Systematic — the viewings follow no schedule</li><li>Uncertain and novel — the outcome is known in advance and no new knowledge is created</li><li>Transferable — the public cannot replicate viewings</li><li>Creative — the staff follow their own initiative</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Outreach with proven equipment resolves no scientific or technological uncertainty and generates no new knowledge — the two criteria that most cleanly separate valuable science <em>services</em> from R&amp;D. The viewings may well be systematic and even creative in presentation (so A and D miss), and "transferable" refers to results being reproducible/communicable, not to the audience's equipment (C).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Applying</span></div>
+    <p class="stem">A team surveys 200 fisherfolk on traditional star-based navigation, then uses the themes to design a quantitative questionnaire administered to 1,000 respondents across three provinces. This is best described as:</p>
+    <ol class="opts"><li>An exploratory sequential mixed-methods design (qualitative first, informing a quantitative phase)</li><li>A convergent design, since both datasets exist</li><li>A purely qualitative design with a large sample</li><li>An experimental design with two treatment phases</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> The signature of the exploratory sequential design is that a qualitative phase comes first and its findings <em>build the instrument</em> for a subsequent quantitative phase — exactly the sequence described. A convergent design (B) collects both strands in parallel and merges them at interpretation. Nothing is manipulated, so D fails; the second phase is clearly quantitative, so C fails.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">After a bright fireball event, a researcher compares trauma-related anxiety between residents who saw it and residents who did not — groups formed by the event itself, not by the researcher. The design is:</p>
+    <ol class="opts"><li>A true experiment, since there are two groups</li><li>A quasi-experiment, since the fireball was a manipulation</li><li>Ex post facto (causal-comparative) — groups are pre-existing and the "treatment" was never under the researcher's control</li><li>A longitudinal panel design</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> In ex post facto designs the researcher studies the after-effects of a condition that occurred without any researcher manipulation — membership in "saw/didn't see" was fixed by circumstance. A quasi-experiment (B) still requires the <em>researcher</em> to administer the treatment; nature administering it does not count as manipulation by design. One measurement occasion rules out D.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two thesis questions are proposed. Q1: "Is astronomy important?" Q2: "Does participation in a 6-week telescope-building workshop increase Grade 9 students' scores on a validated science-process-skills test, relative to a comparison class?" The decisive reason Q2 is superior is that it:</p>
+    <ol class="opts"><li>Is longer and sounds more technical</li><li>Specifies constructs, population, comparison, and measurable outcome — it is researchable and falsifiable, while Q1 is a value judgment with no empirical answer</li><li>Guarantees a positive result</li><li>Avoids statistics entirely</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> A researchable question binds a defined population, an operationalized outcome, and an implicit design (here, a comparison-group study) so that evidence could support <em>or refute</em> it. Q1 asks for a valuation, not a finding — no observation could settle it. Length (A) is cosmetic; no design guarantees results (C); and Q2 invites, rather than avoids, statistics (D).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Applying</span></div>
+    <p class="stem">In the hypothesis "The effect of a stargazing program on science interest is stronger among students with no prior planetarium visits," the variable <em>prior planetarium experience</em> functions as a:</p>
+    <ol class="opts"><li>Dependent variable</li><li>Confounding variable</li><li>Moderating variable — it changes the strength of the program→interest relationship</li><li>Control variable</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> The hypothesis explicitly claims the IV→DV effect <em>differs across levels</em> of prior experience — the definition of moderation (an interaction). It is not the outcome (A); it is stated in the model rather than lurking outside it (B); and it varies rather than being held constant (D).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A student operationalizes "public astronomical literacy" as "number of constellations a respondent can name in 60 seconds." The sharpest construct-validity objection is:</p>
+    <ol class="opts"><li>Sixty seconds is too short for data collection</li><li>The measure captures rote recall of star patterns, while the construct claims understanding of astronomical concepts — the indicator underrepresents and distorts the construct</li><li>Constellation names vary by culture, so the test must be in English</li><li>Naming tasks cannot be scored numerically</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Construct validity asks whether the operationalization represents the concept's meaning. Literacy implies comprehension (why seasons happen, what a light-year is), while the task rewards memorized labels — a systematic mismatch called construct underrepresentation. A is logistics, not validity; C raises a fairness/adaptation issue but concedes the deeper mismatch; D is simply false.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Applying</span></div>
+    <p class="stem">A 25-item "attitude toward science" scale is administered twice, two weeks apart, to the same intact class with no intervention between administrations; scores correlate at r = 0.91. This evidence primarily supports the instrument's:</p>
+    <ol class="opts"><li>Test–retest reliability</li><li>Construct validity</li><li>External validity</li><li>Internal consistency</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Stability of scores across repeated administration under unchanged conditions is the operational definition of test–retest reliability. It says nothing yet about whether the scale measures "attitude toward science" (B), nothing about generalization to other groups (C), and internal consistency (D) would require item-level statistics such as Cronbach's α, not a two-occasion correlation.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">To study why researchers leave government research institutes, a team plans to interview former staff scientists, asking each interviewee to refer other leavers they know. As a design judgment, this snowball strategy is:</p>
+    <ol class="opts"><li>Invalid — only probability samples are ever publishable</li><li>Appropriate: the population is hidden and unlisted, so referral chains are a defensible way to reach it — provided the team reports the method's reach and bias limits and does not generalize statistically</li><li>Appropriate only if at least 1,000 interviews are completed</li><li>Unnecessary — the civil service master list makes simple random sampling easy</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Snowball sampling is the standard defensible choice for hidden or hard-to-frame populations (people who have <em>left</em> — no current roster captures them), with the honesty condition that findings describe the reached network rather than the full population. A overclaims (qualitative journals publish non-probability designs constantly); C imports a quantitative norm; D is false — separated personnel are precisely who master lists lose track of.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A meteor-camera network detects 30% more meteors on weekends. Before proposing "weekend meteor enhancement" as a physical effect, the team should first suspect:</p>
+    <ol class="opts"><li>A genuine celestial periodicity synchronized to the human week</li><li>A detection/observer artifact — e.g., cameras serviced or skies monitored differently on weekends, or urban lighting and haze varying with the workweek</li><li>That meteors are attracted by human leisure activity</li><li>Nothing; a 30% difference must be real</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The seven-day week is a social cycle with no astronomical counterpart, so a weekly signal in "detections" is prima facie evidence of a human-side systematic — uptime, maintenance schedules, lighting, traffic haze — confounding the measurement chain. Rigorous method demands eliminating instrumental/observational explanations before claiming physical novelty. A and C ignore this; D confuses effect size with validity.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">A team studying observatory-site suitability has funds to instrument only 4 of 60 candidate mountains. Their scientific priority is to capture the <em>full range</em> of aerosol conditions (coastal, urban-adjacent, inland dry, high-altitude). The most defensible selection strategy is:</p>
+    <ol class="opts"><li>Simple random sampling of 4 mountains</li><li>Convenience sampling — the 4 nearest the university</li><li>Purposive maximum-variation sampling: deliberately choose one site per aerosol regime</li><li>Quota sampling by province population</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> With n = 4, the goal is not statistical generalization (impossible anyway) but coverage of theoretically important heterogeneity — the textbook indication for purposive maximum-variation sampling. Random selection of 4 (A) could easily land all coastal sites; convenience (B) optimizes logistics, not science; population quotas (D) are irrelevant to aerosols.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">An interrupted time-series shows sky brightness dropping right after an LED-conversion program — but a reviewer notes the conversion coincided with pandemic lockdowns. The reviewer's point is best described as identifying:</p>
+    <ol class="opts"><li>A history threat to internal validity — a concurrent event provides a rival explanation for the change</li><li>A reliability failure of the sky-quality meters</li><li>Publication bias</li><li>A sampling-frame error</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> "History" is the classic quasi-experimental threat: an external event (lockdown-reduced traffic and commercial lighting) co-occurs with the intervention and could produce the observed effect by itself. The instruments may be perfectly consistent (B); no literature selection is involved (C); and the issue is temporal confounding, not who was sampled (D). The remedy is a comparison series from towns without conversion.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Two students each analyze the same archival dataset of variable stars. Student X publishes code, versioned data cuts, and a step-by-step pipeline; Student Y reports only final results "to protect originality." In Frascati and open-science terms, X's practice is superior chiefly because:</p>
+    <ol class="opts"><li>Code repositories increase citation counts</li><li>Reproducibility/transferability is a defining criterion of research — Y's undocumented result cannot be verified, extended, or trusted as knowledge</li><li>Y's approach is illegal</li><li>Published code guarantees the analysis is correct</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Knowledge that cannot be checked or reused fails the transferable/reproducible criterion that distinguishes research from private tinkering; verification is what converts a claim into science. A may be true but is careerist, not methodological; secrecy is unwise, not illegal (C); and openness enables error-finding rather than guaranteeing correctness (D).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Applying</span></div>
+    <p class="stem">A researcher wants to compare science-career intentions of students <em>before and after</em> Grade 12 nationwide, but has only one semester and one budget cycle. Which design adaptation preserves the most inferential value under the constraint?</p>
+    <ol class="opts"><li>Abandon the study until a 3-year grant arrives</li><li>A cross-sectional cohort-comparison: sample Grade 11 and Grade 12 students simultaneously and compare, explicitly acknowledging cohort effects as a limitation</li><li>Survey only Grade 12 and assume Grade 11 answers</li><li>Interview one student intensively across the semester</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The cross-sectional proxy for change — comparing adjacent cohorts at one time — is the standard feasibility adaptation when longitudinal tracking is impossible, and it stays honest by naming its key weakness (cohort ≠ within-person change). A surrenders; C fabricates a baseline; D changes the research question entirely.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A proposal hypothesizes: "H₁: The new coating will improve mirror reflectivity, and if it does not, the aluminum substrate, humidity, or cosmic factors must have interfered." The methodological defect is that the hypothesis is:</p>
+    <ol class="opts"><li>Directional, which is never allowed</li><li>Unfalsifiable as stated — built-in escape clauses ensure no observation could count against it</li><li>Too short for a funded project</li><li>Missing a Greek letter</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> A hypothesis armored with ready-made excuses for every negative outcome cannot be refuted, and what cannot be refuted cannot be tested — the falsifiability requirement. Directionality (A) is perfectly legitimate when theory motivates it. C and D are cosmetic. The fix: state the reflectivity prediction with pre-specified conditions, and handle humidity and substrate as controlled or measured variables.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Institute A pilots its questionnaire on 30 respondents, revises confusing items, and reports Cronbach's α = 0.84 before the main survey. Institute B skips piloting to "save one month" on its Gantt chart. The strongest evaluation of B's decision is:</p>
+    <ol class="opts"><li>Sound project management — schedule beats instrumentation</li><li>A false economy: unpiloted instruments risk invalid, unreliable data, and no amount of later analysis can repair badly asked questions — the month saved is bought with the study's evidential value</li><li>Acceptable because α can be computed afterward anyway</li><li>Irrelevant — reliability applies only to physical instruments</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Piloting is the cheapest point in the whole project to catch construct problems; data collected with a flawed instrument are flawed forever, making this a quality-assurance decision disguised as a scheduling one. C confuses <em>measuring</em> reliability post hoc with <em>having</em> a reliable instrument during collection; A inverts ends and means; D is false — reliability theory covers scales and raters as much as photometers.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Applying</span></div>
+    <p class="stem">A team must justify to a mayor, in one slide, why their light-pollution study used <em>both</em> sky-brightness meters and resident interviews. The most persuasive one-sentence justification is:</p>
+    <ol class="opts"><li>"Two methods doubled our workload, which shows commitment."</li><li>"The meters establish how bright the sky is; the interviews establish why it matters to your constituents — policy needs both the magnitude and the meaning."</li><li>"Mixed methods are fashionable in international journals."</li><li>"Interviews were a backup in case the meters failed."</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> This is complementarity articulated for a decision-maker: each strand answers a question the other cannot, and the pairing maps directly onto what policy requires (evidence of the problem + constituency relevance). A confuses effort with design logic; C is appeal to fashion; D reduces a design choice to contingency planning.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A dataset shows a strong positive correlation between the number of astronomy outreach events in municipalities and their students' science scores. Before recommending outreach funding nationwide, the most important rival explanation to rule out is:</p>
+    <ol class="opts"><li>Reverse causation or common cause — e.g., wealthier, education-invested LGUs both host more events and produce higher scores</li><li>The correlation coefficient was computed in the wrong software</li><li>Some municipalities have longer names</li><li>Science scores are always random</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> With non-experimental data the two standing rivals to "X causes Y" are that Y causes X (better-performing communities attract events) or that Z causes both (LGU wealth and education investment). A policy recommendation must survive these before spending public funds — via controls, longitudinal ordering, or quasi-experimental rollout. B, C, D are noise distractors.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A thesis defense panel asks: "Your archival study of 40,000 Gaia stars found a 2σ anomaly after testing 25 different subgroup cuts. Should we believe the anomaly?" The methodologically strongest answer is:</p>
+    <ol class="opts"><li>"Yes — 40,000 stars is a huge sample, so any result is trustworthy"</li><li>"Caution is required: with 25 comparisons, a ~2σ result is consistent with multiple-testing false positives; it should be treated as exploratory and confirmed on an independent subsample or new data release"</li><li>"Yes — Gaia data are European and therefore reliable"</li><li>"No result below 10σ ever matters"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Searching many subgroups inflates the family-wise false-positive rate: at ~2σ (p ≈ 0.05), roughly one in twenty tests will "succeed" by chance, so 25 cuts <em>expect</em> a hit. The disciplined move is to label the finding exploratory and seek confirmation on independent data — the same logic as pre-registration. A confuses sample size with multiplicity control; C is an authority fallacy; D swaps one arbitrary threshold for another.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Applying</span></div>
+    <p class="stem">You must design a study answerable within one semester: "How do senior high school teachers in Pasig integrate astronomy into the DepEd science curriculum, and what barriers do they face?" The best-fitting design package is:</p>
+    <ol class="opts"><li>True experiment with randomized teacher assignment to curricula</li><li>Descriptive qualitative design: purposive sample of science teachers, semi-structured interviews plus class-material document analysis, thematic coding</li><li>Archival photometry of Pasig skies</li><li>A nationwide stratified survey of all 17 regions</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The question asks <em>how</em> and <em>what barriers</em> — process and meaning within a bounded local population — which qualitative description with purposive sampling answers directly and feasibly in a semester. Randomizing curricula (A) is neither feasible nor aimed at the question; C measures the wrong phenomenon; D answers a national prevalence question the stem did not ask and the timeline cannot support.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">You are converting your Chapter 1 design memo into a DOST-style objectives tree. Which chain below is <em>internally consistent</em> — every element traceable to the one before it?</p>
+    <ol class="opts"><li>Gap: no PH sky-brightness baseline → Objective: "inspire the youth" → Activity: buy a spectrograph → Output: a mobile app</li><li>Gap: no PH sky-brightness baseline → Objective: produce a 12-month calibrated baseline for 30 Metro Manila sites → Activities: procure 6 SQM-L meters, monthly stratified-site campaigns, QA cross-calibration → Outputs: open dataset + baseline report → Budget: meters, transport, student assistants</li><li>Gap: students dislike physics → Objective: map the Kuiper Belt → Activity: community interviews → Output: an ordinance</li><li>Gap: none stated → Objective: "conduct research" → Activity: "do science" → Budget: ₱5M</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Only B forms an unbroken argument: the objective answers the gap; each activity serves the objective; outputs are the objective delivered; every budget line purchases a named activity. A, C, and D each break the chain (objectives unrelated to gaps, activities unrelated to objectives, or budgets attached to nothing) — the exact failure the "read the budget backwards" reviewer heuristic catches.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ PART II ============ -->
+<section id="essay">
+  <h2><span class="secno">II.</span>Reinforcement Essay — 3 HOTS Items</h2>
+  <p>Write each essay in full (300–500 words) before opening the dropdown. The model answers are <em>possible</em> strong responses — your own answer may differ and still earn full marks if it demonstrates the same design reasoning identified in the explanation.</p>
+
+  <div class="q"><div class="qnum">Essay 1 · <span class="lvl">Creating</span> · 20 points</div>
+    <p class="stem">Barangay San Roque, a coastal community, reports that bright new port floodlights have made the night sky invisible and, fisherfolk claim, disturbed nearshore fish behavior. <strong>Design a one-year mixed-methods study</strong> to investigate both claims. Specify: the research problem, two SMART objectives, the design for each strand, variables and operational definitions, the sampling plan, and the two most serious validity threats with your mitigation for each.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Problem:</em> No empirical baseline exists linking the port's floodlight installation to (a) measurable night-sky degradation and (b) reported changes in nearshore fish catch/behavior in Brgy. San Roque; the LGU needs evidence to evaluate lighting policy. <em>Objective 1 (quantitative):</em> To measure zenith and horizon sky brightness (SQM-L, mag/arcsec², median of five readings at astronomical twilight end) at 12 stratified stations (4 shoreline, 4 residential, 4 control stations in a matched unlit cove) monthly for 12 months, testing H₀ of no difference between port-adjacent and control stations. <em>Objective 2 (qualitative + quantitative record):</em> To document perceived changes in fish behavior and catch through semi-structured interviews with a purposive maximum-variation sample of 20 fisherfolk (varying gear type, fishing ground, experience) plus a 12-month catch-log instrument co-designed with the fisherfolk association. <em>Design:</em> convergent mixed-methods; the quantitative strand is a quasi-experimental static-group comparison with a matched control site (no randomization possible), the qualitative strand is descriptive-phenomenological; integration occurs in a joint display matching brightness gradients to reported fishing-ground changes. <em>Key variables:</em> IV — proximity/exposure to floodlights (measured as illuminance at station, lux); DVs — sky brightness; reported behavioral change themes; logged catch per unit effort. Confounders — moon phase (schedule new-moon windows), weather (log cloud octas), seasonal fish migration (12-month coverage + control site). <em>Validity threats and mitigations:</em> (1) History/seasonality — catches vary by monsoon season regardless of lights; mitigated by the matched control cove and full-year coverage. (2) Response bias — fisherfolk seeking compensation may exaggerate; mitigated by triangulating interviews against logged catch data and anonymized collection. Ethics: informed consent, barangay clearance, ethics-committee review before Month 1 fieldwork.</p>
+      <p><strong>Why this earns full marks.</strong> The response (i) converts a community complaint into a researchable problem with a decision-maker; (ii) writes objectives that are specific, measurable, time-bound and carry their own operational definitions; (iii) chooses designs that match each claim (physical measurement for the sky, qualitative + log records for behavior) and names the design honestly (quasi-experimental, not experimental); (iv) anticipates astronomy-specific confounders (moon phase!) and social-science biases symmetrically; and (v) sequences ethics before data collection. A response missing the control site, the confounders, or the integration step is a developing—not proficient—answer.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 2 · <span class="lvl">Evaluating</span> · 20 points</div>
+    <p class="stem">A proposal submitted to your panel reads: <em>"Objective: to prove that our new AI algorithm improves asteroid detection. Method: we will run the algorithm on the images where it performs best and report the improvement. The team sees no ethical issues since no humans are involved."</em> <strong>Critique this methodology comprehensively.</strong> Identify at least four distinct methodological or integrity defects, explain the harm each causes, and rewrite the objective and method so the study becomes defensible.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Defect 1 — "To prove":</em> research tests claims; it does not set out to prove them. Framing the objective as proof invites confirmation bias in every downstream choice. <em>Defect 2 — Cherry-picked evaluation set:</em> selecting "images where it performs best" is selection bias formalized; performance estimates become upwardly biased and unreproducible — the algorithmic equivalent of HARKing. <em>Defect 3 — No comparison baseline:</em> "improves" is a comparative claim, yet no benchmark algorithm, dataset split, or metric (completeness, false-positive rate, precision–recall) is specified; the claim is untestable as written. <em>Defect 4 — No held-out/blind test protocol:</em> without train/validation/test separation on a pre-registered split, results cannot generalize (overfitting is undetectable). <em>Defect 5 — "No ethical issues":</em> integrity obligations (honest reporting, data provenance, reproducible code, declared conflicts) apply to all research, human or not; claiming exemption signals misunderstanding of research ethics' scope. <em>Rewritten objective:</em> "To evaluate whether Algorithm X increases asteroid-detection completeness at fixed false-positive rate, relative to the current pipeline, on a blind, pre-registered test set of survey images." <em>Rewritten method:</em> stratified split of archival survey images into training/validation/held-out test sets before any tuning; benchmark against the incumbent pipeline on identical hardware; report completeness, precision, and failure cases; release code and image lists for replication.</p>
+      <p><strong>Why this earns full marks.</strong> The response detects defects across <em>both</em> dimensions the item plants — design logic (no baseline, biased test set, no held-out data) and integrity (proof-seeking language, ethics-scope error) — explains the specific inferential harm of each rather than labeling them, and demonstrates creation-level thinking by rewriting the objective and method into falsifiable, comparative, reproducible form. Listing defects without the rewrite, or rewriting without explaining harms, is a proficient but not excellent response.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 3 · <span class="lvl">Evaluating / Creating</span> · 20 points</div>
+    <p class="stem">A congressman argues: "A developing country like the Philippines cannot afford basic astronomy research; every peso should fund applied projects with immediate economic return." <strong>Write a position defending or opposing this view</strong> using (i) the Frascati distinction between basic research, applied research, and experimental development; (ii) at least two concrete mechanisms by which basic astronomy research yields national benefit; and (iii) an explicit connection to Philippine research agendas (HNRDA, Pagtanaw 2050, or the Philippine Space Act).</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit opposing response).</strong> <em>Frascati framing:</em> the categories are stages of one pipeline, not rivals: today's applied projects consume the basic knowledge stock of previous decades, so zeroing basic research does not save money — it schedules a future shortage. The claim also misclassifies costs: much basic astronomy (archival analysis of Gaia/TESS data, theory, site characterization) is laptop-scale and cheap relative to infrastructure programs. <em>Mechanism 1 — capability spillover:</em> basic astronomy builds precisely the capacities the applied sector needs: instrumentation, optics, signal processing, big-data pipelines, and precision timing — the skills base behind PAGASA modernization (RA 10692), GNSS applications, and PhilSA's earth-observation program (RA 11363, which itself lists space science research among national policy aims). <em>Mechanism 2 — human capital and STEM pipeline:</em> astronomy is a proven recruitment gateway into physics and engineering; a country that funds no basic science trains its best students for export. (A third acceptable mechanism: international infrastructure access and partnerships — IAU/OAD programs — that cost little but return training and data.) <em>Agenda connection:</em> Pagtanaw 2050 explicitly frames S&amp;T foresight beyond immediate return, and the HNRDA's basic-research pillar exists because the state already recognizes that applied calls cannot generate their own upstream knowledge. <em>Concession and balance:</em> in a constrained budget, portfolio weighting toward applied work is defensible; elimination of basic research is not — the rational instrument is a managed ratio, not a zero. <em>Verdict:</em> the congressman's premise (basic = luxury) fails empirically and structurally; the policy question is portfolio design, not abolition.</p>
+      <p><strong>Why this earns full marks.</strong> The response uses the Frascati categories analytically (pipeline logic) rather than decoratively; supplies two concrete, nationally grounded mechanisms instead of slogans ("inspiration"); cites the actual Philippine policy instruments the course studies (RA 11363, RA 10692, HNRDA, Pagtanaw 2050); and shows evaluation-level maturity by conceding the legitimate core of the opposing view before rebutting its absolutist conclusion. A defending position can also earn full marks if it engages the same three required elements with equal rigor — the rubric rewards the quality of design reasoning, not the side chosen.</p>
+    </div></details>
+  </div>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch1-lecture.html">&#8592; Ch. 1 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch2-lecture.html">Ch. 2 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 1 Reinforcement Exercises · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

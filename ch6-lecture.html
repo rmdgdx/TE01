@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 6 — R&amp;D Project Management: Line-Item Budgeting and Monitoring &amp; Evaluation</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 6 — R&amp;D Project Management: Line-Item Budgeting and Monitoring &amp; Evaluation</h1>
+  <div class="subtitle">Weeks 8–9 · CO1–LO4: Apply this knowledge to effectively manage and monitor research projects and their budgets · Project Line-Item Budget · Monitoring and Evaluation · Assoc. Prof. Ryan Manuel D. Guido, Ph.D. · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Chapter sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#t1">6.1 R&amp;D as a Project</a></li>
+    <li><a href="#t2">6.2 Lifecycle &amp; Governance</a></li>
+    <li><a href="#t3">6.3 WBS &amp; Scheduling</a></li>
+    <li><a href="#t4">6.4 The Line-Item Budget</a></li>
+    <li><a href="#t5">6.5 Spending Lawfully</a></li>
+    <li><a href="#t6">6.6 Monitoring &amp; Evaluation</a></li>
+    <li><a href="#t7">6.7 Risk Management</a></li>
+    <li><a href="#t8">6.8 The Workplan Package</a></li>
+    <li><a href="#test">Mastery Test</a></li>
+    <li><a href="#refs">References</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ OBJECTIVES ============ -->
+<section id="objectives">
+  <div class="objectives">
+    <h4>Chapter Learning Objectives</h4>
+    <p>After working through this chapter, you should be able to:</p>
+    <ol class="plain">
+      <li>Explain what makes R&amp;D project management different from routine project management — and why the triple constraint still applies;</li>
+      <li>Walk a project through its lifecycle — initiation, planning, execution, monitoring, closure — with phase gates, deliverables, and milestones correctly distinguished;</li>
+      <li>Decompose objectives into a work breakdown structure, schedule it as a Gantt chart, and identify the critical path;</li>
+      <li>Construct a Philippine-style line-item budget — Personal Services, MOOE, and Capital/Equipment Outlay — with direct and indirect costs correctly proportioned, and diagnose a malformed one on sight;</li>
+      <li>Situate project spending inside the public-funds regime: procurement law, COA audit, liquidation, and counterpart funding;</li>
+      <li>Build a logical framework (logframe) with indicators, means of verification, and assumptions, and distinguish monitoring from evaluation;</li>
+      <li>Maintain a risk register with probability-impact prioritization and the four response strategies; and</li>
+      <li>Assemble the complete workplan package your Week-12 proposal requires — schedule, budget, logframe, risk register, and reporting calendar, joined to the compliance and IP annexes of Chapters 4–5.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 6.1 ============ -->
+<section id="t1">
+  <h2><span class="secno">6.1</span>Research Is a Project: The Triple Constraint Meets Uncertainty</h2>
+  <p class="lede">A project is a temporary endeavor with a defined beginning, end, and unique deliverable — which describes every funded research undertaking exactly. What makes <em>R&amp;D</em> project management its own discipline is that one corner of the classic management triangle keeps moving.</p>
+  <p>The <strong>triple constraint</strong> is project management's first law: <strong>scope</strong> (what will be delivered), <strong>time</strong> (by when), and <strong>cost</strong> (for how much) are coupled — change one and at least one other must move, with <strong>quality</strong> living in the middle as the casualty of pretending otherwise. A funded project is a promise expressed in all three currencies at once: the proposal's objectives are the scope, its Gantt chart the time, its line-item budget the cost. Reviewers read the three against each other, and the commonest fatal flaw is not a bad idea but an <em>incoherent triangle</em> — eighteen months of scope on a twelve-month schedule, or a budget bearing no arithmetic relation to the activities.</p>
+  <p>What distinguishes R&amp;D is <strong>irreducible uncertainty</strong> — the Frascati criterion of Chapter 1 returning as a management problem. A bridge builder knows what the bridge will look like; a researcher, by definition, does not fully know what the experiment will show. Good R&amp;D management therefore does not eliminate uncertainty (that would eliminate the research); it <em>contains</em> it: uncertainty is confined to the scientific outcome, while everything containable — schedule logic, spending discipline, data management, compliance — is managed as tightly as any bridge. The panel's confidence question is precisely this: <em>has this team confined the uncertainty to the science?</em></p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="Triple constraint triangle adapted for R&amp;D">
+      <polygon points="450,40 150,320 750,320" fill="none" stroke="#1b2a4a" stroke-width="3.5"/>
+      <circle cx="450" cy="40" r="34" fill="#1e7d4f"/>
+      <text x="450" y="36" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">SCOPE</text>
+      <text x="450" y="52" text-anchor="middle" font-size="8.5" fill="#d7f0dc">objectives · deliverables</text>
+      <circle cx="150" cy="320" r="34" fill="#1d5fbf"/>
+      <text x="150" y="316" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">TIME</text>
+      <text x="150" y="332" text-anchor="middle" font-size="8.5" fill="#d4e4fb">Gantt · milestones</text>
+      <circle cx="750" cy="320" r="34" fill="#a86a00"/>
+      <text x="750" y="316" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">COST</text>
+      <text x="750" y="332" text-anchor="middle" font-size="8.5" fill="#f3e2b3">line-item budget</text>
+      <circle cx="450" cy="240" r="62" fill="#fbeceb" stroke="#b3423a" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <text x="450" y="228" text-anchor="middle" font-size="11.5" font-weight="800" fill="#b3423a">R&amp;D UNCERTAINTY</text>
+      <text x="450" y="246" text-anchor="middle" font-size="9" fill="#b3423a">confined to the scientific</text>
+      <text x="450" y="260" text-anchor="middle" font-size="9" fill="#b3423a">outcome — never to the</text>
+      <text x="450" y="274" text-anchor="middle" font-size="9" fill="#b3423a">management of the work</text>
+      <text x="270" y="165" text-anchor="middle" font-size="10" font-weight="700" fill="#4a5568" transform="rotate(-43 270 165)">more scope → more time</text>
+      <text x="632" y="165" text-anchor="middle" font-size="10" font-weight="700" fill="#4a5568" transform="rotate(43 632 165)">more scope → more cost</text>
+      <text x="450" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#4a5568">faster → costlier (or smaller)</text>
+      <text x="450" y="372" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">QUALITY lives inside the triangle — it is what breaks when the three promises are incoherent.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.1 — The triple constraint, with R&amp;D's distinctive fourth element.</span> Classic project-management framework (see the <a href="https://www.pmi.org/" target="_blank" rel="noopener">Project Management Institute</a>), adapted for research per Wingate, <em>Project Management for Research and Development</em> (course reference).</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The proposal <strong>is</strong> the triangle: objectives = scope, Gantt = time, budget = cost. Every review question about feasibility is a question about whether your three documents describe the same project.</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomy adds a constraint the triangle doesn't show: <strong>the sky's schedule</strong>. Observing seasons, lunar phases, monsoon months, and eclipse dates are immovable dependencies — a Philippine observing campaign that ignores the habagat season has planned twelve months of which five may be cloud. Your Gantt chart must be drawn against the almanac, not just the calendar.</aside>
+</section>
+
+<!-- ============ 6.2 ============ -->
+<section id="t2">
+  <h2><span class="secno">6.2</span>Lifecycle and Governance: Gates, Deliverables, Milestones</h2>
+  <p class="lede">Projects live in phases, and funded projects add a governance skeleton: someone approves passage from each phase to the next.</p>
+  <p>The canonical lifecycle runs <strong>initiation</strong> (the idea becomes a proposal — everything this course has taught so far is initiation work), <strong>planning</strong> (the workplan package of Section 6.8), <strong>execution</strong> (the science happens), <strong>monitoring and controlling</strong> (running continuously alongside execution — Section 6.6), and <strong>closure</strong> (terminal reports, liquidation, asset disposition, and the too-often-forgotten harvest: data archived, papers submitted, IP disclosed per Chapter 5). Funded research inserts <strong>phase gates</strong> at the joints: proposal approval, budget release, midterm review, extension decisions, terminal acceptance — each a point where the funder can redirect or stop the work, and each mapped to a document your team must produce.</p>
+  <p>Two vocabulary distinctions do real work in workplans. A <strong>deliverable</strong> is a thing handed over — the calibrated dataset, the trained-teachers cohort, the commissioning report; a <strong>milestone</strong> is a point in time marking verifiable progress — "all five stations installed," "midterm review passed." Deliverables consume budget; milestones consume nothing but prove everything, which is why funders schedule payments against them. And a <strong>work package</strong> — the term your budget will lean on — is the smallest chunk of scope assigned to one owner with its own schedule and cost: the atom of accountability.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 300" role="img" aria-label="Project lifecycle with phase gates">
+      <g font-size="11" font-weight="800">
+        <rect x="20"  y="90" width="150" height="86" rx="10" fill="#1b2a4a"/>
+        <text x="95" y="120" text-anchor="middle" fill="#fff">INITIATION</text>
+        <text x="95" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">problem · alignment ·</text>
+        <text x="95" y="153" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">design (Chs. 1–5)</text>
+        <rect x="205" y="90" width="150" height="86" rx="10" fill="#1e7d4f"/>
+        <text x="280" y="120" text-anchor="middle" fill="#fff">PLANNING</text>
+        <text x="280" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">WBS · Gantt · budget ·</text>
+        <text x="280" y="153" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">logframe · risk register</text>
+        <rect x="390" y="90" width="150" height="86" rx="10" fill="#a86a00"/>
+        <text x="465" y="120" text-anchor="middle" fill="#fff">EXECUTION</text>
+        <text x="465" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">build · observe · train ·</text>
+        <text x="465" y="153" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">spend per plan</text>
+        <rect x="575" y="90" width="150" height="86" rx="10" fill="#1d5fbf"/>
+        <text x="650" y="114" text-anchor="middle" fill="#fff">MONITORING &amp;</text>
+        <text x="650" y="129" text-anchor="middle" fill="#fff">CONTROLLING</text>
+        <text x="650" y="148" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">indicators · reports ·</text>
+        <text x="650" y="161" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">corrective action</text>
+        <rect x="760" y="90" width="125" height="86" rx="10" fill="#6b4fa1"/>
+        <text x="822" y="120" text-anchor="middle" fill="#fff">CLOSURE</text>
+        <text x="822" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">terminal report ·</text>
+        <text x="822" y="153" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">liquidation · harvest</text>
+      </g>
+      <g fill="#b3423a">
+        <polygon points="187,133 197,120 197,146"/>
+        <polygon points="372,133 382,120 382,146"/>
+        <polygon points="557,133 567,120 567,146"/>
+        <polygon points="742,133 752,120 752,146"/>
+      </g>
+      <g font-size="8.5" font-weight="700" fill="#b3423a">
+        <text x="192" y="200" text-anchor="middle">GATE 1</text><text x="192" y="213" text-anchor="middle">approval &amp;</text><text x="192" y="225" text-anchor="middle">fund release</text>
+        <text x="377" y="200" text-anchor="middle">GATE 2</text><text x="377" y="213" text-anchor="middle">workplan</text><text x="377" y="225" text-anchor="middle">acceptance</text>
+        <text x="562" y="200" text-anchor="middle">GATE 3</text><text x="562" y="213" text-anchor="middle">midterm review ·</text><text x="562" y="225" text-anchor="middle">extension decisions</text>
+        <text x="747" y="200" text-anchor="middle">GATE 4</text><text x="747" y="213" text-anchor="middle">terminal</text><text x="747" y="225" text-anchor="middle">acceptance</text>
+      </g>
+      <path d="M 650 176 Q 560 260 465 178" fill="none" stroke="#1d5fbf" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#lcarr)"/>
+      <defs><marker id="lcarr" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#1d5fbf"/></marker></defs>
+      <text x="558" y="262" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1d5fbf">corrective action feeds back into execution — continuously</text>
+      <text x="450" y="290" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Each gate is a funder decision point with a named document — know your gates before you sign your grant.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.2 — The R&amp;D project lifecycle with its funding gates.</span> Standard lifecycle framework (PMI/logical-framework tradition), gated per grant practice such as the DOST-GIA regime (Ch. 7 preview).</figcaption>
+  </figure>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Treating closure as an afterthought. Liquidation delays and unarchived data are the classic endings of Philippine grants — and an unliquidated project can bar its leader and institution from the <em>next</em> grant. Schedule closure as a work package with an owner, not as whatever remains in the final month.</aside>
+</section>
+
+<!-- ============ 6.3 ============ -->
+<section id="t3">
+  <h2><span class="secno">6.3</span>From Objectives to Schedule: WBS, Gantt, Critical Path</h2>
+  <p class="lede">Chapter 2 built the objectives tree downward from agendas; planning now decomposes it further — into work, then into time.</p>
+  <p>The <strong>work breakdown structure (WBS)</strong> answers one question exhaustively: <em>what work, in pieces small enough to own?</em> Each specific objective decomposes into work packages, each work package into activities; the discipline is the <strong>100% rule</strong> — the children must sum to the whole of the parent, no orphan work and no phantom work. The WBS is deliberately timeless; only when it is complete do you sequence it. Then the <strong>Gantt chart</strong> lays activities on the calendar with their <strong>dependencies</strong> (activity B cannot start until A finishes — site MOU before installation; ethics clearance before interviews, as Chapters 1 and 4 insisted). The longest dependent chain through the network is the <strong>critical path</strong>: the sequence with zero slack, whose delay delays the project one-for-one. Everything not on the critical path has <em>float</em> — schedule flexibility you spend deliberately, not accidentally.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 400" role="img" aria-label="Objectives tree to WBS to Gantt chain">
+      <g font-size="10.5" font-weight="800">
+        <rect x="30" y="20" width="260" height="46" rx="9" fill="#12203a"/>
+        <text x="160" y="40" text-anchor="middle" fill="#f6edd2">SPECIFIC OBJECTIVE 1</text>
+        <text x="160" y="56" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">5-station camera network operational by Month 10</text>
+        <rect x="30" y="86" width="125" height="40" rx="8" fill="#1e7d4f"/>
+        <text x="92" y="103" text-anchor="middle" fill="#fff" font-size="9">WP 1.1 · SITES</text>
+        <text x="92" y="117" text-anchor="middle" font-size="8" font-weight="400" fill="#d7f0dc">MOUs · surveys</text>
+        <rect x="165" y="86" width="125" height="40" rx="8" fill="#a86a00"/>
+        <text x="227" y="103" text-anchor="middle" fill="#fff" font-size="9">WP 1.2 · BUILD</text>
+        <text x="227" y="117" text-anchor="middle" font-size="8" font-weight="400" fill="#f3e2b3">procure · assemble</text>
+        <rect x="30" y="136" width="125" height="40" rx="8" fill="#1d5fbf"/>
+        <text x="92" y="153" text-anchor="middle" fill="#fff" font-size="9">WP 1.3 · INSTALL</text>
+        <text x="92" y="167" text-anchor="middle" font-size="8" font-weight="400" fill="#d4e4fb">deploy · network</text>
+        <rect x="165" y="136" width="125" height="40" rx="8" fill="#6b4fa1"/>
+        <text x="227" y="153" text-anchor="middle" fill="#fff" font-size="9">WP 1.4 · COMMISSION</text>
+        <text x="227" y="167" text-anchor="middle" font-size="8" font-weight="400" fill="#ddd2f0">calibrate (PhST!) · test</text>
+      </g>
+      <text x="160" y="205" text-anchor="middle" font-size="9.5" font-weight="700" fill="#4a5568">WBS: the 100% rule — children sum to parent</text>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none" marker-end="url(#gnt)">
+        <line x1="300" y1="215" x2="340" y2="215"/>
+      </g>
+      <defs><marker id="gnt" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <g font-size="9" font-weight="700">
+        <text x="395" y="34" fill="#1b2a4a">GANTT — months</text>
+        <g fill="#4a5568" font-weight="400">
+          <text x="415" y="56">1</text><text x="459" y="56">2</text><text x="503" y="56">3</text><text x="547" y="56">4</text><text x="591" y="56">5</text><text x="635" y="56">6</text><text x="679" y="56">7</text><text x="723" y="56">8</text><text x="767" y="56">9</text><text x="806" y="56">10</text>
+        </g>
+        <g stroke="#e3e0d8" stroke-width="1">
+          <line x1="410" y1="64" x2="410" y2="330"/><line x1="454" y1="64" x2="454" y2="330"/><line x1="498" y1="64" x2="498" y2="330"/><line x1="542" y1="64" x2="542" y2="330"/><line x1="586" y1="64" x2="586" y2="330"/><line x1="630" y1="64" x2="630" y2="330"/><line x1="674" y1="64" x2="674" y2="330"/><line x1="718" y1="64" x2="718" y2="330"/><line x1="762" y1="64" x2="762" y2="330"/><line x1="806" y1="64" x2="806" y2="330"/>
+        </g>
+        <text x="365" y="90" text-anchor="end" fill="#1e7d4f">1.1 Sites</text>
+        <rect x="410" y="76" width="132" height="18" rx="4" fill="#1e7d4f"/>
+        <text x="365" y="130" text-anchor="end" fill="#a86a00">1.2 Build</text>
+        <rect x="454" y="116" width="176" height="18" rx="4" fill="#a86a00" stroke="#b3423a" stroke-width="2.5"/>
+        <text x="365" y="170" text-anchor="end" fill="#1d5fbf">1.3 Install</text>
+        <rect x="630" y="156" width="132" height="18" rx="4" fill="#1d5fbf" stroke="#b3423a" stroke-width="2.5"/>
+        <text x="365" y="210" text-anchor="end" fill="#6b4fa1">1.4 Commission</text>
+        <rect x="762" y="196" width="88" height="18" rx="4" fill="#6b4fa1" stroke="#b3423a" stroke-width="2.5"/>
+        <text x="365" y="250" text-anchor="end" fill="#4a5568">Training (WP 2.1)</text>
+        <rect x="498" y="236" width="132" height="18" rx="4" fill="#4a5568"/>
+        <g stroke="#b3423a" stroke-width="1.8" fill="none">
+          <path d="M 542 94 L 542 116"/><path d="M 630 134 L 630 156"/><path d="M 762 174 L 762 196"/>
+        </g>
+        <polygon points="850,196 862,205 850,214 838,205" fill="#c9a227"/>
+        <text x="850" y="230" text-anchor="middle" font-size="8.5" fill="#a86a00">MILESTONE:</text>
+        <text x="850" y="242" text-anchor="middle" font-size="8.5" fill="#a86a00">network live</text>
+      </g>
+      <g font-size="9.5" font-weight="700" fill="#b3423a">
+        <text x="500" y="290">— red-bordered chain = CRITICAL PATH (procurement → install → commission):</text>
+        <text x="500" y="306" font-weight="400" fill="#4a5568">zero slack — a month lost here is a project-month lost. Training floats within its slack.</text>
+      </g>
+      <text x="450" y="368" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Note what sits on the critical path of most Philippine instrument projects: procurement. Chapter 6 keeps returning to this.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.3 — From objectives tree to WBS to Gantt, with the critical path marked.</span> Standard scheduling frameworks (WBS 100% rule; critical-path method) — see the <a href="https://www.pmi.org/" target="_blank" rel="noopener">PMI</a> literature and the course texts (Wingate; Muñoz et al.).</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The traceability chain of Chapters 1–2 now has its middle links forged: <strong>objective → work package → activity → time (Gantt) and cost (budget)</strong>. The WBS is the junction where science becomes management — every budget line and every schedule bar must name its work package.</aside>
+</section>
+
+<!-- ============ 6.4 ============ -->
+<section id="t4">
+  <h2><span class="secno">6.4</span>The Line-Item Budget: PS, MOOE, CO — and the Proportions That Betray You</h2>
+  <p class="lede">Philippine public money is planned and audited in a fixed vocabulary. Learn it once and every government budget document — including the one in your Case Analysis — becomes legible.</p>
+  <p>Every peso in a government-funded project belongs to an expense class: <strong>Personal Services (PS)</strong> — salaries, wages, and honoraria of project personnel; <strong>Maintenance and Other Operating Expenses (MOOE)</strong> — the consumable life of the project: supplies and materials, travel, communications, utilities, repairs, training costs, publication charges; and <strong>Capital Outlay (CO</strong>, in research grants usually <strong>Equipment Outlay)</strong> — durable assets above the capitalization threshold: the telescope, the server, the vehicle. The classification is not pedantry: each class carries different rules for procurement, accounting, and — as Chapter 5's Prof. Son learned — <em>ownership and disposition</em>: equipment bought as CO is government property whose fate at project's end follows the grant's rules, not the project leader's wishes.</p>
+  <p>Above the classes sits a second cut: <strong>direct costs</strong> — everything attributable to the research itself (the PS, MOOE, and CO of the work packages) — versus <strong>indirect costs</strong> — the institution's overhead for hosting the project: administration, utilities, facilities. Funding rules permit indirect costs only as a <strong>modest, capped percentage of direct costs</strong>, because public research money is appropriated to buy research, not to underwrite institutional overhead at scale. This single principle decides your Case Analysis budget item: a proposal whose "indirect cost" dwarfs its direct cost has inverted the architecture — it asks the funder to buy mostly overhead, garnished with a little science.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 420" role="img" aria-label="Line-item budget anatomy with the STARI diagnosis">
+      <text x="230" y="30" text-anchor="middle" font-size="12" font-weight="800" fill="#1b2a4a">A WELL-FORMED R&amp;D BUDGET</text>
+      <rect x="60" y="44" width="340" height="200" rx="10" fill="#ffffff" stroke="#e3e0d8" stroke-width="2"/>
+      <rect x="80" y="60" width="300" height="44" rx="7" fill="#1e7d4f"/>
+      <text x="230" y="78" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">PS — salaries · honoraria</text>
+      <text x="230" y="94" text-anchor="middle" font-size="8.5" fill="#d7f0dc">who does the work</text>
+      <rect x="80" y="112" width="300" height="44" rx="7" fill="#1d5fbf"/>
+      <text x="230" y="130" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">MOOE — supplies · travel · services</text>
+      <text x="230" y="146" text-anchor="middle" font-size="8.5" fill="#d4e4fb">what the work consumes</text>
+      <rect x="80" y="164" width="300" height="44" rx="7" fill="#a86a00"/>
+      <text x="230" y="182" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">CO / EO — durable equipment</text>
+      <text x="230" y="198" text-anchor="middle" font-size="8.5" fill="#f3e2b3">what the work keeps (gov't property)</text>
+      <rect x="80" y="214" width="300" height="22" rx="7" fill="#6b4fa1"/>
+      <text x="230" y="229" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">INDIRECT — small, capped % of direct</text>
+      <text x="230" y="266" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1e7d4f">direct costs dominate · overhead rides on top, capped</text>
+      <text x="670" y="30" text-anchor="middle" font-size="12" font-weight="800" fill="#b3423a">THE CASE-ANALYSIS PATHOLOGY (STARI)</text>
+      <rect x="500" y="44" width="340" height="200" rx="10" fill="#ffffff" stroke="#b3423a" stroke-width="2"/>
+      <rect x="520" y="60" width="300" height="132" rx="7" fill="#b3423a"/>
+      <text x="670" y="112" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fff">"INDIRECT COST" — ₱2.0B of ₱2.5B</text>
+      <text x="670" y="132" text-anchor="middle" font-size="9" fill="#f4cfcc">80% of the request is overhead —</text>
+      <text x="670" y="146" text-anchor="middle" font-size="9" fill="#f4cfcc">the architecture inverted</text>
+      <rect x="520" y="200" width="300" height="36" rx="7" fill="#4a5568"/>
+      <text x="670" y="215" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">direct: ₱500M (PS 200 · MOOE 200 · CO 100)</text>
+      <text x="670" y="229" text-anchor="middle" font-size="8.5" fill="#e3e0d8">the actual science, one-fifth of the ask</text>
+      <text x="670" y="266" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b3423a">diagnosis: indirect must be a capped fraction OF direct — not four times it</text>
+      <rect x="90" y="296" width="720" height="96" rx="10" fill="#f6edd2"/>
+      <text x="450" y="320" text-anchor="middle" font-size="11" font-weight="800" fill="#a86a00">THE REPAIR (worked example)</text>
+      <text x="450" y="340" text-anchor="middle" font-size="9.5" fill="#4a3a08">Re-derive the budget from the WBS: cost each work package (PS + MOOE + CO), sum to the true direct cost,</text>
+      <text x="450" y="356" text-anchor="middle" font-size="9.5" fill="#4a3a08">then add indirect at the funder's capped rate on top. If the science genuinely needs ₱2.5B, the work packages must show it —</text>
+      <text x="450" y="372" text-anchor="middle" font-size="9.5" fill="#4a3a08">reviewers read budgets backwards (Ch. 1), and the first thing they check is this proportion.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.4 — Anatomy of the line-item budget, and the inverted-proportion pathology from the TE01 Case Analysis.</span> Expense classes per Philippine government budgeting practice (<a href="https://www.dbm.gov.ph/" target="_blank" rel="noopener">DBM</a>); grant-specific rules in the DOST-GIA guidelines (Ch. 7).</figcaption>
+  </figure>
+  <h3>Costing Honestly: How the Numbers Are Born</h3>
+  <p>A defensible budget is <em>derived</em>, not declared. The procedure: take each work package from the WBS; list the people it needs (→ PS: rates × person-months), the consumables and services it burns (→ MOOE: unit costs × quantities, with canvassed prices, not guesses), and the durable assets it requires (→ CO: specified models with quotations); sum upward. The result inherits the traceability that reviewers check — every line answers "for which activity, toward which objective?" — and produces the two artifacts that accompany serious budgets: <strong>unit costing</strong> (the arithmetic shown, not just totals) and the <strong>budget-by-work-package cross-table</strong> that proves the triangle coheres. Two more lines complete Philippine practice: <strong>counterpart funding</strong> — the proponent institution's visible contribution (staff time, facilities, sometimes cash), evidence of institutional commitment (Chapter 2's HNRDA discussion promised this would return); and the <strong>protection and compliance lines</strong> Chapters 4–5 taught you to include: permit fees, monitoring costs, IPOPHL fees.</p>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Padding — inflating lines "for safety" — and its mirror, heroic underbudgeting to look cheap. Both are detected the same way: the reviewer prices a few lines independently. The honest instrument for uncertainty is a visible <strong>contingency</strong> where rules allow it, and a risk register (Sec. 6.7) explaining what it covers — not fog distributed across every line.</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Instrument budgets have famous hidden lines: shipping and customs for imported optics; spares (a CCD that fails in Month 18 with no replacement kills a time-series); calibration references; site electrification; insurance for deployed equipment; and the GPS-disciplined clocks RA 10535 taught you to trace. Walk your WBS asking "what does this <em>physically require</em>?" — the sky-facing budget failures are almost always MOOE lines nobody imagined.</aside>
+</section>
+
+<!-- ============ 6.5 ============ -->
+<section id="t5">
+  <h2><span class="secno">6.5</span>Spending Lawfully: Procurement, Audit, Liquidation</h2>
+  <p class="lede">A funded budget is not money you have; it is public money you are <em>accountable for</em>. Three institutions define that accountability.</p>
+  <p><strong>Procurement.</strong> Government funds buy through the public procurement regime — long governed by RA 9184 (the Government Procurement Reform Act of 2003) and now carried by the <strong>New Government Procurement Act (RA 12009, 2024)</strong> — whose default is <em>competitive public bidding</em>, with alternative modalities (small-value procurement, shopping, direct contracting for proprietary items, negotiated procurement in defined cases) available only on stated grounds. For a project manager the operational meaning is <strong>lead time</strong>: a bid-procured spectrograph can take many months from purchase request to delivery, which is why procurement sat on the critical path of Figure 6.3 — and why Prof. Son's Project UWU, delayed by "the very slow procurement process," is a scheduling case as much as a legal one. Managers who survive procurement do three things: specify early (the technical specifications, not the brand, define what bidding buys), bundle sensibly, and start the paperwork the week the grant is signed.</p>
+  <p><strong>Audit.</strong> The <strong>Commission on Audit (COA)</strong> — a constitutional body — examines every peso of public spending after the fact: was the expense lawful, budgeted, documented, and reasonable? Its instruments are the <em>audit observation memorandum</em> and, at worst, the <em>notice of disallowance</em> — a finding that money must be returned, personally, by the officials who approved it. The manager's defense is boring and absolute: <strong>documentation</strong> — canvasses, purchase orders, inspection and acceptance reports, attendance sheets for that training MOOE line, and a paper trail matching each expense to its budget line and work package.</p>
+  <p><strong>Liquidation.</strong> Funds released to a project are <em>advances</em> to be liquidated: reported, receipted, and reconciled within the grant's deadlines. Unliquidated balances block subsequent releases, poison institutional standing with the funder, and outlive projects as personal liabilities. The closure work package of Figure 6.2 is, concretely, this: liquidate, transfer or dispose equipment per the grant's property rules, and file the terminal report that gates the funder's acceptance.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 300" role="img" aria-label="The public spending accountability cycle">
+      <g font-size="11" font-weight="800">
+        <rect x="30"  y="80" width="190" height="96" rx="10" fill="#1b2a4a"/>
+        <text x="125" y="110" text-anchor="middle" fill="#fff">BUDGET LINE</text>
+        <text x="125" y="130" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">approved PS / MOOE / CO,</text>
+        <text x="125" y="144" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">traceable to a work package</text>
+        <rect x="253" y="80" width="190" height="96" rx="10" fill="#1e7d4f"/>
+        <text x="348" y="106" text-anchor="middle" fill="#fff">PROCUREMENT</text>
+        <text x="348" y="126" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">RA 12009 (ex-RA 9184):</text>
+        <text x="348" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">bidding default · alternatives on</text>
+        <text x="348" y="154" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">stated grounds · LEAD TIME</text>
+        <rect x="476" y="80" width="190" height="96" rx="10" fill="#a86a00"/>
+        <text x="571" y="106" text-anchor="middle" fill="#fff">DOCUMENTATION</text>
+        <text x="571" y="126" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">canvass · PO · inspection &amp;</text>
+        <text x="571" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">acceptance · receipts —</text>
+        <text x="571" y="154" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">the audit defense, built daily</text>
+        <rect x="699" y="80" width="180" height="96" rx="10" fill="#b3423a"/>
+        <text x="789" y="106" text-anchor="middle" fill="#fff">COA AUDIT &amp;</text>
+        <text x="789" y="121" text-anchor="middle" fill="#fff">LIQUIDATION</text>
+        <text x="789" y="140" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">lawful? documented? reasonable?</text>
+        <text x="789" y="154" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">disallowance = personal liability</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none" marker-end="url(#acc)">
+        <line x1="220" y1="128" x2="248" y2="128"/><line x1="443" y1="128" x2="471" y2="128"/><line x1="666" y1="128" x2="694" y2="128"/>
+      </g>
+      <defs><marker id="acc" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <rect x="120" y="210" width="660" height="58" rx="10" fill="#f6edd2"/>
+      <text x="450" y="234" text-anchor="middle" font-size="10.5" font-weight="800" fill="#a86a00">THE MANAGER'S THREE HABITS</text>
+      <text x="450" y="254" text-anchor="middle" font-size="9.5" fill="#4a3a08">start procurement the week the grant signs · file the paperwork the day the expense happens · liquidate before the deadline, not at it</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.5 — The accountability cycle of public research money.</span> Procurement under <a href="https://www.gppb.gov.ph/" target="_blank" rel="noopener">GPPB</a> rules (RA 12009, superseding RA 9184); audit by the <a href="https://www.coa.gov.ph/" target="_blank" rel="noopener">Commission on Audit</a>.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Chapter 3's mandates/money/standards/constraints framework, applied inward: your own project's money arrives wrapped in constraints (procurement law), standards (accounting rules), and a mandate (deliver the science). The statute-reading skill now audits <em>you</em>.</aside>
+</section>
+
+<!-- ============ 6.6 ============ -->
+<section id="t6">
+  <h2><span class="secno">6.6</span>Monitoring and Evaluation: The Logframe at Work</h2>
+  <p class="lede">Chapter 2 introduced the results chain as policy architecture; here it becomes your project's nervous system.</p>
+  <p>Keep the two words distinct. <strong>Monitoring</strong> is continuous and internal: tracking implementation against plan — are activities on schedule, is the budget burning at the planned rate, are outputs emerging? Its instruments are the Gantt-versus-actual comparison, the financial utilization report, and the indicator dashboard. <strong>Evaluation</strong> is periodic and judgmental: at gates and at the end, asking whether the project <em>worked</em> — did outputs appear (terminal evaluation), are outcomes emerging (post-project), was the design itself right (the hardest question)? Monitoring corrects the steering; evaluation grades the voyage and teaches the next one.</p>
+  <p>The instrument that disciplines both is the <strong>logical framework (logframe)</strong> — the results chain (inputs → activities → outputs → outcomes → impact) written as a matrix. Each level states its <strong>objectively verifiable indicators</strong> (how much, by when — the SMART discipline of Chapter 1 applied to progress), its <strong>means of verification</strong> (the document or dataset where a third party checks the indicator — the same verifiable-objects standard that has run through every chapter), and its <strong>assumptions</strong> — the conditions outside your control that must hold for this level to produce the next. The assumptions column is the logframe's philosophical heart and the most-skipped cell in student workplans: it is where honest projects admit what they are betting on (clear skies, LGU cooperation, timely procurement), and it feeds the risk register directly.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 400" role="img" aria-label="Logical framework matrix">
+      <g font-size="9.5" font-weight="800">
+        <rect x="30" y="26" width="180" height="40" rx="7" fill="#12203a"/><text x="120" y="50" text-anchor="middle" fill="#f6edd2">RESULTS LEVEL</text>
+        <rect x="215" y="26" width="215" height="40" rx="7" fill="#12203a"/><text x="322" y="44" text-anchor="middle" fill="#f6edd2">INDICATORS</text><text x="322" y="58" text-anchor="middle" font-size="8" font-weight="400" fill="#c8d2e4">how much · by when</text>
+        <rect x="435" y="26" width="215" height="40" rx="7" fill="#12203a"/><text x="542" y="44" text-anchor="middle" fill="#f6edd2">MEANS OF VERIFICATION</text><text x="542" y="58" text-anchor="middle" font-size="8" font-weight="400" fill="#c8d2e4">where a third party checks</text>
+        <rect x="655" y="26" width="215" height="40" rx="7" fill="#12203a"/><text x="762" y="44" text-anchor="middle" fill="#f6edd2">ASSUMPTIONS</text><text x="762" y="58" text-anchor="middle" font-size="8" font-weight="400" fill="#c8d2e4">what must hold, outside your control</text>
+      </g>
+      <g font-size="8.8">
+        <rect x="30" y="72" width="180" height="72" rx="7" fill="#6b4fa1"/><text x="120" y="100" text-anchor="middle" font-weight="800" fill="#fff">OUTCOME</text><text x="120" y="116" text-anchor="middle" fill="#ddd2f0">LGUs use fireball alerts in</text><text x="120" y="128" text-anchor="middle" fill="#ddd2f0">DRRM decisions</text>
+        <rect x="215" y="72" width="215" height="72" rx="7" fill="#f1ecf9"/><text x="226" y="96" font-weight="700" fill="#6b4fa1">≥3 LDRRMOs receiving &amp; logging</text><text x="226" y="110" fill="#1c2433">alerts by Month 18; alert-to-action</text><text x="226" y="124" fill="#1c2433">documented in ≥2 drills</text>
+        <rect x="435" y="72" width="215" height="72" rx="7" fill="#f1ecf9"/><text x="446" y="96" fill="#1c2433">LDRRMO logbooks · MOU reports ·</text><text x="446" y="110" fill="#1c2433">drill after-action reviews</text>
+        <rect x="655" y="72" width="215" height="72" rx="7" fill="#f1ecf9"/><text x="666" y="96" fill="#1c2433">LGU partnership holds across</text><text x="666" y="110" fill="#1c2433">election cycle (→ risk register)</text>
+        <rect x="30" y="150" width="180" height="72" rx="7" fill="#1e7d4f"/><text x="120" y="178" text-anchor="middle" font-weight="800" fill="#fff">OUTPUTS</text><text x="120" y="194" text-anchor="middle" fill="#d7f0dc">operating network · open dataset ·</text><text x="120" y="206" text-anchor="middle" fill="#d7f0dc">trained observers</text>
+        <rect x="215" y="150" width="215" height="72" rx="7" fill="#e8f5ee"/><text x="226" y="174" font-weight="700" fill="#1e7d4f">5 stations ≥90% uptime by M10;</text><text x="226" y="188" fill="#1c2433">catalog v1 (≥200 events) by M20;</text><text x="226" y="202" fill="#1c2433">20 observers certified by M12</text>
+        <rect x="435" y="150" width="215" height="72" rx="7" fill="#e8f5ee"/><text x="446" y="174" fill="#1c2433">uptime logs (PhST-stamped) ·</text><text x="446" y="188" fill="#1c2433">repository DOI · certification records</text>
+        <rect x="655" y="150" width="215" height="72" rx="7" fill="#e8f5ee"/><text x="666" y="174" fill="#1c2433">observing weather within</text><text x="666" y="188" fill="#1c2433">climatological norms (habagat!)</text>
+        <rect x="30" y="228" width="180" height="72" rx="7" fill="#a86a00"/><text x="120" y="256" text-anchor="middle" font-weight="800" fill="#fff">ACTIVITIES</text><text x="120" y="272" text-anchor="middle" fill="#f3e2b3">WBS work packages 1.1–2.3</text>
+        <rect x="215" y="228" width="215" height="72" rx="7" fill="#fdf6e3"/><text x="226" y="252" font-weight="700" fill="#a86a00">milestones per Gantt; budget</text><text x="226" y="266" fill="#1c2433">utilization within ±10% of plan</text>
+        <rect x="435" y="228" width="215" height="72" rx="7" fill="#fdf6e3"/><text x="446" y="252" fill="#1c2433">progress reports · financial reports ·</text><text x="446" y="266" fill="#1c2433">procurement records</text>
+        <rect x="655" y="228" width="215" height="72" rx="7" fill="#fdf6e3"/><text x="666" y="252" fill="#1c2433">procurement completes within</text><text x="666" y="266" fill="#1c2433">lead-time estimates (critical path)</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2" fill="none" marker-end="url(#lfarr)">
+        <line x1="120" y1="228" x2="120" y2="150"/><line x1="120" y1="150" x2="120" y2="144"/><line x1="120" y1="150" x2="120" y2="146"/>
+      </g>
+      <defs><marker id="lfarr" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <text x="450" y="330" text-anchor="middle" font-size="10" font-weight="700" fill="#4a5568">read upward: IF activities complete AND assumptions hold → outputs; IF outputs AND assumptions → outcome</text>
+      <text x="450" y="352" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Monitoring lives in the indicators column · evaluation judges the levels · the assumptions column feeds the risk register.</text>
+      <text x="450" y="382" text-anchor="middle" font-size="9.5" fill="#4a5568">Report at the level you control (outputs), argue the path to what you don't (outcome) — Figure 2.5's rule, now enforceable.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.6 — A logframe for the TE01 example project.</span> Logical-framework methodology per the results-based management tradition (Ch. 2, Fig. 2.5); indicator discipline per SMART (Ch. 1).</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>An indicator without a <strong>means of verification</strong> is an opinion with a number attached. The MOV column is this course's specificity-causality-honesty test built into a table — if no document could prove the indicator, the indicator is decoration.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Funders increasingly ask for outputs in <strong>6Ps</strong> language (Ch. 1): make each P a logframe output row with its own indicator and MOV — publications (DOI count), people services (certified trainees), places &amp; partnerships (signed MOUs). The vocabulary crosswalk costs one afternoon and reads as fluency.</aside>
+</section>
+
+<!-- ============ 6.7 ============ -->
+<section id="t7">
+  <h2><span class="secno">6.7</span>Risk Management: The Register, the Matrix, the Four Responses</h2>
+  <p class="lede">Every assumption in the logframe is a bet. Risk management is the discipline of naming the bets, sizing them, and deciding in advance what you will do when the sky — literal or bureaucratic — refuses to cooperate.</p>
+  <p>The working instrument is the <strong>risk register</strong>: a living table where each risk gets an owner, a <strong>probability</strong> rating, an <strong>impact</strong> rating, and a planned response. Probability × impact locates each risk on the prioritization matrix — attention flows to the red corner, not to whichever risk was discussed most recently. The four canonical <strong>responses</strong>: <strong>avoid</strong> (redesign so the risk cannot occur — move the site out of the flood zone), <strong>reduce</strong> (lower probability or impact — spares on the shelf, two suppliers qualified, early procurement), <strong>transfer</strong> (make it someone else's risk — insurance on deployed instruments, fixed-price contracts), and <strong>accept</strong> (for low-priority risks: document, monitor, and budget the contingency of Section 6.4). R&amp;D's characteristic risks cluster predictably: <strong>procurement delay</strong> (the Philippine classic — Project UWU's downfall and the critical path's usual occupant), <strong>technical uncertainty</strong> (the detector underperforms — contained by pilot phases and go/no-go gates), <strong>people</strong> (the trained RA graduates and leaves — contained by documentation and cross-training, and by the retention economics Chapter 7's Magna Carta addresses), <strong>site and weather</strong> (habagat, typhoons, land access), and <strong>partner drift</strong> (the LGU's priorities change with its administration — the assumptions column made flesh).</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 380" role="img" aria-label="Probability impact matrix with R&amp;D risks placed">
+      <g stroke="#e3e0d8" stroke-width="1.5">
+        <rect x="150" y="40"  width="180" height="90" fill="#fdf6e3"/><rect x="330" y="40"  width="180" height="90" fill="#fbeceb"/><rect x="510" y="40"  width="180" height="90" fill="#f4cfcc"/>
+        <rect x="150" y="130" width="180" height="90" fill="#e8f5ee"/><rect x="330" y="130" width="180" height="90" fill="#fdf6e3"/><rect x="510" y="130" width="180" height="90" fill="#fbeceb"/>
+        <rect x="150" y="220" width="180" height="90" fill="#e8f5ee"/><rect x="330" y="220" width="180" height="90" fill="#e8f5ee"/><rect x="510" y="220" width="180" height="90" fill="#fdf6e3"/>
+      </g>
+      <text x="120" y="90" text-anchor="middle" font-size="10" font-weight="800" fill="#4a5568" transform="rotate(-90 120 90)">HIGH</text>
+      <text x="120" y="175" text-anchor="middle" font-size="10" font-weight="800" fill="#4a5568" transform="rotate(-90 120 175)">MED</text>
+      <text x="120" y="265" text-anchor="middle" font-size="10" font-weight="800" fill="#4a5568" transform="rotate(-90 120 265)">LOW</text>
+      <text x="95" y="180" text-anchor="middle" font-size="10.5" font-weight="800" fill="#1b2a4a" transform="rotate(-90 95 180)">PROBABILITY →</text>
+      <text x="240" y="336" text-anchor="middle" font-size="10" font-weight="800" fill="#4a5568">LOW</text>
+      <text x="420" y="336" text-anchor="middle" font-size="10" font-weight="800" fill="#4a5568">MED</text>
+      <text x="600" y="336" text-anchor="middle" font-size="10" font-weight="800" fill="#4a5568">HIGH</text>
+      <text x="420" y="358" text-anchor="middle" font-size="10.5" font-weight="800" fill="#1b2a4a">IMPACT →</text>
+      <g font-size="8.8" font-weight="700">
+        <circle cx="615" cy="85" r="7" fill="#b3423a"/><text x="615" y="68" text-anchor="middle" fill="#b3423a">PROCUREMENT DELAY</text>
+        <text x="615" y="105" text-anchor="middle" font-weight="400" fill="#7a2620">REDUCE: Day-1 start · dual suppliers</text>
+        <circle cx="615" cy="175" r="7" fill="#b3423a"/><text x="615" y="158" text-anchor="middle" fill="#b3423a">KEY STAFF ATTRITION</text>
+        <text x="615" y="195" text-anchor="middle" font-weight="400" fill="#7a2620">REDUCE: cross-train · fair pay (Ch. 7)</text>
+        <circle cx="405" cy="85" r="7" fill="#a86a00"/><text x="405" y="68" text-anchor="middle" fill="#a86a00">HABAGAT CLOUD SEASON</text>
+        <text x="405" y="105" text-anchor="middle" font-weight="400" fill="#6b4a08">AVOID: schedule vs. climatology</text>
+        <circle cx="405" cy="175" r="7" fill="#a86a00"/><text x="405" y="158" text-anchor="middle" fill="#a86a00">DETECTOR UNDERPERFORMS</text>
+        <text x="405" y="195" text-anchor="middle" font-weight="400" fill="#6b4a08">REDUCE: pilot · go/no-go gate</text>
+        <circle cx="600" cy="265" r="7" fill="#1e7d4f"/><text x="600" y="248" text-anchor="middle" fill="#1e7d4f">STATION VANDALISM / LOSS</text>
+        <text x="600" y="285" text-anchor="middle" font-weight="400" fill="#14532d">TRANSFER: insure · host agreements</text>
+        <circle cx="240" cy="265" r="7" fill="#1e7d4f"/><text x="240" y="248" text-anchor="middle" fill="#1e7d4f">MINOR PRICE DRIFT</text>
+        <text x="240" y="285" text-anchor="middle" font-weight="400" fill="#14532d">ACCEPT: contingency line covers</text>
+      </g>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.7 — The probability-impact matrix with a realistic TE01 risk register placed on it</span>, each risk carrying its named response (avoid · reduce · transfer · accept). Standard risk-management framework; see <a href="https://www.pmi.org/" target="_blank" rel="noopener">PMI</a> and the course texts.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The register's power is <strong>pre-commitment</strong>: responses decided calmly in planning execute quickly in crisis. A project that discovers its response during the crisis pays for the same decision twice — once in delay, once in panic.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>The write-once register. A risk register dated the same day as the proposal and never touched again is a compliance ornament. Reviews at each gate (Fig. 6.2) re-score probabilities, retire dead risks, and add the ones execution taught you — the register is a diary, not a foreword.</aside>
+</section>
+
+<!-- ============ 6.8 ============ -->
+<section id="t8">
+  <h2><span class="secno">6.8</span>Synthesis: Assembling the Workplan Package</h2>
+  <p class="lede">Week 12 will ask you for a workplan. This section is its packing list — and the map of how every chapter so far becomes a section of one coherent document.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 430" role="img" aria-label="The complete workplan package map">
+      <rect x="330" y="16" width="240" height="60" rx="10" fill="#12203a"/>
+      <text x="450" y="42" text-anchor="middle" font-size="12.5" font-weight="800" fill="#f6edd2">THE WORKPLAN PACKAGE</text>
+      <text x="450" y="62" text-anchor="middle" font-size="9.5" fill="#c8d2e4">one project, seven interlocking artifacts</text>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="370" y1="76" x2="140" y2="112"/><line x1="425" y1="76" x2="330" y2="112"/><line x1="475" y1="76" x2="520" y2="112"/><line x1="530" y1="76" x2="710" y2="112"/>
+        <line x1="390" y1="76" x2="235" y2="252"/><line x1="450" y1="76" x2="450" y2="252"/><line x1="510" y1="76" x2="665" y2="252"/>
+      </g>
+      <g font-size="10.5" font-weight="800">
+        <rect x="40"  y="116" width="200" height="110" rx="10" fill="#1e7d4f"/>
+        <text x="140" y="140" text-anchor="middle" fill="#fff">OBJECTIVES &amp; WBS</text>
+        <text x="140" y="158" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">problem (Ch. 1) · alignment (Ch. 2)</text>
+        <text x="140" y="172" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d7f0dc">decomposed by the 100% rule</text>
+        <text x="140" y="196" text-anchor="middle" font-size="8.5" font-weight="700" fill="#ffe9a8">the spine everything else</text>
+        <text x="140" y="210" text-anchor="middle" font-size="8.5" font-weight="700" fill="#ffe9a8">must trace to</text>
+        <rect x="245" y="116" width="180" height="110" rx="10" fill="#1d5fbf"/>
+        <text x="335" y="140" text-anchor="middle" fill="#fff">GANTT</text>
+        <text x="335" y="158" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">dependencies · critical path ·</text>
+        <text x="335" y="172" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">milestones vs deliverables ·</text>
+        <text x="335" y="186" text-anchor="middle" font-size="8.5" font-weight="400" fill="#d4e4fb">drawn against the almanac</text>
+        <rect x="430" y="116" width="180" height="110" rx="10" fill="#a86a00"/>
+        <text x="520" y="140" text-anchor="middle" fill="#fff">LINE-ITEM BUDGET</text>
+        <text x="520" y="158" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">PS · MOOE · CO by work package ·</text>
+        <text x="520" y="172" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">indirect capped · counterpart shown ·</text>
+        <text x="520" y="186" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f3e2b3">unit costing attached</text>
+        <rect x="615" y="116" width="190" height="110" rx="10" fill="#6b4fa1"/>
+        <text x="710" y="140" text-anchor="middle" fill="#fff">LOGFRAME</text>
+        <text x="710" y="158" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">indicators · MOVs · assumptions ·</text>
+        <text x="710" y="172" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">6Ps crosswalk — the M&amp;E</text>
+        <text x="710" y="186" text-anchor="middle" font-size="8.5" font-weight="400" fill="#ddd2f0">contract with your funder</text>
+        <rect x="135" y="256" width="200" height="100" rx="10" fill="#b3423a"/>
+        <text x="235" y="280" text-anchor="middle" fill="#fff">RISK REGISTER</text>
+        <text x="235" y="298" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">fed by the assumptions column ·</text>
+        <text x="235" y="312" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">owners · P×I scores · four responses ·</text>
+        <text x="235" y="326" text-anchor="middle" font-size="8.5" font-weight="400" fill="#f4cfcc">reviewed at every gate</text>
+        <rect x="350" y="256" width="200" height="100" rx="10" fill="#27406b"/>
+        <text x="450" y="280" text-anchor="middle" fill="#fff">COMPLIANCE CALENDAR</text>
+        <text x="450" y="298" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">ECC conditions · permits (Ch. 4) ·</text>
+        <text x="450" y="312" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">ethics clearance (Ch. 1) · reporting</text>
+        <text x="450" y="326" text-anchor="middle" font-size="8.5" font-weight="400" fill="#c8d2e4">&amp; liquidation deadlines — dated, owned</text>
+        <rect x="565" y="256" width="200" height="100" rx="10" fill="#4a5568"/>
+        <text x="665" y="280" text-anchor="middle" fill="#fff">IP &amp; DATA ANNEX</text>
+        <text x="665" y="298" text-anchor="middle" font-size="8.5" font-weight="400" fill="#e3e0d8">disclosure workflow · licensing</text>
+        <text x="665" y="312" text-anchor="middle" font-size="8.5" font-weight="400" fill="#e3e0d8">table · RA 10055 allocation (Ch. 5) ·</text>
+        <text x="665" y="326" text-anchor="middle" font-size="8.5" font-weight="400" fill="#e3e0d8">data-management plan (Ch. 2)</text>
+      </g>
+      <text x="450" y="392" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Seven artifacts, one test: pick any peso, any bar, any indicator — can you walk it back to an objective and forward to a verifiable result?</text>
+      <text x="450" y="414" text-anchor="middle" font-size="9.5" fill="#4a5568">If yes everywhere, the triangle coheres and the panel's feasibility question is already answered.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 6.8 — The complete workplan package</span>: the course's chapters assembled into one proposal's planning documents.</figcaption>
+  </figure>
+  <p>Two management rhythms animate the package after approval. The <strong>reporting calendar</strong>: progress reports at the funder's intervals, financial reports aligned to liquidation deadlines, and the terminal report as the closure gate — each drawing its content directly from the logframe's indicators and the Gantt-versus-actual record, which is why teams that monitor well write reports quickly and teams that don't relive the whole project each reporting season. And the <strong>change discipline</strong>: when reality diverges from plan — it will — changes to scope, schedule, or budget above the funder's thresholds require prior approval, realignments between budget lines follow the grant's rules, and <strong>extensions</strong> must be requested before expiry with cause shown (a <em>no-cost extension</em> stretches time without new money — the standard remedy for a procurement-delayed but scientifically sound project, and the correct reading of Project UWU's situation). The worst change management is silence: funders forgive documented adversity far more readily than discovered surprises.</p>
+  <p>Close with the standing move — the compressed-IRAC paragraph for your proposal's management section: <em>"(R) The grant's terms require milestone-based reporting, procurement under RA 12009, liquidation per deadline, and prior approval for major realignments; (A) the project operates the package above — logframe-driven quarterly reports, procurement initiated at Day 1 per the critical path, a gate-reviewed risk register, and a dated compliance calendar with named owners; (C) the project's management system therefore meets the grant's terms and makes its own performance auditable."</em> The panel reads that paragraph and sees the thing it funds most confidently: a team that has already imagined Month 14.</p>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>The complete TE01 arc is now visible: a research question (Ch. 1) aligned to agendas (Ch. 2), sited within the law (Chs. 3–4), owning its outputs (Ch. 5), and managed through this chapter's package — which is precisely the R&amp;D proposal your final requirement demands and your Innovative Pitching must sell in Week 18.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The chapter in one sentence: <strong>decompose (WBS), schedule (Gantt), cost (PS/MOOE/CO with capped indirect), spend lawfully (procure–document–liquidate), measure (logframe), pre-decide (risk register), and report — with every artifact tracing to the same objectives.</strong></aside>
+</section>
+
+<!-- ============ MASTERY TEST ============ -->
+<section id="test">
+  <h2><span class="secno">✓</span>Chapter 6 Mastery Test — 20-Item HOTS Multiple Choice</h2>
+  <p>Each item targets applying, analyzing, or evaluating — several in Case Recitation style. Choose your answer before opening the dropdown. Suggested protocol: answer all 20 before revealing any explanation.</p>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Applying</span></div>
+    <p class="stem">Midway through your project, the funder asks you to add two more monitoring sites "within the same grant." Under the triple constraint, the correct managerial response is:</p>
+    <ol class="opts"><li>Agree silently; funders are always right</li><li>Show the triangle: added scope must move time and/or cost — so either the schedule extends, the budget grows, or existing scope is traded out; agreeing without adjusting any of the three quietly promises to break quality</li><li>Refuse all changes on principle</li><li>Add the sites but stop calibrating to save time</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The constraint is arithmetic, not attitude: scope, time, and cost are coupled, and the professional answer to a scope request is a costed change proposal, not heroic silence. D names the hidden victim — quality — explicitly; it is what absorbs incoherent promises, in this case the calibration that made the data trustworthy at all.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">What distinguishes well-managed R&amp;D from a construction project, per Section 6.1?</p>
+    <ol class="opts"><li>R&amp;D needs no schedule because science is unpredictable</li><li>The scientific outcome is irreducibly uncertain — but good management confines uncertainty to that outcome, running schedule, spending, data, and compliance as tightly as any bridge; the panel's feasibility question is whether the team has achieved that confinement</li><li>Construction has budgets; research does not</li><li>Nothing; they are identical</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The Frascati "uncertain" criterion is a fact about the science, not a license for the management. A is the romantic fallacy that kills grants: unpredictable results still emerge from predictable campaigns, procured equipment, and monitored budgets. The confinement idea is the chapter's master metaphor — watch it reappear in the risk register.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Applying</span></div>
+    <p class="stem">Classify: (1) "calibrated first-light images delivered to the repository"; (2) "all five stations installed"; (3) "conduct monthly sky-brightness campaigns." In lifecycle vocabulary these are:</p>
+    <ol class="opts"><li>1 deliverable · 2 milestone · 3 activity</li><li>1 milestone · 2 activity · 3 deliverable</li><li>All three are milestones</li><li>1 activity · 2 deliverable · 3 milestone</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> A deliverable is a thing handed over (images in the repository); a milestone is a verifiable point in time (installation complete — nothing handed over, everything proven); an activity is work that consumes time and budget (the campaigns). Funders schedule payments against milestones precisely because they are checkable instants — mislabeling them muddles your payment schedule.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A WBS for a five-station network omits "site host agreements" but includes "celebrate project anniversary." The two defects, named precisely, are:</p>
+    <ol class="opts"><li>Both are style choices</li><li>A 100%-rule violation in each direction: orphan work (site agreements are real, necessary work missing from the decomposition — it will be done unbudgeted and unscheduled) and phantom work (the celebration serves no objective and will consume budget that traces to nothing)</li><li>The WBS is too detailed</li><li>Site agreements belong in the celebration package</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The 100% rule cuts both ways: children must sum to the parent — no missing work (orphans surface later as schedule shocks and unfunded effort) and no extra work (phantoms are the padding audits find). The WBS review question is always the pair: <em>what real work is absent, and what present work serves no objective?</em></p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Applying</span></div>
+    <p class="stem">In Figure 6.3, training floats while procurement→install→commission is critical. A team member proposes borrowing the training slot's staff to "help chase procurement." The schedule-literate evaluation is:</p>
+    <ol class="opts"><li>Never move anyone; plans are sacred</li><li>Sensible use of float — training can slip within its slack without moving the milestone, while any acceleration of the critical path shortens the whole project; spending float deliberately on the zero-slack chain is exactly what float is for</li><li>Pointless — all activities are equally urgent</li><li>Wrong — training is always the critical path</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Critical-path literacy is resource literacy: a day saved off-path saves nothing, a day saved on-path saves a project-day. The float is a budget of flexibility — spent deliberately (and visibly, so the training milestone is re-dated), not leaked accidentally. C is the flat-schedule fallacy the method exists to dissolve.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Applying</span></div>
+    <p class="stem">Classify these budget lines: (1) honoraria of the project's field observers; (2) a ₱1.8M spectrograph; (3) fuel and ferry fares for site visits; (4) publication charges for the open-access paper.</p>
+    <ol class="opts"><li>1 PS · 2 CO/EO · 3 MOOE · 4 MOOE</li><li>1 MOOE · 2 MOOE · 3 CO · 4 PS</li><li>All four are Capital Outlay</li><li>1 CO · 2 PS · 3 PS · 4 CO</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> People are PS (salaries, wages, honoraria); durable assets above the threshold are CO/EO (the spectrograph — which becomes government property with disposition rules); the consumable life of the project — travel, fuel, fees, page charges — is MOOE. The classification decides procurement route, audit treatment, and end-of-project ownership, which is why examiners test it with lists exactly like this.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Your Case Analysis: STARI requests ₱2.5B — direct costs ₱500M (PS 200, MOOE 200, CO 100) and "indirect cost" ₱2.0B. The correct diagnosis and repair is:</p>
+    <ol class="opts"><li>Approve; the arithmetic sums correctly</li><li>The proportion is inverted: indirect costs are permitted only as a modest, capped percentage OF direct costs, not four times them — the request buys mostly overhead; repair by re-deriving the budget from the WBS (cost each work package into PS/MOOE/CO), summing the true direct cost, and adding indirect at the funder's capped rate on top</li><li>Reject because the PS share is too small</li><li>Move the ₱2B to CO and approve</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Summing correctly is not budgeting correctly: the architecture requires direct costs to dominate, with overhead riding capped on top, because public research money is appropriated to buy research. D relabels the pathology without curing it — ₱2B of unspecified "equipment" fails the same traceability test. This is the mastery version of the 100-point case item; the repair procedure is as gradeable as the diagnosis.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why do funders require <em>counterpart funding</em> from the proponent institution?</p>
+    <ol class="opts"><li>To make small institutions ineligible</li><li>As revealed commitment: an institution that stakes its own staff time, facilities, or cash has skin in the project's success — and the counterpart also evidences the institutional capacity (labs, admin support) the project silently relies on</li><li>Because grants are loans</li><li>To complicate the spreadsheet</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Counterpart is an incentive-alignment instrument (the same design logic as RA 10055's revenue sharing): commitments are more credible when costly. It also surfaces the true cost of research — the institutional infrastructure that "free" hosting actually provides — which is the honest cousin of the indirect-cost line.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your project needs a ₱1.6M custom telescope mount. The procurement-literate plan is:</p>
+    <ol class="opts"><li>Buy it from the project leader's cousin for speed</li><li>Route it through the public procurement regime (RA 12009, ex-RA 9184): write performance-based technical specifications early, anticipate competitive bidding's full lead time on the critical path, and invoke an alternative modality only on grounds the law actually provides (e.g., direct contracting for a genuinely proprietary item)</li><li>Split it into ₱49,999 pieces to dodge thresholds</li><li>Pay cash and keep the receipts in a shoebox</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Public money buys through public procedure: bidding is the default, alternatives are exceptions with stated grounds, and the manager's real lever is time — early, brand-neutral specs and Day-1 paperwork. A is a conflict of interest heading for disallowance; C is the splitting-of-contracts violation auditors search for by name; D is an audit finding in physical form.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A COA notice of disallowance differs from an ordinary budget disagreement because it:</p>
+    <ol class="opts"><li>Is merely advisory</li><li>Finds public money improperly spent and requires its return — with personal liability attaching to the approving and certifying officials; the shield against it is not eloquence at audit time but documentation built at expense time</li><li>Applies only to private companies</li><li>Can be settled by revising next year's proposal</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Disallowance is restitution, not critique — the constitutional audit power reaching into personal bank accounts of signatories. The managerial consequence is the boring habit the chapter preaches: every expense matched at birth to its budget line, work package, and supporting papers. Auditors reconstruct trails; good managers never let the trail need reconstruction.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Distinguish monitoring from evaluation with the correct instrument pairing:</p>
+    <ol class="opts"><li>Monitoring: continuous tracking of implementation against plan (Gantt-vs-actual, burn rate, indicator dashboard); evaluation: periodic judgment at gates and end — did outputs appear, are outcomes emerging, was the design right</li><li>Monitoring is what funders do; evaluation is what teams do</li><li>They are synonyms used to lengthen reports</li><li>Evaluation is continuous; monitoring happens once</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Monitoring corrects the steering; evaluation grades the voyage. The tense differs (present-continuous vs. retrospective), the questions differ (on plan? vs. worked?), and the consumers differ (the team daily; the funder and the next project's designers at gates). Conflating them produces reports that answer neither question.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two logframe indicator rows for the same output: Row X — "Community engagement improved." Row Y — "20 barangay observers certified by Month 12; MOV: certification records and practical-exam sheets." The decisive difference is:</p>
+    <ol class="opts"><li>X is shorter, hence better</li><li>Y is verifiable: quantity, deadline, and a named document a third party can check — while X has no number, no date, and no MOV, making it an opinion wearing an indicator's clothes; the SMART and specificity-causality-honesty tests, now enforced by a table</li><li>Both are equally valid styles</li><li>Y is worse because certification is bureaucratic</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The MOV column is the logframe's honesty mechanism: an indicator no document could prove is decoration. This is the fourth domain where the course's verifiability standard has appeared (agendas, statutes, compliance, now M&amp;E) — by design, because panels apply it everywhere too.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">The logframe's assumptions column exists because:</p>
+    <ol class="opts"><li>Templates abhor empty space</li><li>Each level produces the next only IF conditions outside the project's control hold — naming them makes the causal logic honest, tells monitoring what to watch, and feeds the risk register the bets it must manage; a logframe with an empty assumptions column claims omnipotence</li><li>Assumptions are excuses prepared in advance</li><li>Funders never read that column</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The if-then-given logic (if activities AND assumptions → outputs) is what separates a logframe from a wish list. C contains a half-truth worth confronting: assumptions stated <em>and monitored and managed</em> are professionalism; assumptions invoked for the first time in the terminal report are indeed excuses — the difference is the risk register between them.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Applying</span></div>
+    <p class="stem">Match the risk response: (1) insure the deployed stations; (2) reschedule campaigns away from habagat months; (3) qualify two suppliers and start procurement at Day 1; (4) note minor price drift and cover it from contingency.</p>
+    <ol class="opts"><li>1 transfer · 2 avoid · 3 reduce · 4 accept</li><li>1 avoid · 2 transfer · 3 accept · 4 reduce</li><li>All four are "accept"</li><li>1 reduce · 2 accept · 3 avoid · 4 transfer</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Insurance moves the loss to another balance sheet (transfer); scheduling around the cloud season redesigns the exposure out of existence (avoid); dual suppliers and early paperwork lower the probability and impact of the classic delay (reduce); documented low-priority risks with a funded contingency are accepted, not ignored. Four verbs, four different managerial acts — the register should name which one each row performs.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Project UWU is two years in, scientifically sound, but behind schedule because of the university's slow procurement. As its manager approaching expiry, your correct instrument and argument is:</p>
+    <ol class="opts"><li>Say nothing and hope the funder forgets the end date</li><li>Request a no-cost extension before expiry: cause shown (documented procurement delays on the critical path), remaining work and revised Gantt attached, no new funds sought — the standard, legitimate remedy for exactly this situation, and far cheaper in credibility than discovered silence</li><li>Declare the project finished and skip the undone work</li><li>Move the project to a faster university mid-grant on your own authority</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The no-cost extension is change discipline working as designed: time moves, money doesn't, and the request precedes expiry with cause and a plan. A converts adversity into concealment (the unforgivable version); C falsifies completion; D is the Prof. Son fallacy from Chapter 5 — the grant is a GFA–RDI agreement no individual can relocate. Note how the risk register would have made this request's evidence file automatic.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your quarterly report is due. The fastest honest source of its content is:</p>
+    <ol class="opts"><li>Memory and adjectives</li><li>The monitoring system you already run: Gantt-versus-actual for schedule, utilization-versus-plan for budget, the logframe's indicators with their MOVs for results, and the risk register's updates for issues — reporting as extraction, not creation</li><li>Last quarter's report with the dates changed</li><li>A request for deadline extension every quarter</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Teams that monitor well write reports quickly because the report is a view of a running system, not a quarterly archaeology expedition. C is the template-decay pathology reviewers detect by comparing quarters; A produces the adjective-rich, number-poor reports that trigger exactly the scrutiny they hoped to avoid.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the chapter insist the budget be <em>derived from the WBS</em> rather than written directly?</p>
+    <ol class="opts"><li>Spreadsheets require it technically</li><li>Because derivation creates traceability in both directions: every line answers "for which activity, toward which objective," and every work package shows its true cost — which is what lets reviewers walk the chain, auditors match expenses, and managers see instantly what any scope change costs</li><li>To make budgets longer</li><li>Tradition alone</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> A declared budget is a set of hopeful numbers; a derived budget is the WBS priced. The derivation is also your change-management calculator (Question 1's costed response comes from it) and your padding detector — lines that trace to no work package are phantoms by construction. The chain from Chapter 1's "reviewers read budgets backwards" now has its full machinery.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your CO-funded 60-cm telescope reaches project end. Its correct disposition is decided by:</p>
+    <ol class="opts"><li>The project leader's sentimental attachment</li><li>The grant's property and disposition rules — CO equipment is government property, typically transferred, retained, or disposed per the funder's guidelines and accounting procedure, documented in the closure package; not by possession, affection, or a new employer's welcome letter</li><li>Whoever physically holds the keys at midnight on the end date</li><li>A raffle among project staff</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The Chapter 5 separation (IP vs. chattel vs. grant relationship) closes here on the chattel side: equipment follows property rules through the closure gate, with inspection, inventory, and transfer documents COA can audit. This is also the final answer to the Prof. Son equipment question — and why closure is a work package, not an afterthought.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two management sections reach a panel. Section X: "The team will manage the project diligently and report regularly." Section Y: "Quarterly logframe-based reports; procurement initiated Day 1 (critical path, Fig. 2); risk register reviewed at each gate (owners named); liquidation 30 days before deadline; compliance calendar attached." The panel's reading:</p>
+    <ol class="opts"><li>X wins on brevity</li><li>Y demonstrates a management system — named instruments, dates, owners, and artifacts a monitor can check — while X restates the word "manage" in adjectives; the unfalsifiable-sentence test, applied to its fifth domain</li><li>Both are equivalent</li><li>Y is worse because it admits risks exist</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> By now the pattern is reflex: verifiable objects beat sentiments in agendas, statutes, compliance, IP, and management alike. D deserves its own burial — admitting risks with responses attached is precisely what distinguishes a team that has imagined Month 14 from a team that will meet it unarmed.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">Synthesis: a reviewer picks one peso from your budget — a ₱12,000 line for GPS-disciplined clock modules — and asks you to justify it completely. The full-course answer traces:</p>
+    <ol class="opts"><li>"Electronics are always useful."</li><li>Line → work package 1.4 (commissioning) → objective 1 (network operational) → logframe output indicator (five stations, PhST-stamped uptime logs as MOV) → methodological requirement (multi-station triangulation needs traceable time, RA 10535) → agenda anchor (DRR-relevant space science) — one peso, walked backward to the mission and forward to a verifiable result</li><li>"The supplier had a promotion."</li><li>"It was left over from another line."</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The single-peso walk is the course's entire argument in miniature: Chapter 1's design chain, Chapter 2's alignment, Chapter 3's standards statute, Chapter 6's WBS-derived budget and logframe — all meeting in one defensible line item. If every line survives this walk, your Week-12 workplan is done; if one doesn't, you have found tonight's homework.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section id="refs">
+  <h2><span class="secno">◈</span>References and Readings (Clickable)</h2>
+  <h3>Core Course Texts</h3>
+  <ul class="plain">
+    <li>Wingate, L. (2015). <em>Project Management for Research and Development: Guiding Innovation for Positive R&amp;D Outcomes.</em> CRC Press — <a href="https://www.routledge.com/" target="_blank" rel="noopener">publisher</a></li>
+    <li>Muñoz, J., Blanco, J., &amp; Rizo, S. (2017). <em>Project Management and Engineering Research.</em> Springer Nature — <a href="https://link.springer.com/" target="_blank" rel="noopener">publisher</a></li>
+    <li>Daim, T., Kim, J., &amp; Phan, K. (2017). <em>Research and Development Management.</em> Springer Nature — <a href="https://link.springer.com/book/10.1007/978-3-319-54537-0" target="_blank" rel="noopener">publisher page</a></li>
+  </ul>
+  <h3>Philippine Public-Funds Regime</h3>
+  <ul class="plain">
+    <li>RA 12009 — New Government Procurement Act (2024), superseding RA 9184 (2003) — <a href="https://www.gppb.gov.ph/" target="_blank" rel="noopener">Government Procurement Policy Board</a> · <a href="https://lawphil.net/" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>Commission on Audit (audit rules, disallowance jurisprudence) — <a href="https://www.coa.gov.ph/" target="_blank" rel="noopener">coa.gov.ph</a></li>
+    <li>Department of Budget and Management (expense classification: PS, MOOE, CO) — <a href="https://www.dbm.gov.ph/" target="_blank" rel="noopener">dbm.gov.ph</a></li>
+    <li>DOST-GIA guidelines (AO 011 s. 2020 — the grant regime detailed in Chapter 7) — <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">dost.gov.ph</a></li>
+  </ul>
+  <h3>Methodology</h3>
+  <ul class="plain">
+    <li>Project Management Institute (PMBOK framework: constraints, WBS, critical path, risk) — <a href="https://www.pmi.org/" target="_blank" rel="noopener">pmi.org</a></li>
+    <li>Logical framework / results-based management guides (see the <a href="https://www.oecd.org/en/topics/policy-areas/development-co-operation.html" target="_blank" rel="noopener">OECD DAC</a> literature; Ch. 2, Fig. 2.5)</li>
+    <li>Course case materials: TE01 Case Analysis (STARI budget; Project UWU procurement and extension scenarios)</li>
+  </ul>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch5-lecture.html">&#8592; Ch. 5 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch6-reinforcement.html">Ch. 6 Reinforcement</a></span> <span><a href="ch7-lecture.html">Ch. 7 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 6 Lecture Pack · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

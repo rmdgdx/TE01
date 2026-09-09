@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 5 — Intellectual Property and Technology Transfer in the Philippines</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 5 — Intellectual Property and Technology Transfer in the Philippines</h1>
+  <div class="subtitle">Weeks 8–9 · CO1–LO4: Develop a thorough understanding of the intellectual property landscape and technology transfer in the Philippines · RA 8293 (IP Code) · RA 10055 (Technology Transfer Act) · IPOPHL Memorandum Circulars · Assoc. Prof. Ryan Manuel D. Guido, Ph.D. · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Chapter sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#objectives">Objectives</a></li>
+    <li><a href="#t1">5.1 Knowledge as Asset</a></li>
+    <li><a href="#t2">5.2 The IP Code Family</a></li>
+    <li><a href="#t3">5.3 Patents</a></li>
+    <li><a href="#t4">5.4 Copyright, Software, Data</a></li>
+    <li><a href="#t5">5.5 RA 10055</a></li>
+    <li><a href="#t6">5.6 Transfer Mechanisms</a></li>
+    <li><a href="#t7">5.7 IPOPHL Circulars</a></li>
+    <li><a href="#t8">5.8 IP Strategy</a></li>
+    <li><a href="#test">Mastery Test</a></li>
+    <li><a href="#refs">References</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ OBJECTIVES ============ -->
+<section id="objectives">
+  <div class="objectives">
+    <h4>Chapter Learning Objectives</h4>
+    <p>After working through this chapter, you should be able to:</p>
+    <ol class="plain">
+      <li>Explain why intellectual property is the legal bridge between R&amp;D outputs and their use, and locate IP in the innovation pipeline;</li>
+      <li>Distinguish the IP rights of the Philippine IP Code (RA 8293) — patents, utility models, industrial designs, trademarks, copyright, trade secrets — by subject matter, requirements, and term;</li>
+      <li>Apply the three patentability tests and the statutory exclusions — including the exclusion of discoveries, the clause every astronomer must know;</li>
+      <li>Trace the patent application journey and manage the publish-or-patent timing problem, including the twelve-month grace period;</li>
+      <li>Explain RA 10055's central rule — research development institutions own the IP from government-funded research — with its conditions, reserved government rights, and revenue-sharing duty;</li>
+      <li>Select appropriate technology-transfer instruments (licenses, assignments, MTAs, NDAs, spin-offs) and recognize the IP Code's regulation of technology transfer arrangements;</li>
+      <li>Situate the assigned IPOPHL memorandum circulars in the legal hierarchy of Chapter 3 and read them as operational procedure; and</li>
+      <li>Draft the IP and technology-transfer strategy of your own TE01 proposal, reconciling protection with the open-science commitments of Chapter 2.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 5.1 ============ -->
+<section id="t1">
+  <h2><span class="secno">5.1</span>Knowledge as an Asset: Why R&amp;D Managers Study IP</h2>
+  <p class="lede">Chapter 1 ended with a warning that R&amp;D is not yet innovation; something must carry a result out of the laboratory and into use. Intellectual property is the legal form that <em>carrying</em> takes: it converts knowledge — non-rivalrous, copyable, leaky — into an asset that can be owned, licensed, invested in, and shared on terms.</p>
+  <p>The economic logic is a deliberate bargain. Knowledge is expensive to produce and nearly free to copy; without some protection, private investment in invention under-supplies. The State therefore grants inventors and creators <strong>limited, temporary exclusivity</strong> — and takes, in exchange, full public <strong>disclosure</strong> (patents are published precisely so others can learn from them) and eventual <strong>expiry</strong> into the public domain. The system is thus not the opposite of open science; it is a differently-timed openness, and managing the timing is most of what an R&amp;D manager's "IP strategy" means. The bargain has honest critics — exclusivity can price out the poor, patent thickets can slow research, and most university patents never earn back their fees — and a competent manager knows both the tool and its limits.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 330" role="img" aria-label="Intellectual property as the bridge in the innovation pipeline">
+      <g font-size="11.5" font-weight="800">
+        <rect x="20" y="60" width="200" height="90" rx="10" fill="#1b2a4a"/>
+        <text x="120" y="90" text-anchor="middle" fill="#fff">R&amp;D (Frascati)</text>
+        <text x="120" y="110" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">basic · applied · experimental</text>
+        <text x="120" y="125" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">development — Ch. 1</text>
+        <rect x="20" y="180" width="200" height="70" rx="10" fill="#27406b"/>
+        <text x="120" y="208" text-anchor="middle" fill="#fff">OUTPUTS</text>
+        <text x="120" y="228" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">papers · prototypes · code · data</text>
+        <rect x="330" y="105" width="240" height="110" rx="10" fill="#c9a227"/>
+        <text x="450" y="135" text-anchor="middle" fill="#12203a" font-size="13">INTELLECTUAL PROPERTY</text>
+        <text x="450" y="155" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4a3a08">the legal bridge: identify · protect ·</text>
+        <text x="450" y="170" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4a3a08">own (RA 8293 · RA 10055)</text>
+        <text x="450" y="195" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a3a08">disclosure now · exclusivity for a term ·</text>
+        <text x="450" y="209" text-anchor="middle" font-size="9.5" font-weight="400" fill="#4a3a08">public domain at expiry</text>
+        <rect x="680" y="60" width="200" height="90" rx="10" fill="#1e7d4f"/>
+        <text x="780" y="90" text-anchor="middle" fill="#fff">TECHNOLOGY TRANSFER</text>
+        <text x="780" y="110" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">licenses · assignments · MTAs ·</text>
+        <text x="780" y="125" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">spin-offs — Sec. 5.6</text>
+        <rect x="680" y="180" width="200" height="70" rx="10" fill="#6b4fa1"/>
+        <text x="780" y="208" text-anchor="middle" fill="#fff">INNOVATION (Oslo)</text>
+        <text x="780" y="228" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">products &amp; processes in use · value</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.6" fill="none" marker-end="url(#iparr)">
+        <line x1="220" y1="105" x2="325" y2="130"/>
+        <line x1="220" y1="215" x2="325" y2="185"/>
+        <line x1="570" y1="130" x2="675" y2="105"/>
+        <line x1="570" y1="185" x2="675" y2="215"/>
+      </g>
+      <defs><marker id="iparr" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <text x="450" y="290" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Without the bridge, outputs stay papers; with it, they can become licensed instruments, spin-offs, and shared standards — the 6Ps beyond publications.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.1 — IP as the bridge from R&amp;D outputs to innovation in use.</span> Framework synthesis of the Frascati/Oslo distinction (Ch. 1) and the transfer machinery of this chapter; institutional overview at <a href="https://www.ipophil.gov.ph/" target="_blank" rel="noopener">ipophil.gov.ph</a> and <a href="https://www.wipo.int/" target="_blank" rel="noopener">wipo.int</a>.</figcaption>
+  </figure>
+  <aside class="note key"><span class="tag">Key Concept</span><br>IP is <strong>timed openness</strong>: disclosure now, exclusivity for a term, public domain forever after. Your strategy decisions are mostly <em>sequencing</em> decisions — what to disclose, when, in which order relative to filing and publishing.</aside>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Astronomy looks IP-poor (you cannot own a galaxy) and is actually IP-rich in the engineering layer: detector designs, mount mechanisms, adaptive-optics methods, control software, calibration pipelines. The science stays open; the instruments that produce it are where the field's patents live — a split your own proposal will reproduce in miniature.</aside>
+</section>
+
+<!-- ============ 5.2 ============ -->
+<section id="t2">
+  <h2><span class="secno">5.2</span>The IP Code (RA 8293) and the Family of Rights</h2>
+  <p class="lede">The <strong>Intellectual Property Code of the Philippines</strong> — RA 8293 (1997), since amended — consolidated the country's IP law into one statute and created the <strong>Intellectual Property Office of the Philippines (IPOPHL)</strong> to administer it. Its structure is a family of distinct rights, each matched to a kind of creation, each with its own requirements and clock.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 460" role="img" aria-label="Family of intellectual property rights under the IP Code">
+      <rect x="300" y="14" width="300" height="52" rx="10" fill="#12203a"/>
+      <text x="450" y="36" text-anchor="middle" font-size="13" font-weight="800" fill="#f6edd2">RA 8293 · THE IP CODE</text>
+      <text x="450" y="55" text-anchor="middle" font-size="9.5" fill="#c8d2e4">administered by IPOPHL (1998– )</text>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="360" y1="66" x2="130" y2="102"/><line x1="420" y1="66" x2="360" y2="102"/><line x1="480" y1="66" x2="540" y2="102"/><line x1="540" y1="66" x2="765" y2="102"/>
+        <line x1="360" y1="66" x2="245" y2="262"/><line x1="540" y1="66" x2="655" y2="262"/>
+      </g>
+      <g font-size="11" font-weight="800">
+        <rect x="30" y="106" width="200" height="132" rx="10" fill="#1b2a4a"/>
+        <text x="130" y="130" text-anchor="middle" fill="#fff">PATENT</text>
+        <text x="130" y="150" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">inventions: technical solution</text>
+        <text x="130" y="164" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">to a problem in any field</text>
+        <text x="130" y="184" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">new · inventive step · industrial</text>
+        <text x="130" y="198" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">applicability · examined</text>
+        <text x="130" y="222" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c9a227">20 years from filing</text>
+        <rect x="260" y="106" width="200" height="132" rx="10" fill="#1e7d4f"/>
+        <text x="360" y="130" text-anchor="middle" fill="#fff">UTILITY MODEL</text>
+        <text x="360" y="150" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">"petty patent": new &amp; industrially</text>
+        <text x="360" y="164" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">applicable — no inventive-step</text>
+        <text x="360" y="178" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">examination · fast &amp; cheap</text>
+        <text x="360" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#d7f0dc">ideal for incremental devices</text>
+        <text x="360" y="222" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c9f7d8">7 years · no renewal</text>
+        <rect x="440" y="106" width="200" height="132" rx="10" fill="#a86a00"/>
+        <text x="540" y="130" text-anchor="middle" fill="#fff">INDUSTRIAL DESIGN</text>
+        <text x="540" y="150" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">ornamental / aesthetic aspect</text>
+        <text x="540" y="164" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">of an article (form, pattern,</text>
+        <text x="540" y="178" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">configuration)</text>
+        <text x="540" y="222" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffe9a8">5 yrs, renewable ×2 (15 max)</text>
+        <rect x="665" y="106" width="200" height="132" rx="10" fill="#1d5fbf"/>
+        <text x="765" y="130" text-anchor="middle" fill="#fff">TRADEMARK</text>
+        <text x="765" y="150" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">signs distinguishing goods &amp;</text>
+        <text x="765" y="164" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">services — brands, logos</text>
+        <text x="765" y="184" text-anchor="middle" font-size="9" font-weight="700" fill="#d4e4fb">registration + actual use</text>
+        <text x="765" y="222" text-anchor="middle" font-size="9.5" font-weight="700" fill="#cfe0f7">10 yrs, renewable indefinitely</text>
+        <rect x="145" y="266" width="200" height="120" rx="10" fill="#6b4fa1"/>
+        <text x="245" y="290" text-anchor="middle" fill="#fff">COPYRIGHT</text>
+        <text x="245" y="310" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">original literary &amp; artistic works —</text>
+        <text x="245" y="324" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">incl. software · papers · images</text>
+        <text x="245" y="344" text-anchor="middle" font-size="9" font-weight="700" fill="#ddd2f0">automatic upon creation</text>
+        <text x="245" y="368" text-anchor="middle" font-size="9.5" font-weight="700" fill="#e8dcfa">generally life + 50 years</text>
+        <rect x="555" y="266" width="200" height="120" rx="10" fill="#4a5568"/>
+        <text x="655" y="290" text-anchor="middle" fill="#fff">TRADE SECRET</text>
+        <text x="655" y="310" text-anchor="middle" font-size="9" font-weight="400" fill="#e3e0d8">valuable because secret —</text>
+        <text x="655" y="324" text-anchor="middle" font-size="9" font-weight="400" fill="#e3e0d8">protected by confidentiality,</text>
+        <text x="655" y="338" text-anchor="middle" font-size="9" font-weight="400" fill="#e3e0d8">contracts, unfair-competition law</text>
+        <text x="655" y="368" text-anchor="middle" font-size="9.5" font-weight="700" fill="#f0eee7">lasts while secrecy lasts</text>
+      </g>
+      <text x="450" y="430" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">One creation often wears several rights at once: an instrument may carry a patent (mechanism), a design (housing), copyright (firmware), and a trademark (its name).</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.2 — The family of IP rights under RA 8293</span>, by subject matter, requirement, and term. Full statute via <a href="https://lawphil.net/statutes/repacts/ra1997/ra_8293_1997.html" target="_blank" rel="noopener">LawPhil</a>; administration at <a href="https://www.ipophil.gov.ph/" target="_blank" rel="noopener">IPOPHL</a>.</figcaption>
+  </figure>
+  <h3>Reading the Family Strategically</h3>
+  <p>The rights differ on three axes worth memorizing. <strong>How protection arises:</strong> copyright is automatic on creation and trade secrecy arises from conduct, while patents, utility models, designs, and trademarks exist only through <em>registration</em> with IPOPHL. <strong>What is protected:</strong> patents protect function (the technical solution itself, however expressed); copyright protects <em>expression</em> (this code, this text — not the idea behind it); designs protect appearance; trademarks protect commercial identity; secrets protect whatever secrecy can actually keep. <strong>The clock:</strong> from the utility model's short, unrenewable seven years to the trademark's potentially eternal life (renewed decade by decade, kept alive by actual use), each term expresses a policy judgment about how long exclusivity should pay for disclosure.</p>
+  <p>Employee and commissioned work deserves early attention, because a university team is full of both. As a default under the Code, an invention made by an employee <em>as part of regularly assigned duties</em> belongs to the employer (absent contrary agreement), while an invention outside those duties stays with the employee even if company time or materials were used; copyright in works made in the course of employment follows related default rules. RA 10055 (Section 5.5) then overlays the government-funding dimension. The lesson is not the defaults themselves but their fragility: <strong>every research engagement should say, in writing, who will own what</strong> — the sentence that prevents most academic IP disputes ever occurring.</p>
+  <aside class="note ph"><span class="tag">PH Context</span><br>The Philippines is plugged into the international IP system: the <strong>Paris Convention</strong> (priority rights), the <strong>Patent Cooperation Treaty</strong> (one international patent application preserving rights in most of the world), the <strong>Madrid Protocol</strong> (international trademark registration), and the <strong>Berne Convention</strong> (automatic copyright abroad). A Filipino invention can go global through Philippine filings — the on-ramp is IPOPHL.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Confusing <strong>plagiarism</strong> with <strong>infringement</strong>. Plagiarism is an ethical wrong (claiming credit) policed by institutions; infringement is a legal wrong (violating an exclusive right) policed by courts. Quoting with attribution can still infringe; copying public-domain text without attribution is plagiarism but not infringement. Your Case Analysis answers must keep the two vocabularies apart.</aside>
+</section>
+
+<!-- ============ 5.3 ============ -->
+<section id="t3">
+  <h2><span class="secno">5.3</span>Patents: The Three Tests, the Exclusions, and the Journey</h2>
+  <p class="lede">A patent is the strongest right in the family — a twenty-year exclusivity over a <em>technical solution to a problem</em> — and correspondingly the hardest to earn. Everything turns on three statutory tests and one list of exclusions.</p>
+  <h3>The Three Tests</h3>
+  <p>An invention is patentable if it is <strong>new</strong> (not part of the <em>prior art</em> — everything made available to the public anywhere in the world before the filing date, including your own conference talk); involves an <strong>inventive step</strong> (not obvious to a person skilled in the art, given the prior art — the test that separates real invention from routine engineering); and is <strong>industrially applicable</strong> (can be made or used in some industry — almost never the obstacle). Novelty is brutally objective: one enabling disclosure anywhere, by anyone, including the inventor, destroys it. The Code softens this with a <strong>twelve-month grace period</strong> — a disclosure derived from the inventor within twelve months before filing does not count against novelty — but the grace protects you only from <em>your own</em> disclosures, not from a rival who published independently in the meantime, and many foreign jurisdictions are less forgiving. Professional practice therefore treats the grace period as a seatbelt, not a driving style: <strong>file before you speak</strong>.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 360" role="img" aria-label="Patentability tests and exclusions">
+      <g font-size="11.5" font-weight="800">
+        <rect x="40" y="30" width="255" height="96" rx="10" fill="#1b2a4a"/>
+        <text x="167" y="58" text-anchor="middle" fill="#fff">1 · NOVELTY</text>
+        <text x="167" y="78" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">not in the worldwide prior art —</text>
+        <text x="167" y="92" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">including your own talks &amp; preprints</text>
+        <text x="167" y="112" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">12-month grace: own disclosures only</text>
+        <rect x="322" y="30" width="255" height="96" rx="10" fill="#1e7d4f"/>
+        <text x="450" y="58" text-anchor="middle" fill="#fff">2 · INVENTIVE STEP</text>
+        <text x="450" y="78" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">not obvious to a person skilled</text>
+        <text x="450" y="92" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">in the art — invention, not routine</text>
+        <text x="450" y="112" text-anchor="middle" font-size="9" font-weight="700" fill="#c9f7d8">the test utility models skip</text>
+        <rect x="604" y="30" width="255" height="96" rx="10" fill="#a86a00"/>
+        <text x="731" y="58" text-anchor="middle" fill="#fff">3 · INDUSTRIAL APPLICABILITY</text>
+        <text x="731" y="78" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">can be made or used in industry —</text>
+        <text x="731" y="92" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f3e2b3">rarely the barrier</text>
+      </g>
+      <rect x="90" y="160" width="720" height="140" rx="10" fill="#fbeceb" stroke="#b3423a" stroke-width="2"/>
+      <text x="450" y="186" text-anchor="middle" font-size="12" font-weight="800" fill="#b3423a">NOT PATENTABLE — THE EXCLUSIONS (IP Code, Sec. 22)</text>
+      <g font-size="10" fill="#1c2433">
+        <text x="120" y="212" font-weight="700" fill="#b3423a">★ Discoveries, scientific theories, mathematical methods</text>
+        <text x="120" y="228">— the astronomer's clause: an exoplanet, a relation, an algorithm as such cannot be patented;</text>
+        <text x="120" y="242">the detector, pipeline-embodied process, or instrument that finds it can be.</text>
+        <text x="120" y="264" font-weight="700">Also excluded:</text>
+        <text x="185" y="264">schemes and methods for mental acts, games, business; computer programs as such;</text>
+        <text x="120" y="280">methods of treatment; plant varieties &amp; animal breeds (separate regimes); aesthetic creations; inventions contrary to public order or morality.</text>
+      </g>
+      <text x="450" y="332" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Pass all three tests AND avoid the exclusion list — then the question becomes whether patenting is the right strategy at all (Sec. 5.8).</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.3 — The patentability gauntlet: three tests and the statutory exclusions.</span> RA 8293, Secs. 21–27 — text via <a href="https://lawphil.net/statutes/repacts/ra1997/ra_8293_1997.html" target="_blank" rel="noopener">LawPhil</a>; examination practice at <a href="https://www.ipophil.gov.ph/" target="_blank" rel="noopener">IPOPHL</a>.</figcaption>
+  </figure>
+  <h3>The Journey, and the First-to-File Rule</h3>
+  <p>The Philippines is a <strong>first-to-file</strong> jurisdiction: between two independent inventors, the patent belongs to the earlier application, not the earlier invention — which is why laboratory notebooks matter less for priority here than filing discipline does. The application itself must <em>enable</em>: it discloses the invention completely enough for a skilled person to carry it out, and its <strong>claims</strong> define the legal boundary of the exclusivity (the claims, not the prose, are what competitors will read). The office journey then runs: filing (a date that fixes everything) → formality examination → <strong>publication at eighteen months</strong> (your secret becomes public whether or not a patent ever issues — a strategic fact) → substantive examination <em>upon request</em> → grant or refusal, with post-grant maintenance fees keeping the right alive. A pending application already carries provisional protection against copyists once published.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 260" role="img" aria-label="Patent application timeline in the Philippines">
+      <line x1="60" y1="140" x2="860" y2="140" stroke="#1b2a4a" stroke-width="3" marker-end="url(#ptl)"/>
+      <defs><marker id="ptl" markerWidth="10" markerHeight="9" refX="8" refY="4.5" orient="auto"><polygon points="0 0, 10 4.5, 0 9" fill="#1b2a4a"/></marker></defs>
+      <g font-size="10.5" font-weight="800">
+        <circle cx="110" cy="140" r="9" fill="#c9a227"/>
+        <text x="110" y="105" text-anchor="middle" fill="#1b2a4a">FILING</text>
+        <text x="110" y="120" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">priority date fixed;</text>
+        <text x="110" y="170" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">first-to-file wins</text>
+        <circle cx="280" cy="140" r="9" fill="#1e7d4f"/>
+        <text x="280" y="105" text-anchor="middle" fill="#1e7d4f">FORMALITY EXAM</text>
+        <text x="280" y="170" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">completeness of papers</text>
+        <circle cx="450" cy="140" r="9" fill="#1d5fbf"/>
+        <text x="450" y="105" text-anchor="middle" fill="#1d5fbf">PUBLICATION · 18 MONTHS</text>
+        <text x="450" y="170" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">application becomes public;</text>
+        <text x="450" y="184" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">provisional protection begins</text>
+        <circle cx="640" cy="140" r="9" fill="#a86a00"/>
+        <text x="640" y="105" text-anchor="middle" fill="#a86a00">SUBSTANTIVE EXAM</text>
+        <text x="640" y="120" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">on request — the three tests applied</text>
+        <text x="640" y="170" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">claims negotiated with examiner</text>
+        <circle cx="810" cy="140" r="9" fill="#6b4fa1"/>
+        <text x="810" y="105" text-anchor="middle" fill="#6b4fa1">GRANT</text>
+        <text x="810" y="170" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">20 yrs from FILING;</text>
+        <text x="810" y="184" text-anchor="middle" font-size="9" font-weight="400" fill="#4a5568">maintenance fees due</text>
+      </g>
+      <rect x="60" y="210" width="800" height="34" rx="8" fill="#f6edd2"/>
+      <text x="460" y="232" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a86a00">PCT option: one international application within 12 months of first filing preserves rights in most of the world while you decide where to spend</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.4 — The patent journey from filing to grant.</span> Process under RA 8293 as administered by <a href="https://www.ipophil.gov.ph/" target="_blank" rel="noopener">IPOPHL</a>; international route via the <a href="https://www.wipo.int/pct/en/" target="_blank" rel="noopener">Patent Cooperation Treaty (WIPO)</a>.</figcaption>
+  </figure>
+  <p>The <strong>utility model</strong> deserves its own strategic paragraph. It protects the same kind of subject matter as a patent but is registered <em>without</em> inventive-step examination — faster, far cheaper, and correspondingly weaker and shorter (seven years, no renewal). For the incremental engineering that dominates university instrument work — a better mount clamp, a cleverer baffle, a low-cost drive — the utility model is often the honest right: the improvement is new and useful but might not survive an obviousness challenge, and seven years exceeds the commercial life of most laboratory hardware anyway. Filipino university ITSOs (Section 5.6) push utility models hard for exactly these reasons.</p>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>Run the exclusion clause against your own work: the exoplanet you detect, the period-luminosity relation you fit, the dark-matter profile you infer — <em>discoveries and theories, unpatentable by design</em>, and rightly so; they are the commons your science feeds. The spectrograph configuration, the detector cooling method, the observing-scheduler embodied in a running system — those are candidate inventions. The line between finding and making is the line between Sections 22 and 21.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>The thesis-defense novelty suicide: a public defense, an uploaded abstract, or a conference poster is <em>prior art against your own later filing</em>. The grace period may save a Philippine application; it will not always save a foreign one. If an invention matters, the invention disclosure goes in before the abstract goes out.</aside>
+</section>
+
+<!-- ============ 5.4 ============ -->
+<section id="t4">
+  <h2><span class="secno">5.4</span>Copyright, Software, and Data: The Rights You Already Own</h2>
+  <p class="lede">While patents must be won, copyright simply happens: the moment your paper, code, figure, or lecture pack is fixed in some medium, the right exists — no registration, no fee, no notice required (registration and deposit exist and help as evidence, but they do not create the right).</p>
+  <p>Copyright protects <strong>original expression</strong>, and the Code lists computer programs among protected literary works — which means every reduction pipeline, scheduler, and control script your project writes is born copyrighted, with economic rights (reproduction, adaptation, distribution) that last in general for the author's life plus fifty years, and <strong>moral rights</strong> (attribution, integrity) that Philippine law takes seriously. What copyright does <em>not</em> protect matters just as much to a scientist: <strong>ideas, procedures, methods, discoveries, and data as such</strong>. The measured magnitudes in your catalog are facts — free for all — even though your database's original selection and arrangement, your prose describing it, and your plots are protected expression. There is no separate database right in Philippine law; a well-chosen license does the work instead.</p>
+  <p>This is where Chapter 2's open science returns wearing legal clothes. <strong>Open licensing is copyright, exercised</strong> — a Creative Commons license on your data paper, an OSI-approved license on your pipeline, are grants of permission that only an owner can give. The practical sequence for a project: know what you own (code, text, figures — automatically), decide what the funder and the UNESCO-era data-management plan require to be open, and attach the license that says so explicitly. Unlicensed public code is not open science; it is legal ambiguity with a repository URL. Note also <strong>works of the government</strong>: Philippine law places official government works outside copyright's usual grip (with conditions), one more reason publicly funded outputs default toward openness.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The scientist's copyright triangle: <strong>facts are free; expression is owned; licenses are how owners share.</strong> Every dataset release decision is a walk around this triangle — and your data-management plan is its documentation.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Write the licensing table now, not at publication: for each expected output (pipeline, catalog, paper, teaching modules), one row naming the owner (per RA 10055 — next section), the license, and the release timing. Five rows, one page, and both the open-science reviewer and the IP reviewer are satisfied at once.</aside>
+</section>
+
+<!-- ============ 5.5 ============ -->
+<section id="t5">
+  <h2><span class="secno">5.5</span>RA 10055: The Philippine Technology Transfer Act</h2>
+  <p class="lede">Now the statute your Case Analysis has been circling. Before 2010, IP from government-funded research sat in an ownership fog — formally with funding agencies that had no capacity to commercialize, practically with no one — and inventions died in reports. RA 10055 (the <strong>Philippine Technology Transfer Act of 2009</strong>, signed 2010), modeled on the American Bayh-Dole Act, dispersed the fog with one central rule.</p>
+  <p><strong>The rule: ownership vests in the research development institution.</strong> IP generated from research funded by <strong>government funding agencies (GFAs)</strong> — DOST and its councils, other agencies — belongs as a default to the <strong>research development institution (RDI)</strong> that actually performed the work: the university, the government research institute, the lab. The theory is managerial, not sentimental: the performing institution is closest to the invention, best placed to protect and commercialize it, and most motivated when it owns the result. In exchange, the Act loads the RDI with duties and reserves rights to the public:</p>
+  <ul class="plain">
+    <li><strong>Disclosure and diligence</strong> — the RDI must have researchers disclose inventions, must decide whether to protect them, and must actually pursue commercialization rather than warehouse rights;</li>
+    <li><strong>Government reserved rights</strong> — the GFA keeps a royalty-free license to use the IP for government purposes, and <strong>march-in style powers</strong> let government act (require licensing) in extreme cases: national emergency, public interest, or the RDI's failure to commercialize within a reasonable time;</li>
+    <li><strong>Revenue sharing</strong> — commercialization income is shared between the RDI and the <strong>researchers who created the IP</strong>, on terms fixed by institutional policy under the Act and its IRR — the researcher's legal right to a fair share of what their invention earns;</li>
+    <li><strong>Commercialization freedom</strong> — RDIs may license, assign, or form <strong>spin-off companies</strong>, and researchers may be allowed equity or roles in them, within conflict-of-interest safeguards.</li>
+  </ul>
+  <figure class="fig">
+    <svg viewBox="0 0 900 430" role="img" aria-label="RA 10055 ownership and revenue flow">
+      <g font-size="11.5" font-weight="800">
+        <rect x="40" y="24" width="230" height="76" rx="10" fill="#1b2a4a"/>
+        <text x="155" y="52" text-anchor="middle" fill="#fff">GFA · funding agency</text>
+        <text x="155" y="72" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">DOST · councils · other agencies</text>
+        <text x="155" y="88" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">public money in</text>
+        <rect x="335" y="24" width="230" height="76" rx="10" fill="#1e7d4f" stroke="#c9a227" stroke-width="3.5"/>
+        <text x="450" y="52" text-anchor="middle" fill="#fff">RDI · owns the IP ★</text>
+        <text x="450" y="72" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">university · institute — the</text>
+        <text x="450" y="88" text-anchor="middle" font-size="9.5" font-weight="400" fill="#d7f0dc">performing institution, by default</text>
+        <rect x="630" y="24" width="230" height="76" rx="10" fill="#27406b"/>
+        <text x="745" y="52" text-anchor="middle" fill="#fff">RESEARCHERS</text>
+        <text x="745" y="72" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">disclose inventions · entitled to a</text>
+        <text x="745" y="88" text-anchor="middle" font-size="9.5" font-weight="400" fill="#c8d2e4">share of revenues · may join spin-offs</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none" marker-end="url(#tta)">
+        <line x1="270" y1="62" x2="330" y2="62"/>
+        <line x1="565" y1="62" x2="625" y2="62"/>
+      </g>
+      <defs><marker id="tta" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <text x="300" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#a86a00">funds</text>
+      <text x="595" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#a86a00">disclose</text>
+      <g stroke="#e3e0d8" stroke-width="2"><line x1="450" y1="100" x2="450" y2="140"/></g>
+      <rect x="285" y="144" width="330" height="64" rx="10" fill="#a86a00"/>
+      <text x="450" y="170" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fff">PROTECT &amp; COMMERCIALIZE</text>
+      <text x="450" y="190" text-anchor="middle" font-size="9.5" fill="#f3e2b3">file with IPOPHL · license · assign · spin off — with diligence</text>
+      <g stroke="#e3e0d8" stroke-width="2"><line x1="360" y1="208" x2="235" y2="248"/><line x1="540" y1="208" x2="665" y2="248"/></g>
+      <g font-size="11" font-weight="800">
+        <rect x="90" y="252" width="290" height="70" rx="10" fill="#6b4fa1"/>
+        <text x="235" y="278" text-anchor="middle" fill="#fff">REVENUES SHARED</text>
+        <text x="235" y="296" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">between RDI and its researchers,</text>
+        <text x="235" y="310" text-anchor="middle" font-size="9.5" font-weight="400" fill="#ddd2f0">per institutional policy under the Act</text>
+        <rect x="520" y="252" width="290" height="70" rx="10" fill="#b3423a"/>
+        <text x="665" y="274" text-anchor="middle" fill="#fff">PUBLIC'S RESERVED RIGHTS</text>
+        <text x="665" y="292" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f4cfcc">gov't-use license · march-in for emergency,</text>
+        <text x="665" y="306" text-anchor="middle" font-size="9.5" font-weight="400" fill="#f4cfcc">public interest, or failure to commercialize</text>
+      </g>
+      <rect x="150" y="352" width="600" height="42" rx="9" fill="#f6edd2"/>
+      <text x="450" y="370" text-anchor="middle" font-size="10.5" font-weight="800" fill="#a86a00">THE BARGAIN: public money → institutional ownership → diligent use → shared returns → protected public interest</text>
+      <text x="450" y="386" text-anchor="middle" font-size="9.5" fill="#4a3a08">the Bayh-Dole logic, localized — and the framework behind your Case Analysis items 9–12</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.5 — Ownership and revenue flow under RA 10055.</span> Full text via <a href="https://lawphil.net/statutes/repacts/ra2010/ra_10055_2010.html" target="_blank" rel="noopener">LawPhil</a>; implementing context at <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">DOST</a> and <a href="https://www.ipophil.gov.ph/" target="_blank" rel="noopener">IPOPHL</a>.</figcaption>
+  </figure>
+  <h3>Reading the Act Into Your Case Analysis</h3>
+  <p>Your Case Analysis scenarios about Prof. Lahk Son's Project UWU are RA 10055 questions wearing narrative clothes, and the Act's machinery answers them in IRAC form. <em>Who owns the instrument produced by a DOST-funded university project?</em> Distinguish the layers first: the <strong>IP</strong> (the invention embodied in the instrument) vests by default in the RDI — the university that performed the research — not in the funding agency and not in the project leader personally; the <strong>physical equipment</strong> bought with project funds follows the funding agency's property and accounting rules (the DOST-GIA guidelines you will read in Week 10), which is a different question with a different answer. <em>Can a departing project leader take the project, team, and equipment to another university?</em> The grant is an agreement between the GFA and the RDI — not the leader's personal property — so moving it requires the parties' consent, not a resignation letter. <em>Can protection be applied for during an extension period?</em> The duty to disclose and protect attaches to IP generated from the funded research whenever it arises within the project's legal life — which is exactly why you must read the grant agreement and the IRR rather than assume. Notice the recurring analytic move: <strong>separate the IP from the chattel from the grant relationship</strong>, then apply each body of rules to its own object.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>RA 10055's genius is the alignment of incentives: the institution that can act owns; the inventors who created share; the public that paid keeps a safety valve. When a case scenario feels confusing, ask <em>which of the three interests is being violated</em> — the answer usually names the section you need.</aside>
+  <aside class="note ph"><span class="tag">PH Context</span><br>The Act works in tandem with the Magna Carta you will study next chapter: RA 10055 lets researchers <em>earn from inventions</em>; RA 8439/11312 ensures they are <em>paid fairly as scientists</em>. Together they answer the brain-drain problem with money where the talent is — remember this pairing when the Week 10 cases ask about researcher compensation.</aside>
+</section>
+
+<!-- ============ 5.6 ============ -->
+<section id="t6">
+  <h2><span class="secno">5.6</span>Technology Transfer in Practice: Instruments, Agreements, Offices</h2>
+  <p class="lede">Ownership is potential; transfer is motion. The working instruments of technology transfer are a small set of agreements every project manager should recognize on sight — plus the institutional offices built to wield them.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 420" role="img" aria-label="Technology transfer instruments map">
+      <rect x="330" y="16" width="240" height="58" rx="10" fill="#12203a"/>
+      <text x="450" y="40" text-anchor="middle" font-size="12.5" font-weight="800" fill="#f6edd2">RDI-OWNED TECHNOLOGY</text>
+      <text x="450" y="60" text-anchor="middle" font-size="9.5" fill="#c8d2e4">protected under RA 8293 · owned under RA 10055</text>
+      <g stroke="#e3e0d8" stroke-width="2">
+        <line x1="360" y1="74" x2="140" y2="112"/><line x1="430" y1="74" x2="345" y2="112"/><line x1="470" y1="74" x2="555" y2="112"/><line x1="540" y1="74" x2="760" y2="112"/>
+      </g>
+      <g font-size="11" font-weight="800">
+        <rect x="40"  y="116" width="200" height="104" rx="10" fill="#1e7d4f"/>
+        <text x="140" y="140" text-anchor="middle" fill="#fff">LICENSE</text>
+        <text x="140" y="160" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">permission to use, ownership kept</text>
+        <text x="140" y="176" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">exclusive / non-exclusive · field &amp;</text>
+        <text x="140" y="190" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">territory limits · royalties</text>
+        <text x="140" y="210" text-anchor="middle" font-size="9" font-weight="700" fill="#ffe9a8">the workhorse of academia</text>
+        <rect x="245" y="116" width="200" height="104" rx="10" fill="#a86a00"/>
+        <text x="345" y="140" text-anchor="middle" fill="#fff">ASSIGNMENT</text>
+        <text x="345" y="160" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">ownership itself transferred —</text>
+        <text x="345" y="176" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">a sale, not a permission</text>
+        <text x="345" y="202" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">rare &amp; scrutinized for public IP</text>
+        <rect x="455" y="116" width="200" height="104" rx="10" fill="#1d5fbf"/>
+        <text x="555" y="140" text-anchor="middle" fill="#fff">MTA · NDA · RCA</text>
+        <text x="555" y="160" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">materials transfer (samples, cells,</text>
+        <text x="555" y="174" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">coatings) · confidentiality before</text>
+        <text x="555" y="188" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">filing · research collaboration</text>
+        <text x="555" y="208" text-anchor="middle" font-size="9" font-weight="700" fill="#cfe0f7">the everyday plumbing</text>
+        <rect x="660" y="116" width="200" height="104" rx="10" fill="#6b4fa1"/>
+        <text x="760" y="140" text-anchor="middle" fill="#fff">SPIN-OFF</text>
+        <text x="760" y="160" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">new company built around the</text>
+        <text x="760" y="174" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">technology — RDI licenses in,</text>
+        <text x="760" y="188" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">researchers may hold roles/equity</text>
+        <text x="760" y="208" text-anchor="middle" font-size="9" font-weight="700" fill="#e8dcfa">highest risk, highest ceiling</text>
+      </g>
+      <rect x="120" y="250" width="660" height="66" rx="10" fill="#fbeceb" stroke="#b3423a" stroke-width="1.8"/>
+      <text x="450" y="274" text-anchor="middle" font-size="11" font-weight="800" fill="#b3423a">THE IP CODE REGULATES TTA TERMS</text>
+      <text x="450" y="292" text-anchor="middle" font-size="9.5" fill="#1c2433">technology transfer arrangements must avoid prohibited clauses (e.g., coerced grant-backs, restraints on research and improvement,</text>
+      <text x="450" y="306" text-anchor="middle" font-size="9.5" fill="#1c2433">unfair tie-ins) and carry mandatory provisions — unfair terms can void the arrangement's protection</text>
+      <rect x="120" y="336" width="660" height="58" rx="10" fill="#e8f5ee" stroke="#1e7d4f" stroke-width="1.8"/>
+      <text x="450" y="358" text-anchor="middle" font-size="11" font-weight="800" fill="#1e7d4f">ITSO: THE UNIVERSITY'S IP FRONT DESK</text>
+      <text x="450" y="376" text-anchor="middle" font-size="9.5" fill="#1c2433">IPOPHL's Innovation and Technology Support Office network puts patent-search, drafting, and filing capability inside universities — your first stop after an invention disclosure</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.6 — The instruments of technology transfer, the IP Code's guardrails on TTA terms, and the ITSO network.</span> Voluntary-licensing provisions in RA 8293; ITSO program at <a href="https://www.ipophil.gov.ph/" target="_blank" rel="noopener">IPOPHL</a>.</figcaption>
+  </figure>
+  <h3>Choosing the Instrument</h3>
+  <p>The choice tracks two questions: <em>who should own</em>, and <em>how wide should use be</em>. Keep ownership and license <strong>non-exclusively</strong> when the technology is an enabling method many users should adopt (a calibration technique, an open dataset's commercial mirror); license <strong>exclusively, bounded by field and territory</strong>, when a single licensee must invest heavily to bring the product to market and needs protection to justify it (an instrument manufacturer tooling up a production line); <strong>assign</strong> almost never with publicly funded IP — an assignment is irreversible, and RA 10055's diligence-and-reserved-rights architecture presumes the RDI stays owner. <strong>MTAs and NDAs</strong> are the humble instruments that prevent disasters: the NDA lets you talk to a manufacturer <em>before</em> filing without destroying novelty; the MTA moves a coated sample or detector chip with its ownership, use limits, and publication rights spelled out. Every one of these is a place where the IP Code's TTA rules apply — Philippine law polices the fairness of transfer terms, prohibiting clauses that would shackle the licensee's research freedom or coerce back improvements, a consumer-protection instinct applied to knowledge markets.</p>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Name your ITSO (or the office performing that function) in the proposal's IP section, with the disclosure-to-decision workflow of Section 5.8. Reviewers read an unnamed "we will protect our IP" the way they read "we will obey all laws" (Ch. 4): as a sentence that cannot be false and therefore says nothing.</aside>
+  <aside class="note pit"><span class="tag">Common Pitfall</span><br>Signing the collaborator's "standard" agreement unread. Foreign partners' templates routinely assign all foreground IP to the partner, or bind you to their governing law. Under RA 10055 an RDI's negotiators have statutory backing to push back — but only if someone on the project reads the draft. That someone, on a small project, is you.</aside>
+</section>
+
+<!-- ============ 5.7 ============ -->
+<section id="t7">
+  <h2><span class="secno">5.7</span>The IPOPHL Memorandum Circulars: Reading the Operational Layer</h2>
+  <p class="lede">Your syllabus assigns five IPOPHL memorandum circulars — Nos. 2020-023, 2020-024, 2020-025, 2022-016, and 2023-002 — and their purpose in this course is double: the specific procedures they carry, and the <em>skill of reading circulars at all</em>.</p>
+  <p>Place them first in the hierarchy you built in Chapter 3 (Figure 3.1): memorandum circulars are <strong>administrative issuances</strong> — the layer below the IP Code and its IRRs, where the office translates statute into current, operational procedure: filing modalities and electronic services, fee schedules and reductions, examination and registration guidelines, and program mechanics for the office's services. This is the layer that changes most often — circulars amend, supersede, and consolidate one another as practice evolves — which is why professionals cite them by number and date, and why the authoritative text is always the current one posted by IPOPHL, not a summary. Read each assigned circular with the Chapter 3 method: <em>what does it operationalize (which statute or rule above it)? whom does it bind? what procedure, fee, or deadline does it change?</em> — and then ask the Chapter 5 question: <em>which step of my disclosure-to-filing workflow does this circular govern?</em></p>
+  <p>The deeper lesson is one you have now met three times: statutes give principles, IRRs give structure, and the circular layer gives the <strong>procedure you will actually follow on filing day</strong> — the form, the portal, the fee, the deadline. A research manager who has never read a circular has never actually filed anything; the five in your reading list are your supervised first ascent of the operational layer.</p>
+  <aside class="note key"><span class="tag">Key Concept</span><br>Currency check before citing: circulars supersede one another. The professional habit — verify on the <a href="https://www.ipophil.gov.ph/memorandum-circulars/" target="_blank" rel="noopener">IPOPHL memorandum circulars page</a> that the number you cite is still in force — is thirty seconds that distinguishes a practitioner from a note-taker.</aside>
+  <aside class="note prop"><span class="tag">For the Proposal</span><br>Your budget meets this layer directly: IPOPHL fees (with reductions for small entities and schools, per the current fee circulars) are legitimate line items in an R&amp;D budget that promises protected outputs. A proposal that budgets zero pesos for the protection it promises is telling the panel it has not read the operational layer.</aside>
+</section>
+
+<!-- ============ 5.8 ============ -->
+<section id="t8">
+  <h2><span class="secno">5.8</span>Synthesis: The IP Strategy of Your Proposal</h2>
+  <p class="lede">Everything above compresses into two figures and a workflow — the pages of your Week-12 proposal where IP stops being law and becomes management.</p>
+  <h3>The Timing Problem</h3>
+  <p>Academic incentives say publish immediately; patent law says any publication is prior art. The reconciliation is sequencing, not sacrifice:</p>
+  <figure class="fig">
+    <svg viewBox="0 0 900 330" role="img" aria-label="Publish or patent timing decision">
+      <rect x="30" y="30" width="250" height="60" rx="10" fill="#12203a"/>
+      <text x="155" y="55" text-anchor="middle" font-size="11.5" font-weight="800" fill="#f6edd2">RESULT IN HAND</text>
+      <text x="155" y="75" text-anchor="middle" font-size="9.5" fill="#c8d2e4">is there a candidate invention inside?</text>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none" marker-end="url(#pp)">
+        <line x1="280" y1="60" x2="340" y2="60"/>
+        <line x1="470" y1="90" x2="470" y2="120"/>
+        <line x1="600" y1="60" x2="660" y2="60"/>
+      </g>
+      <defs><marker id="pp" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <rect x="345" y="30" width="250" height="60" rx="10" fill="#a86a00"/>
+      <text x="470" y="55" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fff">NO — pure discovery/theory</text>
+      <text x="470" y="75" text-anchor="middle" font-size="9.5" fill="#f3e2b3">unpatentable by Sec. 22 anyway</text>
+      <rect x="665" y="30" width="205" height="60" rx="10" fill="#1e7d4f"/>
+      <text x="767" y="55" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fff">PUBLISH FREELY</text>
+      <text x="767" y="75" text-anchor="middle" font-size="9.5" fill="#d7f0dc">openness costs nothing here</text>
+      <rect x="345" y="124" width="250" height="60" rx="10" fill="#1b2a4a"/>
+      <text x="470" y="149" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fff">YES — file FIRST, then publish</text>
+      <text x="470" y="169" text-anchor="middle" font-size="9.5" fill="#c8d2e4">filing date fixed → the paper can follow immediately</text>
+      <g stroke="#e3e0d8" stroke-width="2"><line x1="470" y1="184" x2="250" y2="220"/><line x1="470" y1="184" x2="690" y2="220"/></g>
+      <rect x="80" y="224" width="340" height="70" rx="10" fill="#e8f5ee" stroke="#1e7d4f" stroke-width="1.6"/>
+      <text x="250" y="248" text-anchor="middle" font-size="10.5" font-weight="800" fill="#1e7d4f">DISCIPLINED PATH</text>
+      <text x="250" y="266" text-anchor="middle" font-size="9.5" fill="#1c2433">invention disclosure → ITSO evaluation → file (patent or</text>
+      <text x="250" y="280" text-anchor="middle" font-size="9.5" fill="#1c2433">utility model) → submit the paper the same week</text>
+      <rect x="480" y="224" width="340" height="70" rx="10" fill="#fbeceb" stroke="#b3423a" stroke-width="1.6"/>
+      <text x="650" y="248" text-anchor="middle" font-size="10.5" font-weight="800" fill="#b3423a">SEATBELT PATH (already disclosed)</text>
+      <text x="650" y="266" text-anchor="middle" font-size="9.5" fill="#1c2433">own disclosure &lt; 12 months ago → grace period may save a</text>
+      <text x="650" y="280" text-anchor="middle" font-size="9.5" fill="#1c2433">PH filing — foreign rights may already be lost · file NOW</text>
+      <text x="450" y="318" text-anchor="middle" font-size="10.5" font-style="italic" fill="#4a5568">Open science and protection are compatible — the entire trick is the order of two dates.</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.7 — The publish-or-patent timing decision.</span> Grace period under RA 8293, Sec. 25; strategy per standard university technology-transfer practice (see <a href="https://www.wipo.int/publications/en/" target="_blank" rel="noopener">WIPO guides</a>).</figcaption>
+  </figure>
+  <h3>The Workflow That Makes It Routine</h3>
+  <figure class="fig">
+    <svg viewBox="0 0 900 250" role="img" aria-label="Invention disclosure workflow inside an RDI">
+      <g font-size="10.5" font-weight="800">
+        <rect x="20"  y="70" width="150" height="80" rx="10" fill="#1b2a4a"/>
+        <text x="95" y="100" text-anchor="middle" fill="#fff">LAB RECORDS</text>
+        <text x="95" y="118" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">notebooks · versioned</text>
+        <text x="95" y="132" text-anchor="middle" font-size="9" font-weight="400" fill="#c8d2e4">code · dated data</text>
+        <rect x="196" y="70" width="150" height="80" rx="10" fill="#1e7d4f"/>
+        <text x="271" y="100" text-anchor="middle" fill="#fff">INVENTION</text>
+        <text x="271" y="115" text-anchor="middle" fill="#fff">DISCLOSURE</text>
+        <text x="271" y="133" text-anchor="middle" font-size="9" font-weight="400" fill="#d7f0dc">researcher's duty (RA 10055)</text>
+        <rect x="372" y="70" width="150" height="80" rx="10" fill="#a86a00"/>
+        <text x="447" y="100" text-anchor="middle" fill="#fff">ITSO EVALUATION</text>
+        <text x="447" y="118" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">prior-art search · three tests ·</text>
+        <text x="447" y="132" text-anchor="middle" font-size="9" font-weight="400" fill="#f3e2b3">patent vs UM vs secret vs publish</text>
+        <rect x="548" y="70" width="150" height="80" rx="10" fill="#1d5fbf"/>
+        <text x="623" y="100" text-anchor="middle" fill="#fff">DECISION &amp; FILING</text>
+        <text x="623" y="118" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">file with IPOPHL (fees per</text>
+        <text x="623" y="132" text-anchor="middle" font-size="9" font-weight="400" fill="#d4e4fb">current circulars) · then publish</text>
+        <rect x="724" y="70" width="150" height="80" rx="10" fill="#6b4fa1"/>
+        <text x="799" y="100" text-anchor="middle" fill="#fff">TRANSFER</text>
+        <text x="799" y="118" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">license · MTA · spin-off —</text>
+        <text x="799" y="132" text-anchor="middle" font-size="9" font-weight="400" fill="#ddd2f0">revenues shared with inventors</text>
+      </g>
+      <g stroke="#c9a227" stroke-width="2.4" fill="none" marker-end="url(#wf)">
+        <line x1="170" y1="110" x2="192" y2="110"/><line x1="346" y1="110" x2="368" y2="110"/><line x1="522" y1="110" x2="544" y2="110"/><line x1="698" y1="110" x2="720" y2="110"/>
+      </g>
+      <defs><marker id="wf" markerWidth="9" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 9 4, 0 8" fill="#c9a227"/></marker></defs>
+      <rect x="100" y="180" width="700" height="40" rx="9" fill="#f6edd2"/>
+      <text x="450" y="205" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a86a00">NDAs guard every external conversation before the filing date · the licensing table (Sec. 5.4) covers everything the workflow decides to keep open</text>
+    </svg>
+    <figcaption><span class="fignum">Figure 5.8 — The disclosure-to-transfer workflow inside a research institution</span> — RA 10055's duties turned into a repeatable pipeline, with the ITSO as its engine.</figcaption>
+  </figure>
+  <p>Close with the course's standing move — the compressed-IRAC paragraph, this time for your proposal's IP section: <em>"(R) Under RA 10055, IP from this GFA-funded project vests in the University as RDI, with revenue sharing to the researchers and reserved government rights; (A) the project will operate the disclosure workflow above — all inventions disclosed to the ITSO before any public presentation, protection decisions within the evaluation period, open-licensed release of the pipeline and dataset per the licensing table; (C) the project's IP practice is therefore compliant, protective of both openness and value, and auditable."</em> Three sentences, and the panel knows you can manage what you might invent.</p>
+  <aside class="note astro"><span class="tag">Astronomy in Focus</span><br>A realistic TE01 portfolio: the meteor-camera <em>enclosure and mount</em> — utility model; the <em>detection pipeline</em> — copyright, open-licensed after filing decisions; the <em>trigger method</em>, if genuinely non-obvious — patent candidate; the network's <em>name and logo</em> for outreach — trademark; the fireball <em>events themselves</em> — facts, free to the world, as science demands. One small project, the whole family of Figure 5.2 at work.</aside>
+  <aside class="note key"><span class="tag">Key Concept</span><br>The chapter in one sentence: <strong>identify what you have (5.2–5.4), know who owns it (5.5), move it deliberately (5.6), follow the current procedure (5.7), and sequence disclosure so openness and protection both survive (5.8).</strong></aside>
+</section>
+
+<!-- ============ MASTERY TEST ============ -->
+<section id="test">
+  <h2><span class="secno">✓</span>Chapter 5 Mastery Test — 20-Item HOTS Multiple Choice</h2>
+  <p>Each item targets applying, analyzing, or evaluating — several in Case Recitation style. Choose your answer before opening the dropdown. Suggested protocol: answer all 20 before revealing any explanation.</p>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A colleague says: "Patents are anti-science — they lock knowledge away." Based on Section 5.1's account of the bargain, the most accurate correction is:</p>
+    <ol class="opts"><li>Patents keep inventions permanently secret</li><li>Patents trade <em>disclosure</em> for <em>temporary</em> exclusivity: the application is published, teaching the invention to everyone, and the right expires into the public domain — the system is timed openness, though its costs (pricing, thickets) are real and worth managing</li><li>Patents are free of any social cost, so the criticism is baseless</li><li>Science and patents concern different planets</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The bargain's two halves — publication now (patents are among the world's largest technical libraries) and expiry later — are what distinguish a patent from a secret. The answer also keeps the honest half of the criticism: exclusivity has costs, which is why strategy (Section 5.8) sometimes chooses publication or open licensing instead. A describes trade secrets; C overcorrects into advocacy.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Applying</span></div>
+    <p class="stem">Match the creation to the right: (1) a new low-vibration mount clamp; (2) the observatory's control software; (3) the network's name and logo for outreach; (4) the sleek housing shape of a student-built telescope.</p>
+    <ol class="opts"><li>1 → copyright; 2 → patent; 3 → design; 4 → trademark</li><li>1 → patent or utility model; 2 → copyright; 3 → trademark; 4 → industrial design</li><li>1 → trademark; 2 → trade secret; 3 → copyright; 4 → patent</li><li>All four → copyright, since all are creative</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Function (the clamp's technical solution) belongs to patent/utility model; expression (code) to copyright; commercial identity to trademark; ornamental appearance to industrial design — the three-axis map of Figure 5.2. D flattens the family into one right, which fails the moment you ask what each right actually protects.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Your team detects a previously unknown variable-star period relation. A well-meaning administrator urges: "Patent it before someone steals it!" The correct analysis is:</p>
+    <ol class="opts"><li>File immediately; relations are patentable if new</li><li>The relation is a discovery/scientific theory — excluded from patentability by the IP Code; it cannot be "stolen" in the patent sense, and the correct protections are priority of publication and attribution norms. Any patentable matter would lie in an instrument or embodied method built around it</li><li>Keep the relation a trade secret forever</li><li>Register it as a trademark</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The astronomer's clause: discoveries, theories, and mathematical methods are outside patentable subject matter — the commons science runs on. Scientific priority is protected by publication and citation ethics, not exclusivity. C would sabotage the science for no legal gain; D misunderstands trademarks entirely.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Applying</span></div>
+    <p class="stem">A graduate student presented her novel detector-cooling design at a local conference in October 2025, then filed a Philippine patent application in June 2026. A rival independently published a similar design in March 2026. On novelty, the best analysis is:</p>
+    <ol class="opts"><li>Her own October disclosure destroys her application; nothing can be done</li><li>The 12-month grace period can shield her application from her <em>own</em> October disclosure — but the rival's independent March publication is prior art the grace period does not erase, and it may defeat her claims</li><li>Both disclosures are ignored because she invented first</li><li>The rival's publication is irrelevant since it came after hers</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The grace period is inventor-specific: it forgives disclosures derived from the applicant within twelve months before filing, not the independent work of third parties. C imports first-to-invent logic into a first-to-file system. D misses that anything published before her <em>filing date</em> is prior art — the seatbelt saved her from herself, not from the world. File before you speak.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Two labs independently invent the same fiber positioner. Lab A invented in January but filed in August; Lab B invented in March and filed in May. Under Philippine law the patent goes to:</p>
+    <ol class="opts"><li>Lab A — first to invent</li><li>Lab B — first to file; the filing date, not the invention date, settles priority in the Philippine system</li><li>Both, jointly</li><li>Neither; simultaneous invention voids patentability</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> First-to-file is the rule: between independent inventors, the earlier application wins. This is why filing discipline — and the cheap, fast provisional strategies of a working ITSO — beat laboratory-notebook romanticism for priority purposes. The notebook still matters (enablement, derivation disputes, internal records), just not for the race itself.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Your ITSO recommends a utility model rather than a patent for a student's improved dew-heater controller. The strongest justification for that advice is:</p>
+    <ol class="opts"><li>Utility models impress panels more</li><li>The improvement is new and useful but arguably obvious to a skilled engineer; a utility model skips inventive-step examination, registers fast and cheap, and its 7-year unrenewable term comfortably covers the commercial life of small observatory hardware</li><li>Utility models last longer than patents</li><li>Patents are unavailable to students</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The utility model is the honest right for incremental engineering: it trades the inventive-step hurdle (and the stronger, longer right) for speed, cost, and certainty. The advice matches instrument realities — most lab hardware is superseded within seven years anyway. C is false (7 vs 20 years); D is false; A is not a legal reason.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the 18-month publication of patent applications matter <em>strategically</em>, not just procedurally?</p>
+    <ol class="opts"><li>It doesn't; publication is a formality</li><li>Because filing starts a countdown to compelled disclosure: whether or not the patent is ever granted, your specification becomes public at 18 months — so an applicant who might prefer secrecy if refused must decide <em>before filing</em> between the patent path and the trade-secret path</li><li>Because publication grants the patent automatically</li><li>Because it hides the invention until grant</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Filing is itself a disclosure decision: the system publishes applications, not just grants, so patent-or-secret is a fork taken at filing, not at grant. This is the deep reason the ITSO evaluation (Figure 5.8) weighs trade secrecy as a genuine alternative for process innovations that competitors could not reverse-engineer.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your project releases a star catalog. A commercial app copies the magnitudes and coordinates wholesale but writes its own descriptions and interface. Under Philippine copyright law, the best analysis is:</p>
+    <ol class="opts"><li>Full infringement — the numbers are yours</li><li>The measured values are facts, unprotected as such; your prose, figures, and any original selection/arrangement are protected expression. If the app took only the data, copyright gives little traction — which is why the release license (and its terms) was the real instrument of control</li><li>No rights exist in anything astronomical</li><li>The app must be shut down for plagiarism</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The scientist's copyright triangle: facts free, expression owned, licenses as the sharing instrument. With no separate database right in Philippine law, the license attached at release — its attribution, share-alike, or commercial terms — is what governs downstream use of the data. D confuses the ethical register (plagiarism) with the legal one, the Section 5.2 pitfall.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">"Our pipeline is on a public repository, so it's open source." The precise correction, per Section 5.4, is:</p>
+    <ol class="opts"><li>Correct — visibility equals openness</li><li>Public code without a license grants no rights: copyright is automatic, so would-be users legally cannot copy, modify, or redistribute until the owner attaches an explicit license — unlicensed public code is ambiguity, not openness</li><li>Code cannot be copyrighted, so no license is needed</li><li>Only companies need licenses</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Because copyright arises on creation, the default for any work — including posted code — is <em>all rights reserved</em>; open licensing is the owner's affirmative act of permission. The IP Code lists computer programs among protected works, so C fails at the statute's text. The fix costs one file: LICENSE.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">A DOST-funded university project produces a patentable water-sensing instrument. Under RA 10055's default rule, the IP belongs to:</p>
+    <ol class="opts"><li>DOST, as the source of funds</li><li>The project leader personally, as the brain of the work</li><li>The university, as the research development institution that performed the research — subject to disclosure duties, government reserved rights, and revenue sharing with the researchers</li><li>The Bureau of Treasury</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: C.</span> The Act's central rule vests ownership in the RDI — the performing institution — precisely because it is best placed to protect and commercialize, while the GFA keeps a government-use license and march-in powers and the researchers hold a statutory claim to a share of revenues. A restates the pre-2010 fog the Act dispersed; B confuses inventorship (a fact) with ownership (a legal allocation).</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">An RDI wins a patent with public funds, then lets it sleep for years while refusing all license requests. Under RA 10055's architecture, the soundest evaluation is:</p>
+    <ol class="opts"><li>Ownership is absolute; sleeping is the owner's privilege</li><li>The Act pairs ownership with diligence: commercialization is a duty, and persistent failure to exploit opens the door to government intervention — march-in style powers exist exactly for the warehoused-patent scenario, alongside emergencies and public interest</li><li>The patent transfers automatically to the inventors</li><li>The GFA must buy the patent back</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> RA 10055's bargain is conditional ownership: the RDI owns <em>because</em> it is expected to act, and the public's reserved rights are the safety valve when it does not. A describes private IP, not publicly funded IP; C and D invent mechanisms the Act does not contain. In case answers, name the interest violated — here, the public's — and the corresponding remedy follows.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Applying</span></div>
+    <p class="stem">In the Project UWU scenarios of your Case Analysis, Prof. Son claims the produced instrument "belongs to me as project leader and travels with me to my new university." The layered analysis this chapter teaches is:</p>
+    <ol class="opts"><li>He is right; leadership confers ownership</li><li>Separate the objects: the IP vests in the RDI (the university) under RA 10055, not in the leader personally; the physical equipment follows the funding agency's property rules under the grant; and the project itself is a GFA–RDI agreement that cannot be relocated by an individual's transfer — three objects, three rule-sets, none of them his to carry</li><li>Everything belongs to DOST forever</li><li>Ownership follows whoever physically holds the instrument</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The analytic move is separation: IP (RA 10055 → RDI), chattel (grant and government property rules), and the grant relationship (GFA–RDI consent required for changes). Once separated, each question answers cleanly — and the composite answer is that departure changes his employment, not the project's legal skeleton. This is the exact reasoning your 850-point Case Analysis rewards.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does RA 10055 mandate revenue sharing with researchers rather than leaving it to institutional generosity?</p>
+    <ol class="opts"><li>To make accounting more complex</li><li>Incentive alignment: the researchers are the source of future inventions, and a statutory share converts disclosure and commercialization from bureaucratic chores into personally rewarded acts — the Act's answer to labs that hide results or leave for industry</li><li>Because institutions are forbidden to hold money</li><li>To replace researcher salaries entirely</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The Act engineers motivation at each node: institutions own (so they act), researchers share (so they disclose), government reserves (so the public is safe). Reading statutory design as incentive design is the skill; the pairing with the Magna Carta's compensation reforms (Week 10) completes the picture of keeping scientific talent inside the system.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Applying</span></div>
+    <p class="stem">A telescope manufacturer offers to commercialize your team's patented spectrograph but demands: (a) assignment of the patent for a token ₱1, (b) a promise that the university will conduct no further research in spectroscopy, and (c) automatic ownership of all future university improvements. Under this chapter, your response should be:</p>
+    <ol class="opts"><li>Sign — industry knows best</li><li>Counter with an exclusive, field-limited <em>license</em> with royalties instead of assignment, and strike (b) and (c): restraints on research and coerced grant-backs are precisely the clause types the IP Code's technology-transfer rules prohibit, and assignment of publicly funded IP contradicts RA 10055's architecture</li><li>Reject all commercialization forever</li><li>Accept but keep the deal secret</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Each demand has a named counter: license-not-assignment preserves the RDI's conditional ownership; the research restraint and grant-back are on the prohibited-clauses list Philippine law polices in TTAs; and exclusivity bounded by field and royalty keeps the manufacturer's incentive intact. The instrument-selection logic of Section 5.6, applied under pressure.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">You need to discuss an unfiled invention with a potential manufacturing partner, and to send them a coated sample for testing. The correct instrument pairing is:</p>
+    <ol class="opts"><li>A press release and a courier pouch</li><li>An NDA before the conversation (protecting novelty and secrecy), and an MTA for the sample (fixing ownership, permitted uses, and publication rights of anything learned from it)</li><li>A patent assignment and a deed of sale</li><li>Nothing — trust is the foundation of business</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The everyday plumbing of Section 5.6: the NDA keeps the pre-filing conversation from becoming novelty-destroying prior art or a leaked secret; the MTA travels with the material so that possession never silently becomes ownership. A is novelty suicide with logistics; D is how universities learn the hard way.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">In the hierarchy of Chapter 3, the assigned IPOPHL memorandum circulars sit:</p>
+    <ol class="opts"><li>Above RA 8293, since they are newer</li><li>At the administrative-issuance layer: they operationalize the Code and its rules — filing modalities, fees, program mechanics — bind within that scope, change often, and must be checked for currency before citing; they can never contradict the statute above them</li><li>Outside the legal system entirely</li><li>At the constitutional layer</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Figure 3.1 again: statutes give principles, IRRs structure, circulars the procedure you follow on filing day. Their frequent supersession is why professionals verify the current number on IPOPHL's page before citing — the currency-check habit this chapter adds to your Chapter 3 toolkit. A repeats the recency fallacy from the Chapter 3 mastery test.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A proposal promises "patent-protected instrument outputs" but budgets nothing for filing fees or ITSO time, and its Gantt chart shows the results conference in Month 10 with no disclosure step before it. The sharpest review comment is:</p>
+    <ol class="opts"><li>"Add color to the Gantt chart."</li><li>"The IP plan is self-defeating: the conference in Month 10 will place the invention in the prior art before any filing, and the zero-peso protection budget shows the operational layer was never read — insert the disclosure→ITSO→file sequence before any public presentation and budget the fees"</li><li>"Patents are automatic, so nothing is missing"</li><li>"Delete the conference; scientists should not travel"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The comment stitches together three chapter threads: novelty destruction by own disclosure (5.3), the budget-line honesty test for promised protection (5.7), and the workflow that fixes both (5.8). D throws away the science communication instead of sequencing it — the false trade-off Figure 5.7 exists to dissolve.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your team's coating process gives mirrors 15% better reflectivity, cannot be detected or reverse-engineered from the finished mirror, and would be licensed to a handful of trusted facilities. The ITSO's strategy discussion should seriously weigh:</p>
+    <ol class="opts"><li>A billboard announcing the recipe</li><li>Trade-secret protection over patenting: the process is invisible in the product, secrecy is maintainable with NDAs and access controls, and a patent would publish the recipe at 18 months while being hard to police — the classic case where the unregistered right is the strong one</li><li>A trademark on the word "shiny"</li><li>Abandoning protection because processes are unprotectable</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The patent-versus-secret fork of Question 7, taken from the other side: patents suit inventions that products reveal (competitors could copy anyway); secrets suit processes that products conceal, where infringement would be undetectable and publication would be a gift. Coca-Cola logic, applied to optics — and a reminder that Figure 5.2's quietest box is sometimes the most valuable.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">How do this chapter's protection tools and Chapter 2's open-science commitments coexist in one honest proposal?</p>
+    <ol class="opts"><li>They cannot; choose a side</li><li>By object and by sequence: different outputs carry different regimes (data and papers open; a patentable device protected; the pipeline open-licensed after the filing decision), and openness follows filing in time — the licensing table plus the publish-after-filing rule make both commitments auditable at once</li><li>By hiding the open-science section from the IP reviewer</li><li>By making everything secret until the project ends</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The reconciliation this course has now built twice (Chapter 2's essay; Section 5.8): openness and protection apply to <em>different objects</em> on a <em>deliberate timeline</em>, and the documents that prove it are the licensing table and the disclosure workflow. A and D are the two lazy extremes; C is the dishonesty the honesty test exists to catch.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Synthesis: which single sentence best captures Chapter 5's place in the TE01 arc?</p>
+    <ol class="opts"><li>"IP law is a specialist topic researchers can safely skip."</li><li>"Having learned to design research (Ch. 1), align it (Ch. 2), and read its legal terrain (Chs. 3–4), the manager now learns to own its outputs deliberately: identify the rights, apply RA 10055's allocation, transfer with fair instruments, follow the current procedure, and sequence disclosure so openness and value both survive."</li><li>"Patents are the only output that matters."</li><li>"IP replaces the need for publications."</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The chapter is the ownership layer of the course's single continuing argument — the fundable, manageable, defensible R&amp;D proposal. C and D invert the 6Ps portfolio logic (publications remain a P); A is the outsourcing fallacy in its Chapter 5 costume, and by now you can name the counterexample from every preceding chapter.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section id="refs">
+  <h2><span class="secno">◈</span>References and Readings (Clickable)</h2>
+  <h3>Primary Texts</h3>
+  <ul class="plain">
+    <li>RA 8293 — Intellectual Property Code of the Philippines (1997, as amended) — <a href="https://lawphil.net/statutes/repacts/ra1997/ra_8293_1997.html" target="_blank" rel="noopener">LawPhil</a></li>
+    <li>RA 10055 — Philippine Technology Transfer Act of 2009 — <a href="https://lawphil.net/statutes/repacts/ra2010/ra_10055_2010.html" target="_blank" rel="noopener">LawPhil</a>; IRR and program materials via <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">DOST</a></li>
+    <li>IPOPHL Memorandum Circulars Nos. 2020-023, 2020-024, 2020-025, 2022-016, 2023-002 — current texts at the <a href="https://www.ipophil.gov.ph/memorandum-circulars/" target="_blank" rel="noopener">IPOPHL memorandum circulars page</a> (verify currency before citing)</li>
+  </ul>
+  <h3>Institutions and Systems</h3>
+  <ul class="plain">
+    <li>Intellectual Property Office of the Philippines (filing, fees, ITSO program) — <a href="https://www.ipophil.gov.ph/" target="_blank" rel="noopener">ipophil.gov.ph</a></li>
+    <li>World Intellectual Property Organization (PCT, Madrid, Berne; guides for universities) — <a href="https://www.wipo.int/" target="_blank" rel="noopener">wipo.int</a></li>
+    <li>DOST and sectoral councils (GIA rules interfacing with RA 10055 — Week 10 preview) — <a href="https://www.dost.gov.ph/" target="_blank" rel="noopener">dost.gov.ph</a></li>
+  </ul>
+  <h3>Context and Method</h3>
+  <ul class="plain">
+    <li>Bayh-Dole Act background (the model for RA 10055) — overview via <a href="https://www.wipo.int/publications/en/" target="_blank" rel="noopener">WIPO publications</a></li>
+    <li>Creative Commons licenses (open licensing as copyright exercised) — <a href="https://creativecommons.org/licenses/" target="_blank" rel="noopener">creativecommons.org</a> · Open Source Initiative — <a href="https://opensource.org/licenses" target="_blank" rel="noopener">opensource.org</a></li>
+    <li>UNESCO Recommendation on Open Science (the openness side of the timing problem) — <a href="https://www.unesco.org/en/open-science" target="_blank" rel="noopener">unesco.org/en/open-science</a></li>
+    <li>Official Gazette — <a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">officialgazette.gov.ph</a> · LawPhil — <a href="https://lawphil.net/" target="_blank" rel="noopener">lawphil.net</a></li>
+  </ul>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch4-lecture.html">&#8592; Ch. 4 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span> <span><a href="ch5-reinforcement.html">Ch. 5 Reinforcement</a></span> <span><a href="ch6-lecture.html">Ch. 6 Lecture &#8594;</a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 5 Lecture Pack · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>

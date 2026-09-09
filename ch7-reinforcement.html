@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TE01 · Chapter 7 Reinforcement Exercises — R&amp;D Management Principles and the Magna Carta</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-soft:#4a5568;
+    --navy:#1b2a4a; --navy-deep:#12203a;
+    --gold:#c9a227; --gold-soft:#f6edd2;
+    --paper:#fbfaf7; --card:#ffffff; --line:#e3e0d8;
+    --table-head:#f0eee7; --row-alt:#f8f7f2;
+    --key:#a86a00;   --key-bg:#fdf6e3;
+    --astro:#1d5fbf; --astro-bg:#eaf1fc;
+    --ph:#1e7d4f;    --ph-bg:#e8f5ee;
+    --pit:#b3423a;   --pit-bg:#fbeceb;
+    --prop:#6b4fa1;  --prop-bg:#f1ecf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16.5px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 70%,#27406b 100%);
+    color:#fff;padding:44px 20px 36px;text-align:center;border-bottom:5px solid var(--gold);
+  }
+  .hero .kicker{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c8d2e4;}
+  .hero .course{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px;}
+  .hero h1{font-size:2rem;font-weight:400;margin:20px auto 8px;max-width:860px;line-height:1.3;}
+  .hero .subtitle{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.92rem;color:#dbe3f0;max-width:760px;margin:0 auto;}
+
+  nav.toc{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,30,50,.08);}
+  nav.toc ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;list-style:none;max-width:1120px;margin:0 auto;padding:8px 12px;}
+  nav.toc a{font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:block;padding:6px 11px;border-radius:6px;color:var(--navy);text-decoration:none;font-size:.82rem;font-weight:600;}
+  nav.toc a:hover{background:var(--gold-soft);}
+
+  main{max-width:980px;margin:0 auto;padding:36px 22px 60px;}
+  section{margin-bottom:54px;}
+  h2{font-size:1.45rem;font-weight:700;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px;}
+  h2 .secno{color:var(--gold);margin-right:10px;font-weight:400;}
+  h3{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:1rem;color:var(--navy);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin-bottom:13px;}
+  .lede{font-size:1.06rem;}
+  ul.plain,ol.plain{padding-left:24px;margin-bottom:14px;}
+  ul.plain li,ol.plain li{margin-bottom:8px;}
+  em{color:inherit;}
+  a{color:#1d5fbf;}
+
+  /* ------ Annotations ------ */
+  aside.note{border-radius:0 10px 10px 0;padding:13px 17px;margin:16px 0;font-size:.93rem;line-height:1.6;}
+  aside.note .tag{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;display:inline-block;
+    font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  aside.key{background:var(--key-bg);border-left:4px solid var(--key);}
+  aside.key .tag{background:#f3e2b3;color:var(--key);}
+  aside.astro{background:var(--astro-bg);border-left:4px solid var(--astro);}
+  aside.astro .tag{background:#cfe0f7;color:var(--astro);}
+  aside.ph{background:var(--ph-bg);border-left:4px solid var(--ph);}
+  aside.ph .tag{background:#c4e7d3;color:var(--ph);}
+  aside.pit{background:var(--pit-bg);border-left:4px solid var(--pit);}
+  aside.pit .tag{background:#f4cfcc;color:var(--pit);}
+  aside.prop{background:var(--prop-bg);border-left:4px solid var(--prop);}
+  aside.prop .tag{background:#ddd2f0;color:var(--prop);}
+
+  /* ------ Tables ------ */
+  .tbl-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:.92rem;border:1px solid var(--line);}
+  th{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--table-head);color:var(--navy);text-align:left;padding:9px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  /* ------ Objectives box ------ */
+  .objectives{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .objectives h4{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+
+  /* ------ Figures ------ */
+  figure.fig{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  figure.fig svg{width:100%;height:auto;display:block;}
+  figure.fig svg text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+  figure.fig figcaption{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:12px;padding:10px 4px 6px;line-height:1.55;}
+  figure.fig .fignum{font-weight:800;color:var(--navy);}
+
+  /* ------ Quiz ------ */
+  .q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin:18px 0;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .qnum{font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .qnum .lvl{color:var(--ink-soft);font-weight:600;}
+  .stem{margin-bottom:12px;}
+  ol.opts{list-style-type:upper-alpha;padding-left:28px;margin-bottom:12px;}
+  ol.opts li{margin-bottom:6px;}
+  details.ans{background:var(--row-alt);border:1px solid var(--line);border-radius:8px;padding:0;}
+  details.ans summary{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;cursor:pointer;font-weight:700;font-size:.85rem;
+    color:var(--navy);padding:10px 16px;list-style:none;
+  }
+  details.ans summary::before{content:"▸ ";color:var(--gold);}
+  details.ans[open] summary::before{content:"▾ ";}
+  details.ans .body{padding:2px 18px 14px;font-size:.94rem;}
+  details.ans .correct{color:var(--ph);font-weight:700;}
+
+  footer{background:var(--navy-deep);color:#c8d2e4;text-align:center;padding:24px 20px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.82rem;border-top:4px solid var(--gold);}
+  @media print{nav.toc{display:none;}body{font-size:12px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Rizal Technological University · College of Arts and Sciences · Department of Earth and Space Sciences</div>
+  <div class="course">TE01 · Astronomy Project Development and Management</div>
+  <h1>Chapter 7 Reinforcement Exercises</h1>
+  <div class="subtitle">Principles of R&amp;D Management · DOST-GIA · RA 8439 · RA 11312 · S&amp;T HRD &amp; Qualification Standards · 20-Item HOTS Multiple Choice + 3-Item HOTS Essay · First Semester, AY 2026–2027</div>
+</header>
+
+<nav class="toc" aria-label="Exercise sections">
+  <ul>
+    <li><a href="index.html" style="color:#a86a00;font-weight:800;">&#8962; Course Home</a></li>
+    <li><a href="#howto">How to Use</a></li>
+    <li><a href="#mcq">Part I · Multiple Choice (20 items)</a></li>
+    <li><a href="#essay">Part II · Essay (3 items)</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="howto">
+  <div class="objectives">
+    <h4>How to Use This Reinforcement Set</h4>
+    <p>These exercises are <em>formative</em> — for building mastery after the Chapter 7 lecture, not for grading. All items are HOTS-level (applying, analyzing, evaluating, creating), most in Case Recitation style, and use fresh scenarios not found in the Mastery Test. This is also your direct rehearsal for the group Case Analysis: write the full IRAC responses for the essays before opening the dropdowns.</p>
+  </div>
+</section>
+
+<!-- ============ PART I ============ -->
+<section id="mcq">
+  <h2><span class="secno">I.</span>Reinforcement Multiple Choice — 20 HOTS Items</h2>
+
+  <div class="q"><div class="qnum">Question 1 · <span class="lvl">Applying</span></div>
+    <p class="stem">A GIA project's MOA names the university as implementing agency. The project leader resigns mid-project. What survives her departure, and why?</p>
+    <ol class="opts"><li>Nothing; projects are personal ventures</li><li>Everything institutional: the MOA (funder–RDI), the funds and their accountability, the equipment (government property), the IP allocation (RA 10055) — because none of these ever attached to her personally; the RDI proposes a replacement leader to the funder, and the project continues or is wound down by the parties, not by her exit</li><li>The project automatically transfers to her next employer</li><li>Only the Gantt chart survives</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The MOA is the spine, and it binds institutions. A leader's resignation is a staffing event inside a continuing institutional obligation — consequential, but not structural. This is the Prof. Son analysis run from the institution's chair instead of the departing leader's.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 2 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why do the GIA guidelines disqualify proponents with unliquidated prior grants from new funding?</p>
+    <ol class="opts"><li>Bureaucratic spite</li><li>Portfolio-level incentive design: liquidation discipline is unenforceable retail (project by project) but enforceable wholesale — making future funding conditional on past accountability converts closure from a courtesy into a gate, which is why Chapter 6 told you an unliquidated project can bar its leader <em>and institution</em> from the next grant</li><li>To reduce the number of scientists</li><li>Because liquidation is optional otherwise</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The funder's strongest lever is the next grant. Recognizing consequence-design (like counterpart funding and revenue sharing) tells you how seriously to schedule the closure work package — and why your institution's research office chases receipts with such feeling.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 3 · <span class="lvl">Applying</span></div>
+    <p class="stem">A government RI's guard, its accountant, and its telescope-operations technician all claim Magna Carta coverage. The correct triage is:</p>
+    <ol class="opts"><li>All covered; they share a building</li><li>Functions decide: the technician's work is directly an S&amp;T function (strong claim under "other S&amp;T personnel"); the accountant and guard perform administrative and security functions common to any agency — their claims are weak unless their actual duties are shown to be S&amp;T-specific; the building is irrelevant</li><li>None covered; only PhDs qualify</li><li>Coverage rotates annually among staff</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Function beats title, title beats building — the coverage triad. The technician is the easy case the Newton scenario shades toward; the accountant and guard mark the boundary where "in a science agency" stops meaning "doing science." Argue from duties, quote the definitions, and the triage writes itself.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 4 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A field team measuring volcanic-plume optical properties claims hazard allowance; a colleague doing the same analysis from archived data claims it too, "for parity." The conditions analysis:</p>
+    <ol class="opts"><li>Both get it; teams share everything</li><li>The field team's claim rests on actual exposure to hazardous conditions — the benefit's own eligibility trigger; the archival analyst, whatever her coverage, lacks the exposure the allowance compensates. Parity arguments cannot substitute for a benefit's stated conditions</li><li>Neither gets it; volcanoes are natural</li><li>Only the senior member gets it</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Each benefit carries its own conditions (the Figure 7.3 principle): hazard pay follows hazard, not team membership. Note this is the legitimate face of differential treatment — conditions applied evenly — in contrast to the Rotasyon pattern, where identical conditions were met and one person was still excluded.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 5 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">An RI head proposes granting Magna Carta benefits "by seniority tranche as funds allow — most senior first, newest last." Compared with the all-but-one exclusion, this scheme is:</p>
+    <ol class="opts"><li>Identical, and equally indefensible</li><li>Different in kind and closer to defensible — a neutral, uniform rule for phasing a genuinely constrained program is program-level rationing, not person-level exclusion; but it still demands scrutiny: the phasing rule must be genuinely neutral, temporary, documented, and consistent with what the IRR and appropriations actually permit, or it becomes discrimination with better paperwork</li><li>Perfect and beyond question</li><li>Unlawful because seniority is irrelevant to everything</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The two-layer analysis rewards precision: fund constraints can justify <em>program-level</em> design choices under lawful rules, never targeted exclusion. The evaluative skill is seeing that neutrality of rule matters — and that neutrality is a claim to verify (does the tranche line just happen to fall after the one disliked employee?), not to assume.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 6 · <span class="lvl">Applying</span></div>
+    <p class="stem">A case answer cites "Section 6, RA 8439" on a benefit that RA 11312 rewrote in 2019, for facts occurring in 2025. The defect and repair:</p>
+    <ol class="opts"><li>No defect; the original text is eternal</li><li>The Rule step quotes a superseded provision: for 2025 facts, the section <em>as amended</em> governs — the repair is to quote RA 8439's section as rewritten by the relevant section of RA 11312, stating the amendment relationship explicitly, and then re-run the Application against the current text</li><li>The defect is citing any statute at all</li><li>The repair is deleting the Rule step</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Statutes-as-amended discipline: the amendment rewrites the section, and post-amendment facts meet post-amendment law. An Application run against superseded text can reach the right result only by accident — and examiners who assigned <em>both</em> statutes are testing precisely whether you noticed which one speaks to your scenario.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 7 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why does the contractual track pay a premium <em>above</em> the plantilla rate rather than below it, given contractuals are "temporary"?</p>
+    <ol class="opts"><li>A drafting error never corrected</li><li>Because total compensation, not salary, is the comparison: the plantilla worker's package includes tenure, leave, GSIS, retirement, and benefits worth real money; the contractual worker gets none of these, so equal <em>total</em> compensation requires a higher <em>cash</em> salary — the premium prices the missing package, it does not out-rank it</li><li>To lure people away from permanent posts</li><li>Because projects have money to burn</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The premium is compensation arithmetic, not favoritism — and understanding it dissolves both directions of envy: the plantilla holder eyeing the bigger cash figure (Publico) and anyone imagining contractuals are overpaid. Total-package thinking is also how you'll cost your own PS lines honestly.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 8 · <span class="lvl">Applying</span></div>
+    <p class="stem">A plantilla researcher (₱71,511 monthly at her grade and step) is offered the equivalent contractual project post. Applying the GIA premium architecture, the project rate would be at most approximately:</p>
+    <ol class="opts"><li>₱71,511 — identical by law</li><li>₱85,813.20 — the plantilla rate × 1.20, the ceiling the premium architecture sets for the comparable contract-of-service engagement (subject to the current guidelines' exact terms)</li><li>₱143,022 — double, as danger pay</li><li>₱35,755.50 — half, as probation</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> 71,511 × 1.20 = 85,813.20 — the same computation as the Ursulan–Publico pair with fresh numbers, run forward instead of backward. In a case answer, show the multiplication, name the premium's rationale (the absent package), and cite the guidelines as the rate's source; the arithmetic is the argument.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 9 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A contractual project RA, engaged full-time for three years on consecutive project contracts, asks why she accrues no leave and no GSIS. The honest structural answer — and its policy edge — is:</p>
+    <ol class="opts"><li>She is lazy for asking</li><li>Her engagements are contract-of-service on the project track: the premium in her rate is the architecture's cash substitute for those benefits. The policy edge is real: serial contractual engagement doing permanent-shaped work is the system's known sore point — exactly the precarity the Magna Carta's designers worried about and the premium only partly answers</li><li>A payroll glitch; benefits will appear</li><li>Because she never applied for them</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Full-credit answers can hold both truths: the architecture is internally coherent (premium prices the package) <em>and</em> its edge cases are genuinely uncomfortable (serial project employment as de facto permanence). Naming the tension honestly — rather than pretending the design is seamless — is evaluation-level maturity examiners reward.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 10 · <span class="lvl">Applying</span></div>
+    <p class="stem">A resource-person honorarium case gives you: expert classification A, rate schedule in the current issuance, 3-hour engagement. Your answer earns full marks by:</p>
+    <ol class="opts"><li>Stating a final peso figure with no working</li><li>Showing the method as the product: classify the expert against the schedule's categories, quote the applicable per-hour rate with its issuance citation, multiply by the 3 compensable hours, present the arithmetic — and note any conditions the issuance attaches (approval requirements, caps)</li><li>Arguing honoraria are demeaning to experts</li><li>Substituting the expert's monthly salary</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> "Show computation" grades the chain, not the endpoint: classification → cited rate → hours → arithmetic → conditions. A bare figure is unverifiable (the MOV principle from Chapter 6, applied to your own answer); the method is what transfers to every honorarium case with different numbers.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 11 · <span class="lvl">Applying</span></div>
+    <p class="stem">Classify each: (1) a PAGASA researcher spends four months at PHIVOLCS on a joint hazard model, then returns; (2) a university physicist moves permanently to PhilSA; (3) an RI chemist works Tuesdays in another unit of the same RI.</p>
+    <ol class="opts"><li>1 detail · 2 transfer · 3 reassignment</li><li>1 secondment · 2 detail · 3 transfer</li><li>1 transfer · 2 reassignment · 3 detail</li><li>All three are secondments</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: A.</span> Government-to-government, temporary, same employer and pay → detail; permanent change of employer → transfer; movement within one agency → reassignment. Reserve secondment for the released-to-another-entity-with-right-of-return pattern (especially private hosts, per the S&amp;T framework). Four terms, cleanly partitioned — the examiner's favorite matching exercise.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 12 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">During Ms. Pink-style secondment to a private firm, who pays the researcher, and what must the arrangement document? The best-reasoned answer:</p>
+    <ol class="opts"><li>Nobody pays; prestige suffices</li><li>The secondment agreement decides — and that is the point: a lawful secondment is papered, specifying the compensation source and terms, the duration, the return right, and the treatment of her government item during absence; the analytical error to avoid is assuming defaults where the framework requires a documented arrangement</li><li>Both employers pay double salary automatically</li><li>The government pays her to work for the company</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Classification answers "what is this?"; the instrument answers "on what terms?" A secondment without its agreement is the personnel version of unlicensed public code (Ch. 5) — a status asserted without the document that gives it content. Case answers should name the required paper, not guess its contents.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 13 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">A brilliant Scientist III is offered the RI directorship. She hesitates: "I'd stop doing science." The Scientific Career System's relevance to her dilemma is:</p>
+    <ol class="opts"><li>None; dilemmas are personal</li><li>It removes the false fork: the SCS lets her continue rising — Scientist IV, V — in rank, pay, and prestige on research merit alone, so declining the directorship is no longer career suicide; the institution, meanwhile, should find a director who <em>wants</em> to manage (the dual ladder serving both sides)</li><li>It requires her to accept the directorship</li><li>It abolishes directorships</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The dual ladder in action: the SCS exists so that "promotion" and "leaving the bench" stop being synonyms. The institutional corollary matters too — managers drafted from reluctant scientists are the classic double loss the system was designed to end.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 14 · <span class="lvl">Applying</span></div>
+    <p class="stem">An RA 7687 scholar finishes her physics degree and immediately accepts a job abroad, service obligation unserved. The framework's response, correctly stated:</p>
+    <ol class="opts"><li>Congratulations and godspeed</li><li>The return-service obligation is enforceable: the scholarship's terms bind her to serve in-country, in-field, for the defined period, with default remedies (typically repayment with the program's prescribed consequences) — because the design is investment-and-return, not gift; her lawful paths are to serve, or to settle the obligation under the program's rules</li><li>Automatic imprisonment</li><li>Nothing; obligations expire at graduation</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The wall that keeps the pipeline holding water: service or settlement, per the program's terms. C overshoots into caricature (the remedies are civil/administrative, per the scholarship contract); D dissolves the design. Case answers should quote the obligation's source — the statute and the scholarship agreement — before naming consequences.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 15 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Your department hosts a Balik Scientist for one year. Which pairing of benefit-to-purpose is correctly matched?</p>
+    <ol class="opts"><li>Her incentives reward leaving again quickly</li><li>Program incentives (travel, allowances, facilitation, and for long-term awardees more substantial support) lower the personal cost of returning; the hosting institution supplies the platform (lab, students, project) that makes the return productive — the program pays for the bridge, the host makes the far side worth standing on</li><li>The host pays all costs; the program observes</li><li>The scientist pays for the privilege of returning</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> RA 11035's design divides labor: national incentives + institutional platform. For your proposal, this means a Balik Scientist paragraph must show the platform (what she will build, with whom), not just the wish — the difference between hosting an expert and name-dropping one.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 16 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">A project leader keeps her best RA by promising "next project, I'll make you co-investigator" — for the third consecutive project. Under Section 7.1's motivation principles, evaluate.</p>
+    <ol class="opts"><li>Effective leadership through hope</li><li>Recognition deferred serially is recognition denied: intrinsic motivators (credit, growth, standing) are the currency creative staff actually work for, and a leader who spends promises instead of authorship, training lines, and visible roles is running down exactly the account the retention statutes were built to protect — expect the resignation the pattern predicts</li><li>Fine, because RAs are interchangeable</li><li>Wrong only if the RA complains formally</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The management layer beneath the statutes: honoraria, authorship, revenue shares, and career ladders are recognition instruments, and instruments must actually be played. The leak of Figure 7.1 runs through individual labs one broken promise at a time — statute-level retention cannot outpump lab-level attrition.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 17 · <span class="lvl">Applying</span></div>
+    <p class="stem">Your Case Analysis answer to a compensation scenario opens: "This is unfair, and fairness demands payment." The graded repair is:</p>
+    <ol class="opts"><li>None; moral clarity is the whole answer</li><li>Convert sentiment into IRAC: frame the issue as a question of entitlement under named provisions; quote the operative sections (as amended); run coverage → classification → conditions → computation against the facts; conclude on the entitlement — fairness may motivate the reading, but only the statute can ground the answer</li><li>Add more adjectives to "unfair"</li><li>Cite fairness as Section 1 of every law</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> The course's oldest lesson in its final costume: claims need verifiable grounds — here, sections and elements rather than sentiments. Purpose (Section 7.1's leak) legitimately guides interpretation at the margins, but it enters through the Rule and Application, never in place of them.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 18 · <span class="lvl">Analyzing</span></div>
+    <p class="stem">Why do the GIA guidelines regulate project personnel compensation at all, rather than letting each RDI pay what it likes from the grant?</p>
+    <ol class="opts"><li>Distrust of universities as a class</li><li>Public-funds coherence: unregulated rates would create arbitrary inequities across projects (identical work, wildly different pay), invite PS-line abuse, and collide with the government-wide compensation architecture — the premium-capped-to-comparable-rate design keeps project pay fair, auditable, and consistent with the two-track logic</li><li>To keep all salaries low forever</li><li>Because DBM enjoys tables</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Rate regulation is the compensation face of the same discipline that regulates procurement and liquidation: public money moves through rules so that outcomes are defensible across the whole portfolio, not just agreeable within one lab. The cap-with-premium is the balance point between fairness to workers and coherence of the system.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 19 · <span class="lvl">Evaluating</span></div>
+    <p class="stem">Two Case Analysis answers to the Newton coverage question. Answer X: "Yes, he is covered, because thirty years of loyalty deserves reward." Answer Y: "Coverage turns on the definitions: the Act reaches 'other S&amp;T personnel'; his functions — continuous calibration and operational support of research instruments in a government RI — are argued to fall within S&amp;T support functions as defined; against this, [the contrary reading]; on balance, coverage [conclusion], and only then do specific benefits' conditions apply." The grading difference:</p>
+    <ol class="opts"><li>X wins; brevity and heart</li><li>Y runs the method — definitions quoted, functions matched, counter-argument faced, conclusion staged before conditions — while X substitutes desert for law; even where both reach the same conclusion, Y earns the points because the points are <em>in</em> the reasoning</li><li>They are equivalent</li><li>Y is worse for admitting a contrary reading exists</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Acknowledging and answering the contrary reading is strength, not weakness — it is the Application step demonstrating it faced the hard version of the question. D's instinct (hide the counter-argument) produces brittle answers that a single panel question shatters; Y's structure survives cross-examination because it already contains one.</p></div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Question 20 · <span class="lvl">Creating / Evaluating</span></div>
+    <p class="stem">Design check: your TE01 proposal's people plan must touch all four spokes of the talent machine. Which plan does it?</p>
+    <ol class="opts"><li>"We will hire good people and treat them well."</li><li>"Two contractual RAs at GIA rates with premium (PS, WP-costed); RA training work package with certification MOVs; authorship per ICMJE and RA 10055 shares per University policy; one RA aligned to graduate study under an S&amp;T scholarship pathway; a Balik Scientist hosted in Year 2 to lead receiver-lab training; faculty counterpart time valued at plantilla rates"</li><li>"Personnel matters will be handled by HR"</li><li>"Salaries as budget permits"</li></ol>
+    <details class="ans"><summary>Show correct answer &amp; explanation</summary><div class="body"><p><span class="correct">Correct answer: B.</span> Produce (scholarship pathway), place and pay (correct track, premium, counterpart), keep (training, credit, shares), repatriate (Balik Scientist) — the Figure 7.6 loop written as budget-bearing commitments with MOVs. A, C, and D are the unfalsifiable sentence in three dialects; by the end of this course you can hear it from across the room.</p></div></details>
+  </div>
+</section>
+
+<!-- ============ PART II ============ -->
+<section id="essay">
+  <h2><span class="secno">II.</span>Reinforcement Essay — 3 HOTS Items</h2>
+  <p>Write each essay in full (300–500 words) before opening the dropdown — Essays 1 and 2 must follow the IRAC structure explicitly. These are direct rehearsals for your group Case Analysis. The model answers are <em>possible</em> strong responses; yours may differ and still earn full marks if it demonstrates the same reasoning identified in the explanation.</p>
+
+  <div class="q"><div class="qnum">Essay 1 · <span class="lvl">Evaluating (IRAC)</span> · 20 points</div>
+    <p class="stem">Ms. Dalisay Cometa is hired as Senior Science Research Specialist (permanent) at a government space-research institute. In her first year she: (a) is denied all Magna Carta benefits "pending completion of one year of service, per office practice"; (b) is assigned four months of night-shift ionospheric observation duty at a remote station, for which she claims subsistence, quarters, and (citing the antenna site's RF environment) hazard allowance — all denied "because your item is office-based"; and (c) discovers that a male colleague hired the same day, same item, received full benefits from month one. <strong>Using full IRAC, analyze all three strands</strong> and state the office's total exposure.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Issue:</em> Whether an office may (a) impose a one-year waiting period on Magna Carta benefits by "practice," (b) deny work-condition allowances by reference to the position's nominal station rather than actual duties, and (c) apply the benefits differentially between identically situated employees. <em>Rule:</em> RA 8439 as amended by RA 11312 covers S&amp;T personnel in government performing S&amp;T functions; coverage attaches by classification of functions, not by length of service — the Act imposes no probationary gate on its protections; condition-based allowances (subsistence, quarters, hazard) follow the actual circumstances of work as the IRR defines them; and equal application binds public employers. <em>Application:</em> Strand (a): a Senior Science Research Specialist in a government RI passes the coverage gate on functions; "office practice" is not law — an internal practice cannot amend a statute (the hierarchy of Fig. 3.1 in miniature), so the one-year gate fails unless the office can point to an actual provision, which the scenario does not supply. Strand (b): the office confuses the item's nominal station with the work's actual conditions — four months of assigned remote night observation is precisely the fact pattern subsistence and quarters provisions exist for, and the allowances follow the <em>assignment</em>, not the desk; the hazard claim is the one strand requiring genuine evaluation — RF exposure at the antenna site must be assessed against the IRR's hazard definitions and exposure standards, so the answer concludes conditionally: payable if the site's conditions meet the defined thresholds, with the office obliged to evaluate rather than dismiss by label. Strand (c): the same-day, same-item comparison eliminates every neutral explanation the office might offer for strand (a) — whatever "practice" exists was not practiced on her colleague; the differential application converts a bad benefits decision into a discrimination problem, and the office's exposure now includes the equal-application violation independently of the statutory one. <em>Conclusion:</em> Strands (a) and (c) fail outright: benefits are payable from the start of covered service, and the selective application aggravates the violation. Strand (b): subsistence and quarters payable for the remote assignment; hazard allowance to be determined against the IRR's exposure standards, which the office must actually apply. Total exposure: retroactive benefits, the condition-based allowances for the assignment months, correction of the discriminatory application — and the quiet institutional lesson that "office practice" is not a layer of the legal hierarchy.</p>
+      <p><strong>Why this earns full marks.</strong> Three strands, three distinct doctrines — no-probation-gate coverage, conditions-follow-actual-work, equal application — each argued with its own Rule and Application rather than one blended complaint. The hazard strand shows calibrated judgment: it neither grants (sympathy) nor denies (label) but names the evaluation the law requires — examiners reward answers that know <em>which</em> questions are conditional. The strand-(c) move — using the comparator to destroy the office's neutral explanations — is the analytical peak. Answers treating all three denials as one injustice, or resolving the hazard claim without the exposure-standards step, land at proficient.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 2 · <span class="lvl">Evaluating (IRAC)</span> · 20 points</div>
+    <p class="stem">Engr. Bituin Liwanag holds a permanent Engineer IV plantilla item (₱75,000/month at her grade-step) at a government RI. A DOST-GIA project at the same RI advertises a contractual Senior Project Engineer post at ₱90,000/month. She applies, wins, resigns her item, and takes the project post. Eighteen months later the project ends without renewal; she is unemployed and aggrieved: "The government tricked me — the higher salary was an illusion; I demand my old item back and damages." <strong>Using full IRAC, analyze:</strong> (i) was the ₱90,000 rate lawful and what did it represent; (ii) what did she give up, valued honestly; (iii) does she have a right to reinstatement or damages; and (iv) what should the RI's HR have done — and should do now.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>Issue:</em> Whether a lawful two-track compensation difference, knowingly accepted, grounds claims of deception, reinstatement, or damages when the project track ends. <em>Rule:</em> Plantilla compensation follows the SSL grade-step with tenure, leave, GSIS, retirement, and applicable Magna Carta benefits; contractual project compensation follows the GIA architecture — comparable plantilla rate plus a premium (up to the guidelines' ceiling) precisely because the engagement carries no tenure or benefits package and ends with the project; resignation from a permanent item is a voluntary surrender of tenure, and reappointment to any item requires a vacancy and the QS process, not a right of return. <em>Application:</em> (i) Check the arithmetic first: ₱75,000 × 1.20 = ₱90,000 — the advertised rate is exactly the comparable rate plus the maximum premium: lawful, and representing not a raise but the cash price of the package she would be giving up. (ii) What she surrendered, valued honestly: security of tenure (the right to the item until lawful separation), leave accrual, GSIS coverage and retirement contributions, and her Magna Carta package — a bundle whose annualized value approaches or exceeds the ₱15,000 monthly differential; the "illusion" was not in the salary but in valuing cash above the bundle. (iii) Deception fails on the facts: both tracks' terms are public architecture, the premium's meaning is stated in the guidelines, and her acceptance of a project-bound engagement included its defining feature — the end date; reinstatement fails as of right because resignation extinguished her claim to the item (if still vacant, she may re-apply through the QS process; if filled, the incumbent's own tenure now protects it); damages fail with the deception. Her genuine equity — eighteen months of competent service and a system that under-explains itself — sounds in (iv), not in litigation. <em>(iv) HR's duty:</em> prospectively, a mandatory counseling step before any plantilla-to-contractual move: a one-page comparison of total compensation on both tracks (the Figure 7.5 diagram, personalized), signed by the employee — informed consent for career decisions, the ethics-clearance principle transplanted to HR; retrospectively, HR should treat her as a priority-eligible applicant for suitable vacancies and certify her service record fully. <em>Conclusion:</em> The rate was lawful and honestly constructed; the surrender was voluntary and its cost knowable; no reinstatement as of right, no damages — and an institution that wants to keep engineers should nonetheless adopt the counseling instrument that would have prevented the grief.</p>
+      <p><strong>Why this earns full marks.</strong> The ×1.20 check opens the analysis (the examiners' planted arithmetic, found again); the "valued honestly" section demonstrates total-package reasoning rather than salary comparison; the reinstatement analysis distinguishes right from re-application cleanly; and part (iv) converts the legal conclusion into management design — the course's signature move — without letting sympathy rewrite the law. Answers that either endorse her deception claim or dismiss her with the arithmetic alone (skipping the HR-design lesson) land at proficient.</p>
+    </div></details>
+  </div>
+
+  <div class="q"><div class="qnum">Essay 3 · <span class="lvl">Creating</span> · 20 points</div>
+    <p class="stem">Your department has been asked to draft the <strong>five-year S&amp;T talent strategy</strong> for a new provincial astronomy and space-science facility (the observatory of your earlier essays). Using the full Chapter 7 stack, design it: (i) the staffing architecture — which posts should be plantilla, which project-track, and why; (ii) the acquisition plan — scholarships, QS-based recruitment, and one Balik Scientist engagement, each with its statutory instrument named; (iii) the retention plan — Magna Carta implementation, SCS pathway, recognition and credit architecture; and (iv) the three metrics by which the strategy's success should be judged at Year 5, each with its means of verification.</p>
+    <details class="ans"><summary>Show possible correct answer &amp; explanation</summary><div class="body">
+      <p><strong>Model answer (outline of a full-credit response).</strong> <em>(i) Staffing architecture.</em> Plantilla core (stability where continuity is the asset): facility director, two resident researchers, one instrumentation engineer, one science-education officer — permanent items because the observatory's value is its accumulated local knowledge, community trust, and time-series continuity, none of which survive project-cycle churn. Project track (flexibility where work is episodic): campaign RAs, software developers for defined pipeline builds, festival and outreach surge staff — engaged per project at GIA rates <em>with the premium correctly applied</em>, because honest pricing of precarity is both compliance and recruitment advantage. The strategy states the boundary rule: work that must outlive any single grant gets an item; work that ends gets a contract — and serial re-contracting for permanent-shaped work is named as the anti-pattern to audit against (the Question-9 sore point, managed by design). <em>(ii) Acquisition.</em> Scholarships: partner with DOST-SEI so that RA 7687/10612 scholars from the province serve their return-service years at the facility — the obligation converted into a staffing pipeline that also answers the equity question of who gets to be an astronomer; two scholars per cohort, tracked from junior year. QS-based recruitment: write the plantilla items' qualification standards deliberately — education and experience elements that value instrumentation and data skills, not just degrees — so the QS gate selects for what the facility actually needs. Balik Scientist (RA 11035): one long-term engagement in Year 2 to establish the receiver laboratory and train the resident engineer and RAs — the program supplying the incentives, the facility supplying the platform (defined lab, named trainees, equipment budgeted in Year 1 so the returning expert builds rather than waits). <em>(iii) Retention.</em> Magna Carta implementation as a founding policy, not an afterthought: benefits budgeted from Year 1 appropriations, condition-based allowances (remote-station subsistence and quarters for campaign duty) pre-defined in the operations manual — the Rotasyon and Cometa pathologies designed out before the first hire. SCS pathway: the resident researchers enrolled toward Scientist-rank evaluation, with the facility's publication and instrument outputs feeding their dossiers — the dual ladder giving the province a reason its best people need not leave for Manila, let alone abroad. Recognition architecture: authorship per ICMJE, RA 10055 revenue shares per institutional policy, honoraria for public lectures under the applicable schedules, and an annual named recognition tied to the facility's founding — the intrinsic-motivation instruments played, not promised. <em>(iv) Year-5 metrics.</em> (1) Retention rate of professional staff ≥80% over five years — MOV: HR service records; (2) at least two staff advanced in rank (SCS or plantilla promotion) and two scholars serving return-service on site — MOV: CSC/DOST-SEI records; (3) zero adverse findings on personnel compensation and benefits — MOV: COA audit reports and benefits disbursement records. Each metric has a named owner and appears in the facility's own logframe — Chapter 6's machinery monitoring Chapter 7's promises.</p>
+      <p><strong>Why this earns full marks.</strong> The staffing boundary rule (continuity → item; episodic → contract) shows the two-track architecture used as a design principle rather than recited; every acquisition and retention element names its statutory instrument; the known pathologies of the chapter (serial contracting, benefits-as-afterthought, promotion-off-the-bench) are designed against explicitly; and the metrics close the loop with MOVs and owners — the course's verifiability standard applied to its own people plan. Strategies that list benefits without budgeting them, or hire without the QS design step, are proficient; strategies that staff everything plantilla (rigidity) or everything contractual (churn) miss the architecture the chapter exists to teach.</p>
+    </div></details>
+  </div>
+</section>
+
+</main>
+
+<div style="max-width:980px;margin:0 auto;padding:0 22px 40px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:.9rem;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;border-top:1px dashed #e3e0d8;padding-top:22px;"><span><a href="ch7-lecture.html">&#8592; Ch. 7 Lecture</a></span> <span><a href="index.html"><strong>Course Home</strong></a></span></div>
+
+<footer>
+  TE01 · Astronomy Project Development and Management · Chapter 7 Reinforcement Exercises · Department of Earth and Space Sciences, RTU · First Semester, AY 2026–2027 · Prepared August 2026
+</footer>
+
+</body>
+</html>
