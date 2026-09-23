@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philippine Laws on Science-Related Agencies — 100-Item Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16233f; --ink-soft:#22325a; --paper:#eef1f6; --surface:#ffffff;
+  --text:#232a36; --muted:#626c7c; --blue:#2f6db0; --blue-soft:#e7f0fa;
+  --gold:#d99a24; --gold-soft:#fbf6ea; --code-bg:#1b2438; --code-text:#e7ecf7;
+  --rule:#dde3ec; --ok:#1f9d57; --bad:#cf3a3a;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--paper); color:var(--text);
+  font-family:"Inter",system-ui,-apple-system,sans-serif; font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column;}
+.wrap{width:100%; max-width:760px; margin:0 auto; padding:28px 20px 60px; flex:1;}
+
+/* Header bar */
+.topbar{background:var(--ink); color:#fff;}
+.topbar .inner{max-width:760px; margin:0 auto; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+.topbar .kick{font-family:"JetBrains Mono",monospace; font-size:.7rem; letter-spacing:.12em; color:var(--gold);}
+.topbar h1{font-family:"Spectral",serif; font-weight:600; font-size:1.12rem; margin:2px 0 0; line-height:1.2;}
+.topbar .who{font-size:.72rem; color:#aab6cc; text-align:right;}
+.topbar .who b{color:#fff;}
+
+/* Progress */
+.progress{margin:22px 0 6px;}
+.progress .meta{display:flex; justify-content:space-between; align-items:baseline; font-family:"JetBrains Mono",monospace; font-size:.74rem; color:var(--muted); margin-bottom:7px;}
+.progress .meta .qof{color:var(--ink-soft); font-weight:600;}
+.bar{height:7px; background:#e2e7f0; border-radius:99px; overflow:hidden;}
+.bar > i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--blue),var(--gold)); border-radius:99px; transition:width .25s ease;}
+
+/* Cards / panels */
+.panel{background:var(--surface); border:1px solid var(--rule); border-radius:14px; padding:26px 26px 24px; box-shadow:0 1px 2px rgba(20,30,60,.04);}
+h2{font-family:"Spectral",serif; color:var(--ink); font-weight:600; margin:0 0 .4rem; line-height:1.2;}
+.lead{color:var(--muted); font-size:.95rem; margin:.2rem 0 1.2rem;}
+
+/* Identity form */
+.field{margin:14px 0;}
+.field label{display:block; font-size:.78rem; font-weight:600; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:6px;}
+.field input{width:100%; font-family:"Inter",sans-serif; font-size:1rem; padding:11px 13px; border:1px solid var(--rule); border-radius:9px; background:#fbfcfe; color:var(--text);}
+.field input:focus{outline:2px solid var(--blue-soft); border-color:var(--blue);}
+.field .hint{font-size:.74rem; color:var(--muted); margin-top:5px;}
+
+/* Question */
+.qhead{display:flex; align-items:flex-start; gap:10px; margin-bottom:6px;}
+.qnum{font-family:"JetBrains Mono",monospace; font-size:.74rem; color:#fff; background:var(--ink); padding:3px 9px; border-radius:6px; flex-shrink:0; margin-top:3px;}
+.qtitle{font-family:"Spectral",serif; font-weight:600; font-size:1.1rem; line-height:1.4; color:var(--ink);}
+pre.code{display:none;background:var(--code-bg); color:var(--code-text); border-radius:10px; padding:16px 16px 14px;
+  overflow-x:auto; margin:14px 0 18px; position:relative; border:1px solid #0f1626;
+  font-family:"JetBrains Mono",monospace; font-size:.86rem; line-height:1.6; white-space:pre;}
+pre.code::before{content:"py"; position:absolute; top:0; right:0; font-family:"JetBrains Mono",monospace; font-size:.6rem;
+  letter-spacing:.12em; color:var(--ink); background:var(--gold); padding:2px 9px; border-radius:0 9px 0 9px; font-weight:600;}
+
+/* Options */
+.opts{list-style:none; padding:0; margin:0;}
+.opt{display:flex; align-items:flex-start; gap:12px; padding:13px 15px; margin:9px 0; border:1.5px solid var(--rule);
+  border-radius:10px; background:#fbfcfe; cursor:pointer; transition:border-color .12s, background .12s;}
+.opt:hover{border-color:#b9c6dd; background:#f5f8fc;}
+.opt.sel{border-color:var(--blue); background:var(--blue-soft);}
+.opt .let{font-family:"JetBrains Mono",monospace; font-weight:600; font-size:.86rem; color:var(--muted);
+  width:26px; height:26px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+  border:1.5px solid var(--rule); border-radius:50%; background:#fff;}
+.opt.sel .let{color:#fff; background:var(--blue); border-color:var(--blue);}
+.opt .txt{font-size:.96rem;}
+.opt .txt.mono{font-family:"JetBrains Mono",monospace; font-size:.9rem;}
+
+/* Nav buttons */
+.actions{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:22px;}
+.btn{font-family:"Inter",sans-serif; font-size:.95rem; font-weight:600; padding:12px 24px; border-radius:10px;
+  border:1px solid transparent; cursor:pointer; transition:filter .12s, background .12s;}
+.btn:disabled{opacity:.45; cursor:not-allowed;}
+.btn-primary{background:var(--ink); color:#fff;}
+.btn-primary:hover:not(:disabled){filter:brightness(1.15);}
+.btn-gold{background:var(--gold); color:#1a1303;}
+.btn-gold:hover:not(:disabled){filter:brightness(1.06);}
+.btn-ghost{background:transparent; color:var(--muted); border-color:var(--rule);}
+.btn-ghost:hover:not(:disabled){color:var(--ink); border-color:#b9c6dd;}
+.note{font-family:"JetBrains Mono",monospace; font-size:.72rem; color:var(--muted);}
+
+/* Completion */
+.center{text-align:center;}
+.bigmark{width:64px; height:64px; border-radius:50%; background:var(--gold-soft); border:2px solid var(--gold);
+  color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:1.8rem; margin:6px auto 16px;}
+.summary{background:#f6f8fc; border:1px solid var(--rule); border-radius:10px; padding:14px 18px; margin:18px 0; text-align:left; font-size:.92rem;}
+.summary div{display:flex; justify-content:space-between; padding:4px 0; border-top:1px solid var(--rule);}
+.summary div:first-child{border-top:none;}
+.summary b{color:var(--ink-soft);}
+.statusmsg{font-size:.9rem; margin-top:14px; padding:11px 14px; border-radius:9px; display:none;}
+.statusmsg.show{display:block;}
+.statusmsg.good{background:#eaf6ef; color:#1f5b3a; border:1px solid #bfe3cd;}
+.statusmsg.bad{background:#fceaea; color:#8a2b2b; border:1px solid #e9c3c3;}
+.statusmsg.info{background:var(--blue-soft); color:#1c4f86; border:1px solid #c5dcf2;}
+
+.hide{display:none !important;}
+footer{max-width:760px; margin:0 auto; padding:18px 20px 30px; font-family:"JetBrains Mono",monospace;
+  font-size:.7rem; color:var(--muted); letter-spacing:.02em; text-align:center;}
+@media (max-width:600px){ .panel{padding:20px 18px;} .topbar .who{text-align:left;} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <div>
+      <div class="kick">TE01 ASTRONOMY PROJECT DEVELOPMENT AND MANAGEMENT · REINFORCEMENT EXERCISE 3</div>
+      <h1>Philippine Laws on Science-Related Government Agencies</h1>
+    </div>
+    <div class="who">Instructional designer<br><b>Dr. Ryan Manuel D. Guido</b></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- Progress (hidden until test starts) -->
+  <div class="progress hide" id="progress">
+    <div class="meta"><span class="qof" id="qof">Question 1 of 100</span><span id="answeredCount">0 answered</span></div>
+    <div class="bar"><i id="barfill"></i></div>
+  </div>
+
+  <!-- ===== START SCREEN ===== -->
+  <section class="panel" id="startScreen">
+    <h2>Before you begin</h2>
+    <p class="lead">This is a 100-item multiple-choice test on the Republic Acts that govern science-related government agencies: RA 10121 (Philippine Disaster Risk Reduction and Management Act), RA 10692 (PAGASA Modernization Act), RA 10535 (Philippine Standard Time Act), RA 11363 (Philippine Space Act), and the Implementing Rules and Regulations of RA 11363. Most items describe a situation — apply the relevant provisions and choose the <b>best</b> answer, then tap <b>Next</b>; the following item appears only after you answer. You will not see a score; your responses are submitted to your instructor for checking.</p>
+    <div class="field"><label for="fName">Full name</label><input id="fName" type="text" autocomplete="name" placeholder="e.g., Maria Santos"></div>
+    <div class="field"><label for="fId">Student number</label><input id="fId" type="text" placeholder="e.g., 2026-12345"></div>
+    <div class="field"><label for="fSection">Section</label><input id="fSection" type="text" placeholder="Your class section"></div>
+    <div class="field"><label for="fEmail">Your email <span style="font-weight:400;color:var(--muted)">(RTU email)</span></label><input id="fEmail" type="email" autocomplete="email" placeholder="you@rtu.edu.ph"></div>
+    <div class="actions" style="justify-content:flex-end;">
+      <button class="btn btn-primary" id="startBtn">Start test &rarr;</button>
+    </div>
+    <p class="note" style="margin-top:14px;">100 items · one at a time · you may go back before sending</p>
+    <p class="note" style="margin-top:6px;"><a href="index.html#materials" style="color:var(--blue)">&larr; Course home</a></p>
+  </section>
+
+  <!-- ===== QUESTION SCREEN ===== -->
+  <section class="panel hide" id="quizScreen">
+    <div class="qhead"><span class="qnum" id="qBadge">Q1</span><span class="qtitle" id="qPrompt"></span></div>
+    <ul class="opts" id="qOpts" style="margin-top:14px;"></ul>
+    <div class="actions">
+      <button class="btn btn-ghost" id="prevBtn">&larr; Back</button>
+      <button class="btn btn-primary" id="nextBtn" disabled>Next &rarr;</button>
+    </div>
+  </section>
+
+  <!-- ===== COMPLETION SCREEN ===== -->
+  <section class="panel center hide" id="doneScreen">
+    <div class="bigmark">&#10003;</div>
+    <h2>You&rsquo;ve completed all 100 items</h2>
+    <p class="lead">Your answers are ready to submit. Your score is recorded but is not shown here — it will be sent to your instructor for checking.</p>
+    <div class="summary">
+      <div><span>Name</span><b id="sName">—</b></div>
+      <div><span>Student number</span><b id="sId">—</b></div>
+      <div><span>Section</span><b id="sSection">—</b></div>
+      <div><span>Items answered</span><b id="sAnswered">0 / 100</b></div>
+    </div>
+    <div class="actions" style="justify-content:center; gap:14px;">
+      <button class="btn btn-ghost" id="reviewBtn">&larr; Review answers</button>
+      <button class="btn btn-gold" id="sendBtn">Send to instructor</button>
+    </div>
+    <div class="statusmsg" id="statusMsg"></div>
+    <p class="note" id="destNote" style="margin-top:16px;">Results are sent to rmdguido@rtu.edu.ph</p>
+    <p class="note hide" id="homeLink" style="margin-top:8px;"><a href="index.html#materials" style="color:var(--blue)">&larr; Back to the course home</a></p>
+  </section>
+
+</div>
+
+<footer>TE01 Astronomy Project Development and Management · Philippine Laws on Science-Related Government Agencies · 100-Item Test · Instructional designer: Dr. Ryan Manuel D. Guido</footer>
+
+<script>
+/* ====================================================================
+   SUBMISSION CONFIG  —  check this ONCE before sharing the test.
+   --------------------------------------------------------------------
+   A standalone HTML page cannot send email by itself, so results are
+   POSTed to a form-to-email service (Formspree) that delivers them to
+   the instructor's inbox. The respondent never sees the score.
+
+   The endpoint below is the one used by the EBDA test. Every email's
+   subject line starts with the test name, so the two tests are easy to
+   tell apart. To keep this test in its own Formspree form instead:
+     1. Sign in at https://formspree.io (account: rmdguido@rtu.edu.ph)
+     2. Create a new form and copy its endpoint,
+        e.g. https://formspree.io/f/abcdwxyz
+     3. Paste it below in place of the current endpoint.
+   If the endpoint is set to REPLACE_WITH_FORMSPREE_ID, the Send button
+   shows a configuration notice instead of silently failing.
+   ==================================================================== */
+const CONFIG = {
+  endpoint: "https://formspree.io/f/xvzjkzeb",
+  instructorEmail: "rmdguido@rtu.edu.ph",
+  testName: "TE01 Reinforcement 3 — Philippine Laws (RA 10121, 10692, 10535, 11363 & IRR) — 100-Item Test"
+};
+
+/* Items. The answer key is NOT stored here in readable form (see KEY below). */
+const QUESTIONS = [{"prompt": "A provincial board releases money for a hazard-mapping study only after a typhoon has struck, arguing that funds are best spent once damage is visible. Which core feature of RA 10121 does this reasoning most directly contradict?", "options": ["The shift from reactive response toward reducing disaster risk before hazards strike.", "The rule that every disaster expense must first be approved by the NDRRMC chair.", "The rule that hazard maps may be produced only by national government agencies.", "The ban on using local government funds for scientific studies of any kind."]}, {"prompt": "A municipality's estimated revenue from regular sources is ₱200 million. Under RA 10121, what is the minimum Local DRRM Fund, and how much of it is the Quick Response Fund?", "options": ["At least ₱10 million, of which ₱7 million is the Quick Response Fund.", "At least ₱20 million, of which ₱6 million is the Quick Response Fund.", "At least ₱6 million, all of which is treated as the Quick Response Fund.", "At least ₱10 million, of which ₱3 million is the Quick Response Fund."]}, {"prompt": "At year-end, a city still has ₱4 million of unspent LDRRMF. The treasurer proposes moving it to a road-widening project. Which course of action is consistent with RA 10121?", "options": ["Transfer it at once, because all unspent LDRRMF automatically reverts to the general fund at the close of each fiscal year.", "Place it in a special trust fund for DRRM use; only amounts still unused after five years revert to the general fund.", "Remit it to the national NDRRM Fund so that other provinces can use it for their own disasters.", "Release it as unrestricted cash aid to barangays, since any spending that reaches residents is allowed."]}, {"prompt": "A team is building a landslide early-warning sensor network and wants a champion agency inside the NDRRMC. Which thematic area and vice-chair pairing fits the project best?", "options": ["Disaster response, vice-chaired by the DOST.", "Disaster prevention and mitigation, vice-chaired by the DOST.", "Disaster preparedness, vice-chaired by NEDA.", "Disaster rehabilitation and recovery, vice-chaired by the DILG."]}, {"prompt": "A barangay receives accurate typhoon warnings on time, but residents stay home because they do not understand what the warning levels mean or where to go. Using RA 10121's definition of an early warning system, which element has broken down?", "options": ["Monitoring, analysis, and forecasting of the hazard itself.", "Knowledge of the risks at the level of the national government.", "Local capability to understand and act on the warnings received.", "Technical calibration of the instruments that detected the typhoon."]}, {"prompt": "Two coastal towns are hit by a typhoon of identical strength. One suffers far heavier losses because many households live in makeshift houses along a riverbank. Under the concepts defined in RA 10121, the difference is best explained by:", "options": ["Differences in the intensity of the hazard that struck each town.", "Differences in exposure and vulnerability, not in the hazard itself.", "Differences in the size of each town's Quick Response Fund.", "Differences in whether a state of calamity was declared in each town."]}, {"prompt": "RA 10121 defines a disaster as a serious disruption that exceeds a community's ability to cope using its own resources. A strong earthquake strikes an uninhabited island and causes no losses. How should this event be classified?", "options": ["A hazard event that did not become a disaster, because no community's coping capacity was exceeded.", "A disaster, because any strong earthquake automatically meets the statutory definition.", "A state of calamity, because the magnitude alone requires a declaration by the President.", "A preparedness failure, because the island had no local DRRM office to record the event."]}, {"prompt": "A research center wants a single national counterpart to coordinate its DRRM data-sharing agreement. Why is the Office of Civil Defense (OCD) the logical entry point?", "options": ["The OCD chairs the NDRRMC and personally reviews and approves every provincial, city, and municipal DRRM plan in the country.", "The OCD is the only agency legally allowed to collect hazard data under RA 10121.", "The OCD vice-chairs the prevention and mitigation area in place of the DOST.", "The OCD is the executive arm and secretariat of the NDRRMC, and its Administrator serves as the Council's Executive Director."]}, {"prompt": "After a super typhoon, a provincial DRRM council completes its damage assessment and recommends declaring a state of calamity for the province. Under RA 10121, who makes the declaration?", "options": ["The provincial governor alone, through an executive order.", "The Sangguniang Panlalawigan, acting on the council's recommendation.", "The PAGASA Administrator, based on the typhoon's recorded strength.", "The Secretary of National Defense, as chair of the NDRRMC."]}, {"prompt": "Right after a state of calamity is declared, a store triples the price of bottled water and canned goods. Which measure that RA 10121 attaches to the declaration applies most directly?", "options": ["Automatic closure of all private stores in the area until the state of calamity is formally lifted by the sanggunian.", "Imposition of price ceilings on basic necessities and action against overpricing and hoarding.", "Transfer of the store's inventory to the Quick Response Fund of the municipality.", "Suspension of all price rules so that supply can respond freely to demand."]}, {"prompt": "Volunteers repack donated relief goods into bags printed with a local politician's name and face, making it appear that the goods came from him. Under RA 10121, this is:", "options": ["Allowed, as long as the goods themselves are complete and are delivered to the affected families within the week.", "A prohibited act of misrepresenting the source of relief goods, punishable by fine or imprisonment.", "A matter for election law only, since RA 10121 is silent on relief goods.", "Allowed if the politician personally paid for the repacking materials."]}, {"prompt": "A court finds a public official guilty of diverting relief goods intended for disaster victims. Which penalty falls within the range set by RA 10121?", "options": ["A fine of ₱5,000 to ₱10,000, or imprisonment of not more than six months.", "A fine of ₱50,000 to ₱500,000, or imprisonment of 6 years and 1 day to 12 years.", "A fine of ₱1 million to ₱5 million, and life imprisonment in all cases.", "An administrative reprimand only, since relief work is voluntary in nature."]}, {"prompt": "A state university wants to add DRRM content to its general-education courses and to its NSTP program. Which provision of RA 10121 gives the strongest legal basis?", "options": ["The rule requiring every LGU to set aside at least 5% of its estimated revenue from regular sources for a Local DRRM Fund.", "The provision creating the Quick Response Fund as a stand-by fund for relief operations.", "The mandate for DepEd, CHED, and TESDA to integrate DRRM education into secondary and tertiary curricula, including NSTP.", "The list of prohibited acts involving the handling and distribution of relief goods."]}, {"prompt": "A newly created city plans to staff its local DRRM office with a single officer who will handle everything. What minimum structure does RA 10121 require?", "options": ["A single officer is enough, because staffing is left entirely to the discretion of the mayor.", "A head supported by one staff for relief-goods warehousing and one staff for procurement of rescue vehicles and equipment.", "A head supported by three staff for administration and training, research and planning, and operations and warning.", "No office is needed, because the provincial office performs all functions for its cities."]}, {"prompt": "At the barangay level, which body carries out DRRM functions under RA 10121?", "options": ["A separate barangay DRRM office with its own appointed head and three permanent staff paid from the national DRRM fund.", "The municipal DRRM office directly, since barangays have no DRRM role.", "The regional DRRM council, which appoints a representative in each barangay.", "The Barangay DRRM Committee, which works as a regular committee of the Barangay Development Council."]}, {"prompt": "RA 10121 requires civil society representatives, including those of vulnerable groups, to sit in local DRRM bodies. What is the best explanation for this design?", "options": ["It lets civil society organizations manage and disburse the Local DRRM Fund in place of the elected local government officials.", "It shifts legal liability for disaster losses from the government to private organizations.", "It brings community knowledge and the voices of vulnerable sectors into risk decisions, supporting community-based DRRM.", "It ensures that relief goods are distributed only by private groups and not by officials."]}, {"prompt": "An accredited community volunteer is injured during a flood rescue. Under RA 10121, what protection applies?", "options": ["None, because volunteers are not government employees and are not covered by law.", "Benefits apply only if the volunteer is a permanent employee of the Office of Civil Defense.", "Accredited volunteers are entitled to compensatory benefits and accident insurance for injury or death.", "Benefits must be paid entirely by the non-government group that recruited the volunteer."]}, {"prompt": "A research team wants part of a city's LDRRMF to finance a flood-sensor network. What is the most appropriate route?", "options": ["Partner with the city so the project is included in its local DRRM plan and funded from the non-QRF share.", "Apply directly to the LDRRMF as if it were an open research grant window.", "Request the money from the Quick Response Fund, which the Act reserves for science and monitoring projects of this kind.", "Ask the NDRRMC to order the city to release the fund to the university."]}, {"prompt": "Why does RA 10121 assign the DOST, rather than the DSWD, as vice-chair for disaster prevention and mitigation?", "options": ["Prevention and mitigation depend on hazard science, monitoring, and forecasting, which fall within DOST's expertise.", "The DOST manages the Quick Response Fund, so it must lead all spending decisions.", "The DSWD is barred from any DRRM role other than the declaration of calamities.", "Prevention and mitigation take place only after a disaster, when scientists are needed to assess damage and count losses."]}, {"prompt": "After the same flood, Town A restores water, power, and classes in three days, while Town B takes three weeks. Which concept defined in RA 10121 best describes Town A's advantage?", "options": ["Exposure — the presence of people and property in areas where hazards may occur.", "Vulnerability — the characteristics and circumstances of a community that make it susceptible to a hazard's damaging effects.", "Hazard — a dangerous phenomenon that may cause loss of life or damage.", "Resilience — the ability to resist, absorb, accommodate, and recover from a hazard in a timely manner."]}, {"prompt": "A municipality uses its Quick Response Fund to pay for a three-year climate research study. How should this be evaluated?", "options": ["Proper — the QRF may be spent on any activity that has the word 'climate' in its title.", "Improper — the QRF is a stand-by fund for relief and recovery; research belongs in the rest of the LDRRMF.", "Proper — the QRF is intended mainly for long-term climate research, while relief is funded from the national budget instead.", "Improper — research of any kind is prohibited under every provision of RA 10121."]}, {"prompt": "RA 10121 provides for a review of the law within five years by a Congressional Oversight Committee. What is the main purpose of this sunset review?", "options": ["To automatically repeal the law after five years unless the President renews it through an executive order.", "To transfer the NDRRMC from the Department of National Defense to the DOST.", "To re-declare every state of calamity that was issued in the preceding five years.", "To assess the law's accomplishments and impact and to recommend remedial legislation where needed."]}, {"prompt": "A reviewer asks how the head of PAGASA is appointed under RA 10692. Which answer is accurate?", "options": ["The President appoints the Administrator, who holds the rank of Undersecretary, on the recommendation of the DOST Secretary.", "The DOST Secretary appoints the Administrator, who holds the rank of Cabinet Secretary, without presidential approval.", "The Civil Service Commission appoints the Administrator through a competitive examination for meteorologists.", "PAGASA employees elect the Administrator every three years from among the senior forecasters."]}, {"prompt": "A PAGASA official proposes using the PAGASA Modernization Fund to pay year-end bonuses for all personnel. How should this be evaluated under RA 10692?", "options": ["Allowed — any personnel benefit counts as modernization under the Act.", "Allowed — as long as the DOST Secretary approves the bonus in writing.", "Not allowed — the Act prohibits any form of incentive for PAGASA personnel.", "Not allowed — the Modernization Fund is set aside exclusively for capital outlay."]}, {"prompt": "A farmers' cooperative is asked to pay a fee before it can receive a typhoon warning for its province. Under RA 10692, this is:", "options": ["Improper, because forecasts and warnings affecting national safety must be provided free of charge.", "Proper, because PAGASA must recover the full cost of every forecast it produces.", "Proper, because cooperatives are private entities and must pay for all public information.", "Improper only if the cooperative has fewer than one hundred members."]}, {"prompt": "An airline requests a tailored, route-specific weather service, and PAGASA charges a fee for it. Under RA 10692, this is:", "options": ["Prohibited, because all PAGASA products must be free regardless of their nature.", "Permitted only if the airline is owned by the government.", "Permitted, because specialized services for sectors such as aviation and maritime may generate revenue.", "Prohibited, because aviation weather services were transferred to PhilSA and are no longer part of PAGASA's mandate."]}, {"prompt": "Experienced meteorologists keep leaving PAGASA for better-paying jobs abroad. Which provisions of RA 10692 address this problem most directly?", "options": ["The Quick Response Fund and the stand-by budget for relief operations after typhoons.", "A ban on PAGASA personnel accepting employment abroad for ten years after resigning.", "A ban on PAGASA personnel accepting any employment abroad for ten years after they resign or retire from the agency.", "A new salary scale aligned with the Magna Carta for scientists and a retention incentive of up to 20% of monthly basic salary."]}, {"prompt": "Typhoon bulletins issued only in English and Filipino are poorly understood by fishers in several Visayan and Mindanao provinces. Which component of the modernization program addresses this?", "options": ["Effective information dissemination, including communication in local languages.", "Upgrading of radar instruments and flood monitoring equipment.", "Establishment of a technology-based data center that follows international standards.", "Fostering of regional and international cooperation in meteorology."]}, {"prompt": "A graduate student finds that PAGASA datasets from different stations come in inconsistent formats that are hard to combine. Which modernization component is designed to solve this?", "options": ["Scholarships for undergraduate and graduate studies in meteorology.", "The personnel retention incentive for scientific and technical staff.", "A technology-based data center that follows international standards.", "Regional weather service centers that issue localized bulletins."]}, {"prompt": "The government buys several new Doppler radars but provides no training for the staff who must operate them and interpret their data. How does this compare with the design of RA 10692?", "options": ["It fully satisfies the Act, which is concerned only with buying equipment.", "It violates the Act, which prohibits purchasing radars from foreign suppliers.", "It is incomplete — the Act pairs equipment upgrades with human resource development.", "It is irrelevant, because the Act deals only with astronomical services."]}, {"prompt": "Why does RA 10692 provide for regional weather service centers and flood forecasting sub-centers?", "options": ["To replace the local DRRM offices as the bodies that order and supervise the evacuation of residents in each region.", "To allow each region to set its own official time different from PhST.", "To bring forecasting and warning closer to regions and river basins, making services more timely and local.", "To transfer PAGASA's central forecasting functions to private companies."]}, {"prompt": "A student asks whether RA 10692 offers any direct support for studying meteorology. What is the accurate answer?", "options": ["No — the Act deals only with instruments and buildings, not with people.", "Yes — but only for students who are already permanent PAGASA employees.", "Yes — the Act provides for scholarships for undergraduate and graduate studies in meteorology.", "No — scholarships for meteorology are provided only by PhilSA under RA 11363, since weather satellites are space assets."]}, {"prompt": "A project proposal claims that RA 10692 separated PAGASA from the DOST and made it an independent agency. What is the best correction?", "options": ["PAGASA remains under the DOST; the Act modernizes the agency rather than moving it.", "PAGASA was merged into PhilSA and now reports to the Office of the President.", "PAGASA was placed under the Office of Civil Defense as the NDRRMC's weather arm.", "PAGASA was abolished and its functions divided among the regional centers."]}, {"prompt": "A school group needs official contact times for an upcoming eclipse visible from the Philippines. Which agency's mandate most directly covers this request?", "options": ["PhilSA, because every astronomy-related request now belongs to the space agency rather than to any older agency.", "The Office of Civil Defense, because eclipses are treated as natural hazards.", "The DILG, because eclipse viewing events are organized by local governments.", "PAGASA, through its astronomical services, which include ephemerides and eclipse predictions."]}, {"prompt": "A city DRRM office orders pre-emptive evacuation after PAGASA issues a red rainfall warning. Which statement best describes how RA 10692 and RA 10121 relate in this case?", "options": ["PAGASA orders the evacuation directly, and the local office only reports on it.", "PAGASA supplies the scientific warning; the local DRRM system decides and carries out the response.", "The local office produces its own forecast and ignores PAGASA's warning levels.", "The two laws are unrelated, since one covers weather and the other covers relief goods."]}, {"prompt": "PAGASA joins an international arrangement to exchange satellite and observation data with neighboring countries. Which modernization component does this serve?", "options": ["Establishing regional weather service centers.", "Fostering regional and international cooperation.", "Developing the personnel retention incentive.", "Upgrading local flood monitoring equipment."]}, {"prompt": "A university partners with PAGASA to test a new numerical weather prediction model for tropical cyclones. Which modernization component fits this partnership best?", "options": ["Providing free forecasts and warnings to the public.", "Disseminating warnings in local languages.", "Granting the personnel retention incentive.", "Enhancing research capabilities through integrated approaches."]}, {"prompt": "RA 10692 set an initial three-year implementation period, yet a radar supply contract runs for five years. Is the contract automatically invalid?", "options": ["Yes — every contract under the program must end within the three-year period, without any exception allowed.", "Yes — radar purchases are not allowed under the modernization program.", "Not necessarily — the Act allows multi-year contract obligations to extend beyond the initial period.", "No — contracts under RA 10692 are exempt from all government procurement rules."]}, {"prompt": "A senator wants to monitor whether the PAGASA modernization program is on track. Which mechanism under RA 10692 provides this information?", "options": ["An annual progress report submitted to the President and the chairs of the relevant congressional committees.", "A monthly report submitted by each LGU on the weather in its area.", "A report prepared by PhilSA on all PAGASA satellite and radar activities, submitted to the Space Council every five years.", "A five-year sunset review that automatically ends the program."]}, {"prompt": "Which proposal rationale most accurately invokes the declaration of policy of RA 10692?", "options": ["It reduces government spending by transferring national weather and climate services to private forecasting companies.", "It applies scientific knowledge to protect public safety and economic security by strengthening weather and climate services.", "It establishes a single official time for all government offices and broadcasts.", "It creates a national registry of objects launched into outer space."]}, {"prompt": "A bank sets its transaction servers using a foreign internet time source that differs from PAGASA's time by two seconds. Under RA 10535, which time is the legally official time of the Philippines?", "options": ["Whatever time the bank's internet provider supplies.", "Philippine Standard Time as provided by PAGASA.", "The time shown by the most widely used mobile network.", "The average of the clocks used by the major banks."]}, {"prompt": "A meteor camera logs an event at 14:00 UTC. What is the corresponding Philippine Standard Time (UTC+8)?", "options": ["22:00 PhST on the same date.", "06:00 PhST on the same date.", "22:00 PhST on the previous date.", "14:08 PhST on the same date."]}, {"prompt": "A television network fails to synchronize its on-screen clock with PhST and is sanctioned. A year later it commits the same violation again. Under RA 10535, what is the consequence of the second offense?", "options": ["A written warning only.", "A fine of ₱1,000 per day of delay.", "Suspension of its news programs for one week.", "Revocation of its franchise."]}, {"prompt": "A radio station commits its first violation of the synchronization rule. Which penalty range does RA 10535 set for this?", "options": ["A fine of not less than ₱30,000 but not more than ₱50,000.", "A fine of not less than ₱1,000 but not more than ₱5,000.", "Imprisonment of six years and one day to twelve years.", "Immediate revocation of its broadcast franchise."]}, {"prompt": "A private radio station argues that RA 10535's synchronization rule applies only to government-owned stations. What is the best response?", "options": ["The rule covers all television and radio stations, whether government or private.", "The station is right, because private media answer only to their franchise terms and are outside the Act.", "The rule applies only to television, not to radio stations.", "The rule applies only during National Time Consciousness Week."]}, {"prompt": "How often does RA 10535 require government offices to coordinate with PAGASA to keep their timepieces synchronized?", "options": ["Only once, when the clocks are first installed.", "Every five years, during the sunset review.", "Monthly.", "Only when a citizen files a complaint."]}, {"prompt": "A school plans to hold its National Time Consciousness Week activities in the second week of February. How does this fit RA 10535?", "options": ["It does not match the Act, which sets the week as the first week of every year.", "It matches the Act, which leaves the timing of the week to each school's academic calendar.", "It matches the Act, which sets the week in February.", "It does not matter, since the Act never mentions such a week."]}, {"prompt": "Which unit is responsible for maintaining and disseminating Philippine Standard Time?", "options": ["PAGASA's Time Service Unit, in coordination with the DOST.", "PhilSA's satellite operations division.", "The Office of Civil Defense's operations center.", "The National Telecommunications Commission alone."]}, {"prompt": "PAGASA needs new GPS-enabled automatic time dissemination equipment. Under RA 10535, how must it be acquired?", "options": ["Through direct purchase from any supplier without public bidding, since accurate time is urgently needed.", "Through donations only, because the Act provides no budget for equipment.", "Through the Quick Response Fund of the LGU where the equipment is installed.", "Through procurement under the Government Procurement Reform Act (RA 9184), with DOST oversight."]}, {"prompt": "RA 10535 required PAGASA and the DOST to prepare its implementing rules in coordination with several agencies, including the National Telecommunications Commission (NTC). Why is the NTC's participation especially relevant?", "options": ["The NTC regulates broadcast franchises, which the Act's penalties for stations directly affect.", "The NTC maintains the atomic clocks that define Philippine Standard Time for the whole country.", "The NTC declares the start of National Time Consciousness Week each year.", "The NTC is the agency that sets the country's offset from UTC."]}, {"prompt": "A private school claims it is exempt from conducting time-consciousness campaigns because RA 10535 concerns only government. What is the best evaluation?", "options": ["The claim is wrong — the Act calls on both public and private schools to conduct awareness campaigns.", "The claim is right — private schools are regulated only by DepEd issuances and are not covered by the Act.", "The claim is right — the Act addresses broadcast media alone.", "The claim is wrong — but only for schools with more than 1,000 students."]}, {"prompt": "Two meteor cameras 40 km apart record the same fireball, but one station's clock is two seconds off. Why does this show that RA 10535 is scientific infrastructure and not only civic discipline?", "options": ["Fireballs can be recorded legally only during National Time Consciousness Week.", "PAGASA owns all meteor data, so every observer must use PAGASA's cameras.", "A two-second error changes only the fireball's recorded brightness, not the trajectory computed from the two stations.", "Triangulation needs simultaneous timestamps; without a common traceable timescale, the observations cannot be combined."]}, {"prompt": "RA 10535 is often linked to the campaign against so-called 'Filipino time.' Which provisions address this behavioral side of the law?", "options": ["The franchise revocation clause for broadcast stations.", "National Time Consciousness Week and continuing awareness campaigns in offices and schools.", "The GPS-enabled equipment procurement under RA 9184.", "The monthly coordination of government office timepieces with PAGASA and the display of PhST on them."]}, {"prompt": "A team installs seismometers and all-sky cameras at five distant sites. Which workplan step best applies RA 10535?", "options": ["Ask each site host to set the station clocks by hand using their own mobile phones whenever they visit.", "Record data without timestamps and align the records later by visual inspection.", "Use a different local time at each site to reflect its longitude.", "Budget GPS-disciplined clocks or time servers traceable to PhST so every site shares one timescale."]}, {"prompt": "A city wants an accurate public clock tower in its plaza. Under RA 10535, what is PAGASA's role in such public displays?", "options": ["PAGASA has no role, since public clocks are purely a local matter.", "PAGASA installs or supports synchronized time devices in field stations and key public places.", "PAGASA must sell the clock tower to the city at commercial rates.", "PAGASA must approve the clock tower's architectural design and location before any construction starts."]}, {"prompt": "An LGU is told it must pay for PAGASA's national time dissemination equipment. According to RA 10535, where does funding for implementing the Act come from?", "options": ["The DOST–PAGASA budget and their annual appropriations.", "The LGU's Local DRRM Fund.", "The Philippine Space Development Fund.", "Fees collected from private radio stations."]}, {"prompt": "Two bidders dispute whether a sealed bid arrived before a government office's 10:00 AM deadline; their phones show different times. Which reference should decide the matter?", "options": ["The clock on the bidder's own phone.", "The time shown on the government office's internet provider's server when the bid was logged.", "Whichever time favors the lower bid.", "Philippine Standard Time, the country's single official time kept by PAGASA."]}, {"prompt": "A government hospital records times of birth and death using wall clocks that are several minutes off. Why does synchronization with PhST matter here beyond punctuality?", "options": ["It matters only because hospital staff may otherwise arrive late or leave early for their shifts.", "Official records carry legal effect, so their timestamps must follow one authoritative national standard.", "It does not matter, because only broadcast media must use PhST.", "It matters only during National Time Consciousness Week."]}, {"prompt": "A project uses satellite imagery to map flood extent and track changing rainfall patterns. Which key development area of RA 11363 does it fit best?", "options": ["Space industry capacity building.", "National security and development.", "Hazard management and climate studies.", "International cooperation."]}, {"prompt": "A Filipino startup plans to manufacture cubesat components for local and foreign clients. Which key development area of the Space Act supports it most directly?", "options": ["Space education and awareness.", "Space industry capacity building.", "Hazard management and climate studies.", "Space research and development."]}, {"prompt": "PhilSA is attached to the Office of the President instead of being placed inside a single department. What is the best explanation for this design?", "options": ["Space policy cuts across many departments, so attachment to the Presidency supports whole-of-government coordination.", "It exempts PhilSA from the budget, audit, and civil service rules that apply to ordinary departments and bureaus.", "It lets the President personally operate the country's satellites.", "It places PhilSA under the Department of National Defense by default."]}, {"prompt": "Which statement correctly describes the head of PhilSA under RA 11363?", "options": ["An Administrator with the rank of Undersecretary, appointed by the DOST Secretary on the recommendation of the PAGASA board.", "A Director elected by the Philippine Space Council from among its members.", "A Director General with the rank of Cabinet Secretary, appointed by the President and confirmed by the Commission on Appointments.", "A Commissioner chosen by Congress for a single six-year term."]}, {"prompt": "A nominee for PhilSA Director General holds a law degree and has managed business firms, but has no advanced degree in a science or engineering field. How does this compare with the Act's qualifications?", "options": ["The nominee qualifies, because the Act looks mainly for proven management experience in large private or public organizations.", "The nominee qualifies, because any advanced degree is accepted by the Act.", "The nominee qualifies after passing a civil service examination on space policy.", "The nominee does not qualify; the Act requires an advanced degree in space science, astronomy, physics, engineering, or a related field, plus relevant experience."]}, {"prompt": "PhilSA's Director General is assisted by Deputy Directors General. Which description matches RA 11363?", "options": ["Three Deputy Directors General with Undersecretary rank, at least two of whom must be career executive officers.", "One Deputy Director General with Cabinet rank, chosen by the Space Council.", "Five Deputy Directors General with Cabinet rank, one for each key development area, all chosen by the Space Council.", "Two Deputy Directors General elected by PhilSA's scientific staff."]}, {"prompt": "Who chairs the Philippine Space Council, and which officials serve as its vice-chairs?", "options": ["The PhilSA Director General chairs it; the Secretaries of Finance and Education are vice-chairs.", "The DOST Secretary chairs it; the PAGASA Administrator and the OCD Administrator are vice-chairs.", "The Senate President chairs it; the House Speaker is the sole vice-chair.", "The President chairs it; the Secretaries of Science and Technology and of National Defense are vice-chairs."]}, {"prompt": "A student confuses the roles of the Philippine Space Council and PhilSA. Which statement separates them correctly?", "options": ["The Council runs satellite missions and ground stations day to day; PhilSA only advises the President on space policy.", "The Council and PhilSA are two names for the same office.", "The Council sets policy direction and approves strategic directions; PhilSA is the central agency that implements programs.", "The Council handles astronomy only; PhilSA handles satellites only."]}, {"prompt": "Besides leading PhilSA, which additional roles does the Director General hold under RA 11363?", "options": ["Chair of the NDRRMC and head of the Office of Civil Defense during disasters.", "Administrator of PAGASA and keeper of Philippine Standard Time.", "Head of the Space Council's secretariat and Presidential Adviser on Space Matters.", "Vice-chair of the Space Council and Secretary of National Defense."]}, {"prompt": "A PhilSA unit proposes using the Philippine Space Development Fund to pay regular staff salaries. How should this be evaluated under RA 11363?", "options": ["Allowed — the Fund may cover any PhilSA expense, including salaries.", "Allowed — if the salaries are for scientists rather than administrative staff.", "Not allowed — the Fund is reserved exclusively for capital outlay.", "Not allowed — the Fund may be used only for foreign travel."]}, {"prompt": "Where does RA 11363 source the Philippine Space Development Fund, and for how long?", "options": ["₱1 billion a year for ten years, from LGU revenue shares.", "₱500 million a year indefinitely, from broadcast franchise fees.", "₱2 billion a year for five years, from PAGCOR and BCDA sources.", "₱3 billion once, from the PAGASA Modernization Fund."]}, {"prompt": "PhilSA's very first operating funds came from which source under the Act?", "options": ["₱1 billion from the current budget of the Office of the President.", "₱1 billion from the Local DRRM Funds of all provinces.", "₱1 billion from the PAGASA Modernization Fund.", "₱1 billion from private donations collected by the Space Council."]}, {"prompt": "Where does RA 11363 locate PhilSA's principal site?", "options": ["At least 5 hectares inside the DOST compound in Taguig.", "At least 30 hectares within PAGASA's Quezon City headquarters.", "Any site chosen by the LGU that offers the lowest land cost.", "At least 30 hectares within the Clark Special Economic Zone."]}, {"prompt": "A Philippine university's cubesat is launched into orbit through a foreign launch provider. Under RA 11363, what registry duty follows?", "options": ["No registry duty applies, because the rocket belongs to a foreign company and the launch took place outside the country.", "PhilSA enters it in the National Registry of Space Objects and furnishes the information to the UN Office for Outer Space Affairs.", "The university must register it with PAGASA as a weather instrument.", "The university must register it with the local government where it was built."]}, {"prompt": "A satellite procured and registered by the Philippines later breaks apart, and debris damages property in another country. Under the international treaties the Space Act commits to, who bears international liability?", "options": ["No one, because damage from space debris is treated as a natural event.", "Only the foreign launch company, since it operated the rocket and therefore answers for anything the satellite later causes.", "The Philippines as a launching State, since States answer internationally for space objects they launch or procure.", "Only the individual engineers who designed the satellite."]}, {"prompt": "RA 11363 transferred a specific existing program into PhilSA. Which program was named in the Act?", "options": ["The weather forecasting and typhoon warning division of PAGASA.", "The Quick Response Fund of the NDRRMC.", "PAGASA's Time Service Unit.", "The Philippine Space Science Education Program of the DOST–Science Education Institute."]}, {"prompt": "The Philippine Space Development and Utilization Policy is described as the nation's primary strategic roadmap for space. What long-term aim does the Act attach to it?", "options": ["To place a Filipino astronaut on the Moon within five years.", "To make the Philippines a space-capable and space-faring nation within the next decade.", "To replace PAGASA's weather services with satellite-based services run entirely by PhilSA.", "To end all international cooperation in favor of self-reliance."]}, {"prompt": "A university proposes training public-school teachers in space science across three school divisions. Which is the strongest statutory anchor?", "options": ["RA 10535, because classes will start on time.", "RA 10121, because teachers take part in school disaster drills and will teach hazard awareness as well.", "RA 10692, because teachers can read weather bulletins.", "The space education and awareness key development area of RA 11363, with PhilSA programs as the implementing channel."]}, {"prompt": "At a meeting of the UN Committee on the Peaceful Uses of Outer Space, who represents the Philippines on space matters under RA 11363?", "options": ["PAGASA, because it is the older science agency with a long astronomical services tradition.", "Any university that has launched a satellite.", "The Office of Civil Defense, as NDRRMC secretariat.", "PhilSA, as the country's official representative in international space fora."]}, {"prompt": "Satellite monitoring of vessels in the country's maritime zones is proposed. Which part of the Space Act most directly supports it?", "options": ["The space education and awareness development area.", "The registration of every Philippine space object with the United Nations Office for Outer Space Affairs.", "The policy of safeguarding sovereignty and territorial integrity, under the national security and development area.", "The initial ₱1 billion operating fund of PhilSA."]}, {"prompt": "A team builds a spectrograph for a university observatory to study variable stars. Which key development area does this fit best?", "options": ["Space research and development.", "Space industry capacity building.", "Hazard management and climate studies.", "National security and development."]}, {"prompt": "A legislator wants a yearly account of how RA 11363 is being implemented. Which reporting mechanism does the Act provide?", "options": ["The PAGASA Administrator reports on PhilSA's activities to Congress every five years.", "Each LGU reports its own space activities to the Senate.", "PhilSA submits an annual report to the President and both Houses of Congress.", "No report is required, since the Space Council oversees itself."]}, {"prompt": "A researcher needs satellite imagery for an environmental study. Which PhilSA function most directly supports this request?", "options": ["Maintaining the National Registry of Space Objects.", "Public access and resource-sharing of space data and facilities.", "Serving as secretariat of the Philippine Space Council.", "Representing the country at international space meetings."]}, {"prompt": "RA 11363 directed PhilSA to issue its implementing rules within 90 days, yet the IRR took effect only in 2021. What lesson does this hold for project planners?", "options": ["A statute can be in force before its procedures are fully in place, so workplans should check the IRR's status.", "The Act was invalid until the IRR took effect, so nothing PhilSA did before 2021 had any legal basis.", "IRRs are optional, so planners may ignore them entirely.", "The delay transferred PhilSA's powers back to the DOST."]}, {"prompt": "The IRR of RA 11363 was published in a newspaper and deposited with the UP Law Center before it took effect in May 2021. Why are these steps necessary?", "options": ["Rules that affect the public take effect only after publication and filing, so people can know them.", "They allow the IRR to override any conflicting parts of the Act once it has been published.", "They make the IRR binding on foreign space agencies.", "They let the President skip Congress in funding PhilSA."]}, {"prompt": "A provision of the IRR seems to conflict with the text of RA 11363. Which rule resolves the conflict?", "options": ["The IRR prevails, because it is more recent and more detailed than the Act.", "The Act prevails; an IRR provision inconsistent with its statute is invalid to that extent.", "Both are void, and Congress must pass the law again.", "PhilSA may apply whichever version it finds more convenient."]}, {"prompt": "The IRR defines a 'transition period' for PhilSA's build-up. What maximum length does it set?", "options": ["Five years.", "Ninety days.", "One year.", "Twenty years."]}, {"prompt": "Under the IRR, at least one-sixth of the Philippine Space Development Fund must go to research and development and education. If the Fund receives ₱2 billion in a year, what is the minimum amount for these areas?", "options": ["About ₱200 million.", "About ₱500 million.", "About ₱667 million.", "About ₱333 million."]}, {"prompt": "A PhilSA scientist asks whether the benefits for scientists, engineers, and researchers apply to PhilSA staff. What does the IRR provide?", "options": ["PhilSA staff are excluded from all S&T benefits because PhilSA is attached to the Office of the President and not to the DOST.", "PhilSA's S&T personnel are covered by the Magna Carta for scientists, engineers, researchers, and other S&T personnel (RA 8439, as amended by RA 11312).", "Only the Director General is covered by the Magna Carta benefits.", "The benefits apply only to staff assigned to PAGASA."]}, {"prompt": "A proponent wants to know the exact steps for entering a satellite in the national registry. Where is such detail most likely found?", "options": ["In the declaration of policy of RA 10121.", "In the IRR, which sets out procedures that operationalize the Act's registry provision.", "In the penalty clause of RA 10535.", "In a news article or blog post summarizing the Space Act for the general public."]}, {"prompt": "A draft rule would let PhilSA impose a new tax to boost the Space Development Fund, although RA 11363 contains no taxing provision. What is the soundest evaluation?", "options": ["Valid — IRRs may improve on the statute whenever program funds run low.", "Valid — if the Space Council approves the tax by majority vote.", "Invalid — only because taxes are the DOST's responsibility.", "Invalid — an IRR cannot create new burdens or powers that the statute never granted."]}, {"prompt": "Some personnel may be affected as programs shift into PhilSA during its build-up. Which topic does the IRR cover for them?", "options": ["Automatic transfer of all affected personnel to PAGASA.", "Separation and related benefits for personnel affected by the transition.", "A ban on affected personnel working in government again.", "Mandatory retirement at age forty for affected personnel."]}, {"prompt": "The IRR of RA 11363 was issued under the authority of which body?", "options": ["The NDRRMC, as the body in charge of hazard-monitoring satellites and their data during disasters.", "PAGASA, as keeper of the country's astronomical services.", "The Supreme Court, through an administrative circular.", "PhilSA, through its Director General, in coordination with agencies such as the DBM and the Civil Service Commission."]}, {"prompt": "According to the IRR, when does the Philippines assume international liability for space objects in its national registry?", "options": ["Only if the object was physically launched from Philippine territory.", "After ratification of the relevant UN conventions on registration and liability.", "Only after the object has re-entered the atmosphere.", "Never, because the IRR rejects all international liability."]}, {"prompt": "A workplan cites RA 11363 as its legal basis but never mentions the IRR. What is the main weakness?", "options": ["It is stronger, because citing an IRR weakens a proposal.", "It is invalid, because the Act has no legal effect on its own until its IRR is cited.", "It is complete, because IRRs only repeat the Act word for word.", "It gives the principle without the procedure, so it may misstate how things are actually done."]}, {"prompt": "The IRR formally constitutes the Philippine Space Council. How many members sit on it besides the chair and two vice-chairs?", "options": ["Three members, all from the DOST.", "Twelve members, all elected by PhilSA staff.", "No other members; the Council has only three officers.", "Nine members drawn from relevant departments and bodies."]}, {"prompt": "A provincial fireball-alert camera network is planned. Which mapping of the four laws to the project is correct?", "options": ["RA 10121 gives a time standard; RA 10692 a policy anchor; RA 10535 a user and pillar; RA 11363 a data source.", "All four laws provide funding only, so the network needs no other partners.", "RA 10121 gives a user and pillar; RA 10692 a partner and data source; RA 10535 a time standard; RA 11363 a policy anchor.", "RA 10535 gives a user; RA 11363 a time standard; RA 10121 an astronomy mandate; RA 10692 a space council."]}, {"prompt": "A proposal for a national astronomical observatory names PhilSA as its only government stakeholder and never mentions PAGASA. What is the sharpest reviewer critique?", "options": ["It wrongly names PhilSA, which has no authority over any matter related to astronomy or space science.", "Observatories need no government stakeholders at all.", "It overlooks PAGASA's astronomical services mandate; a credible proposal shows coordination with both agencies.", "The proposal should have named the NDRRMC as sole stakeholder."]}, {"prompt": "A team proposes monitoring geomagnetic storms that disrupt GPS and communications. Which legal framing is most defensible?", "options": ["Prevention and mitigation science under RA 10121, and hazard management under RA 11363.", "Relief-goods management under RA 10121, and education under RA 10535.", "Broadcast synchronization under RA 10535, and aviation fees under RA 10692.", "It cannot be framed under any Philippine law, since space weather is not a hazard."]}, {"prompt": "Satellite rainfall estimates from PhilSA, PAGASA forecasts, and an LGU's evacuation order all feed one flood response. Which statement best describes the combined legal system?", "options": ["PhilSA issues the official flood forecast and warning, replacing PAGASA's role, while the LGU acts on it.", "The LGU must wait for the NDRRMC chair before any evacuation.", "PhilSA supplies space data, PAGASA issues the official forecast and warning, and the local DRRM system acts on it.", "PAGASA orders the evacuation, while the LGU only collects data."]}, {"prompt": "Laws can give research projects funds, institutions, or standards. Which classification of RA 10535 is most accurate?", "options": ["It mainly provides a fund for local research.", "It mainly creates a new space agency.", "It mainly provides a standard — a single national timescale.", "It mainly lists prohibited acts on relief goods."]}, {"prompt": "During a tsunami alert, warnings from different offices show slightly different issuance times. Why does a single official time matter in early warning?", "options": ["It matters only for broadcast stations, which may lose their franchise if they announce the wrong time.", "Responders must compare and sequence warnings reliably, so all messages need one authoritative timestamp.", "It does not matter, since warnings are judged only by their wording.", "It matters only for the annual National Time Consciousness Week."]}];
+const LETTERS = ["A","B","C","D"];
+
+/* Answer key, lightly obfuscated (character shift + base64) so it cannot be
+   read at a glance in the page source. Decoded only at grading time. */
+const KEY = "SEtJSUpJSEtJSUlJSkpLSkpISEtJS0hLSEpLSEpKSkpIS0lJS0pISUlIS0hISkhIS0hIS0lLSUhLSUpJSEpLSEtKSkpKSEtJSktJS0tKSEpJSEhJSEtJSUtJS0lLS0pKSEpKSQ==";
+function keyLetters(){ return atob(KEY).split("").map(c => String.fromCharCode(c.charCodeAt(0)-7)); }
+
+const state = { i:0, answers:new Array(QUESTIONS.length).fill(null), submitted:false, profile:{} };
+
+const $ = id => document.getElementById(id);
+const startScreen=$("startScreen"), quizScreen=$("quizScreen"), doneScreen=$("doneScreen"), progress=$("progress");
+
+/* ---- Start ---- */
+$("startBtn").addEventListener("click", () => {
+  const name=$("fName").value.trim();
+  if(!name){ $("fName").focus(); $("fName").style.borderColor="var(--bad)"; return; }
+  state.profile = {
+    name,
+    studentId: $("fId").value.trim() || "(not given)",
+    section: $("fSection").value.trim() || "(not given)",
+    email: $("fEmail").value.trim() || "(not given)"
+  };
+  startScreen.classList.add("hide");
+  progress.classList.remove("hide");
+  quizScreen.classList.remove("hide");
+  render();
+});
+
+/* ---- Render current question ---- */
+function render(){
+  const q = QUESTIONS[state.i];
+  $("qBadge").textContent = "Q" + (state.i+1);
+  $("qPrompt").textContent = q.prompt;
+
+  const ul = $("qOpts"); ul.innerHTML="";
+  q.options.forEach((opt, idx) => {
+    const li=document.createElement("li");
+    li.className="opt" + (state.answers[state.i]===idx ? " sel":"");
+    li.setAttribute("role","button"); li.tabIndex=0;
+    li.innerHTML = '<span class="let">'+LETTERS[idx]+'</span><span class="txt"></span>';
+    li.querySelector(".txt").textContent = opt;
+    const choose = () => {
+      state.answers[state.i]=idx;
+      [...ul.children].forEach(c=>c.classList.remove("sel"));
+      li.classList.add("sel");
+      $("nextBtn").disabled=false;
+      updateProgress();
+    };
+    li.addEventListener("click", choose);
+    li.addEventListener("keydown", e => { if(e.key==="Enter"||e.key===" "){ e.preventDefault(); choose(); } });
+    ul.appendChild(li);
+  });
+
+  $("prevBtn").disabled = (state.i===0);
+  $("nextBtn").disabled = (state.answers[state.i]===null);
+  $("nextBtn").textContent = (state.i===QUESTIONS.length-1) ? "Finish \u2192" : "Next \u2192";
+  updateProgress();
+}
+
+function updateProgress(){
+  const total=QUESTIONS.length;
+  const answered=state.answers.filter(a=>a!==null).length;
+  $("qof").textContent = "Question " + (state.i+1) + " of " + total;
+  $("answeredCount").textContent = answered + " answered";
+  $("barfill").style.width = ((state.i+1)/total*100) + "%";
+}
+
+/* ---- Navigation ---- */
+$("nextBtn").addEventListener("click", () => {
+  if(state.answers[state.i]===null) return;          // item revealed only after answering
+  if(state.i < QUESTIONS.length-1){ state.i++; render(); window.scrollTo({top:0,behavior:"smooth"}); }
+  else { finish(); }
+});
+$("prevBtn").addEventListener("click", () => {
+  if(state.i>0){ state.i--; render(); window.scrollTo({top:0,behavior:"smooth"}); }
+});
+$("reviewBtn").addEventListener("click", () => {
+  if(state.submitted) return;
+  doneScreen.classList.add("hide");
+  progress.classList.remove("hide");
+  quizScreen.classList.remove("hide");
+  state.i=QUESTIONS.length-1; render();
+});
+
+/* ---- Finish -> completion screen (NO score shown) ---- */
+function finish(){
+  quizScreen.classList.add("hide");
+  progress.classList.add("hide");
+  doneScreen.classList.remove("hide");
+  $("sName").textContent=state.profile.name;
+  $("sId").textContent=state.profile.studentId;
+  $("sSection").textContent=state.profile.section;
+  $("sAnswered").textContent = state.answers.filter(a=>a!==null).length + " / " + QUESTIONS.length;
+  $("destNote").textContent = "Results are sent to " + CONFIG.instructorEmail;
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ---- Silent grading (score never rendered) ---- */
+function grade(){
+  const key = keyLetters();
+  let correct=0; const detail=[];
+  QUESTIONS.forEach((q,idx) => {
+    const chosen=state.answers[idx];
+    const chosenLetter = (chosen===null ? "-" : LETTERS[chosen]);
+    const isCorrect = (chosenLetter===key[idx]);
+    if(isCorrect) correct++;
+    detail.push("Q"+(idx+1).toString().padStart(2," ")+": chose "+chosenLetter+" | correct "+key[idx]+" | "+(isCorrect ? "OK" : "X"));
+  });
+  const total=QUESTIONS.length;
+  const pct=Math.round(correct/total*1000)/10;
+  return { correct, total, pct, detail };
+}
+
+/* ---- Send ---- */
+function setStatus(kind,msg){
+  const s=$("statusMsg"); s.className="statusmsg show "+kind; s.textContent=msg;
+}
+
+$("sendBtn").addEventListener("click", async () => {
+  if(state.submitted) return;
+  const r = grade();
+  const stamp = new Date().toString();
+  const body = {
+    _subject: "["+CONFIG.testName+"] "+state.profile.name+" — "+r.correct+"/"+r.total,
+    to_instructor: CONFIG.instructorEmail,
+    test: CONFIG.testName,
+    submitted_at: stamp,
+    name: state.profile.name,
+    student_number: state.profile.studentId,
+    section: state.profile.section,
+    respondent_email: state.profile.email,
+    score: r.correct + " / " + r.total,
+    percentage: r.pct + "%",
+    answers_answered: state.answers.filter(a=>a!==null).length + " / " + r.total,
+    item_breakdown: r.detail.join("\n")
+  };
+
+  // Endpoint not configured yet
+  if(CONFIG.endpoint.indexOf("REPLACE_WITH_FORMSPREE_ID") !== -1){
+    setStatus("info","Submission endpoint not set up yet. Please notify your instructor — results were not sent. (Setup instructions are in the file's CONFIG comment.)");
+    return;
+  }
+
+  $("sendBtn").disabled=true; $("reviewBtn").disabled=true;
+  setStatus("info","Sending your test to your instructor…");
+  try{
+    const res = await fetch(CONFIG.endpoint, {
+      method:"POST",
+      headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body: JSON.stringify(body)
+    });
+    if(res.ok){
+      state.submitted=true;
+      setStatus("good","Your test has been submitted successfully. You may now close this page. Thank you!");
+      $("sendBtn").textContent="Submitted \u2713";
+      $("homeLink").classList.remove("hide");
+    } else {
+      $("sendBtn").disabled=false; $("reviewBtn").disabled=false;
+      setStatus("bad","Submission failed (server returned an error). Please check your internet connection and try again, or contact your instructor.");
+    }
+  }catch(err){
+    $("sendBtn").disabled=false; $("reviewBtn").disabled=false;
+    setStatus("bad","Could not send — network error. Please check your connection and try again, or contact your instructor.");
+  }
+});
+</script>
+</body>
+</html>
