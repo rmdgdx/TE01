@@ -12,6 +12,8 @@ Assoc. Prof. Ryan Manuel D. Guido, Ph.D.
 | `index.html` | **Landing page** — the enhanced course syllabus, with a Course Materials section linking every chapter pack |
 | `ch1-lecture.html` … `ch7-lecture.html` | Chapter lecture packs: annotated lectures, framework figures, 20-item HOTS mastery tests with answer dropdowns, linked primary sources |
 | `ch1-reinforcement.html` … `ch7-reinforcement.html` | Reinforcement sets: 20 fresh HOTS multiple-choice items + 3 HOTS essays with model answers |
+| `ch3-test.html` | Chapter 3 100-item test (submits to the instructor through Formspree) |
+| `midterm-exam.html` | Midterm Examination: 100 items, one per page, with confidentiality notice, data privacy notice, NDA, 120-minute timer, running score, and Formspree submission |
 
 All pages are single-file, self-contained HTML (no external assets or build step) —
 they work offline, render on any device, and print cleanly.
